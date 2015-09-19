@@ -133,38 +133,42 @@
                     <div>
                         <div id="account">
                             <div>
-                                <form action="Controlle?action=register" method="POST">
+                                <form action="Controlle?action=register" method="POST" name="myform">
                                     <span>SIGN-UP</span>
                                     <table>
                                         <tr>
                                             <td><label for="login">Login</label></td>
                                             <td>
                                                 <input type="text" id="login" name="username" placeholder="Enter your name" onkeyup="isValidUsername()" />
+                                                 <p id ="failUser" style="color: red"></p> 
                                             </td>
-                                            <p id ="failUser" style="color: red"></p> 
+                                           
 
                                         </tr>
                                         <tr>
                                             <td><label for="email">E-mail</label></td>
                                             <td>
                                                 <input type="text" id="email" name="email" id="fname" placeholder="Enter your email" onkeyup="isValidEmail()"/>
+                                                 <p id ="failEmail" style="color: red"></span>
                                             </td>
-                                            <p id ="failEmail" style="color: red"></span>
+                                           
                                         </tr>
 
                                         <tr>
                                             <td><label for="password">Password</label></td>
                                             <td>
                                                 <input name="password" type="text" id="password" placeholder="Password" onkeyup="isValidPassword()"/> 
+                                                <p id ="password_error" style="color: red"></span>
                                             </td>
-                                            <p id ="password_error" style="color: red"></span>
+                                            
                                         </tr>
                                         <tr>
                                             <td><label for="confirmpass">Confirm<br />Password</label></td>
                                             <td>
-                                                <input type="text" id="confirmpass" name="confirmpass" placeholder="Retype Password" onkeyup="isValidPassword2() "/>
+                                                <input type="text" id="confirmpass" name="password1" placeholder="Retype Password" onkeyup="isValidPassword2() "/>
+                                                 <p id ="password1_error" style="color: red"></span>
                                             </td>
-                                            <p id ="password1_error" style="color: red"></span>
+                                           
                                         </tr>
                                         <tr>
                                             <td></td>

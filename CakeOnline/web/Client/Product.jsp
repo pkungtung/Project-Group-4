@@ -35,13 +35,12 @@
                     <c:forEach var="p" items="${list.rows}">
                         <li>
                             <div>
+
+                                <a href="Home.jsp"><img src="${p.img}" height="400" width="400"  alt="Image" /></a>
                                 <div>
                                     <h2><a href="Home.jsp">${p.name}</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
-                                    <a href="Home.jsp" class="view">view all</a>
+                                    <a href="Home.jsp" class="view">detail</a>
                                 </div>
-                                    <!--<img src="imgProduct/1dress-birthday-cakes-for-girlsa8a4.png" alt=""/>-->
-                                    <a href="Home.jsp"><img src="${p.img}" height="400" width="400"  alt="Image" /></a>
                             </div>
                         </li>
                     </c:forEach>

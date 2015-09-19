@@ -15,11 +15,6 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
-        <c:if test="${param.login == 'success'}">
-        <script>
-            alert("dang nhap thanh cong");
-        </script>
-        </c:if>
 
         <jsp:include page="include/menu.jsp" />
 
