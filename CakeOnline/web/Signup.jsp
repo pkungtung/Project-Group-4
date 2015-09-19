@@ -138,8 +138,10 @@
                                     <table>
                                         <tr>
                                             <td><label for="login">Login</label></td>
-                                            <td><input type="text" id="login" name="username" placeholder="Enter your name" onkeyup="isValidUsername() / > < /td>
-                                            < p id ="failUser" style="color: red"></p> 
+                                            <td>
+                                                <input type="text" id="login" name="username" placeholder="Enter your name" onkeyup="isValidUsername()" />
+                                            </td>
+                                            <p id ="failUser" style="color: red"></p> 
 
                                         </tr>
                                         <tr>
