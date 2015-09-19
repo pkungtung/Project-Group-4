@@ -17,7 +17,7 @@
     <div>                
         <div>
             <div id="logo">
-                <a href="Home.jsp"><img src="images/logo.gif" alt="Logo"/></a>
+                <a href="Home.jsp"><img src="images/logo1.gif" alt="Logo"/></a>
             </div>
             <div>
                 <div>
