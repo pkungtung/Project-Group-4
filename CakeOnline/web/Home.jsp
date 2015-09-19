@@ -7,11 +7,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
+
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Cake Delights Web Template</title>
+        <title>Cake </title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>

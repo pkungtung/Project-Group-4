@@ -20,10 +20,10 @@
                 <div class="connect">
                     <span>Follow Us</span>
                     <ul>
-                        <li><a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook">Facebook</a></li>
-                        <li><a href="http://twitter.com/fwtemplates" target="_blank" class="twitter">Twitter</a></li>
+                        <li><a href="http://facebook.com" target="_blank" class="facebook">Facebook</a></li>
+                        <li><a href="http://twitter.com" target="_blank" class="twitter">Twitter</a></li>
                         <li><a href="#" class="subscribe">Subscribe</a></li>
-                        <li><a href="http://www.flickr.com/freewebsitetemplates/" target="_blank" class="flicker">Flicker</a></li>
+                        <li><a href="http://www.flickr.com" target="_blank" class="flicker">Flicker</a></li>
                     </ul>
                 </div>
             </div>
@@ -65,7 +65,7 @@
         <div>
             <ul>
                 <li class="first"><a href="Home.jsp">help</a></li>
-                <li><a href="Home.jsp">about cake delight</a></li>
+                <li><a href="About.jsp">about cake delight</a></li>
                 <li><a href="Home.jsp">cake delight talk</a></li>
                 <li><a href="Home.jsp">developers</a></li>
                 <li><a href="Home.jsp">privacy policy</a></li>

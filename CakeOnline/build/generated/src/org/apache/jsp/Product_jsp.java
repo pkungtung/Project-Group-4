@@ -125,7 +125,7 @@ public final class Product_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("        ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/newfooter.jsp", out, false);
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/footer.jsp", out, false);
       out.write("\n");
       out.write("    </body>\n");
       out.write("</html>");

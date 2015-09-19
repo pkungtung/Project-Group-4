@@ -5,42 +5,59 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
+
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Sign In - Cake Delights Web Template</title>
+        <title>Sign In </title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
-    <body>
-        <jsp:include page="include/menu.jsp" />
-        <div id="content">
-            <div>
-                <div id="account">
+    <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
+    <c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
+
+    <c:choose>
+        <c:when test="${!empty param.dangnhap}">
+            <c:set var="dangnhap" value="${param['dangnhap']}" />
+            <c:if test="${dangnhap =='loi'}" >
+                <script>
+                    alert("Dang nhap khong thanh cong");
+                    window.location.href = "${param.u}?${param.p}";
+                </script>
+            </c:if>
+        </c:when>
+        <c:otherwise>
+            <body>
+                <jsp:include page="include/menu.jsp" />
+                <div id="content">
                     <div>
-                        <form action="#">
-                            <span>SIGN-IN</span>
-                            <table>
-                                <tr>
-                                    <td><label for="name">Name</label></td>
-                                    <td><input type="text" id="name" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="password">Password</label></td>
-                                    <td><input type="text" id="password" /></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="rememberme"><label for="rememberme"><input type="checkbox" id="rememberme" /> Remember me on this computer</label></td>
-                                </tr>
-                            </table>
-                            <input type="submit" value="Sign-In" class="submitbtn" />
-                        </form>
+                        <div id="account">
+                            <div>
+                                <form action="Controlle?action=Login" method="POST">
+                                    <span>SIGN-IN</span>
+                                    <table>
+                                        <tr>
+                                            <td><label for="name">Name</label></td>
+                                            <td><input type="text" id="name" name="txtUsername" placeholder="Enter Name" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="password">Password</label></td>
+                                            <td><input type="password" id="password"  name="txtPassword" placeholder="Password" value="${paramPage}"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td class="rememberme"><label for="rememberme"><input type="checkbox" id="rememberme" /> Remember me on this computer</label></td>
+                                        </tr>
+                                    </table>
+                                    <input type="submit" value="Sign-In" class="submitbtn" />   
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <jsp:include page="include/newfooter.jsp" />
-    </body>
+                <jsp:include page="include/newfooter.jsp" />
+            </body>
+        </c:otherwise>
+    </c:choose>
 </html>

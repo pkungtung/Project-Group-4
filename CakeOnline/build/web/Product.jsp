@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>The Pastry Shop - Cake Delights Web Template</title>
+        <title>The Pastry Shop</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>

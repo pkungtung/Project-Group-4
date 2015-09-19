@@ -6,11 +6,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
+
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Services - Cake Delights Web Template</title>
+        <title>Services </title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
