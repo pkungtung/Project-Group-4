@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.DataBase;
+import model.DataProcess;
 
 /**
  *
@@ -44,7 +44,7 @@ public class Controlle extends HttpServlet {
             String url = request.getParameter("urlPage");
             String param = request.getParameter("paramPage");
 
-            DataBase dt = new DataBase();
+            DataProcess dt = new DataProcess();
             String u = request.getParameter("txtUsername");
             String p = request.getParameter("txtPassword");
             if (request.getParameter("cbRemember") != null) {
@@ -61,7 +61,7 @@ public class Controlle extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("login", u);
                 //response.sendRedirect("" + url + "?" + param);
-                  response.sendRedirect("Home.jsp?dangnhapthanhcong");
+                  response.sendRedirect("/Client/Home.jsp?dangnhapthanhcong");
             } else {
                 response.sendRedirect("404.jsp");
             }
@@ -80,7 +80,7 @@ public class Controlle extends HttpServlet {
             String url = request.getParameter("urlPage");
             String param = request.getParameter("paramPage");
 
-            DataBase dt = new DataBase();
+            DataProcess dt = new DataProcess();
             String u = request.getParameter("username");
             String p = request.getParameter("password");
             String e = request.getParameter("email");

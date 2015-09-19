@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>The Pastry Shop</title>
+        <title>All Cake</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
@@ -36,74 +36,15 @@
                         <li>
                             <div>
 
-                                <a href="Home.jsp"><img src="${p.img}" height="400" width="400"  alt="Image" /></a>
+                                <a href="Detail.jsp?id=${p.itemCode}"><img src="${p.img}" height="400" width="400"  alt="Image" /></a>
                                 <div>
                                     <h2><a href="Home.jsp">${p.name}</a></h2>
-                                    <a href="Home.jsp" class="view">detail</a>
+                                    <a href="Home.jsp" class="view">Order</a>
                                 </div>
                             </div>
                         </li>
                     </c:forEach>
-                    <!--                    <li>
-                                            <div>
-                                                <div>
-                                                    <h2><a href="Home.jsp">Special Treats</a></h2>
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
-                                                    <a href="Home.jsp" class="view">view all</a>
-                                                </div>
-                                                <a href="Home.jsp"><img src="images/special-treats.jpg" alt="Image" /></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div>
-                                                    <h2><a href="Home.jsp">Tarts</a></h2>
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
-                                                    <a href="Home.jsp" class="view">view all</a>
-                                                </div>
-                                                <a href="Home.jsp"><img src="images/tarts.jpg" alt="Image" /></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div>
-                                                    <h2><a href="Home.jsp">Cakes</a></h2>
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
-                                                    <a href="Home.jsp" class="view">view all</a>
-                                                </div>
-                                                <a href="Home.jsp"><img src="images/cakes.jpg" alt="Image" /></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div>
-                                                    <h2><a href="Home.jsp">Desserts</a></h2>
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
-                                                    <a href="Home.jsp" class="view">view all</a>
-                                                </div>
-                                                <a href="Home.jsp"><img src="images/dessert.jpg" alt="Image" /></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div>
-                                                    <h2><a href="Home.jsp">Pastries</a></h2>
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
-                                                    <a href="Home.jsp" class="view">view all</a>
-                                                </div>
-                                                <a href="Home.jsp"><img src="images/pastries.jpg" alt="Image" /></a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div>
-                                                    <h2><a href="Home.jsp">Healthy Food</a></h2>
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh</p>
-                                                    <a href="Home.jsp" class="view">view all</a>
-                                                </div>
-                                                <a href="Home.jsp"><img src="images/healthy-food.jpg" alt="Image" /></a>
-                                            </div>
-                                        </li>-->
+                    
                 </ul>
             </div>
         </div>

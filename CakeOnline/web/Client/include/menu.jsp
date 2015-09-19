@@ -32,7 +32,7 @@
             </div>
         </div>
         <c:choose>
-            <c:when test="${path == '/Home.jsp'}">
+            <c:when test="${path == '/Client/Home.jsp'}">
                 <ul>
                     <li class="current"><a href="Home.jsp">Home</a></li>
                     <li><a href="Product.jsp">All Cakes</a></li>
@@ -40,7 +40,7 @@
                     <li><a href="Contact.jsp">Contact Us</a></li>
                 </ul>
             </c:when>
-            <c:when test="${path == '/Product.jsp'}">
+            <c:when test="${path == '/Client/Product.jsp'}">
                 <ul>
                     <li><a href="Home.jsp">Home</a></li>
                     <li class="current"><a href="Product.jsp">All Cakes</a></li>
@@ -48,7 +48,7 @@
                     <li><a href="Contact.jsp">Contact Us</a></li>
                 </ul>
             </c:when>
-            <c:when test="${path == '/Contact.jsp'}">
+            <c:when test="${path == '/Client/Contact.jsp'}">
                 <ul>
                     <li><a href="Home.jsp">Home</a></li>
                     <li><a href="Product.jsp">All Cakes</a></li>
@@ -56,7 +56,7 @@
                     <li class="current"><a href="Contact.jsp">Contact Us</a></li>
                 </ul>
             </c:when>
-            <c:when test="${path == '/About.jsp'}">
+            <c:when test="${path == '/Client/About.jsp'}">
                 <ul>
                     <li><a href="Home.jsp">Home</a></li>
                     <li><a href="Product.jsp">All Cakes</a></li>
