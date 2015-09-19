@@ -146,19 +146,25 @@
                                         </tr>
                                         <tr>
                                             <td><label for="email">E-mail</label></td>
-                                            <td><input type="text" id="email" name="email" id="fname" placeholder="Enter your email" onkeyup="isValidEmail() / > < /td>
-                                            < p id ="failEmail" style="color: red"></span>
+                                            <td>
+                                                <input type="text" id="email" name="email" id="fname" placeholder="Enter your email" onkeyup="isValidEmail()"/>
+                                            </td>
+                                            <p id ="failEmail" style="color: red"></span>
                                         </tr>
 
                                         <tr>
                                             <td><label for="password">Password</label></td>
-                                            <td><input name="password" type="text" id="password" placeholder="Password" onkeyup="isValidPassword() / > < /td>
-                                            < p id ="password_error" style="color: red"></span>
+                                            <td>
+                                                <input name="password" type="text" id="password" placeholder="Password" onkeyup="isValidPassword()"/> 
+                                            </td>
+                                            <p id ="password_error" style="color: red"></span>
                                         </tr>
                                         <tr>
                                             <td><label for="confirmpass">Confirm<br />Password</label></td>
-                                            <td><input type="text" id="confirmpass" name="confirmpass" placeholder="Retype Password" onkeyup="isValidPassword2() / > < /td>
-                                            < p id ="password1_error" style="color: red"></span>
+                                            <td>
+                                                <input type="text" id="confirmpass" name="confirmpass" placeholder="Retype Password" onkeyup="isValidPassword2() "/>
+                                            </td>
+                                            <p id ="password1_error" style="color: red"></span>
                                         </tr>
                                         <tr>
                                             <td></td>

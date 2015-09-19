@@ -47,7 +47,11 @@
                                         </tr>
                                         <tr>
                                             <td></td>
-                                            <td class="rememberme"><label for="rememberme"><input type="checkbox" id="rememberme" /> Remember me on this computer</label></td>
+                                            <td class="rememberme">
+                                                <label for="rememberme">
+                                                    <input type="checkbox" <c:if test="${cookie['cb'].value == 'ok'}">checked</c:if> name="cbRemember"> Remember me on this computer
+                                                </label>
+                                            </td>
                                         </tr>
                                     </table>
                                     <input type="submit" value="Sign-In" class="submitbtn" />   
