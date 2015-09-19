@@ -35,70 +35,40 @@
             <c:when test="${path == '/Home.jsp'}">
                 <ul>
                     <li class="current"><a href="Home.jsp">Home</a></li>
-                    <li><a href="Product.jsp">The Pastry shop</a></li>
+                    <li><a href="Product.jsp">All Cakes</a></li>
                     <li><a href="About.jsp">About us</a></li>
-                    <li><a href="Service.jsp">Services</a></li>
-                    <li><a href="Blog.jsp">Blog</a></li>
                     <li><a href="Contact.jsp">Contact Us</a></li>
                 </ul>
             </c:when>
             <c:when test="${path == '/Product.jsp'}">
                 <ul>
                     <li><a href="Home.jsp">Home</a></li>
-                    <li class="current"><a href="Product.jsp">The Pastry shop</a></li>
+                    <li class="current"><a href="Product.jsp">All Cakes</a></li>
                     <li><a href="About.jsp">About us</a></li>
-                    <li><a href="Service.jsp">Services</a></li>
-                    <li><a href="Blog.jsp">Blog</a></li>
                     <li><a href="Contact.jsp">Contact Us</a></li>
                 </ul>
             </c:when>
             <c:when test="${path == '/Contact.jsp'}">
                 <ul>
                     <li><a href="Home.jsp">Home</a></li>
-                    <li><a href="Product.jsp">The Pastry shop</a></li>
+                    <li><a href="Product.jsp">All Cakes</a></li>
                     <li><a href="About.jsp">About us</a></li>
-                    <li><a href="Service.jsp">Services</a></li>
-                    <li><a href="Blog.jsp">Blog</a></li>
                     <li class="current"><a href="Contact.jsp">Contact Us</a></li>
-                </ul>
-            </c:when>
-            <c:when test="${path == '/Blog.jsp'}">
-                <ul>
-                    <li><a href="Home.jsp">Home</a></li>
-                    <li><a href="Product.jsp">The Pastry shop</a></li>
-                    <li><a href="About.jsp">About us</a></li>
-                    <li><a href="Service.jsp">Services</a></li>
-                    <li class="current"><a href="Blog.jsp">Blog</a></li>
-                    <li><a href="Contact.jsp">Contact Us</a></li>
-                </ul>
-            </c:when>
-            <c:when test="${path == '/Service.jsp'}">
-                <ul>
-                    <li><a href="Home.jsp">Home</a></li>
-                    <li><a href="Product.jsp">The Pastry shop</a></li>
-                    <li><a href="About.jsp">About us</a></li>
-                    <li class="current"><a href="Service.jsp">Services</a></li>
-                    <li><a href="Blog.jsp">Blog</a></li>
-                    <li><a href="Contact.jsp">Contact Us</a></li>
                 </ul>
             </c:when>
             <c:when test="${path == '/About.jsp'}">
                 <ul>
                     <li><a href="Home.jsp">Home</a></li>
-                    <li><a href="Product.jsp">The Pastry shop</a></li>
+                    <li><a href="Product.jsp">All Cakes</a></li>
                     <li class="current"><a href="About.jsp">About us</a></li>
-                    <li><a href="Service.jsp">Services</a></li>
-                    <li><a href="Blog.jsp">Blog</a></li>
                     <li><a href="Contact.jsp">Contact Us</a></li>
                 </ul>
             </c:when>
             <c:otherwise>
                 <ul>
                     <li><a href="Home.jsp">Home</a></li>
-                    <li><a href="Product.jsp">The Pastry shop</a></li>
+                    <li><a href="Product.jsp">All Cakes</a></li>
                     <li><a href="About.jsp">About us</a></li>
-                    <li><a href="Service.jsp">Services</a></li>
-                    <li><a href="Blog.jsp">Blog</a></li>
                     <li><a href="Contact.jsp">Contact Us</a></li>
                 </ul>
             </c:otherwise>
@@ -109,15 +79,10 @@
             <c:when test="${path == '/Home.jsp'}">
                 <div id="section">
                     <ul>
-                        <li><a href="Home.jsp">cheese cakes</a></li>
-                        <li><a href="Home.jsp">sponge cakes</a></li>
-                        <li><a href="Home.jsp">butter cakes</a></li>
-                        <li class="selected"><a href="Home.jsp">layer cakes</a></li>
-                        <li><a href="Home.jsp">sheet cakes</a></li>
-                        <li><a href="Home.jsp">cupcakes</a></li>
-                        <li><a href="Home.jsp">fondant cakes</a></li>
-                        <li><a href="Home.jsp">swiss roll</a></li>
-                        <li><a href="Home.jsp">other desserts</a></li>
+                        <li><a href="Home.jsp">Birthday Cake</a></li>
+                        <li><a href="Home.jsp">Anniversary</a></li>
+                        <li><a href="Home.jsp">Engagement</a></li>
+                        <li class="selected"><a href="Home.jsp">Marriage</a></li>
                     </ul>
                    <a href="Home.jsp"><img src="images/wedding-cupcakes-large.jpg" alt="Image"/></a>
                    
