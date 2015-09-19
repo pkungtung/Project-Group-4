@@ -417,8 +417,9 @@ p a {
 
 #content div ul li {
 	float: left;
-	height: 220px;
-	width: 450px;
+	height: 400px;
+	width: 400px;
+        padding: 25px;
 }
 
 #content div ul li div {
