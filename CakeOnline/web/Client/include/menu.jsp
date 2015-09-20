@@ -9,27 +9,35 @@
 <!DOCTYPE html>
 <c:set var="path" value="${pageContext.request.servletPath}" />
 <script type="text/javascript" src="css/coin-slider.js"></script>
-<script src="../jquery-2.1.4.min.js" type="text/javascript"></script>
+<!--<script src="../jQuery/jquery 1.11.1 for cycle2.js" type="text/javascript"></script>-->
+<!--<script src="../jQuery/jquery.cycle2.js" type="text/javascript"></script>-->
+<script src="../jQuery/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="http://malsup.github.io/jquery.cycle2.js"></script>
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script type = "text/javascript" >
-    $(function () {
-        $('.slide img:gt(0)').hide();
-        setInterval(function () {
-            $('.slide :first-child').fadeOut()
-                    .next('img').fadeIn()
-                    .end().appendTo('.slide');
-        },
-                1500);
-    })
+//    $(function () {
+//        $('.slide img:gt(0)').hide();
+//        setInterval(function () {
+//            $('.slide :first-child').fadeOut()
+//                    .next('img').fadeIn()
+//                    .end().appendTo('.slide');
+//        },
+//                1500);
+//    })
+    //slide
+
 </script>
 <style type="text/css">
     .slide {
-        position:relative; width:940px; 
+        position:relative; 
+        width:940px; 
         background: #aa6581;
         padding: 10px;
         height: 240px;
     }
-    .slide img {position:absolute;}
-    .slide a img {position:absolute;}
+    /*.slide img {position:absolute;}*/
+    /*.slide a {position:absolute;}*/
 </style>
 <link rel="stylesheet" href="css/coin-slider-styles.css" type="text/css" />
 <div id="header">    
@@ -93,14 +101,23 @@
             </c:otherwise>
         </c:choose>
         <div class="slide" style="height: 240px;">
-            <img src="images/1.jpg" width="960" height="240" />
-            <img src="images/2.jpg" width="960" height="240" />
-            <img src="images/3.jpg" width="960" height="240" />
-            <img src="images/4.jpg" width="960" height="240" />
-            <img src="images/5.jpg" width="960" height="240" />
-            <img src="images/6.jpg" width="960" height="240" />
-            <!--            <a href="Home.jsp"><img src="images/wedding-cupcakes-small.jpg" height="240" width="940" alt="Image"/></a>-->
-        </div>
+            <div class="cycle-slideshow"  style="height: 240px;"
+                 data-cycle-pause-on-hover="true"
+                 data-cycle-fx="scrollHorz"
+                 data-cycle-speed="600"    
+                 data-cycle-timeout="1200"
 
+                 >
+                <div class="cycle-prev"></div>
+                <div class="cycle-next"></div>
+                <a href="Home.jsp"><img src="images/wedding-cupcakes-small.jpg" height="240" width="940" alt="Image"/></a>
+                <img src="images/1.jpg" width="960" height="240" />
+                <img src="images/2.jpg" width="960" height="240" />
+                <img src="images/3.jpg" width="960" height="240" />
+                <img src="images/4.jpg" width="960" height="240" />
+                <img src="images/5.jpg" width="960" height="240" />
+                <img src="images/6.jpg" width="960" height="240" />
+            </div>
+        </div>
     </div>
 </div>
