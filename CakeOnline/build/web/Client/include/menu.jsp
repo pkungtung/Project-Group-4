@@ -8,11 +8,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <c:set var="path" value="${pageContext.request.servletPath}" />
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type="text/javascript" src="css/coin-slider.js"></script>
-
-        <link rel="stylesheet" href="css/coin-slider-styles.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="css/coin-slider.js"></script>
+<link rel="stylesheet" href="css/coin-slider-styles.css" type="text/css" />
 <div id="header">    
     <div>                
         <div>
@@ -73,76 +71,9 @@
                 </ul>
             </c:otherwise>
         </c:choose>
-
-
-        <c:choose>
-            <c:when test="${path == '/Home.jsp'}">
-                <div id="section">
-                    <ul>
-                        <li><a href="Home.jsp">Birthday Cake</a></li>
-                        <li><a href="Home.jsp">Anniversary</a></li>
-                        <li><a href="Home.jsp">Engagement</a></li>
-                        <li class="selected"><a href="Home.jsp">Marriage</a></li>
-                    </ul>
-                   <a href="Home.jsp"><img src="images/wedding-cupcakes-large.jpg" alt="Image"/></a>
-                   
-<!--             <div id="games">
-
-            <a href="http://www.minininjas.com/" target="_blank">
-                <img src="images/Bakarta.jpg" alt="Image"/>
-                <span>
-                    <b>Mini Ninjas</b><br />
-                    Your quest to defeat the Evil Samurai Warlord has begun. Control the powers of nature, possess creatures, use your
-                    furious Ninja skills to free your Ninja friends.
-                </span>
-            </a>
-
-            <a href="http://www.princeofpersiagame.com/" target="_blank">
-               <img src="images/banh.jpg" alt="Image"/>
-            </a>
-
-            <a href="http://spidermandimensions.marvel.com/" target="_blank">
-               <img src="images/wedding-cupcakes-large.jpg" alt="Image"/>
-            </a>
-
-            <a href="http://brinkthegame.com/" target="_blank">
-                <img src="images/wedding-cupcakes-large.jpg" alt="Image"/>
-            </a>
-
-            <a href="http://www.godofwar.com/" target="_blank" >
-                <img src="images/wedding-cupcakes-large.jpg" alt="Image"/>
-            </a>
-
-            <a href="http://www.borderlandsthegame.com/" target="_blank">
-               <img src="images/wedding-cupcakes-large.jpg" alt="Image"/>
-                <span>
-                    <b>Borderlands</b><br />
-                    Fun combat and a steady flow of rewards make this journey a massively enjoyable one, especially with some fellow mercenaries along for the ride.
-                </span>
-            </a>
-
-            <a href="http://www.swtor.com/" target="_blank">
-                <img src="images/wedding-cupcakes-large.jpg" alt="Image"/>
-            </a>
-
-            <a href="http://www.batmanarkhamasylum.com/" target="_blank">
-               <img src="images/wedding-cupcakes-large.jpg" alt="Image"/>
-            </a>
-
+        <div class="section" style="height: 240px">
+            <a href="Home.jsp"><img src="images/wedding-cupcakes-small.jpg" height="100%" width="100%" alt="Image"/></a>
         </div>
-       
-        <script>
-            $('#games').coinslider();
-        </script>-->
-
-                </div>
-            </c:when>
-            <c:otherwise>
-                <div class="section">
-                    <a href="Home.jsp"><img src="images/wedding-cupcakes-small.jpg" alt="Image"/></a>
-                </div>
-            </c:otherwise>
-        </c:choose>
 
     </div>
 </div>

@@ -1194,3 +1194,78 @@ p a {
     padding: 0;
     width: auto;
 }
+
+                                 // pkung tung
+
+#content div.home div.imgpro {
+    float: left;
+    height: auto;
+    padding: 0 0 0 20px;
+    width: 450px;
+}
+
+#content div.home div.imgpro h1 {
+    color: #84284d;
+    font-family: Trebuchet MS;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0 0 5px;
+    padding-bottom: 0;
+    text-indent: 0;
+}
+
+#content div.home div.imgpro p {
+    line-height: 28px;
+    margin: 0;
+    text-align: justify;
+}
+
+#content div.home div.imgpro p a.readmore {
+    color: #932b50;
+    text-decoration: none;
+}
+
+#content div.home div.detail {
+    background: url(../images/bg-foodstory.gif) repeat-y top center;
+    float: right;
+    height: auto;
+    padding: 20px;
+    width: 400px;
+}
+
+#content div.home div.detail div {
+    background: #ebe7e8;
+    float: left;
+    height: auto;
+    padding: 5px 20px 20px;
+    width: 360px;
+}
+
+#content div.home div.detail div h2 {
+    color: #84284d;
+    /* font-family: 'JamesFajardoRegular'; */
+    font-family: Trebuchet MS;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+#content div.home div.detail div p {
+    color: #5f5d5e;
+    line-height: 34px;
+    margin: 0;
+    text-align: justify;
+    
+}
+
+#content div.home div.detail h3 {
+    color: #000000;
+    font-size: 18;
+}
+
+
+#content div.home div.detail ul li img {
+    border: 6px solid #fefffa;
+}

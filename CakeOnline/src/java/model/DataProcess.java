@@ -29,14 +29,14 @@ public class DataProcess {
             try {
                 conn = DriverManager.getConnection(url, user, pass);
             } catch (SQLException ex) {
-                Logger.getLogger(DataBase.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DataBase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
         }
         return conn;
     }
-
+    
     public boolean checkLogin(String user, String pass) {
         String sql = "SELECT * FROM logincake WHERE _user=? and _pass=?";
         try {
@@ -77,9 +77,10 @@ public class DataProcess {
             f = prat.executeUpdate() > 0;
             prat.close();
         } catch (SQLException ex) {
-            Logger.getLogger(DataBase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
         }
         return f;
     }
-
+    // pkung tung
+    
 }
