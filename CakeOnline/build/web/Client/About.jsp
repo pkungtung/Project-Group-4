@@ -18,7 +18,7 @@
         <div id="content">
             <div id="about">
                 <div class="aside">
-                    <h1>About Cake Delights</h1>
+                    <h1>About The Cake Shops</h1>
                     <span>We Have Free Templates for Everyone</span>
                     <p>Our website templates are created with inspiration, checked for quality and originality and meticulously sliced and coded. What's more, they're absolutely free! You can do a lot with them. You can modify them. You can use them to design websites for clients, so long as you agree with the <a href="http://www.freewebsitetemplates.com/about/termsofuse/">Terms of Use</a>. You can even remove all our links if you want to.</p>
                     <span>We Have Free Templates for Everyone</span>
