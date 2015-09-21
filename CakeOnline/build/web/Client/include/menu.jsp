@@ -8,13 +8,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <c:set var="path" value="${pageContext.request.servletPath}" />
-<script type="text/javascript" src="css/coin-slider.js"></script>
+<!--<script type="text/javascript" src="css/coin-slider.js"></script>-->
 <!--<script src="../jQuery/jquery 1.11.1 for cycle2.js" type="text/javascript"></script>-->
 <!--<script src="../jQuery/jquery.cycle2.js" type="text/javascript"></script>-->
 <script src="../jQuery/jquery-2.1.4.min.js" type="text/javascript"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <script src="http://malsup.github.io/jquery.cycle2.js"></script>
-<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script type = "text/javascript" >
 //    $(function () {
 //        $('.slide img:gt(0)').hide();
@@ -26,9 +25,29 @@
 //                1500);
 //    })
     //slide
+    var progress = $('#progress'),
+            slideshow = $('.cycle-slideshow');
 
+    slideshow.on('cycle-initialized cycle-before', function (e, opts) {
+        progress.stop(true).css('width', 0);
+    });
+
+    slideshow.on('cycle-initialized cycle-after', function (e, opts) {
+        if (!slideshow.is('.cycle-paused'))
+            progress.animate({width: '100%'}, opts.timeout, 'linear');
+    });
+
+    slideshow.on('cycle-paused', function (e, opts) {
+        progress.stop();
+    });
+
+    slideshow.on('cycle-resumed', function (e, opts, timeoutRemaining) {
+        progress.animate({width: '100%'}, timeoutRemaining, 'linear');
+    });
 </script>
 <style type="text/css">
+    #progress { position: absolute; bottom: 0; height: 6px; width: 0px; background: #c00; z-index: 500; }
+
     .slide {
         position:relative; 
         width:940px; 
@@ -106,7 +125,6 @@
                  data-cycle-fx="scrollHorz"
                  data-cycle-speed="600"    
                  data-cycle-timeout="1200"
-
                  >
                 <div class="cycle-prev"></div>
                 <div class="cycle-next"></div>
@@ -117,7 +135,10 @@
                 <img src="images/4.jpg" width="960" height="240" />
                 <img src="images/5.jpg" width="960" height="240" />
                 <img src="images/6.jpg" width="960" height="240" />
+
             </div>
+            <div id="progress"></div>
+
         </div>
     </div>
 </div>
