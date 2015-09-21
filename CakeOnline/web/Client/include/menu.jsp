@@ -129,12 +129,12 @@
                 <div class="cycle-prev"></div>
                 <div class="cycle-next"></div>
                 <a href="Home.jsp"><img src="images/wedding-cupcakes-small.jpg" height="240" width="940" alt="Image"/></a>
-                <img src="images/1.jpg" width="960" height="240" />
-                <img src="images/2.jpg" width="960" height="240" />
-                <img src="images/3.jpg" width="960" height="240" />
-                <img src="images/4.jpg" width="960" height="240" />
-                <img src="images/5.jpg" width="960" height="240" />
-                <img src="images/6.jpg" width="960" height="240" />
+                <img src="images/healthy.jpg" width="960" height="240" />
+                <img src="images/cakes1.jpg" width="960" height="240" />
+                <img src="images/dog.jpg" width="960" height="240" />
+                <img src="images/Star.jpg" width="960" height="240" />
+                <img src="images/valentine-day-cake.jpg" width="960" height="240" />
+                
 
             </div>
             <div id="progress"></div>
