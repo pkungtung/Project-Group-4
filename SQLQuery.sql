@@ -1,6 +1,6 @@
 create database ProjectGroup4
 use ProjectGroup4
-
+/*jkhj*/
 
 create table Product
 (
