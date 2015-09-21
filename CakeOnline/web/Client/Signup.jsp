@@ -132,7 +132,7 @@
                 <div id="content">
                     <div>
                         <div id="account">
-                            <div id="logodk">
+                            <div>
                                 <form action="Controlle?action=register" method="POST" name="myform" onsubmit="return checkinput()">
                                     <div><span>SIGN-UP</span></div>
                                     <table>
