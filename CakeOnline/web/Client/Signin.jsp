@@ -13,6 +13,7 @@
         <meta charset="UTF-8" />
         <title>Sign In </title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+          <link href="css/bootstrap.css" rel="stylesheet">
     </head>
     <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
     <c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
@@ -31,33 +32,39 @@
             <body>
                 <jsp:include page="include/menu.jsp" />
                 <div id="content">
-                    <div>
-                        <div id="account">
-                            <div>
-                                <form action="Controlle?action=Login" method="POST">
-                                    <span>SIGN-IN</span>
-                                    <table>
-                                        <tr>
-                                            <td><label for="name">Name</label></td>
-                                            <td><input type="text" id="name" name="txtUsername" placeholder="Enter Name" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td><label for="password">Password</label></td>
-                                            <td><input type="password" id="password"  name="txtPassword" placeholder="Password" value="${paramPage}"/></td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td class="rememberme">
-                                                <label for="rememberme">
-                                                    <input type="checkbox" <c:if test="${cookie['cb'].value == 'ok'}">checked</c:if> name="cbRemember"> Remember me on this computer
+                                <div>
+                                    <div class="modal-dialog">
+                            <form method="post" action="Controller?action=login" >
+                                <div hidden="visibility">
+                                    <input type="text" class="form-control" name="urlPage" value="${urlPage}"/>
+                                    <input type="text" class="form-control" name="paramPage" value="${paramPage}"/>
+                                </div>
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        
+                                        <h4 class="modal-title">Đăng nhập</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="InputUserName">Tên Đăng Nhập</label>
+                                            <input type="text" class="form-control" name="txtUsername" id="InputUserName" placeholder="Enter email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputPassword">Mật khẩu</label>
+                                            <input type="password" class="form-control" name="txtPassword" id="InputPassword" placeholder="Password">
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" <c:if test="${cookie['cb'].value == 'ok'}">checked</c:if> name="cbRemember">  Ghi nhớ đăng nhập
                                                 </label>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <input type="submit" value="Sign-In" class="submitbtn" />   
+                                            </div>                                
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input type="submit" value="Sign-In" name="submit"  class="btn btn-warning" />
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
-                        </div>
                     </div>
                 </div>
                 <jsp:include page="include/newfooter.jsp" />
