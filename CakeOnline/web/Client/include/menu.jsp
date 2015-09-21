@@ -132,8 +132,8 @@
                 <img src="images/healthy.jpg" width="960" height="240" />
                 <img src="images/cakes1.jpg" width="960" height="240" />
                 <img src="images/dog.jpg" width="960" height="240" />
-                <img src="images/Star.jpg" width="960" height="240" />
-                <img src="images/valentine-day-cake.jpg" width="960" height="240" />
+                <img src="images/cakes-cupcakes-pastries-table-banner.jpg" width="960" height="240" />
+                <img src="images/featured_product_banner.jpg" width="960" height="240" />
                 
 
             </div>
