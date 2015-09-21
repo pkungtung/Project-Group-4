@@ -104,40 +104,6 @@ p a {
     width: 60px;
 }
 
-#header div ul {
-    list-style: none;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-}
-
-#header div ul li {
-    float: left;
-    height: 50px;
-    line-height: 50px;
-    width: 160px;
-}
-
-#header div ul li a {
-    background: url(../images/sprite-buttons.gif) no-repeat 0 -205px;
-    color: #5b5c5e;
-    display: block;
-    font-size: 14px;
-    text-align: center;
-    text-decoration: none;
-    text-shadow: 1px 1px 0 #e8edf1;
-    text-transform: capitalize;
-}
-
-#header div ul li a:hover, #header ul li.current a {
-    color: #b13c68;
-    text-shadow: 1px 1px 0 #ebb8c7;
-}
-
-#header div ul li.current a {
-    background: url(../images/sprite-buttons.gif) no-repeat 0 -97px;
-}
-
 #header div div#section, #header div div.section {
     background: #aa6581;
     height: 360px;	
