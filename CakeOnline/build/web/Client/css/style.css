@@ -173,9 +173,9 @@ p a {
 
 #content div#services, #content div#about, #content div {
     margin: 0 auto;
-    padding: 10px 30px 30px;
+    //padding: 10px 30px 30px;
     position: relative;
-    width: 900px;
+    //width: 900px;
 }
 
 #content div#services, #content div#about  {
@@ -383,9 +383,9 @@ p a {
 
 #content div ul li {
     float: left;
-    height: 440px;
-    width: 400px;
-    padding: 25px;
+    height: 220px;
+    width: 450px;
+    /*padding: 25px;*/
 }
 
 #content div ul li div {
@@ -398,6 +398,7 @@ p a {
     left: 30px;
     padding: 0;
     position: absolute;
+    top: 20px;
     width: auto;
 }
 
@@ -431,7 +432,7 @@ p a {
     text-align: center;
     text-decoration: none;
     width: 120px;
-    margin-top: 5   px;
+    margin-top: 5px;
 }
 
 #content div.home div.aside {
@@ -532,8 +533,8 @@ p a {
 }
 
 #content div form input {
-    color: #aeaeae;
-    display: block;
+/*    color: #aeaeae;
+    display: block;*/
     margin: 20px 0;
 }
 
