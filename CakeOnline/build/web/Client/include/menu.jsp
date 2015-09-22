@@ -110,73 +110,7 @@
         padding: 10px;
         height: 240px;
     }
-    #menu{
-        background: #ff9999;
-        width: 940px;
-        padding: 10px;
-        height: 20px;
-        z-index: 9999;
-        position: relative;
-    }
-    #menu ul{
-        background: #1F568B;
-        list-style-type: none;
-        text-align: center;
-    }
-    #menu li {
-        color: #f1f1f1;
-        display: inline-block;
-        width: 120px;
-        height: 40px;
-        line-height: 40px;
-        margin-left: -5px;
-    }
-    #menu a {
-        text-decoration: none;
-        color: #fff;
-        display: block;
-    }
-    #menu a:hover {
-        background: #F1F1F1;
-        color: #333;
-    }
-    /*==Dropdown Menu==*/
-    .sub-menu {
-        display: none;
-        position: absolute;
-    }
-    .sub-menu li {
-        display: none;
-    }
-    #menu li {
-        position: relative;
-    }
-
-    #menu li:hover .sub-menu {
-        display: block;
-    }
-    .sub-menu li {
-        margin-left: 0 !important;
-    }
-</style>
-<script>
-    // show and hide sub menu
-    $(function () {
-        $('nav ul li').hover(
-                function () {
-                    //show its submenu
-                    $('ul', this).slideDown(150);
-                },
-                function () {
-                    //hide its submenu
-                    $('ul', this).slideUp(150);
-                }
-        );
-    });
-//end
-</script>
-<style>
-    /*===== nav style ======*/
+    /*===== Dropdown Menu style ======*/
     #fdw{
         margin-top: 5px;
         height: 50px;
@@ -204,7 +138,7 @@
         height: 100%;
         width: 100%;
         background: url(images/sprite-buttons.gif) no-repeat 0 -205px;
-        color: #5b5c5e;
+        color: #000;
         display: block;
         font-size: 14px;
         text-align: center;
@@ -215,6 +149,7 @@
     #fdw nav ul li a:hover, #fdw nav ul li.current a {
         color: #b13c68;
         text-shadow: 1px 1px 0 #ebb8c7;
+        background: url(images/sprite-buttons.gif) no-repeat 0 -97px;
     }
     #header div ul li.current a{
         height: 100%;
@@ -223,7 +158,7 @@
     }
 
     #fdw nav ul li a:link, #fdw nav ul li a:visited {
-        color:#5b5c5e;
+        color:#000;
         /*text-transform:uppercase;*/
         display:inline-block;
         position:relative;
@@ -264,7 +199,7 @@
     /*===== sub_menu Style =======*/
     #fdw nav ul li ul.sub_menu {
         position:absolute;
-        top:90px;
+        top:52px;
         left:0;
         margin:0;
         padding:0;
@@ -279,7 +214,7 @@
     }
     #fdw nav ul li ul.sub_menu li.arrow_top {
         position:absolute;
-        top:-12px;
+        top:-10px;
         left:12px;
         width:13px;
         height:8px;
@@ -293,17 +228,24 @@
         padding:0;
         border-bottom:1px solid #ececec;
     }
-    #fdw nav ul li ul.sub_menu li a {
-        white-space: nowrap;
-        width: 150px;
-        padding:12px;
-        font:13px Arial, tahoma, sans-serif;
-        text-transform:capitalize;
-        color:#777;
+    #fdw nav ul li ul.sub_menu a:hover{
+        height: 100%;
+        width: 100%;
+        color: #000;
+        background: #f1ffff;
+        text-shadow: 1px 1px 0 #ebb8c7;
     }
-    #fdw nav ul li ul.sub_menu li a:hover {
-        background:#f9f9f9;
-        color:#333;
+    #fdw nav ul li ul.sub_menu li a{
+        height: 100%;
+        width: 100%;
+        background: url(images/sprite-buttons.gif) no-repeat 0 -205px;
+        color: #5b5c5e;
+        display: block;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 1px 1px 0 #e8edf1;
+        text-transform: capitalize;
     }
     #fdw nav ul li ul.sub_menu li a.subCurrent {
         color:#e25d29;
@@ -368,7 +310,6 @@
                             <li class="current"><a href="Home.jsp">home</a></li>
                             <li><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li class="arrow_top"></li>
                                     <li><a href="#">Birthday</a></li>
                                     <li><a href="#">Anniversary</a></li>
                                     <li><a href="#">Engage</a></li>
@@ -390,7 +331,6 @@
                             <li><a href="Home.jsp">home</a></li>
                             <li class="current"><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li class="arrow_top"></li>
                                     <li><a href="#">Birthday</a></li>
                                     <li><a href="#">Anniversary</a></li>
                                     <li><a href="#">Engage</a></li>
@@ -412,7 +352,6 @@
                             <li><a href="Home.jsp">home</a></li>
                             <li><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li class="arrow_top"></li>
                                     <li><a href="#">Birthday</a></li>
                                     <li><a href="#">Anniversary</a></li>
                                     <li><a href="#">Engage</a></li>
@@ -434,7 +373,6 @@
                             <li><a href="Home.jsp">home</a></li>
                             <li><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li class="arrow_top"></li>
                                     <li><a href="#">Birthday</a></li>
                                     <li><a href="#">Anniversary</a></li>
                                     <li><a href="#">Engage</a></li>
@@ -456,7 +394,6 @@
                             <li><a href="Home.jsp">home</a></li>
                             <li><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li class="arrow_top"></li>
                                     <li><a href="#">Birthday</a></li>
                                     <li><a href="#">Anniversary</a></li>
                                     <li><a href="#">Engage</a></li>
