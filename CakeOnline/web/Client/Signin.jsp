@@ -34,7 +34,7 @@
                 <div id="content">
                                 <div>
                                     <div class="modal-dialog">
-                            <form method="post" action="Controller?action=login" >
+                            <form method="post" action="../Controlle?action=login" >
                                 <div hidden="visibility">
                                     <input type="text" class="form-control" name="urlPage" value="${urlPage}"/>
                                     <input type="text" class="form-control" name="paramPage" value="${paramPage}"/>

@@ -37,7 +37,7 @@ public class Controlle extends HttpServlet {
 
         String action = request.getParameter("action");
 
-        if (action.equals("Login")) {
+        if (action.equals("login")) {
 
             System.out.println("demo login");
 
@@ -61,7 +61,7 @@ public class Controlle extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("login", u);
                 //response.sendRedirect("" + url + "?" + param);
-                  response.sendRedirect("/Client/Home.jsp?dangnhapthanhcong");
+                  response.sendRedirect("Client/Signin.jsp?dangnhap=thanhcong");
             } else {
                 response.sendRedirect("404.jsp");
             }
@@ -76,7 +76,7 @@ public class Controlle extends HttpServlet {
         }
 
         if (action.equals("register")) {
-
+          
             String url = request.getParameter("urlPage");
             String param = request.getParameter("paramPage");
 
@@ -89,15 +89,14 @@ public class Controlle extends HttpServlet {
             String s = "đang hoạt động";
 
             if (dt.addNewAcc(u, p, l, e)) {
-                response.sendRedirect("Signup.jsp?dangky=thanhcong");
+                response.sendRedirect("Client/Signup.jsp?dangky=thanhcong");
             } else {
-                response.sendRedirect("Signup.jsp?dangky=loi");
+                response.sendRedirect("Client/Signup.jsp?dangky=loi");
             }
 
         }
 
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

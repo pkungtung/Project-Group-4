@@ -135,7 +135,7 @@
                 <div id="content">
                     <div>
                         <div class="modal-dialog" style="    box-sizing: border-box;">
-                <form method="POST" name="myform" action="Controller?action=register" onsubmit="return checkinput()">
+                <form method="POST" name="myform" action="../Controlle?action=register" onsubmit="return checkinput()">
 
                     <div hidden="visibility">
                         <input type="text" class="form-control" name="urlPage" value="${urlPage}"/>
