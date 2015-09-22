@@ -33,12 +33,24 @@ p a {
     padding: 30px 0;
     width: 960px;
 }
+#content div#services, #content div#about {
+    margin: 0 auto;
+    position: relative;
+    padding: 10px 30px 30px;
+    width: 900px;
+}
 
 #content div#services, #content div#about, #content div {
     margin: 0 auto;
-    padding: 10px 30px 30px;
     position: relative;
-    width: 900px;
+/*    padding: 10px 30px 30px;
+    width: 900px;*/
+}
+#content div#services, #content div#about, #content div#suatex {
+	margin: 0 auto;
+        padding: 10px 30px 30px;
+	position: relative;
+	width: 900px;
 }
 
 #content div#services, #content div#about  {
@@ -395,9 +407,14 @@ p a {
 }
 
 #content div form input {
-    color: #aeaeae;
-    display: block;
+/*    color: #aeaeae;
+    display: block;*/
     margin: 20px 0;
+}
+#content div form input.coninput {
+	color: #aeaeae;
+	display: block;
+	margin: 20px 0;
 }
 
 #content div form input.textcontact {
