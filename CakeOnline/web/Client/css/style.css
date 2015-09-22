@@ -40,12 +40,6 @@ p a {
     position: relative;
     width: 900px;
 }
-#content div#services, #content div#about, #content div#contex {
-    margin: 0 auto;
-    padding: 10px 30px 30px;
-    position: relative;
-    width: 900px;
-}
 
 #content div#services, #content div#about  {
     overflow: hidden;
