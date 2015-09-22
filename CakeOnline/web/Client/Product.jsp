@@ -28,7 +28,7 @@
         </sql:query>
         <jsp:include page="include/menu.jsp" />
         <div id="content">
-            <div id="contex">
+            <div>
                 <h1>All Cake</h1>
 
                 <ul>
