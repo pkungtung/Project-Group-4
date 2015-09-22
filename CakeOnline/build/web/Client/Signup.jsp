@@ -13,6 +13,9 @@
         <meta charset="UTF-8" />
         <title>Sign Up </title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/bcg.css" />
     </head>
 
     <c:choose>
@@ -131,59 +134,58 @@
                 <jsp:include page="include/menu.jsp" />
                 <div id="content">
                     <div>
-                        <div id="account">
-                            <div>
-                                <form action="Controlle?action=register" method="POST" name="myform" onsubmit="return checkinput()">
-                                    <div><span>SIGN-UP</span></div>
-                                    <table>
-                                        
-                                        <tr>
-                                            <td><label for="login">Login</label></td>
-                                            <td>
-                                                <input type="text" id="login" name="username" placeholder="Enter your name" onkeyup="isValidUsername()" />
-                                                <p id ="failUser" style="color: red"></p> 
-                                            </td>
-                                            
+                        <div class="modal-dialog" style="    box-sizing: border-box;">
+                <form method="POST" name="myform" action="Controller?action=register" onsubmit="return checkinput()">
 
-                                        </tr>
-                                        <tr>
-                                            <td><label for="email">E-mail</label></td>
-                                            <td>
-                                                <input type="text" id="email" name="email" id="fname" placeholder="Enter your email" onkeyup="isValidEmail()"/>
-                                             <p id ="failEmail" style="color: red"></span>
-                                            </td>
-                                            
-                                        </tr>
+                    <div hidden="visibility">
+                        <input type="text" class="form-control" name="urlPage" value="${urlPage}"/>
+                        <input type="text" class="form-control" name="paramPage" value="${paramPage}"/>
+                    </div>
 
-                                        <tr>
-                                            <td><label for="password">Password</label></td>
-                                            <td>
-                                                <input name="password" type="text" id="password" placeholder="Password" onkeyup="isValidPassword()"/> 
-                                            <p id ="password_error" style="color: red"></span>
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td><label for="confirmpass">Confirm<br />Password</label></td>
-                                            <td>
-                                                <input type="text" id="confirmpass" name="password1" placeholder="Retype Password" onkeyup="isValidPassword2() "/>
-                                            <p id ="password1_error" style="color: red"></span>
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td class="rememberme">
-                                                <label for="rememberme">
-                                                    <input type="checkbox" name="checkbox"  > Bạn đồng ý với <a href="about-common.html">điều khoản</a> và <a href="about-common.html">quy định của chúng tôi</a> 
-                                                </label>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <input type="submit" value="Sign-up" class="submitbtn" />
-                                </form>
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <label for="InputUserName">${urlPage}</label>
+                            <label for="InputUserName">${paramPage}</label>
+                            <div class="form-group fbregister">
+                                <a class="fbreg">Đăng ký bằng Facebook</a>
                             </div>
+
+                            <div class="form-group">
+                                <label for="InputUserName">Name</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your name" onkeyup="isValidUsername()">
+                                <div class="username_exist">
+                                    <!--                                  Hiển thị thông báo -->
+                                </div>
+                                <p id="failUser" style="color: red"></p> 
+                            </div>
+                            <div class="form-group">
+                                <label for="InputUserEmail">E-mail</label>
+                                <input type="email"  class="form-control" name="email" id="fname" placeholder="Enter your email" onkeyup="isValidEmail()">
+                                <p id="failEmail" style="color: red"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputPassword">Password</label>
+                                <input type="password"  name="password" class="form-control" id="InputPassword" placeholder="Password" onkeyup="isValidPassword()">
+                                <p id="password_error" style="color: red"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputPassword">Confirm Password</label>
+                                <input type="password" name="password1" class="form-control" id="InputPassword" placeholder="Retype Password" onkeyup="isValidPassword2()">
+                                <p id="password1_error" style="color: red"></span>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="checkbox"  > Bạn đồng ý với <a href="about-common.html">điều khoản</a> và <a href="about-common.html">quy định sử dụng</a> của chúng tôi
+                                </label>
+                            </div>						      				      
                         </div>
+                        <div class="modal-footer">
+                            
+                            <input type="submit" value="Sign-up" name="submit" id="submit_dangky" class="btn btn-warning" />
+                        </div>
+                    </div>
+                </form>
+            </div>
                     </div>
                 </div>
                 <jsp:include page="include/newfooter.jsp" />

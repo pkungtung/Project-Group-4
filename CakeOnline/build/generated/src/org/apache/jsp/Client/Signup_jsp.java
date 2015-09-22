@@ -63,7 +63,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-<<<<<<< HEAD
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -81,7 +80,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_choose_0(_jspx_page_context))
         return;
       out.write("\n");
-=======
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -99,7 +97,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_choose_0(_jspx_page_context))
         return;
       out.write("\r\n");
->>>>>>> origin/master
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
@@ -127,7 +124,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_c_choose_0 = _jspx_th_c_choose_0.doStartTag();
     if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-<<<<<<< HEAD
         out.write("\n");
         out.write("        ");
         if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
@@ -137,7 +133,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_c_otherwise_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\n");
-=======
         out.write("\r\n");
         out.write("        ");
         if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
@@ -147,7 +142,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_c_otherwise_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
         out.write("\r\n");
->>>>>>> origin/master
         out.write("    ");
         int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -174,7 +168,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_c_when_0 = _jspx_th_c_when_0.doStartTag();
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-<<<<<<< HEAD
         out.write("\n");
         out.write("            ");
         if (_jspx_meth_c_set_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
@@ -188,7 +181,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_c_if_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
         out.write("\n");
-=======
         out.write("\r\n");
         out.write("            ");
         if (_jspx_meth_c_set_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
@@ -202,7 +194,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_c_if_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
         out.write("\r\n");
->>>>>>> origin/master
         out.write("            ");
         int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -248,24 +239,18 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
     if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-<<<<<<< HEAD
         out.write("\n");
         out.write("                <script>\n");
         out.write("                    alert(\"Tài khoản tồn tại\");\n");
-=======
         out.write("\r\n");
         out.write("                <script>\r\n");
         out.write("                    alert(\"Tài khoản tồn tại\");\r\n");
->>>>>>> origin/master
         out.write("                            window.location.href = \"");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.u}", java.lang.String.class, (PageContext)_jspx_page_context, null));
         out.write('?');
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.p}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-<<<<<<< HEAD
         out.write("\";</script>\n");
-=======
         out.write("\";</script>\r\n");
->>>>>>> origin/master
         out.write("                ");
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -292,17 +277,14 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-<<<<<<< HEAD
         out.write("\n");
         out.write("                <script>\n");
         out.write("                            alert(\"Đăng ký thành công, mời bạn đăng nhập\");\n");
         out.write("                            window.location.href = \"Signin.jsp\";</script>\n");
-=======
         out.write("\r\n");
         out.write("                <script>\r\n");
         out.write("                            alert(\"Đăng ký thành công, mời bạn đăng nhập\");\r\n");
         out.write("                            window.location.href = \"Signin.jsp\";</script>\r\n");
->>>>>>> origin/master
         out.write("                ");
         int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -330,7 +312,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_c_otherwise_0 = _jspx_th_c_otherwise_0.doStartTag();
     if (_jspx_eval_c_otherwise_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-<<<<<<< HEAD
         out.write("\n");
         out.write("            <script language=\"JavaScript\">\n");
         out.write("\n");
@@ -489,7 +470,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
         org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/newfooter.jsp", out, false);
         out.write("\n");
         out.write("            </body>\n");
-=======
         out.write("\r\n");
         out.write("            <script language=\"JavaScript\">\r\n");
         out.write("\r\n");
@@ -653,7 +633,6 @@ public final class Signup_jsp extends org.apache.jasper.runtime.HttpJspBase
         org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/newfooter.jsp", out, false);
         out.write("\r\n");
         out.write("            </body>\r\n");
->>>>>>> origin/master
         out.write("        ");
         int evalDoAfterBody = _jspx_th_c_otherwise_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
