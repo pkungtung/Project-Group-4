@@ -15,20 +15,26 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link href="css/bootstrap.css" rel="stylesheet">
     </head>
-    <body>
+    
         <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
         <c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
-        <c:choose>
-            <c:when test="${!empty param.dangnhap}">
+        <c:when test="${!empty param.dangnhap}">
                 <c:set var="dangnhap" value="${param['dangnhap']}" />
                 <c:if test="${dangnhap =='loi'}" >
                     <script>
                         alert("Signin Failed");
-                        window.location.href = "${param.u}?${param.p}";
+                        window.location.href = "Signin.jsp";
+                    </script>
+                </c:if>
+                <c:if test="${dangnhap =='thanhcong'}" >
+                    <script>
+                        alert("Dang nhap thanh cong");
+                        window.location.href = "Home.jsp";
                     </script>
                 </c:if>
             </c:when>
             <c:otherwise>
+  <body>
                 <jsp:include page="include/menu.jsp" />
                 <div id="content">
                     <div>
