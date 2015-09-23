@@ -31,14 +31,14 @@
             </c:when>
             <c:otherwise>
                 <sql:query dataSource="${conn}" var="list">
-                    Select * from Product where _event= ${param.event};
+                    Select * from Product where _event= '${param.event}';
                 </sql:query>
             </c:otherwise>
         </c:choose>
         <jsp:include page="include/menu.jsp" />
         <div id="content">
             <div id="suatex">
-                <h1>All Cake</h1>
+                <h1>${param.event}</h1>
 
                 <ul>
                     <c:forEach var="p" items="${list.rows}">

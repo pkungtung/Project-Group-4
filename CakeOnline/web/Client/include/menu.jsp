@@ -41,8 +41,8 @@
                     <a href="Home.jsp">Help</a>
                     <a href="Signin.jsp" class="last">Sign in</a>
                 </div>
-                <form action="#">
-                    <input type="text" id="search" maxlength="30" />
+                <form action="Product.jsp?">
+                    <input type="text" id="search" name="search" maxlength="30" />
                     <input type="submit" value="" id="searchbtn" />
                 </form>
             </div>
@@ -77,10 +77,10 @@
                             <li><a href="Home.jsp">home</a></li>
                             <li class="current"><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li><a href="#">Birthday</a></li>
-                                    <li><a href="#">Anniversary</a></li>
-                                    <li><a href="#">Engage</a></li>
-                                    <li><a href="#">Marriage</a></li>
+                                    <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
+                                    <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
+                                    <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -98,10 +98,10 @@
                             <li><a href="Home.jsp">home</a></li>
                             <li><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li><a href="#">Birthday</a></li>
-                                    <li><a href="#">Anniversary</a></li>
-                                    <li><a href="#">Engage</a></li>
-                                    <li><a href="#">Marriage</a></li>
+                                    <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
+                                    <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
+                                    <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -119,10 +119,10 @@
                             <li><a href="Home.jsp">home</a></li>
                             <li><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li><a href="#">Birthday</a></li>
-                                    <li><a href="#">Anniversary</a></li>
-                                    <li><a href="#">Engage</a></li>
-                                    <li><a href="#">Marriage</a></li>
+                                    <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
+                                    <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
+                                    <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
                                 </ul>
                             </li>
                             <li class="current"><a href="About.jsp">About Us</a></li>
@@ -139,10 +139,10 @@
                             <li><a href="Home.jsp">home</a></li>
                             <li><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li><a href="#">Birthday</a></li>
-                                    <li><a href="#">Anniversary</a></li>
-                                    <li><a href="#">Engage</a></li>
-                                    <li><a href="#">Marriage</a></li>
+                                    <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
+                                    <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
+                                    <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -159,10 +159,10 @@
                             <li><a href="Home.jsp">home</a></li>
                             <li><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li><a href="#">Birthday</a></li>
-                                    <li><a href="#">Anniversary</a></li>
-                                    <li><a href="#">Engage</a></li>
-                                    <li><a href="#">Marriage</a></li>
+                                    <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
+                                    <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
+                                    <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -180,10 +180,10 @@
                             <li><a href="Home.jsp">home</a></li>
                             <li><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li><a href="#">Birthday</a></li>
-                                    <li><a href="#">Anniversary</a></li>
-                                    <li><a href="#">Engage</a></li>
-                                    <li><a href="#">Marriage</a></li>
+                                    <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
+                                    <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
+                                    <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -205,7 +205,7 @@
                  data-cycle-slides="> a"
                  >
                 <a href="Home.jsp"><img src="images/wedding-cupcakes-small.jpg" height="240" width="940" alt="Image"/></a>
-                <a href="#"><img src="images/healthy.jpg" width="920" height="240" /></a>
+                <a href="#"><img src="images/healthy.jpg" width="940" height="240" /></a>
                 <a href="#"><img src="images/cakes1.jpg" width="940" height="240" /></a>
                 <a href="#"><img src="images/dog.jpg" width="940" height="240" /></a>
                 <a href="#"><img src="images/Star.jpg" width="940" height="240" /></a>

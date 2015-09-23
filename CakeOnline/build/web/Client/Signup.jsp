@@ -35,19 +35,19 @@
             <c:otherwise>
             <script language="JavaScript">
 
-                        function isValidUsername() {
-                        txtusername = document.myform.username;
-                                regexU = /^[a-z0-9 ]{4,20}$/;
-                                ;
-                                testUsername = regexU.test(txtusername.value);
-                                if (!testUsername) {
+                function isValidUsername() {
+                    txtusername = document.myform.username;
+                    regexU = /^[a-z0-9 ]{4,20}$/;
+                    ;
+                    testUsername = regexU.test(txtusername.value);
+                    if (!testUsername) {
                         document.getElementById("failUser").innerHTML = "Tên đăng nhập không hợp lệ";
-                                return false;
-                        } else {
+                        return false;
+                    } else {
                         document.getElementById("failUser").innerHTML = "";
-                                return true;
-                        }
-                        }
+                        return true;
+                    }
+                } 
 
                 function isValidEmail() {
                 email = document.myform.email;
@@ -135,7 +135,7 @@
                 <div id="content">
                     <div>
                         <div class="modal-dialog" style="    box-sizing: border-box;">
-                <form method="POST" name="myform" action="Controller?action=register" onsubmit="return checkinput()">
+                <form method="POST" name="myform" action="../Controlle?action=register" onsubmit="return checkinput()">
 
                     <div hidden="visibility">
                         <input type="text" class="form-control" name="urlPage" value="${urlPage}"/>
