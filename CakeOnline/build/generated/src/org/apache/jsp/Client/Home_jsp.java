@@ -62,9 +62,9 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"home\">\r\n");
       out.write("                <div class=\"aside\">\r\n");
       out.write("                    <h1>Welcome to our site</h1>\r\n");
-      out.write("                    <p>Pastry is the name given to various kinds of baked goods made from ingredients such as flour, butter, shortening, baking powder or eggs. Small cakes, tarts and other sweet baked goods are called &#34;pastries&#34;.</p> \r\n");
-      out.write("                    <p>Pastry may also refer to the dough from which such baked goods are made. Pastry dough is rolled out thinly and used as a base for baked goods. Common pastry dishes include pies, tarts and quiches. \r\n");
-      out.write("                    <p>Pastry is distinguished from bread by having a higher fat content, which contributes to a flaky or crumbly texture. A good pastry is light and airy and fatty, but firm enough to support the weight of the filling. When making a shortcrust pastry, care must be taken to blend the fat and flour thoroughly before adding. <a href=\"index.html\" class=\"readmore\">read more</a></p>\r\n");
+      out.write("                    <p>The Cake is the name given to various kinds of baked goods made from ingredients such as flour, butter, shortening, baking powder or eggs. Small cakes, tarts and other sweet baked goods are called &#34;pastries&#34;.</p> \r\n");
+      out.write("                    <p>The Cake may also refer to the dough from which such baked goods are made. Pastry dough is rolled out thinly and used as a base for baked goods. Common pastry dishes include pies, tarts and quiches. \r\n");
+      out.write("                    <p>The Cake is distinguished from bread by having a higher fat content, which contributes to a flaky or crumbly texture. A good pastry is light and airy and fatty, but firm enough to support the weight of the filling. When making a shortcrust pastry, care must be taken to blend the fat and flour thoroughly before adding. <a href=\"index.html\" class=\"readmore\">read more</a></p>\r\n");
       out.write("                </div>\r\n");
       out.write("                <div class=\"section\">\r\n");
       out.write("                    <div>\r\n");
@@ -73,13 +73,10 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\r\n");
       out.write("                    <ul>\r\n");
       out.write("                        <li class=\"first\">\r\n");
-      out.write("                            <a href=\"Home.jsp\"><img src=\"images/cake.jpg\" alt=\"Image\" /></a>\r\n");
+      out.write("                            <a href=\"Detail.jsp?id=tc29\"><img src=\"images/cake.jpg\" alt=\"Image\" /></a>\r\n");
       out.write("                        </li>\r\n");
       out.write("                        <li>\r\n");
-      out.write("                            <a href=\"Home.jsp\"><img src=\"images/burgercake.jpg\" alt=\"Image\" /></a>\r\n");
-      out.write("                        </li>\r\n");
-      out.write("                        <li>\r\n");
-      out.write("                            <a href=\"Home.jsp\"><img src=\"images/cupcake.jpg\" alt=\"Image\" /></a>\r\n");
+      out.write("                            <a href=\"Detail.jsp?id=tc28\"><img src=\"images/burgercake.jpg\" alt=\"Image\" /></a>\r\n");
       out.write("                        </li>\r\n");
       out.write("                    </ul>\r\n");
       out.write("                </div>\r\n");
