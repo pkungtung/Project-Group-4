@@ -37,14 +37,14 @@ p a {
 #content div#services, #content div#about, #content div {
     margin: 0 auto;
     position: relative;
-/*    padding: 10px 30px 30px;
-    width: 900px;*/
+    /*    padding: 10px 30px 30px;
+        width: 900px;*/
 }
 #content div#services, #content div#about, #content div#suatex {
-	margin: 0 auto;
-        padding: 10px 30px 30px;
-	position: relative;
-	width: 900px;
+    margin: 0 auto;
+    padding: 10px 30px 30px;
+    position: relative;
+    width: 900px;
 }
 
 #content div#services, #content div#about  {
@@ -401,14 +401,14 @@ p a {
 }
 
 #content div form input {
-/*    color: #aeaeae;
-    display: block;*/
+    /*    color: #aeaeae;
+        display: block;*/
     margin: 20px 0;
 }
 #content div form input.coninput {
-	color: #aeaeae;
-	display: block;
-	margin: 20px 0;
+    color: #aeaeae;
+    display: block;
+    margin: 20px 0;
 }
 
 #content div form input.textcontact {
@@ -1101,11 +1101,268 @@ p a {
 }
 
 #content div.home div.detail h3 {
-    color: #000000;
-    font-size: 18;
+    color: #000;
+    font-size: 18px;
 }
 
 
 #content div.home div.detail ul li img {
     border: 6px solid #fefffa;
+}
+
+
+// Dropdow menu pkung Tung
+#header {
+    background: #f5f5f5 url(../images/bg-body.gif) repeat-x center top;
+}
+#header div {
+    margin: 0 auto;
+    width: 960px;
+}
+#top{
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+}
+
+#header div div div#logo {
+    float: left;
+    width: 331px;
+}
+#header div div div#tright {
+    float: right;
+    height: 110px;
+    width: auto;
+}
+#header div div div div#link {
+    display: block;
+    float: none;
+    height: auto;
+    padding-bottom: 40px;
+    padding-left: 134px;
+    margin-top: 20px;
+    overflow: hidden;
+    width: auto;
+}
+#header div div div div#link a {
+    border-right: 1px solid #6c404f;
+    color: #6c404f;
+    display: block;
+    float: left;
+    font-weight: bold;
+    line-height: 13px;
+    padding: 0 5px;
+    text-decoration: none;
+}
+
+#header div div div div#link a.last {
+    border: 0;
+    padding-right: 0;
+}
+
+#header div div div form {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    height: 30px;
+    width: 290px;
+}
+
+#header div div div form input {
+    float: left;
+    line-height: 30px;
+}
+
+#header div div div form input#search {
+    background: url(../images/input-search.gif) no-repeat 0 0;
+    border: 0;
+    height: 30px;
+    padding: 0 5px;
+    width: 220px;
+}
+
+#header div div div form input#searchbtn {
+    background: url(../images/sprite-buttons.gif) no-repeat 0 -291px;
+    border: none;
+    height: 30px;
+    width: 60px;
+}
+
+#slide {
+    width:940px; 
+    background: #aa6581;
+    padding: 10px;
+    height: 240px;
+}
+/*===== Dropdown Menu style ======*/
+#fdw{
+    margin-top: 5px;
+    height: 50px;
+}
+#fdw nav select {
+    display:none; /* this is just for the mobile display */
+}
+#fdw nav ul {
+    display:block;
+    z-index:999999;
+    margin: 0;
+    padding: 0;
+}
+#fdw nav ul li {
+    /*background: url(images/sprite-buttons.gif) no-repeat 0 -205px;*/
+    position:relative;
+    list-style-type: none;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    width: 160px;
+    text-align: center;
+}
+#fdw nav ul li a{
+    height: 100%;
+    width: 100%;
+    background: url(../images/sprite-buttons.gif) no-repeat 0 -205px;
+    color: #000;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #e8edf1;
+    text-transform: capitalize;
+}
+#fdw nav ul li a:hover, #fdw nav ul li.current a {
+    color: #b13c68;
+    text-shadow: 1px 1px 0 #ebb8c7;
+    background: url(../images/sprite-buttons.gif) no-repeat 0 -97px;
+}
+#header div ul li.current a{
+    height: 100%;
+    width: 100%;
+    background: url(../images/sprite-buttons.gif) no-repeat 0 -97px;
+}
+
+#fdw nav ul li a:link, #fdw nav ul li a:visited {
+    color:#000;
+    /*text-transform:uppercase;*/
+    display:inline-block;
+    position:relative;
+}
+#fdw nav ul li a:active {
+    color:#b13c68;
+    text-decoration:none;
+}
+#fdw nav ul li span {
+    position:absolute;
+    right:-12px;
+    bottom:6px;
+    width:7px;
+    height:8px;
+    margin:0 0 0 3px;
+    float:right;
+    display:block;
+    background:url('../images/nav_arrow.png') no-repeat left -8px;
+    font:0/0 a;
+}
+#fdw nav ul li.current {
+    /*border-bottom:2px solid #e25d29;*/
+}
+#fdw nav ul li.current a {
+    color:#e25d29;
+    cursor: default;
+}
+#fdw nav ul li.current a span {
+    background:url('../images/nav_arrow.png') no-repeat left 0;
+}
+#fdw nav ul li a span {
+    background:url('../images/nav_arrow.png') no-repeat left 0;
+}
+#fdw nav ul li.current ul li a {
+    cursor:pointer;
+}
+
+/*===== sub_menu Style =======*/
+#fdw nav ul li ul.sub_menu {
+    position:absolute;
+    top:52px;
+    left:0;
+    margin:0;
+    padding:0;
+    background:#fff;
+    border:1px solid #ececec;
+    border-top:5px solid #e25d29;
+    display:none;
+    z-index:999999;
+    -moz-box-shadow: 0px 6px 7px #121012;
+    -webkit-box-shadow: 0px 6px 7px #121012;
+    box-shadow: 0px 6px 7px #121012;
+}
+#fdw nav ul li ul.sub_menu li.arrow_top {
+    position:absolute;
+    top:-10px;
+    left:12px;
+    width:13px;
+    height:8px;
+    display:block;
+    border:none;
+    background:url('../images/arrow_top.png') no-repeat left top;
+}
+#fdw nav ul li ul.sub_menu li {
+    float:none;
+    margin:0;
+    padding:0;
+    border-bottom:1px solid #ececec;
+}
+#fdw nav ul li ul.sub_menu a:hover{
+    height: 100%;
+    width: 100%;
+    color: #000;
+    background: #f1ffff;
+    text-shadow: 1px 1px 0 #ebb8c7;
+}
+#fdw nav ul li ul.sub_menu li a{
+    height: 100%;
+    width: 100%;
+    background: url(../images/sprite-buttons.gif) no-repeat 0 -205px;
+    color: #5b5c5e;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #e8edf1;
+    text-transform: capitalize;
+}
+#fdw nav ul li ul.sub_menu li a.subCurrent {
+    color:#e25d29;
+    cursor:default;
+}
+#fdw nav ul li ul.sub_menu li a.subCurrent:hover {
+    background:none;
+}
+/*===================== end Header style ======================*/
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    /* nav */
+    #fdw nav ul li{
+        margin-left:12px;
+    }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+
+    /* nav menu ul & select */
+    #fdw nav ul {
+        display:none;
+    }
+    #fdw nav select {
+        width:100%;
+        display:block;
+        margin-bottom:30px;
+        cursor:pointer;
+        padding:6px;
+        background:#f9f9f9;
+        border:1px solid #e3e3e3;
+        color:#777;
+    }
 }
