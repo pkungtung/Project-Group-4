@@ -23,9 +23,18 @@
                            user="sa" 
                            password="123456"
                            scope="session"/>
-        <sql:query dataSource="${conn}" var="list">
-            Select * from Product;
-        </sql:query>
+        <c:choose>
+            <c:when test="${empty param.event}">
+                <sql:query dataSource="${conn}" var="list">
+                    Select * from Product;
+                </sql:query>
+            </c:when>
+            <c:otherwise>
+                <sql:query dataSource="${conn}" var="list">
+                    Select * from Product where _event= ${param.event};
+                </sql:query>
+            </c:otherwise>
+        </c:choose>
         <jsp:include page="include/menu.jsp" />
         <div id="content">
             <div id="suatex">
@@ -44,7 +53,7 @@
                             </div>
                         </li>
                     </c:forEach>
-                    
+
                 </ul>
             </div>
         </div>

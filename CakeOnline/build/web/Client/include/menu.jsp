@@ -9,8 +9,10 @@
 <!DOCTYPE html>
 <c:set var="path" value="${pageContext.request.servletPath}" />
 <script src="../jQuery/jquery-2.1.4.min.js" type="text/javascript"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-<script src="http://malsup.github.io/jquery.cycle2.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>-->
+<!--<script src="http://malsup.github.io/jquery.cycle2.js"></script>-->
+<script src="../jQuery/jquery 1.11.1 for cycle2.js" type="text/javascript"></script>
+<script src="../jQuery/jquery.cycle2.js" type="text/javascript"></script>
 <script>
     // show and hide sub menu
     $(function () {
@@ -54,10 +56,10 @@
                             <li class="current"><a href="Home.jsp">home</a></li>
                             <li><a href="Product.jsp">All Cake<span></span></a>
                                 <ul class="sub_menu" style="display: none">
-                                    <li><a href="#">Birthday</a></li>
-                                    <li><a href="#">Anniversary</a></li>
-                                    <li><a href="#">Engage</a></li>
-                                    <li><a href="#">Marriage</a></li>
+                                    <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
+                                    <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
+                                    <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>

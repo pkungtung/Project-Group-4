@@ -13,44 +13,43 @@
         <meta charset="UTF-8" />
         <title>Sign In </title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
-          <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
     </head>
-    <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
-    <c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
-
-    <c:choose>
-        <c:when test="${!empty param.dangnhap}">
-            <c:set var="dangnhap" value="${param['dangnhap']}" />
-            <c:if test="${dangnhap =='loi'}" >
-                <script>
-                    alert("Dang nhap khong thanh cong");
-                    window.location.href = "${param.u}?${param.p}";
-                </script>
-            </c:if>
-        </c:when>
-        <c:otherwise>
-            <body>
+    <body>
+        <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
+        <c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
+        <c:choose>
+            <c:when test="${!empty param.dangnhap}">
+                <c:set var="dangnhap" value="${param['dangnhap']}" />
+                <c:if test="${dangnhap =='loi'}" >
+                    <script>
+                        alert("Signin Failed");
+                        window.location.href = "${param.u}?${param.p}";
+                    </script>
+                </c:if>
+            </c:when>
+            <c:otherwise>
                 <jsp:include page="include/menu.jsp" />
                 <div id="content">
-                                <div>
-                                    <div class="modal-dialog">
-                            <form method="post" action="Controller?action=login" >
+                    <div>
+                        <div class="modal-dialog">
+                            <form method="post" action="../Controlle?action=login" >
                                 <div hidden="visibility">
                                     <input type="text" class="form-control" name="urlPage" value="${urlPage}"/>
                                     <input type="text" class="form-control" name="paramPage" value="${paramPage}"/>
                                 </div>
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        
-                                        <h4 class="modal-title">Đăng nhập</h4>
+
+                                        <h4 class="modal-title">Signin</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="form-group">
-                                            <label for="InputUserName">Tên Đăng Nhập</label>
+                                            <label for="InputUserName">User Name</label>
                                             <input type="text" class="form-control" name="txtUsername" id="InputUserName" placeholder="Enter email">
                                         </div>
                                         <div class="form-group">
-                                            <label for="InputPassword">Mật khẩu</label>
+                                            <label for="InputPassword">Password</label>
                                             <input type="password" class="form-control" name="txtPassword" id="InputPassword" placeholder="Password">
                                         </div>
                                         <div class="checkbox">
@@ -65,10 +64,10 @@
                                     </div>
                                 </form>
                             </div>
+                        </div>
                     </div>
-                </div>
                 <jsp:include page="include/newfooter.jsp" />
-            </body>
-        </c:otherwise>
-    </c:choose>
+            </c:otherwise>
+        </c:choose>
+    </body>
 </html>
