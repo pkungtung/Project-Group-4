@@ -63,7 +63,8 @@ public class Controlle extends HttpServlet {
                 //response.sendRedirect("" + url + "?" + param);
                   response.sendRedirect("Client/Signin.jsp?dangnhap=thanhcong");
             } else {
-                response.sendRedirect("404.jsp");
+                //response.sendRedirect("404.jsp");
+                response.sendRedirect("Client/Signin.jsp?dangnhap=loi");
             }
         }
 
