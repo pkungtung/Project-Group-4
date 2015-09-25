@@ -39,7 +39,7 @@ insert into Product values('tc24', 'Star Berry Cake', 86, 'no', '../imgProduct/1
 insert into Product values('tc25', 'Raspberry Heart Swirl Cheese Cake', 216, 'no', '../imgProduct/2Raspberry Heart Swirl Cheesecake.jpg', 'Anniversary')
 insert into Product values('tc26', 'Valentine Day Cake', 146, 'no', '../imgProduct/2valentine-day-cake.jpg', 'Anniversary')
 insert into Product values('tc27', 'Pink Cup Cake', 8, 'no', '../imgProduct/3cupcake.jpg', 'Marriage')
-insert into Product values('tc28', 'Burger Cake', 8, 'yes', '../imgProduct/1burgercake.jpg', 'Birthday')
+insert into Product values('tc28', 'Burger Cake', 8, 'yes', '../imgProduct/1burgercake.jpg', 'Dessert')
 insert into Product values('tc29', 'Flower Cup Cake', 8, 'no', '../imgProduct/1flowercake.jpg', 'Birthday')
 insert into Product values('tc30', 'Chocolate Cup Cake', 8, 'no', '../imgProduct/1healthy-food.jpg', 'Birthday')
 insert into Product values('tc31', 'Berry Pie', 8, 'no', '../imgProduct/5berrypie.jpg', 'Dessert')
@@ -49,7 +49,7 @@ insert into Product values('tc34', 'Fruit Cake', 8, 'no', '../imgProduct/5fruit-
 insert into Product values('tc35', 'Italian Pie', 8, 'no', '../imgProduct/5italianpie.jpg', 'Dessert')
 insert into Product values('tc36', 'Velvet Cup Cake', 8, 'no', '../imgProduct/5sweetcupcake.jpg', 'Dessert')
 
-delete Product where itemcode ='tc27'
+delete Product where itemcode ='tc28'
 
 create table logincake(
 	_id int primary key identity (1,1),
