@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Order</title>
+        <title>Customer</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME ICONS STYLES-->
@@ -146,7 +146,7 @@
                             <a  href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
                         </li>
                         <li>
-                            <a href="Oder.jsp"><i class="fa fa-venus "></i>Order </a>
+                            <a href="Order.jsp"><i class="fa fa-venus "></i>Order </a>
                         </li>
                         <li>
                             <a href="Product.jsp"><i class="fa fa-bolt "></i>Product</a>
@@ -164,7 +164,7 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Blank Page</h1>
+                            <h1 class="page-head-line">Customer Manager</h1>
                         </div>
                     </div>
                     <div class="row">

@@ -5,12 +5,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Order</title>
+        <title>Product</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME ICONS STYLES-->
@@ -19,6 +21,15 @@
         <link href="assets/css/style.css" rel="stylesheet" />
     </head>
     <body>
+        <sql:setDataSource var="conn" 
+                           driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                           url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
+                           user="sa" 
+                           password="123456"
+                           scope="session"/>
+        <sql:query dataSource="${conn}" var="list">
+            Select * from Product;
+        </sql:query>
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -148,7 +159,7 @@
                             <a href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
                         </li>
                         <li>
-                            <a href="Oder.jsp"><i class="fa fa-venus "></i>Order </a>
+                            <a href="Order.jsp"><i class="fa fa-venus "></i>Order </a>
 
                         </li>
 
@@ -170,16 +181,51 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Blank Page</h1>
+                            <h1 class="page-head-line">Product Manager</h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="alert alert-warning">
-                                Viết content vào đây
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                All Product
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Code</th>
+                                                <th>Name</th>
+                                                <th>Price</th>
+                                                <th>Egge</th>
+                                                <th>Event</th>
+                                                <th>Status</th>
+                                                <th>Edit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <c:forEach var="p" items="${list.rows}">
+                                                <tr>
+                                                    <td>${p.itemcode}</td>
+                                                    <td><a href="ProductDetail.jsp?id=${p.itemcode}">${p.name}</a></td>
+                                                    <td>$ ${p.price}</td>
+                                                    <td>${p.egg}</td>
+                                                    <td>${p._event}</td>
+                                                    <td>${p.egg}</td>
+                                                    <td>
+                                                        <button class="btn btn-primary"><i class="fa fa-edit "></i>Edit</button>
+                                                        <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+                                                    </td>
+                                                </tr>
+                                            </c:forEach>    
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
+
 
                 </div>
                 <!-- /. PAGE INNER  -->

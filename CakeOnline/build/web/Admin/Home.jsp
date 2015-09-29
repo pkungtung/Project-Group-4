@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Order</title>
+        <title>Home</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME ICONS STYLES-->
@@ -135,29 +135,20 @@
                         <li>
                             <div class="user-img-div">
                                 <img src="assets/img/user.jpg" class="img-circle" />
-
-
                             </div>
-
                         </li>
                         <li>
                             <a  href="#"> <strong> Phug Van Tung </strong></a>
                         </li>
-
                         <li>
                             <a class="active-menu"   href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
                         </li>
                         <li>
-                            <a href="Oder.jsp"><i class="fa fa-venus "></i>Order </a>
-
+                            <a href="Order.jsp"><i class="fa fa-venus "></i>Order </a>
                         </li>
-
                         <li>
                             <a href="Product.jsp"><i class="fa fa-bolt "></i>Product</a>
-
                         </li>
-
-
                         <li>
                             <a href="Customer.jsp"><i class="fa fa-code "></i>Customer</a>
                         </li>
@@ -172,6 +163,40 @@
                         <div class="col-md-12">
                             <h1 class="page-head-line">Home Page</h1>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-3 col-sm-3">
+                            <div class="style-box-one Style-one-clr-one">
+                                <a href="Order.jsp">
+                                    <span class="glyphicon glyphicon-headphones"></span>
+                                    <h5>Order</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class=" col-md-3 col-sm-3">
+                            <div class="style-box-one Style-one-clr-two">
+                                <a href="Product.jsp">
+                                    <span class="glyphicon glyphicon-repeat"></span>
+                                    <h5>Product</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class=" col-md-3 col-sm-3">
+                            <div class="style-box-one Style-one-clr-three">
+                                <a href="Customer.jsp">
+                                    <span class="glyphicon glyphicon-camera"></span>
+                                    <h5>Customer</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class=" col-md-3 col-sm-3">
+                            <div class="style-box-one Style-one-clr-four">
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    <h5>Some Sample Text</h5>
+                                </a>
+                            </div>
+                        </div>      
                     </div>
                     <div class="row">
                         <div class="col-md-12">
