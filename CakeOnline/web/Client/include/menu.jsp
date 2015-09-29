@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <c:set var="path" value="${pageContext.request.servletPath}" />
@@ -17,6 +18,25 @@
 <link rel="stylesheet" href="css/login/style.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
 <script src="js/login.js"></script>
+        <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
+        <c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
+        <c:choose>
+        <c:when test="${!empty param.dangnhap}">
+                <c:set var="dangnhap" value="${param['dangnhap']}" />
+                <c:if test="${dangnhap =='loi'}" >
+                    <script>
+                        alert("Signin Failed");
+                        window.location.href = "Signin.jsp";
+                    </script>
+                </c:if>
+                <c:if test="${dangnhap =='thanhcong'}" >
+                    <script>
+                        alert("Dang nhap thanh cong");
+                        window.location.href = "Home.jsp";
+                    </script>
+                </c:if>
+            </c:when>
+        </c:choose>
 <script>
     // show and hide sub menu
     $(function () {
@@ -38,17 +58,21 @@
     <a href="#" id="loginButton"><span>Login</span><em></em></a>
     <div style="clear:both"></div>
     <div id="loginBox">                
-        <form id="loginForm">
+        <form id="loginForm" method="post" action="../Controlle?action=login">
+                        <div hidden="visibility">
+                            <input type="text" class="form-control" name="urlPage" value="${urlPage}"/>
+                            <input type="text" class="form-control" name="paramPage" value="${paramPage}"/>
+                        </div>
             <fieldset id="body">
                 <fieldset>
-                    <label for="email">Email Address</label>
-                    <input type="text" name="email" id="email" />
+                    <label for="InputUserName">Email Address</label>
+                    <input type="text"  name="txtusername" id="email" />
                 </fieldset>
                 <fieldset>
-                    <label for="password">Password</label>
+                    <label for="InputPassword">Password</label>
                     <input type="password" name="password" id="password" />
                 </fieldset>
-                 <label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
+                 <label for="checkbox"><input type="checkbox" id="checkbox" <c:if test="${cookie['cb'].value == 'ok'}">checked</c:if> name="cbRemember"/>Remember me</label>
                 <input type="submit" id="login" value="Sign in" />
                 <label id="checkbox">or</label>
                 <input  type="button" value="Sign In with Google" id="login">
