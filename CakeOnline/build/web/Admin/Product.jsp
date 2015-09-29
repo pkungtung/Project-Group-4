@@ -19,6 +19,9 @@
         <link href="assets/css/font-awesome.css" rel="stylesheet" />
         <!--CUSTOM STYLES-->
         <link href="assets/css/style.css" rel="stylesheet" />
+        <script>
+            
+        </script>
     </head>
     <body>
         <sql:setDataSource var="conn" 
@@ -187,7 +190,7 @@
                     <div class="row">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                All Product
+                                <a href="AddNew.jsp" class="btn btn-primary btn-lg">Add New Product</a>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">

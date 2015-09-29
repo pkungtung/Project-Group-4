@@ -1,38 +1,23 @@
 <%-- 
-    Document   : Oder
-    Created on : Sep 29, 2015, 3:32:52 PM
+    Document   : AddNew
+    Created on : Sep 30, 2015, 1:39:37 AM
     Author     : ChungPhung
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Product</title>
+        <title>Home</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME ICONS STYLES-->
         <link href="assets/css/font-awesome.css" rel="stylesheet" />
         <!--CUSTOM STYLES-->
         <link href="assets/css/style.css" rel="stylesheet" />
-        <script>
-            
-        </script>
     </head>
     <body>
-        <sql:setDataSource var="conn" 
-                           driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
-                           url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
-                           user="sa" 
-                           password="123456"
-                           scope="session"/>
-        <sql:query dataSource="${conn}" var="list">
-            Select * from Product;
-        </sql:query>
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -149,29 +134,20 @@
                         <li>
                             <div class="user-img-div">
                                 <img src="assets/img/user.jpg" class="img-circle" />
-
-
                             </div>
-
                         </li>
                         <li>
                             <a  href="#"> <strong> Phug Van Tung </strong></a>
                         </li>
-
                         <li>
                             <a href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
                         </li>
                         <li>
                             <a href="Order.jsp"><i class="fa fa-venus "></i>Order </a>
-
                         </li>
-
                         <li>
-                            <a class="active-menu"  href="Product.jsp"><i class="fa fa-bolt "></i>Product</a>
-
+                            <a href="Product.jsp"><i class="fa fa-bolt "></i>Product</a>
                         </li>
-
-
                         <li>
                             <a href="Customer.jsp"><i class="fa fa-code "></i>Customer</a>
                         </li>
@@ -184,51 +160,57 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Product Manager</h1>
+                            <h1 class="page-head-line">Add New Product</h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a href="AddNew.jsp" class="btn btn-primary btn-lg">Add New Product</a>
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Code</th>
-                                                <th>Name</th>
-                                                <th>Price</th>
-                                                <th>Egge</th>
-                                                <th>Event</th>
-                                                <th>Status</th>
-                                                <th>Edit</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <c:forEach var="p" items="${list.rows}">
-                                                <tr>
-                                                    <td>${p.itemcode}</td>
-                                                    <td><a href="ProductDetail.jsp?id=${p.itemcode}">${p.name}</a></td>
-                                                    <td>$ ${p.price}</td>
-                                                    <td>${p.egg}</td>
-                                                    <td>${p._event}</td>
-                                                    <td>${p.egg}</td>
-                                                    <td>
-                                                        <button class="btn btn-primary"><i class="fa fa-edit "></i>Edit</button>
-                                                        <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
-                                                    </td>
-                                                </tr>
-                                            </c:forEach>    
-
-                                        </tbody>
-                                    </table>
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <form action="../Controller" method="Post">
+                                        <div class="form-group">
+                                            <label>Item Code</label>
+                                            <input type="text" class="form-control" placeholder="Item Code">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Product Name</label>
+                                            <input type="text" class="form-control" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Price</label>
+                                            <input type="text" class="form-control" placeholder="Price">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Egge</label>
+                                            <input type="text" class="form-control" placeholder="Egge">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Event</label>
+                                            <select class="form-control">
+                                                <option>Birthday</option>
+                                                <option>Anniversary</option>
+                                                <option>Engagement</option>
+                                                <option>Marriage</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <select class="form-control">
+                                                <option>Show</option>
+                                                <option>Hidden</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Product Image</label>
+                                            <input type="file" id="exampleInputFile">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Submit</button>
+                                        <hr>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-
 
                 </div>
                 <!-- /. PAGE INNER  -->
