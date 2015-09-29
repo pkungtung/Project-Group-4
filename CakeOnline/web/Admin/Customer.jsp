@@ -135,8 +135,6 @@
                         <li>
                             <div class="user-img-div">
                                 <img src="assets/img/user.jpg" class="img-circle" />
-
-
                             </div>
 
                         </li>
@@ -145,21 +143,17 @@
                         </li>
 
                         <li>
-                            <a class="active-menu"   href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
+                            <a  href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
                         </li>
                         <li>
                             <a href="Oder.jsp"><i class="fa fa-venus "></i>Order </a>
-
                         </li>
-
                         <li>
                             <a href="Product.jsp"><i class="fa fa-bolt "></i>Product</a>
 
                         </li>
-
-
                         <li>
-                            <a href="Customer.jsp"><i class="fa fa-code "></i>Customer</a>
+                            <a class="active-menu" href="Customer.jsp"><i class="fa fa-code "></i>Customer</a>
                         </li>
                     </ul>
                 </div>
@@ -170,7 +164,7 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Home Page</h1>
+                            <h1 class="page-head-line">Blank Page</h1>
                         </div>
                     </div>
                     <div class="row">

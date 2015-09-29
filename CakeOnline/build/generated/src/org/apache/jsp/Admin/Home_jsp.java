@@ -1,0 +1,270 @@
+package org.apache.jsp.Admin;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+
+public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
+      out.write("        <!-- BOOTSTRAP STYLES-->\r\n");
+      out.write("        <link href=\"assets/css/bootstrap.css\" rel=\"stylesheet\" />\r\n");
+      out.write("        <!-- FONTAWESOME ICONS STYLES-->\r\n");
+      out.write("        <link href=\"assets/css/font-awesome.css\" rel=\"stylesheet\" />\r\n");
+      out.write("        <!--CUSTOM STYLES-->\r\n");
+      out.write("        <link href=\"assets/css/style.css\" rel=\"stylesheet\" />\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div id=\"wrapper\">\r\n");
+      out.write("            <nav class=\"navbar navbar-default navbar-cls-top \" role=\"navigation\" style=\"margin-bottom: 0\">\r\n");
+      out.write("                <div class=\"navbar-header\">\r\n");
+      out.write("                    <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".sidebar-collapse\">\r\n");
+      out.write("                        <span class=\"sr-only\">Toggle navigation</span>\r\n");
+      out.write("                        <span class=\"icon-bar\"></span>\r\n");
+      out.write("                        <span class=\"icon-bar\"></span>\r\n");
+      out.write("                        <span class=\"icon-bar\"></span>\r\n");
+      out.write("                    </button>\r\n");
+      out.write("                    <a  class=\"navbar-brand\" href=\"index.html\">The Cake Admin \r\n");
+      out.write("\r\n");
+      out.write("                    </a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("\r\n");
+      out.write("                <div class=\"notifications-wrapper\">\r\n");
+      out.write("                    <ul class=\"nav\">\r\n");
+      out.write("\r\n");
+      out.write("                        <li class=\"dropdown\">\r\n");
+      out.write("                            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" aria-expanded=\"false\">\r\n");
+      out.write("                                <i class=\"fa fa-tasks fa-fw\"></i>  <i class=\"fa fa-caret-down\"></i>\r\n");
+      out.write("                            </a>\r\n");
+      out.write("                            <ul class=\"dropdown-menu dropdown-tasks\">\r\n");
+      out.write("                                <li>\r\n");
+      out.write("                                    <a href=\"#\">\r\n");
+      out.write("                                        <div>\r\n");
+      out.write("                                            <p>\r\n");
+      out.write("                                                <strong>Task 1</strong>\r\n");
+      out.write("                                                <span class=\"pull-right text-muted\">60% Complete</span>\r\n");
+      out.write("                                            </p>\r\n");
+      out.write("                                            <div class=\"progress progress-striped active\">\r\n");
+      out.write("                                                <div class=\"progress-bar progress-bar-danger\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%\">\r\n");
+      out.write("                                                    <span class=\"sr-only\">60% Complete (danger)</span>\r\n");
+      out.write("                                                </div>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                    </a>\r\n");
+      out.write("                                </li>\r\n");
+      out.write("                                <li class=\"divider\"></li>\r\n");
+      out.write("                                <li>\r\n");
+      out.write("                                    <a href=\"#\">\r\n");
+      out.write("                                        <div>\r\n");
+      out.write("                                            <p>\r\n");
+      out.write("                                                <strong>Task 2</strong>\r\n");
+      out.write("                                                <span class=\"pull-right text-muted\">30% Complete</span>\r\n");
+      out.write("                                            </p>\r\n");
+      out.write("                                            <div class=\"progress progress-striped active\">\r\n");
+      out.write("                                                <div class=\"progress-bar progress-bar-info\" role=\"progressbar\" aria-valuenow=\"30\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%\">\r\n");
+      out.write("                                                    <span class=\"sr-only\">30% Complete</span>\r\n");
+      out.write("                                                </div>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                    </a>\r\n");
+      out.write("                                </li>\r\n");
+      out.write("                                <li class=\"divider\"></li>\r\n");
+      out.write("                                <li>\r\n");
+      out.write("                                    <a href=\"#\">\r\n");
+      out.write("                                        <div>\r\n");
+      out.write("                                            <p>\r\n");
+      out.write("                                                <strong>Task 3</strong>\r\n");
+      out.write("                                                <span class=\"pull-right text-muted\">80% Complete</span>\r\n");
+      out.write("                                            </p>\r\n");
+      out.write("                                            <div class=\"progress progress-striped active\">\r\n");
+      out.write("                                                <div class=\"progress-bar progress-bar-warning\" role=\"progressbar\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%\">\r\n");
+      out.write("                                                    <span class=\"sr-only\">80% Complete (warning)</span>\r\n");
+      out.write("                                                </div>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                    </a>\r\n");
+      out.write("                                </li>\r\n");
+      out.write("                                <li class=\"divider\"></li>\r\n");
+      out.write("                                <li>\r\n");
+      out.write("                                    <a href=\"#\">\r\n");
+      out.write("                                        <div>\r\n");
+      out.write("                                            <p>\r\n");
+      out.write("                                                <strong>Task 4</strong>\r\n");
+      out.write("                                                <span class=\"pull-right text-muted\">90% Complete</span>\r\n");
+      out.write("                                            </p>\r\n");
+      out.write("                                            <div class=\"progress progress-striped active\">\r\n");
+      out.write("                                                <div class=\"progress-bar progress-bar-success\" role=\"progressbar\" aria-valuenow=\"90\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 90%\">\r\n");
+      out.write("                                                    <span class=\"sr-only\">90% Complete (success)</span>\r\n");
+      out.write("                                                </div>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                    </a>\r\n");
+      out.write("                                </li>\r\n");
+      out.write("                                <li class=\"divider\"></li>\r\n");
+      out.write("                                <li>\r\n");
+      out.write("                                    <a class=\"text-center\" href=\"#\">\r\n");
+      out.write("                                        <strong>See Tasks List + </strong>\r\n");
+      out.write("                                    </a>\r\n");
+      out.write("                                </li>\r\n");
+      out.write("                            </ul>\r\n");
+      out.write("                        </li>\r\n");
+      out.write("\r\n");
+      out.write("                        <li class=\"dropdown\">\r\n");
+      out.write("                            <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">\r\n");
+      out.write("                                <i class=\"fa fa-user-plus\"></i>  <i class=\"fa fa-caret-down\"></i>\r\n");
+      out.write("                            </a>\r\n");
+      out.write("                            <ul class=\"dropdown-menu dropdown-user\">\r\n");
+      out.write("                                <li><a href=\"#\"><i class=\"fa fa-user-plus\"></i> My Profile</a>\r\n");
+      out.write("                                </li>\r\n");
+      out.write("                                <li class=\"divider\"></li>\r\n");
+      out.write("                                <li><a href=\"#\"><i class=\"fa fa-sign-out\"></i> Logout</a>\r\n");
+      out.write("                                </li>\r\n");
+      out.write("                            </ul>\r\n");
+      out.write("                        </li>\r\n");
+      out.write("                    </ul>\r\n");
+      out.write("\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </nav>\r\n");
+      out.write("            <!-- /. NAV TOP  -->\r\n");
+      out.write("            <nav  class=\"navbar-default navbar-side\" role=\"navigation\">\r\n");
+      out.write("                <div class=\"sidebar-collapse\">\r\n");
+      out.write("                    <ul class=\"nav\" id=\"main-menu\">\r\n");
+      out.write("                        <li>\r\n");
+      out.write("                            <div class=\"user-img-div\">\r\n");
+      out.write("                                <img src=\"assets/img/user.jpg\" class=\"img-circle\" />\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                            </div>\r\n");
+      out.write("\r\n");
+      out.write("                        </li>\r\n");
+      out.write("                        <li>\r\n");
+      out.write("                            <a  href=\"#\"> <strong> Phug Van Tung </strong></a>\r\n");
+      out.write("                        </li>\r\n");
+      out.write("\r\n");
+      out.write("                        <li>\r\n");
+      out.write("                            <a class=\"active-menu\"  href=\"Home.jsp\"><i class=\"fa fa-dashboard \"></i>Home</a>\r\n");
+      out.write("                        </li>\r\n");
+      out.write("                        <li>\r\n");
+      out.write("                            <a href=\"Oder.jsp\"><i class=\"fa fa-venus \"></i>Order </a>\r\n");
+      out.write("\r\n");
+      out.write("                        </li>\r\n");
+      out.write("\r\n");
+      out.write("                        <li>\r\n");
+      out.write("                            <a href=\"Product.jsp\"><i class=\"fa fa-bolt \"></i>Product</a>\r\n");
+      out.write("\r\n");
+      out.write("                        </li>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                        <li>\r\n");
+      out.write("                            <a href=\"Customer.jsp\"><i class=\"fa fa-code \"></i>Customer</a>\r\n");
+      out.write("                        </li>\r\n");
+      out.write("\r\n");
+      out.write("                        <!--                        <li>\r\n");
+      out.write("                                                    <a href=\"#\"><i class=\"fa fa-sitemap \"></i>Multilevel Link <span class=\"fa arrow\"></span></a>\r\n");
+      out.write("                                                    <ul class=\"nav nav-second-level\">\r\n");
+      out.write("                                                        <li>\r\n");
+      out.write("                                                            <a href=\"#\"><i class=\"fa fa-cogs \"></i>Second  Link</a>\r\n");
+      out.write("                                                        </li>\r\n");
+      out.write("                                                        <li>\r\n");
+      out.write("                                                            <a href=\"#\"><i class=\"fa fa-bullhorn \"></i>Second Link</a>\r\n");
+      out.write("                                                        </li>\r\n");
+      out.write("                                                        <li>\r\n");
+      out.write("                                                            <a href=\"#\">Second Level<span class=\"fa arrow\"></span></a>\r\n");
+      out.write("                                                            <ul class=\"nav nav-third-level\">\r\n");
+      out.write("                                                                <li>\r\n");
+      out.write("                                                                    <a href=\"#\">Third  Link</a>\r\n");
+      out.write("                                                                </li>\r\n");
+      out.write("                                                                <li>\r\n");
+      out.write("                                                                    <a href=\"#\">Third Link</a>\r\n");
+      out.write("                                                                </li>\r\n");
+      out.write("                        \r\n");
+      out.write("                                                            </ul>\r\n");
+      out.write("                        \r\n");
+      out.write("                                                        </li>\r\n");
+      out.write("                                                    </ul>\r\n");
+      out.write("                                                </li>\r\n");
+      out.write("                                                <li>\r\n");
+      out.write("                                                    <a href=\"blank.html\"><i class=\"fa fa-dashcube \"></i>Blank Page</a>\r\n");
+      out.write("                                                </li>-->\r\n");
+      out.write("\r\n");
+      out.write("                    </ul>\r\n");
+      out.write("                </div>\r\n");
+      out.write("\r\n");
+      out.write("            </nav>\r\n");
+      out.write("            <!-- /. SIDEBAR MENU (navbar-side) -->\r\n");
+      out.write("\r\n");
+      out.write("        </div>\r\n");
+      out.write("        <!-- /. WRAPPER  -->\r\n");
+      out.write("        <footer >\r\n");
+      out.write("            &copy; 2015 YourCompany | By : <a href=\"http://www.designbootstrap.com/\" target=\"_blank\">Group 4 GC 0902</a>\r\n");
+      out.write("        </footer>\r\n");
+      out.write("        <!-- /. FOOTER  -->\r\n");
+      out.write("        <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->\r\n");
+      out.write("        <!-- JQUERY SCRIPTS -->\r\n");
+      out.write("        <script src=\"assets/js/jquery-1.11.1.js\"></script>\r\n");
+      out.write("        <!-- BOOTSTRAP SCRIPTS -->\r\n");
+      out.write("        <script src=\"assets/js/bootstrap.js\"></script>\r\n");
+      out.write("        <!-- METISMENU SCRIPTS -->\r\n");
+      out.write("        <script src=\"assets/js/jquery.metisMenu.js\"></script>\r\n");
+      out.write("        <!-- CUSTOM SCRIPTS -->\r\n");
+      out.write("        <script src=\"assets/js/custom.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}

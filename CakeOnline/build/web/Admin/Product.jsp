@@ -145,7 +145,7 @@
                         </li>
 
                         <li>
-                            <a class="active-menu"   href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
+                            <a href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
                         </li>
                         <li>
                             <a href="Oder.jsp"><i class="fa fa-venus "></i>Order </a>
@@ -153,7 +153,7 @@
                         </li>
 
                         <li>
-                            <a href="Product.jsp"><i class="fa fa-bolt "></i>Product</a>
+                            <a class="active-menu"  href="Product.jsp"><i class="fa fa-bolt "></i>Product</a>
 
                         </li>
 
@@ -170,7 +170,7 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Home Page</h1>
+                            <h1 class="page-head-line">Blank Page</h1>
                         </div>
                     </div>
                     <div class="row">
