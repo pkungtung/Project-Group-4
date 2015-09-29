@@ -49,7 +49,6 @@ insert into Product values('tc34', 'Fruit Cake', 8, 'no', '../imgProduct/5fruit-
 insert into Product values('tc35', 'Italian Pie', 8, 'no', '../imgProduct/5italianpie.jpg', 'Dessert')
 insert into Product values('tc36', 'Velvet Cup Cake', 8, 'no', '../imgProduct/5sweetcupcake.jpg', 'Dessert')
 
-delete Product where itemcode ='tc28'
 
 create table logincake(
 	_id int primary key identity (1,1),
