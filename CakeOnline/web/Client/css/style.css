@@ -44,7 +44,7 @@ p a {
     margin: 0 auto;
     padding: 10px 30px 30px;
     position: relative;
-    width: 900px;
+    width: 960px;
 }
 
 #content div#services, #content div#about  {
@@ -252,9 +252,9 @@ p a {
 
 #content div ul li {
     float: left;
-    height: 440px;
-    width: 400px;
-    padding: 25px;
+    height: 490px;
+    width: 450px;
+/*    padding: 25px;*/
 }
 
 #content div ul li div {
@@ -283,7 +283,7 @@ p a {
     text-decoration: none;
 }
 
-#content div ul li div div p {
+#content div ul li div div p.namep {
     color: #5F5D5E;
     margin: 0 0 10px;
     line-height: 28px;
@@ -466,6 +466,7 @@ p a {
     position: relative;
     margin-bottom: 30px;
     width: 692px;
+    padding: 0px 0px 0px 0px;
 }
 
 #content div#blog div#articles ul li div {

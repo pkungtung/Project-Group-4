@@ -13,6 +13,10 @@
 <!--<script src="http://malsup.github.io/jquery.cycle2.js"></script>-->
 <script src="../jQuery/jquery 1.11.1 for cycle2.js" type="text/javascript"></script>
 <script src="../jQuery/jquery.cycle2.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="css/login/style.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+<script src="js/login.js"></script>
 <script>
     // show and hide sub menu
     $(function () {
@@ -29,24 +33,54 @@
     });
 //end
 </script>
+<div id="link">
+<div id="loginContainer" style="margin: 20px 190px -20px 0;">
+    <a href="#" id="loginButton"><span>Login</span><em></em></a>
+    <div style="clear:both"></div>
+    <div id="loginBox">                
+        <form id="loginForm">
+            <fieldset id="body">
+                <fieldset>
+                    <label for="email">Email Address</label>
+                    <input type="text" name="email" id="email" />
+                </fieldset>
+                <fieldset>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" />
+                </fieldset>
+                 <label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
+                <input type="submit" id="login" value="Sign in" />
+                <label id="checkbox">or</label>
+                <input  type="button" value="Sign In with Google" id="login">
+		<input  type="button" id="login" value="facebook">
+            </fieldset>
+            <span><a href="#">Forgot your password?</a></span>
+        </form>
+    </div>    
+</div>
+<div id="loginContainer" style="margin: 20px 0 -20px 0;">
+    <a href="Signup.jsp" id="loginButton"><span>Sign up</span><em></em></a>
+    <div style="clear:both"></div>
+</div> 
+</div>
+
 <div id="header" style="background: #f5f5f5 url(images/bg-body.gif) repeat-x center top;">    
-    <div>                
+    <div>           
         <div id="top">
             <div id="logo">
                 <a href="Home.jsp"><img src="images/logo1.gif" alt="Logo"/></a>
             </div>
+
             <div id="tright">
-                <div id="link">
-                    <a href="Signup.jsp">Singup</a>
-                    <!--<a href="Home.jsp">Help</a>-->
-                    <a href="Signin.jsp" class="last">Sign in</a>
-                </div>
+
+
                 <form action="Product.jsp?">
                     <input type="text" id="search" name="search" maxlength="30" />
                     <input type="submit" value="" id="searchbtn" />
                 </form>
             </div>
         </div>
+
 
         <c:choose>
             <c:when test="${path == '/Client/Home.jsp'}">
@@ -58,9 +92,8 @@
                                 <ul class="sub_menu" style="display: none">
                                     <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
                                     <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
-                                    <li><a href="Product.jsp?event=Engagement">Engagement</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
                                     <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
-                                    <li><a href="Product.jsp?event=Dessert">Dessert</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -80,9 +113,8 @@
                                 <ul class="sub_menu" style="display: none">
                                     <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
                                     <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
-                                    <li><a href="Product.jsp?event=Engagement">Engagement</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
                                     <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
-                                    <li><a href="Product.jsp?event=Dessert">Dessert</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -102,9 +134,8 @@
                                 <ul class="sub_menu" style="display: none">
                                     <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
                                     <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
-                                    <li><a href="Product.jsp?event=Engagement">Engagement</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
                                     <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
-                                    <li><a href="Product.jsp?event=Dessert">Dessert</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -124,9 +155,8 @@
                                 <ul class="sub_menu" style="display: none">
                                     <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
                                     <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
-                                    <li><a href="Product.jsp?event=Engagement">Engagement</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
                                     <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
-                                    <li><a href="Product.jsp?event=Dessert">Dessert</a></li>
                                 </ul>
                             </li>
                             <li class="current"><a href="About.jsp">About Us</a></li>
@@ -145,9 +175,8 @@
                                 <ul class="sub_menu" style="display: none">
                                     <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
                                     <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
-                                    <li><a href="Product.jsp?event=Engagement">Engagement</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
                                     <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
-                                    <li><a href="Product.jsp?event=Dessert">Dessert</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -166,9 +195,8 @@
                                 <ul class="sub_menu" style="display: none">
                                     <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
                                     <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
-                                    <li><a href="Product.jsp?event=Engagement">Engagement</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
                                     <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
-                                    <li><a href="Product.jsp?event=Dessert">Dessert</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -188,9 +216,8 @@
                                 <ul class="sub_menu" style="display: none">
                                     <li><a href="Product.jsp?event=Birthday">Birthday</a></li>
                                     <li><a href="Product.jsp?event=Anniversary">Anniversary</a></li>
-                                    <li><a href="Product.jsp?event=Engagement">Engagement</a></li>
+                                    <li><a href="Product.jsp?event=Engage">Engage</a></li>
                                     <li><a href="Product.jsp?event=Marriage">Marriage</a></li>
-                                    <li><a href="Product.jsp?event=Dessert">Dessert</a></li>
                                 </ul>
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
@@ -203,20 +230,20 @@
             </c:otherwise>
         </c:choose>
 
-        <div id="slide" style="height: 240px; z-index: 1; width: 940px;">
+        <div id="slide" style="height: 262px; z-index: 1; width: 959px;">
             <div class="cycle-slideshow"  style="height: 240px;z-index: 2; width: 940px;"
                  data-cycle-pause-on-hover="true"
                  data-cycle-fx="scrollHorz"
-                 data-cycle-speed="900"    
-                 data-cycle-timeout="1800"
+                 data-cycle-speed="600"    
+                 data-cycle-timeout="1200"
                  data-cycle-slides="> a"
                  >
-                <a href="Detail.jsp?id=tc27"><img src="images/wedding-cupcakes-small.jpg" height="240" width="940" alt="Image"/></a>
-                <a href="Detail.jsp?id=tc30"><img src="images/healthy.jpg" width="940" height="240" /></a>
-                <a href="Detail.jsp?id=tc29"><img src="images/cakes1.jpg" width="940" height="240" /></a>
-                <a href="Detail.jsp?id=tc23"><img src="images/dog.jpg" width="940" height="240" /></a>
-                <a href="Detail.jsp?id=tc36"><img src="images/sweetcupcake.jpg" width="940" height="240" /></a>
-                <a href="Detail.jsp?id=tc26"><img src="images/valentine-day-cake.jpg" width="940" height="240" /></a>
+                <a href="Home.jsp"><img src="images/wedding-cupcakes-small.jpg" height="240" width="940" alt="Image"/></a>
+                <a href="#"><img src="images/healthy.jpg" width="940" height="240" /></a>
+                <a href="#"><img src="images/cakes1.jpg" width="940" height="240" /></a>
+                <a href="#"><img src="images/dog.jpg" width="940" height="240" /></a>
+                <a href="#"><img src="images/Star.jpg" width="940" height="240" /></a>
+                <a href="#"><img src="images/valentine-day-cake.jpg" width="940" height="240" /></a>
             </div>
         </div>
     </div>

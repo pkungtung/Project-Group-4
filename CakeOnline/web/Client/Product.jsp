@@ -8,6 +8,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/set2.css" />
+
 <!DOCTYPE html>
 
 <html>
@@ -26,7 +30,10 @@
         <c:choose>
             <c:when test="${empty param.event}">
                 <sql:query dataSource="${conn}" var="list">
-                    Select * from Product;
+                    SELECT *FROM Product
+                    ORDER BY id
+                    OFFSET 0 ROWS
+                    FETCH NEXT 8 ROWS ONLY;
                 </sql:query>
             </c:when>
             <c:otherwise>
@@ -38,24 +45,55 @@
         <jsp:include page="include/menu.jsp" />
         <div id="content">
             <div id="suatex">
-                <h1>${param.event}</h1>
+                <h1>All Cake</h1>
 
                 <ul>
                     <c:forEach var="p" items="${list.rows}">
                         <li>
                             <div>
 
-                                <a href="Detail.jsp?id=${p.itemCode}"><img src="${p.img}" height="400" width="400"  alt="Image" /></a>
-                                <div>
-                                    <h2><a href="Home.jsp">${p.name}</a></h2>
-                                    <a href="Home.jsp" class="view">Order</a>
+                                <!--                                    <h2>Cake</h2>-->
+                                <div class="grid">
+                                    <figure class="effect-steve">
+                                        <img src="${p.img}" height="400" width="400" alt="img"/>
+                                        <figcaption>
+                                            <h2>${p.name}</h2>
+                                            <p style="margin: 80px 0 0 0">dat hang</p>
+                                            <a href="Home.jsp">Order</a>
+                                        </figcaption>	
+                                        <figcaption>
+                                            <!--                                                    							<h2>Lonely <span>Steve</span></h2>-->
+                                            <p style="margin: 60px 0 0 0"> Chi tiet san pham</p>
+                                            <a href="Detail.jsp?id=${p.itemCode}">View more</a>
+                                        </figcaption>	
+                                    </figure>
+
                                 </div>
+                                <!-- /containdaer -->
+                                <script>
+                                    // For Demo purposes only (show hover effect on mobile devices)
+                                    [].slice.call(document.querySelectorAll('a[href="#"')).forEach(function (el) {
+                                        el.addEventListener('click', function (ev) {
+                                            ev.preventDefault();
+                                        });
+                                    });
+                                </script>
                             </div>
                         </li>
                     </c:forEach>
 
                 </ul>
             </div>
+        </div>
+        <div class="pager">
+            <a href="Product.jsp" class="button ">< Prev</a>
+            &nbsp; 
+            <span class="page"><a href="Product.jsp" class="pageNumber">1</a> </span>
+            <span class="page"><a href="Product2.jsp" class="pageNumber">2</a> </span>
+            <span class="page"><a href="Product.jsp" class="pageNumber">3</a> </span>
+            <span class="page"><a href="Product.jsp" class="pageNumber">4</a> </span>
+            <span class="page"><a href="Product.jsp" class="pageNumber">5</a> </span>
+            <a href="Product2.jsp" class="button ">Next &gt;</a>
         </div>
         <jsp:include page="include/newfooter.jsp" />
     </body>
