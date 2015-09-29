@@ -8,6 +8,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/set2.css" />
+
 <!DOCTYPE html>
 
 <html>
@@ -45,10 +49,21 @@
                         <li>
                             <div>
 
-                                <a href="Detail.jsp?id=${p.itemCode}"><img src="${p.img}" height="400" width="400"  alt="Image" /></a>
-                                <div>
-                                    <h2><a href="Home.jsp">${p.name}</a></h2>
-                                    <a href="Home.jsp" class="view">Order</a>
+                                <div class="grid">
+                                    <figure class="effect-steve">
+                                        <img src="${p.img}" height="400" width="400" alt="img"/>
+                                        <figcaption>
+                                            <h2>${p.name}</h2>
+                                            <p style="margin: 80px 0 0 0">dat hang</p>
+                                            <a href="Home.jsp">Order</a>
+                                        </figcaption>	
+                                        <figcaption>
+                                            <!--                                                    							<h2>Lonely <span>Steve</span></h2>-->
+                                            <p style="margin: 60px 0 0 0"> Chi tiet san pham</p>
+                                            <a href="Detail.jsp?id=${p.itemCode}">View more</a>
+                                        </figcaption>	
+                                    </figure>
+
                                 </div>
                             </div>
                         </li>
