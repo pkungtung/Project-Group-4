@@ -1,16 +1,16 @@
 <%-- 
-    Document   : Home
-    Created on : Sep 25, 2015, 10:06:15 AM
+    Document   : Oder
+    Created on : Sep 29, 2015, 3:32:52 PM
     Author     : ChungPhung
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Order</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME ICONS STYLES-->
@@ -28,7 +28,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a  class="navbar-brand" href="index.html">The Cake Admin 
+                    <a  class="navbar-brand" href="index.html">DesignBootstrap 
 
                     </a>
                 </div>
@@ -126,7 +126,6 @@
                             </ul>
                         </li>
                     </ul>
-
                 </div>
             </nav>
             <!-- /. NAV TOP  -->
@@ -146,7 +145,7 @@
                         </li>
 
                         <li>
-                            <a class="active-menu"  href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
+                            <a  href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
                         </li>
                         <li>
                             <a href="Oder.jsp"><i class="fa fa-venus "></i>Order </a>
@@ -160,7 +159,7 @@
 
 
                         <li>
-                            <a href="Customer.jsp"><i class="fa fa-code "></i>Customer</a>
+                            <a class="active-menu" href="Customer.jsp"><i class="fa fa-code "></i>Customer</a>
                         </li>
 
                         <!--                        <li>
@@ -196,11 +195,36 @@
 
             </nav>
             <!-- /. SIDEBAR MENU (navbar-side) -->
+            <div id="page-wrapper" class="page-wrapper-cls">
+                <div id="page-inner">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="page-head-line">Blank Page</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-warning">
+                                Hey,
+                                <br />
+                                Hope You Like this template, Please look in to <strong><a  href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap.Com</a></strong> always for these type of free templates and snippets.
+                                Which will remain free forever. You can tell your friends about us if you like our work/templates/snippets.
+                                <br /><br />
+                                Thanks & Regards
+                                <br />
+                                <strong><a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap.Com</a></strong> 
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+                <!-- /. PAGE INNER  -->
+            </div>
+            <!-- /. PAGE WRAPPER  -->
         </div>
         <!-- /. WRAPPER  -->
         <footer >
-            &copy; 2015 YourCompany | By : <a href="http://www.designbootstrap.com/" target="_blank">Group 4 GC 0902</a>
+            &copy; 2015 YourCompany | By : <a href="http://www.designbootstrap.com/" target="_blank">DesignBootstrap</a>
         </footer>
         <!-- /. FOOTER  -->
         <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
