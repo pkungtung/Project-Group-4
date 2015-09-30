@@ -206,7 +206,7 @@ public final class AddNew_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <div class=\"col-md-6\" style=\"margin: auto;\">\r\n");
       out.write("                            <div class=\"panel panel-default\">\r\n");
       out.write("                                <div class=\"panel-body\">\r\n");
-      out.write("                                    <form action=\"../Controller\" method=\"Post\" enctype=\"multipart/form-data\">\r\n");
+      out.write("                                    <form action=\"../Controller?ac=add\" method=\"Post\" enctype=\"multipart/form-data\">\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
       out.write("                                            <label>Item Code</label>\r\n");
       out.write("                                            <input type=\"text\" class=\"form-control\" name=\"itemcode\" placeholder=\"Item Code\">\r\n");
@@ -244,7 +244,7 @@ public final class AddNew_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                        </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
       out.write("                                            <label for=\"exampleInputFile\">Product Image</label>\r\n");
-      out.write("                                            <input type=\"file\" id=\"exampleInputFile\">\r\n");
+      out.write("                                            <input type=\"file\" id=\"exampleInputFile\" name=\"file\">\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <button type=\"submit\" class=\"btn btn-default\">Submit</button>\r\n");
       out.write("                                        <hr>\r\n");

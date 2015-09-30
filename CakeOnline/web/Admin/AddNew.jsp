@@ -205,7 +205,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputFile">Product Image</label>
-                                            <input type="file" id="exampleInputFile">
+                                            <input type="file" id="exampleInputFile" name="file">
                                         </div>
                                         <button type="submit" class="btn btn-default">Submit</button>
                                         <hr>

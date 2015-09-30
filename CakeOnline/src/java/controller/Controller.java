@@ -34,7 +34,7 @@ public class Controller extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private final String UPLOAD_DIRECTORY = "../web/imgProduct";
+    private final String UPLOAD_DIRECTORY = "C:\\Users\\Pkung\\Documents\\GitHub\\Project-Group-4\\CakeOnline\\web\\imgProduct";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

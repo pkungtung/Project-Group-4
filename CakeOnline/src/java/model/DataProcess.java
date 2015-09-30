@@ -107,11 +107,5 @@ public class DataProcess {
             Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result > 0;
-    }
-    public static void main(String[] args) {
-        DataProcess dt = new DataProcess();
-        Cake c = new Cake("asd12", "asdad", 12, "asd", "asdasd", "asdasd", "asdasd");
-        dt.addProduct(c);
-    }
-    
+    }    
 }
