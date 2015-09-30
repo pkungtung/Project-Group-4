@@ -65,6 +65,10 @@
                                     </figure>
 
                                 </div>
+                                <div style="margin-top: 415px;">
+                                    <h2><a href="Home.jsp">${p.name}</a></h2>
+                                   
+                                </div> 
                             </div>
                         </li>
                     </c:forEach>

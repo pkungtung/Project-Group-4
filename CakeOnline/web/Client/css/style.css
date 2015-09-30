@@ -42,7 +42,7 @@ p a {
 }
 #content div#services, #content div#about, #content div#suatex {
     margin: 0 auto;
-    padding: 10px 30px 30px;
+    padding: 20px 30px 30px;
     position: relative;
     width: 960px;
 }
