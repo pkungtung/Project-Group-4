@@ -30,22 +30,20 @@
                     <div id="visitshop">
                         <div>
                             <p><span>Sweets from the heart</span> Treat your loveones</p>
-                            <a href="" class="visit">visit the shop</a>
+                            <a href="Product.jsp" class="visit">visit the shop</a>
                         </div>
                     </div>
                     <div>
                     </div>
                     <div>
                         <h3>Address</h3>
-                        <p>8 Ton That Thuyet <br /> 
-                            HaNoi VietNam <br /> 
-                            Samar Loop St., Businees Park <br />
-                            Quisque vestibulum, 6029 <br />
-                            Lorem, Ipsum Dolor
+                        <p>8 Ton That Thuyet<br/>
+                            Cau Giay district<br/>
+                            Ha Noi, Vietnam <br /> 
                         </p>
                     </div>
                     <div>
-                        <a href="index.html" class="callus">CALL US <span>043 456 789</span></a>
+                        <a class="callus">CALL US <span>043 456 789</span></a>
                     </div>
                 </div>
             </div>

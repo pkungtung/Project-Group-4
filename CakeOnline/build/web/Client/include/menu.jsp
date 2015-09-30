@@ -72,7 +72,7 @@
                     <label for="InputPassword">Password</label>
                     <input type="password" name="password" id="password" />
                 </fieldset>
-                 <label for="checkbox"><input type="checkbox" id="checkbox" <c:if test="${cookie['cb'].value == 'ok'}">checked</c:if> name="cbRemember"/>Remember me</label>
+                 <label for="checkbox"><input type="checkbox" id="checkbox"/>Remember me</label>
                 <input type="submit" id="login" value="Sign in" />
                 <label id="checkbox">or</label>
                 <input  type="button" value="Sign In with Google" id="login">
@@ -254,7 +254,7 @@
             </c:otherwise>
         </c:choose>
 
-        <div id="slide" style="height: 262px; z-index: 1; width: 959px;">
+        <div id="slide" style="height: 240px; z-index: 1; width: 940px;">
             <div class="cycle-slideshow"  style="height: 240px;z-index: 2; width: 940px;"
                  data-cycle-pause-on-hover="true"
                  data-cycle-fx="scrollHorz"

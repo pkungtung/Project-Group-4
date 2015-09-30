@@ -254,7 +254,7 @@
             </c:otherwise>
         </c:choose>
 
-        <div id="slide" style="height: 262px; z-index: 1; width: 959px;">
+        <div id="slide" style="height: 240px; z-index: 1; width: 940px;">
             <div class="cycle-slideshow"  style="height: 240px;z-index: 2; width: 940px;"
                  data-cycle-pause-on-hover="true"
                  data-cycle-fx="scrollHorz"
