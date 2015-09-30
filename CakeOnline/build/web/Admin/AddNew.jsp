@@ -167,7 +167,7 @@
                         <div class="col-md-6" style="margin: auto;">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <form action="../Controller" method="Post" enctype="multipart/form-data">
+                                    <form action="../Controller?ac=add" method="Post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Item Code</label>
                                             <input type="text" class="form-control" name="itemcode" placeholder="Item Code">
@@ -182,7 +182,10 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Egge</label>
-                                            <input type="text" class="form-control" name="egge" placeholder="Egge">
+                                            <select class="form-control" name="egge">
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Event</label>

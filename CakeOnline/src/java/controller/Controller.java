@@ -5,6 +5,7 @@
  */
 package controller;
 
+import Entity.Cake;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.DataProcess;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -58,41 +60,36 @@ public class Controller extends HttpServlet {
                             item.write(new File(UPLOAD_DIRECTORY + File.separator + img));
                             System.out.println("Name Img is:" + img);
                         } else {
+                            if ("itemcode".equals(item.getFieldName())) {
+                                itemCode = (String) item.getString();
+                            }  
                             if ("name".equals(item.getFieldName())) {
-                                nameP = (String) item.getString();
-                                nameP = new String(nameP.getBytes("iso-8859-1"), "UTF-8");
-                                System.out.println("Name is:" + nameP);
+                                name = (String) item.getString();
+                                name = new String(name.getBytes("iso-8859-1"), "UTF-8");
                             }
                             if ("price".equalsIgnoreCase(item.getFieldName())) {
                                 price = Float.parseFloat(item.getString());
                                 System.out.println("Price is:" + price);
                             }
-                            if ("kind".equals(item.getFieldName())) {
-                                kind = (String) item.getString();
-                                kind = new String(kind.getBytes("iso-8859-1"), "UTF-8");
-                                System.out.println("kind is:" + kind);
+                            if ("egge".equals(item.getFieldName())) {
+                                egg = (String) item.getString();
                             }
-                            if ("quantity".equalsIgnoreCase(item.getFieldName())) {
-                                quantity = Integer.parseInt(item.getString());
-                                System.out.println("Quantity is:" + quantity);
+                            if ("event".equalsIgnoreCase(item.getFieldName())) {
+                                event = item.getString();
                             }
-                            if ("descrip".equalsIgnoreCase(item.getFieldName())) {
-                                desc = item.getString();
-                                System.out.println("Decs is:" + quantity);
-
+                            if ("status".equalsIgnoreCase(item.getFieldName())) {
+                                stt = item.getString();
                             }
                         }
                     }
-
                     //File uploaded successfully
                     request.setAttribute("message", "File Uploaded Successfully");
-
-                    Product b = new Product(1, kind, nameP, price, desc, quantity, "../images/" + nameImg);
+                    Cake ca = new Cake(itemCode, name, price, egg,"../imgProduct/"+ img, event, stt);
                     DataProcess dt = new DataProcess();
-                    if (dt.addProduct(b)) {
-                        response.sendRedirect("/ProductAssignment/Admin/View.jsp");
+                    if (dt.addProduct(ca)) {
+                        response.sendRedirect("/CakeOnline/Admin/Product.jsp");
                     } else {
-                        response.sendRedirect("/ProductAssignment/Admin/AddProduct.jsp");
+                        response.sendRedirect("/CakeOnline/Admin/AddNew.jsp");
                     }
 
                 } catch (Exception ex) {
@@ -102,7 +99,7 @@ public class Controller extends HttpServlet {
             } else {
                 request.setAttribute("message",
                         "Sorry this Servlet only handles file upload request");
-                response.sendRedirect("/ProductAssignment/Admin/AddProduct.jsp");
+                response.sendRedirect("../Admin/AddProduct.jsp");
             }
         }
     }

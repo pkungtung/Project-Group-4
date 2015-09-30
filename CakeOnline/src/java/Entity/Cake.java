@@ -10,32 +10,34 @@ package Entity;
  * @author ChungPhung
  */
 public class Cake {
-    
-    private String icode;
+
+    private String itemCode;
     private String name;
     private float price;
-    private String egg;
+    private String egge;
     private String img;
     private String event;
+    private String stt;
+
+    public Cake(String itemCode, String name, float price, String egge, String img, String event, String stt) {
+        this.itemCode = itemCode;
+        this.name = name;
+        this.price = price;
+        this.egge = egge;
+        this.img = img;
+        this.event = event;
+        this.stt = stt;
+    }
 
     public Cake() {
     }
 
-    public Cake(String icode, String name, float price, String egg, String img, String event) {
-        this.icode = icode;
-        this.name = name;
-        this.price = price;
-        this.egg = egg;
-        this.img = img;
-        this.event = event;
+    public String getItemCode() {
+        return itemCode;
     }
 
-    public String getIcode() {
-        return icode;
-    }
-
-    public void setIcode(String icode) {
-        this.icode = icode;
+    public void setItemCode(String itemCode) {
+        this.itemCode = itemCode;
     }
 
     public String getName() {
@@ -54,12 +56,12 @@ public class Cake {
         this.price = price;
     }
 
-    public String getEgg() {
-        return egg;
+    public String getEgge() {
+        return egge;
     }
 
-    public void setEgg(String egg) {
-        this.egg = egg;
+    public void setEgge(String egge) {
+        this.egge = egge;
     }
 
     public String getImg() {
@@ -77,6 +79,13 @@ public class Cake {
     public void setEvent(String event) {
         this.event = event;
     }
-    
-    
+
+    public String getStt() {
+        return stt;
+    }
+
+    public void setStt(String stt) {
+        this.stt = stt;
+    }
+
 }

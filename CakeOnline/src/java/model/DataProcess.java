@@ -84,36 +84,34 @@ public class DataProcess {
         return f;
     }
     // pkung tung
-        
-    
-    public ArrayList<Cake> getListCake (){
-        ArrayList<Cake> listC = new ArrayList<Cake>();
-        String sql = "SELECT * FROM Product";
+     // pkung tung
+
+    public boolean addProduct(Cake ca) {
+        int result = 0;
+        String sql = "Insert into Product values(?,?,?,?,?,?,?)";
+        Connection conn = getConnection();
         try {
-            ResultSet rs = getConnection().createStatement().executeQuery(sql);
-            while (rs.next()){
-                Cake c = new Cake();
-                c.setIcode(rs.getString("itemcode"));
-                c.setName(rs.getString("name"));
-                c.setPrice(rs.getFloat("price"));
-                c.setEgg(rs.getString("egg"));
-                c.setImg(rs.getString("img"));
-                c.setEvent(rs.getString("_event"));
-                listC.add(c);
-            }
-            rs.close();
+            PreparedStatement pr = conn.prepareStatement(sql);
+            pr.setString(1, ca.getItemCode());
+            pr.setString(2, ca.getName());
+            pr.setFloat(3, ca.getPrice());
+            pr.setString(4, ca.getEgge());
+            pr.setString(5, ca.getImg());
+            pr.setString(6, ca.getEvent());
+            pr.setString(7,ca.getStt());
+            result = pr.executeUpdate();
+            pr.close();
+            conn.close();
+
         } catch (SQLException ex) {
             Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        return listC;
+        return result > 0;
     }
-    
     public static void main(String[] args) {
-        DataProcess dp = new DataProcess ();
-        for (Cake c : dp.getListCake()){
-            System.out.println("+ "+c.getName());
-        }
+        DataProcess dt = new DataProcess();
+        Cake c = new Cake("asd12", "asdad", 12, "asd", "asdasd", "asdasd", "asdasd");
+        dt.addProduct(c);
     }
     
 }
