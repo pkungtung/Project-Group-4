@@ -53,13 +53,13 @@
                                     <figure class="effect-steve">
                                         <img src="${p.img}" height="400" width="400" alt="img"/>
                                         <figcaption>
-                                            <h2>${p.name}</h2>
-                                            <p style="margin: 80px 0 0 0">dat hang</p>
+<!--                                            <h2>${p.name}</h2>-->
+                                            <p style="margin: 130px 0 0 0">dat hang</p>
                                             <a href="Home.jsp">Order</a>
                                         </figcaption>	
                                         <figcaption>
                                             <!--                                                    							<h2>Lonely <span>Steve</span></h2>-->
-                                            <p style="margin: 60px 0 0 0"> Chi tiet san pham</p>
+                                            <p style="margin: 50px 0 0 0"> Chi tiet san pham</p>
                                             <a href="Detail.jsp?id=${p.itemCode}">View more</a>
                                         </figcaption>	
                                     </figure>

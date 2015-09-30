@@ -1174,7 +1174,7 @@ p a {
     line-height: 30px;
 }
 
-#header div div div form input#search {
+#header div div div form input.search {
     background: url(../images/input-search.gif) no-repeat 0 0;
     border: 0;
     height: 30px;

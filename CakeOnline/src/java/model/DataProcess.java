@@ -5,11 +5,13 @@
  */
 package model;
 
+import Entity.Cake;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -82,5 +84,36 @@ public class DataProcess {
         return f;
     }
     // pkung tung
+        
+    
+    public ArrayList<Cake> getListCake (){
+        ArrayList<Cake> listC = new ArrayList<Cake>();
+        String sql = "SELECT * FROM Product";
+        try {
+            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            while (rs.next()){
+                Cake c = new Cake();
+                c.setIcode(rs.getString("itemcode"));
+                c.setName(rs.getString("name"));
+                c.setPrice(rs.getFloat("price"));
+                c.setEgg(rs.getString("egg"));
+                c.setImg(rs.getString("img"));
+                c.setEvent(rs.getString("_event"));
+                listC.add(c);
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return listC;
+    }
+    
+    public static void main(String[] args) {
+        DataProcess dp = new DataProcess ();
+        for (Cake c : dp.getListCake()){
+            System.out.println("+ "+c.getName());
+        }
+    }
     
 }
