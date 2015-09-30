@@ -30,17 +30,16 @@ public class Controller extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Controller</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Controller at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String ac=request.getParameter("ac");
+        if ("add".equals(ac)) {
+            String itemCode =null;
+            String name = null;
+            float price =0;
+            String egg=null;
+            String img = null;
+            String event = null;
+            String stt= null;
+            
         }
     }
 

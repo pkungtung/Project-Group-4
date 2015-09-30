@@ -9,7 +9,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home</title>
+        <title>Add New Product</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME ICONS STYLES-->
@@ -167,26 +167,26 @@
                         <div class="col-md-6" style="margin: auto;">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <form action="../Controller" method="Post">
+                                    <form action="../Controller" method="Post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Item Code</label>
-                                            <input type="text" class="form-control" placeholder="Item Code">
+                                            <input type="text" class="form-control" name="itemcode" placeholder="Item Code">
                                         </div>
                                         <div class="form-group">
                                             <label>Product Name</label>
-                                            <input type="text" class="form-control" placeholder="Name">
+                                            <input type="text" class="form-control" name="name" placeholder="Name">
                                         </div>
                                         <div class="form-group">
                                             <label>Price</label>
-                                            <input type="text" class="form-control" placeholder="Price">
+                                            <input type="text" class="form-control" name="price" placeholder="Price">
                                         </div>
                                         <div class="form-group">
                                             <label>Egge</label>
-                                            <input type="text" class="form-control" placeholder="Egge">
+                                            <input type="text" class="form-control" name="egge" placeholder="Egge">
                                         </div>
                                         <div class="form-group">
                                             <label>Event</label>
-                                            <select class="form-control">
+                                            <select class="form-control" name="event">
                                                 <option>Birthday</option>
                                                 <option>Anniversary</option>
                                                 <option>Engagement</option>
@@ -195,7 +195,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Status</label>
-                                            <select class="form-control">
+                                            <select class="form-control" name="status">
                                                 <option>Show</option>
                                                 <option>Hidden</option>
                                             </select>

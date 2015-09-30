@@ -210,11 +210,11 @@
                                             <c:forEach var="p" items="${list.rows}">
                                                 <tr>
                                                     <td>${p.itemcode}</td>
-                                                    <td><a href="ProductDetail.jsp?id=${p.itemcode}">${p.name}</a></td>
+                                                    <td><a href="AddNew.jsp?id=${p.itemcode}">${p.name}</a></td>
                                                     <td>$ ${p.price}</td>
                                                     <td>${p.egg}</td>
                                                     <td>${p._event}</td>
-                                                    <td>${p.egg}</td>
+                                                    <td>${p.stt}</td>
                                                     <td>
                                                         <button class="btn btn-primary"><i class="fa fa-edit "></i>Edit</button>
                                                         <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
