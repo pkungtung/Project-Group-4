@@ -19,8 +19,6 @@
         <link href="assets/css/font-awesome.css" rel="stylesheet" />
         <!--CUSTOM STYLES-->
         <link href="assets/css/style.css" rel="stylesheet" />
-        <script>
-        </script>
     </head>
     <body>
         <sql:setDataSource var="conn" 

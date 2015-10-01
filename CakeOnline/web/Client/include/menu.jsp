@@ -107,42 +107,40 @@
         );
     });
 </script>
+<!--login-->
+<link href="../Admin/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="../Admin/assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../Admin/assets/js/bootstrap.js" type="text/javascript"></script>
+<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">Signin to Site</h4>
+            </div>
+            <div class="modal-body">
+                <form action="../Controller?ac=signin" method="Post">
+                    <div class="form-group has-success">
+                        <label for="userName">UserName</label>
+                        <input type="text" class="form-control" id="userName" placeholder="UserName">
+                    </div>
+                    <div class="form-group has-warning">
+                        <label for="pass">Password</label>
+                        <input type="password" class="form-control" id="pass" placeholder="Password">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <a href="" class="btn btn-primary">Sign up</a>
+                        <button type="reset" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
+                </form>
+            </div>
 
-<div id="link">
-    <div id="loginContainer" style="margin: 20px 190px -20px 0;">
-        <a href="#" id="loginButton"><span>Login</span><em></em></a>
-        <div style="clear:both"></div>
-        <div id="loginBox">                
-            <form id="loginForm" method="post" action="../Controlle?action=login">
-                <div hidden="visibility">
-                    <input type="text" class="form-control" name="urlPage" value="${urlPage}"/>
-                    <input type="text" class="form-control" name="paramPage" value="${paramPage}"/>
-                </div>
-                <fieldset id="body">
-                    <fieldset>
-                        <label for="InputUserName">Email Address</label>
-                        <input type="text"  name="txtUsername" id="email" />
-                    </fieldset>
-                    <fieldset>
-                        <label for="InputPassword">Password</label>
-                        <input type="password" name="txtPassword" id="password" />
-                    </fieldset>
-                    <label for="checkbox"><input type="checkbox" id="checkbox"/>Remember me</label>
-                    <input type="submit" id="login" value="Sign in" />
-                    <label id="checkbox">or</label>
-                    <input  type="button" value="Sign In with Google" id="login">
-                    <input  type="button" id="login" value="facebook">
-                </fieldset>
-                <span><a href="#">Forgot your password?</a></span>
-            </form>
-        </div>    
+        </div>
     </div>
-    <div id="loginContainer" style="margin: 20px 0 -20px 0;">
-        <a href="Signup.jsp" id="loginButton"><span>Sign up</span><em></em></a>
-        <div style="clear:both"></div>
-    </div> 
 </div>
-
 <div id="header" style="background: #f5f5f5 url(images/bg-body.gif) repeat-x center top;">    
     <div>           
         <div id="top">
@@ -151,7 +149,11 @@
             </div>
 
             <div id="tright">
-
+                <div id="link">
+                    <a href="signup.html">My Account</a>
+                    <a href="index.html">Help</a>
+                    <a href="#" data-toggle="modal" data-target="#myModal" class="last">Sign in</a>
+                </div>
 
                 <form action="Product.jsp?">
                     <input type="text" id="autosearch" class="search" name="autosearch" maxlength="30" />
@@ -159,8 +161,6 @@
                 </form>
             </div>
         </div>
-
-
         <c:choose>
             <c:when test="${path == '/Client/Home.jsp'}">
                 <div id="fdw">
@@ -311,7 +311,7 @@
             </c:otherwise>
         </c:choose>
 
-        <div id="slide" style="height: 240px; z-index: 1; width: 940px;">
+        <div id="slidee" style="height: 260px; z-index: 1; width: 960px;">
             <div class="cycle-slideshow"  style="height: 240px;z-index: 2; width: 940px;"
                  data-cycle-pause-on-hover="true"
                  data-cycle-fx="scrollHorz"
