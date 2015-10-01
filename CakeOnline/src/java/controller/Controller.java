@@ -43,6 +43,13 @@ public class Controller extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String ac = request.getParameter("ac");
+        if ("signin".equals(ac)) {
+           String username = request.getParameter("username");
+           String pass = request.getParameter("pass");
+        }
+        if ("signup".equals(ac)) {
+            
+        }
         if ("add".equals(ac)) {
             String itemCode = null;
             String name = null;

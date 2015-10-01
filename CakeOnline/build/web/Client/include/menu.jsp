@@ -20,6 +20,13 @@
 
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>-->
 <script src="js/login.js"></script>
+
+<!--login-->
+<link href="../Admin/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="../Admin/assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../Admin/assets/js/bootstrap.js" type="text/javascript"></script>
+
 <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
 <c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
 <c:choose>
@@ -27,37 +34,77 @@
         <c:set var="dangnhap" value="${param['dangnhap']}" />
         <c:if test="${dangnhap =='loi'}" >
             <script>
-                alert("Signin Failed");
-                window.location.href = "Signin.jsp";
-            </script>
-        </c:if>
-        <c:if test="${dangnhap =='thanhcong'}" >
+                        alert("Signin Failed");
+                        window.location.href = "Signin.jsp";</script>
+            </c:if>
+            <c:if test="${dangnhap =='thanhcong'}" >
             <script>
-                alert("Dang nhap thanh cong");
-                window.location.href = "Home.jsp";
-            </script>
-        </c:if>
-    </c:when>
-</c:choose>
+                        alert("Dang nhap thanh cong");
+                        window.location.href = "Home.jsp";</script>
+            </c:if>
+        </c:when>
+    </c:choose>
+    <jsp:useBean id="mrBean" class="model.DataProcess" />
 <script>
-    // show and hide sub menu
-    $(function () {
-        $('nav ul li').hover(
-                function () {
+            // show and hide sub menu
+            $(function () {
+            $('nav ul li').hover(
+                    function () {
                     //show its submenu
                     $('ul', this).slideDown(150);
-                },
-                function () {
+                    },
+                    function () {
                     //hide its submenu
                     $('ul', this).slideUp(150);
-                }
-        );
-    });
-//end
-</script>
+                    }
+            );
+            });
+//end    
+////signin
+            function signin(){
+            alert("buc minh qua");
+            }
+    $(function ()){
+    $("singinBtn").click(
+            this.fom.action = "http://localhost:8080/CakeOnline/Client/Product.jsp";
+            this.fom.submit();
+            )
+    });</script>
 <!--Search-->
-<jsp:useBean id="search" class="model.DataProcess" />
+<input type="button" onclick="signin()" value="abc"/>
+<button onclick="signin()">aaa</button>
+<script>
+            function getListSearch() {
 
+            var source = [
+    <c:forEach var="item" items="${mrBean.listCake}">
+            {
+            url: "Detail.jsp?id=${item.itemCode}",
+                    value: "${item.name}"
+            },
+    </c:forEach>
+            ];
+                    return source;
+            }
+
+    $(document).ready(function () {
+    $("input#autosearch").autocomplete(
+    {
+    source: getListSearch(),
+            minLength: 1,
+            delay: 100,
+            autoFocus: false,
+            open: function () {
+            $('.ui-autocomplete').width('250px');
+                    $('.ui-widget-content').css('background', '#E1F7DE');
+                    $('.ui-menu-item a').removeClass('ui-corner-all');
+            },
+            select: function (event, ui) {
+            window.location.href = ui.item.url;
+            }
+    }
+    );
+    });</script>
 
 <style>
     .ui-autocomplete {
@@ -73,46 +120,7 @@
         height: 100px;
     }
 </style>
-
-<script>
-    function getListSearch() {
-
-        var source = [
-    <c:forEach var="item" items="${search.listCake}">
-            {
-                url: "Detail.jsp?id=${item.itemCode}",
-                value: "${item.name}"
-            },
-    </c:forEach>
-        ];
-        return source;
-    }
-
-    $(document).ready(function () {
-        $("input#autosearch").autocomplete(
-                {
-                    source: getListSearch(),
-                    minLength: 1,
-                    delay: 100,
-                    autoFocus: false,
-                    open: function () {
-                        $('.ui-autocomplete').width('250px');
-                        $('.ui-widget-content').css('background', '#E1F7DE');
-                        $('.ui-menu-item a').removeClass('ui-corner-all');
-                    },
-                    select: function (event, ui) {
-                        window.location.href = ui.item.url;
-                    }
-                }
-        );
-    });
-</script>
-<!--login-->
-<link href="../Admin/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-<link href="../Admin/assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
-<script src="../Admin/assets/js/bootstrap.js" type="text/javascript"></script>
-<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;">
+<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background: #9C9C9C;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -120,7 +128,35 @@
                 <h4 class="modal-title" id="myModalLabel">Signin to Site</h4>
             </div>
             <div class="modal-body">
-                <form action="../Controller?ac=signin" method="Post">
+                <form method="Post" id="fom" name="phom">
+                    <div class="form-group has-success">
+                        <label for="userName">UserName</label>
+                        <input type="text" class="form-control" id="userName" placeholder="UserName" name="username">
+                    </div>
+                    <div class="form-group has-warning">
+                        <label for="pass">Password</label>
+                        <input type="password" class="form-control" id="pass" placeholder="Password" name="pass">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="singinBtn" class="btn btn-primary" onclick="signin()">Sign in</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign up</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade in" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background: #9C9C9C;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">Signup to Site</h4>
+            </div>
+            <div class="modal-body">
+                <form action="../Controller?ac=signup" method="Post">
                     <div class="form-group has-success">
                         <label for="userName">UserName</label>
                         <input type="text" class="form-control" id="userName" placeholder="UserName">
@@ -130,10 +166,9 @@
                         <input type="password" class="form-control" id="pass" placeholder="Password">
                     </div>
                     <div class="modal-footer">
+                        <button type="reset" class="btn btn-primary"><i class="fa fa-refresh"></i>  Reset</button>
+                        <button type="submit" class="btn btn-primary">Sign up</button>                        
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <a href="Signup.jsp" class="btn btn-primary">Sign up</a>
-                        <button type="reset" class="btn btn-primary">Reset</button>
-                        <button type="submit" class="btn btn-primary">Sign in</button>
                     </div>
                 </form>
             </div>
@@ -150,7 +185,7 @@
 
             <div id="tright">
                 <div id="link">
-                    <a href="Signup.jsp">My Account</a>
+                    <a href="#" data-toggle="modal" data-target="#signUpModal" >Sign up</a>
                     <a href="index.html">Help</a>
                     <a href="#" data-toggle="modal" data-target="#myModal" class="last">Sign in</a>
                 </div>
@@ -329,4 +364,10 @@
         </div>
     </div>
 </div>
+<sql:setDataSource var="conn" 
+                   driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                   url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
+                   user="sa" 
+                   password="123456"
+                   scope="session"/>
 
