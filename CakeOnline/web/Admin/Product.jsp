@@ -20,7 +20,6 @@
         <!--CUSTOM STYLES-->
         <link href="assets/css/style.css" rel="stylesheet" />
         <script>
-            
         </script>
     </head>
     <body>
@@ -33,6 +32,12 @@
         <sql:query dataSource="${conn}" var="list">
             Select * from Product;
         </sql:query>
+        <c:if test="${param.ac eq 'del'}">
+            <sql:update dataSource="${conn}" var="del">
+                delete from Product where itemcode= '${param.id}'
+            </sql:update>
+            <c:redirect url="Product.jsp"/>
+        </c:if>
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -216,8 +221,28 @@
                                                     <td>${p._event}</td>
                                                     <td>${p.stt}</td>
                                                     <td>
-                                                        <button class="btn btn-primary"><i class="fa fa-edit "></i>Edit</button>
-                                                        <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+                                                        <button class="btn btn-primary btn-sm"><i class="fa fa-edit "></i>Edit</button>
+                                                        <button class="btn btn-danger btn-sm" 
+                                                                data-toggle="modal" 
+                                                                data-target="#myModal">
+                                                            <i class="fa fa-pencil"></i> Delete
+                                                        </button>
+                                                        <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                                        <h4 class="modal-title" id="myModalLabel">Confirm Delete!</h4>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        bạn có muốn xóa vĩnh viễn sản phẩm này không?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                                        <a href="Product.jsp?ac=del&id=${p.itemcode}" class="btn btn-danger btn-sm">Delete</a>                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </c:forEach>    
@@ -249,7 +274,5 @@
         <script src="assets/js/jquery.metisMenu.js"></script>
         <!-- CUSTOM SCRIPTS -->
         <script src="assets/js/custom.js"></script>
-
-
     </body>
 </html>
