@@ -65,7 +65,7 @@
                                     </figure>
 
                                 </div>
-                                <div style="margin-top: 415px;">
+                                <div style="margin-top: 333px; margin-left: 33px;">
                                     <h2><a href="Home.jsp">${p.name}</a></h2>
                                    
                                 </div> 
