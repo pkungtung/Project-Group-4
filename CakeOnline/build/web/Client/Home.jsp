@@ -10,9 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
-
         <jsp:include page="include/menu.jsp" />
-
         <div id="content">
             <div class="home">
                 <div class="aside">

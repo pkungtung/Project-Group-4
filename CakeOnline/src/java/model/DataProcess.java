@@ -83,8 +83,32 @@ public class DataProcess {
         }
         return f;
     }
+
     // pkung tung
-    // pkung tung
+
+    public ArrayList<Cake> getListCake() {
+        ArrayList<Cake> listC = new ArrayList<Cake>();
+        String sql = "SELECT * FROM Product";
+        try {
+            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            while (rs.next()) {
+                Cake c = new Cake();
+                c.setItemCode(rs.getString("itemcode"));
+                c.setName(rs.getString("name"));
+                c.setPrice(rs.getFloat("price"));
+                c.setEgge(rs.getString("egg"));
+                c.setImg(rs.getString("img"));
+                c.setEvent(rs.getString("_event"));
+                c.setStt(rs.getString("stt"));
+                listC.add(c);
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return listC;
+    }
 
     public boolean addProduct(Cake ca) {
         int result = 0;

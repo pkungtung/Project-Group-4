@@ -20,25 +20,25 @@
 
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>-->
 <script src="js/login.js"></script>
-        <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
-        <c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
-        <c:choose>
-        <c:when test="${!empty param.dangnhap}">
-                <c:set var="dangnhap" value="${param['dangnhap']}" />
-                <c:if test="${dangnhap =='loi'}" >
-                    <script>
-                        alert("Signin Failed");
-                        window.location.href = "Signin.jsp";
-                    </script>
-                </c:if>
-                <c:if test="${dangnhap =='thanhcong'}" >
-                    <script>
-                        alert("Dang nhap thanh cong");
-                        window.location.href = "Home.jsp";
-                    </script>
-                </c:if>
-            </c:when>
-        </c:choose>
+<c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
+<c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
+<c:choose>
+    <c:when test="${!empty param.dangnhap}">
+        <c:set var="dangnhap" value="${param['dangnhap']}" />
+        <c:if test="${dangnhap =='loi'}" >
+            <script>
+                alert("Signin Failed");
+                window.location.href = "Signin.jsp";
+            </script>
+        </c:if>
+        <c:if test="${dangnhap =='thanhcong'}" >
+            <script>
+                alert("Dang nhap thanh cong");
+                window.location.href = "Home.jsp";
+            </script>
+        </c:if>
+    </c:when>
+</c:choose>
 <script>
     // show and hide sub menu
     $(function () {
@@ -80,7 +80,7 @@
         var source = [
     <c:forEach var="item" items="${search.listCake}">
             {
-                url: "Detail.jsp?id=${item.icode}",
+                url: "Detail.jsp?id=${item.itemCode}",
                 value: "${item.name}"
             },
     </c:forEach>
@@ -109,38 +109,38 @@
 </script>
 
 <div id="link">
-<div id="loginContainer" style="margin: 20px 190px -20px 0;">
-    <a href="#" id="loginButton"><span>Login</span><em></em></a>
-    <div style="clear:both"></div>
-    <div id="loginBox">                
-        <form id="loginForm" method="post" action="../Controlle?action=login">
-                        <div hidden="visibility">
-                            <input type="text" class="form-control" name="urlPage" value="${urlPage}"/>
-                            <input type="text" class="form-control" name="paramPage" value="${paramPage}"/>
-                        </div>
-            <fieldset id="body">
-                <fieldset>
-                    <label for="InputUserName">Email Address</label>
-                    <input type="text"  name="txtUsername" id="email" />
+    <div id="loginContainer" style="margin: 20px 190px -20px 0;">
+        <a href="#" id="loginButton"><span>Login</span><em></em></a>
+        <div style="clear:both"></div>
+        <div id="loginBox">                
+            <form id="loginForm" method="post" action="../Controlle?action=login">
+                <div hidden="visibility">
+                    <input type="text" class="form-control" name="urlPage" value="${urlPage}"/>
+                    <input type="text" class="form-control" name="paramPage" value="${paramPage}"/>
+                </div>
+                <fieldset id="body">
+                    <fieldset>
+                        <label for="InputUserName">Email Address</label>
+                        <input type="text"  name="txtUsername" id="email" />
+                    </fieldset>
+                    <fieldset>
+                        <label for="InputPassword">Password</label>
+                        <input type="password" name="txtPassword" id="password" />
+                    </fieldset>
+                    <label for="checkbox"><input type="checkbox" id="checkbox"/>Remember me</label>
+                    <input type="submit" id="login" value="Sign in" />
+                    <label id="checkbox">or</label>
+                    <input  type="button" value="Sign In with Google" id="login">
+                    <input  type="button" id="login" value="facebook">
                 </fieldset>
-                <fieldset>
-                    <label for="InputPassword">Password</label>
-                    <input type="password" name="txtPassword" id="password" />
-                </fieldset>
-                 <label for="checkbox"><input type="checkbox" id="checkbox"/>Remember me</label>
-                <input type="submit" id="login" value="Sign in" />
-                <label id="checkbox">or</label>
-                <input  type="button" value="Sign In with Google" id="login">
-		<input  type="button" id="login" value="facebook">
-            </fieldset>
-            <span><a href="#">Forgot your password?</a></span>
-        </form>
-    </div>    
-</div>
-<div id="loginContainer" style="margin: 20px 0 -20px 0;">
-    <a href="Signup.jsp" id="loginButton"><span>Sign up</span><em></em></a>
-    <div style="clear:both"></div>
-</div> 
+                <span><a href="#">Forgot your password?</a></span>
+            </form>
+        </div>    
+    </div>
+    <div id="loginContainer" style="margin: 20px 0 -20px 0;">
+        <a href="Signup.jsp" id="loginButton"><span>Sign up</span><em></em></a>
+        <div style="clear:both"></div>
+    </div> 
 </div>
 
 <div id="header" style="background: #f5f5f5 url(images/bg-body.gif) repeat-x center top;">    
@@ -153,10 +153,10 @@
             <div id="tright">
 
 
-                    <form action="Product.jsp?">
-                        <input type="text" id="autosearch" class="search" name="autosearch" maxlength="30" />
-                        <input type="submit" value="" id="searchbtn" />
-                    </form>
+                <form action="Product.jsp?">
+                    <input type="text" id="autosearch" class="search" name="autosearch" maxlength="30" />
+                    <input type="submit" value="" id="searchbtn" />
+                </form>
             </div>
         </div>
 
@@ -245,7 +245,8 @@
                         </ul>
                     </nav>
                 </div>
-            </c:when>           <c:when test="${path == '/Client/Service.jsp'}">
+            </c:when>          
+            <c:when test="${path == '/Client/Service.jsp'}">
                 <div id="fdw">
                     <nav>
                         <ul>
@@ -265,7 +266,8 @@
                         </ul>
                     </nav>
                 </div>
-            </c:when>           <c:when test="${path == '/Client/Blog.jsp'}">
+            </c:when>          
+            <c:when test="${path == '/Client/Blog.jsp'}">
                 <div id="fdw">
                     <nav>
                         <ul>
