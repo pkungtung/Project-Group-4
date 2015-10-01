@@ -131,7 +131,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <a href="" class="btn btn-primary">Sign up</a>
+                        <a href="Signup.jsp" class="btn btn-primary">Sign up</a>
                         <button type="reset" class="btn btn-primary">Reset</button>
                         <button type="submit" class="btn btn-primary">Sign in</button>
                     </div>
@@ -150,7 +150,7 @@
 
             <div id="tright">
                 <div id="link">
-                    <a href="signup.html">My Account</a>
+                    <a href="Signup.jsp">My Account</a>
                     <a href="index.html">Help</a>
                     <a href="#" data-toggle="modal" data-target="#myModal" class="last">Sign in</a>
                 </div>
