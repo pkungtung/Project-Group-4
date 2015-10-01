@@ -38,7 +38,7 @@ public class DataProcess {
         }
         return conn;
     }
-    
+
     public boolean checkLogin(String user, String pass) {
         String sql = "SELECT * FROM logincake WHERE _user=? and _pass=?";
         try {
@@ -84,7 +84,7 @@ public class DataProcess {
         return f;
     }
     // pkung tung
-     // pkung tung
+    // pkung tung
 
     public boolean addProduct(Cake ca) {
         int result = 0;
@@ -98,7 +98,7 @@ public class DataProcess {
             pr.setString(4, ca.getEgge());
             pr.setString(5, ca.getImg());
             pr.setString(6, ca.getEvent());
-            pr.setString(7,ca.getStt());
+            pr.setString(7, ca.getStt());
             result = pr.executeUpdate();
             pr.close();
             conn.close();
@@ -107,5 +107,50 @@ public class DataProcess {
             Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result > 0;
-    }    
+    }
+
+    public boolean updateProduct(Cake ca) {
+        int result = 0;
+        String sql = "update Product set name=?,price=?,egg=?,img=?,_event=?,stt=? where itemcode=?";
+        Connection conn = getConnection();
+        try {
+            PreparedStatement pr = conn.prepareStatement(sql);
+            pr.setString(1, ca.getName());
+            pr.setFloat(2, ca.getPrice());
+            pr.setString(3, ca.getEgge());
+            pr.setString(4, ca.getImg());
+            pr.setString(5, ca.getEvent());
+            pr.setString(6, ca.getStt());
+            pr.setString(7, ca.getItemCode());
+            result = pr.executeUpdate();
+            pr.close();
+            conn.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return result > 0;
+    }
+
+    public boolean updateProductNoImg(Cake ca) {
+        int result = 0;
+        String sql = "update Product set name=?,price=?,egg=?,_event=?,stt=? where itemcode=?";
+        Connection conn = getConnection();
+        try {
+            PreparedStatement pr = conn.prepareStatement(sql);
+            pr.setString(1, ca.getName());
+            pr.setFloat(2, ca.getPrice());
+            pr.setString(3, ca.getEgge());
+            pr.setString(4, ca.getEvent());
+            pr.setString(5, ca.getStt());
+            pr.setString(6, ca.getItemCode());
+            result = pr.executeUpdate();
+            pr.close();
+            conn.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return result > 0;
+    }
 }

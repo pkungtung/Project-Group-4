@@ -215,13 +215,12 @@
                                             <c:forEach var="p" items="${list.rows}">
                                                 <tr>
                                                     <td>${p.itemcode}</td>
-                                                    <td><a href="AddNew.jsp?id=${p.itemcode}">${p.name}</a></td>
+                                                    <td><a href="Update.jsp?id=${p.itemcode}">${p.name}</a></td>
                                                     <td>$ ${p.price}</td>
                                                     <td>${p.egg}</td>
                                                     <td>${p._event}</td>
                                                     <td>${p.stt}</td>
                                                     <td>
-                                                        <button class="btn btn-primary btn-sm"><i class="fa fa-edit "></i>Edit</button>
                                                         <button class="btn btn-danger btn-sm" 
                                                                 data-toggle="modal" 
                                                                 data-target="#myModal">
@@ -235,7 +234,7 @@
                                                                         <h4 class="modal-title" id="myModalLabel">Confirm Delete!</h4>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        bạn có muốn xóa vĩnh viễn sản phẩm này không?
+                                                                        Do you want to permanently delete?
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

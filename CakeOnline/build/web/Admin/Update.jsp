@@ -1,26 +1,23 @@
 <%-- 
-    Document   : Oder
-    Created on : Sep 29, 2015, 3:32:52 PM
-    Author     : ChungPhung
+    Document   : AddNew
+    Created on : Sep 30, 2015, 1:39:37 AM
+    Author     : PkungTung
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Product</title>
+        <title>Update Product</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME ICONS STYLES-->
         <link href="assets/css/font-awesome.css" rel="stylesheet" />
         <!--CUSTOM STYLES-->
         <link href="assets/css/style.css" rel="stylesheet" />
-        <script>
-        </script>
     </head>
     <body>
         <sql:setDataSource var="conn" 
@@ -28,16 +25,10 @@
                            url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
                            user="sa" 
                            password="123456"
-                           scope="session"/>
-        <sql:query dataSource="${conn}" var="list">
-            Select * from Product;
+                           scope="request"/>
+        <sql:query dataSource="${conn}" var="pro">
+            Select * from Product where itemcode ='${param.id}';
         </sql:query>
-        <c:if test="${param.ac eq 'del'}">
-            <sql:update dataSource="${conn}" var="del">
-                delete from Product where itemcode= '${param.id}'
-            </sql:update>
-            <c:redirect url="Product.jsp"/>
-        </c:if>
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -154,29 +145,20 @@
                         <li>
                             <div class="user-img-div">
                                 <img src="assets/img/user.jpg" class="img-circle" />
-
-
                             </div>
-
                         </li>
                         <li>
                             <a  href="#"> <strong> Phug Van Tung </strong></a>
                         </li>
-
                         <li>
                             <a href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
                         </li>
                         <li>
                             <a href="Order.jsp"><i class="fa fa-venus "></i>Order </a>
-
                         </li>
-
                         <li>
-                            <a class="active-menu"  href="Product.jsp"><i class="fa fa-bolt "></i>Product</a>
-
+                            <a href="Product.jsp"><i class="fa fa-bolt "></i>Product</a>
                         </li>
-
-
                         <li>
                             <a href="Customer.jsp"><i class="fa fa-code "></i>Customer</a>
                         </li>
@@ -184,75 +166,98 @@
                 </div>
 
             </nav>
-            <!-- /. SIDEBAR MENU (navbar-side) -->
             <div id="page-wrapper" class="page-wrapper-cls">
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Product Manager</h1>
+                            <h1 style="color: #ff3333">${pro.rows[0].name}</h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a href="AddNew.jsp" class="btn btn-primary btn-lg">Add New Product</a>
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Code</th>
-                                                <th>Name</th>
-                                                <th>Price</th>
-                                                <th>Egge</th>
-                                                <th>Event</th>
-                                                <th>Status</th>
-                                                <th>Edit</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <c:forEach var="p" items="${list.rows}">
-                                                <tr>
-                                                    <td>${p.itemcode}</td>
-                                                    <td><a href="Update.jsp?id=${p.itemcode}">${p.name}</a></td>
-                                                    <td>$ ${p.price}</td>
-                                                    <td>${p.egg}</td>
-                                                    <td>${p._event}</td>
-                                                    <td>${p.stt}</td>
-                                                    <td>
-                                                        <button class="btn btn-danger btn-sm" 
-                                                                data-toggle="modal" 
-                                                                data-target="#myModal">
-                                                            <i class="fa fa-pencil"></i> Delete
-                                                        </button>
-                                                        <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                                        <h4 class="modal-title" id="myModalLabel">Confirm Delete!</h4>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        Do you want to permanently delete?
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                                        <a href="Product.jsp?ac=del&id=${p.itemcode}" class="btn btn-danger btn-sm">Delete</a>                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </c:forEach>    
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <form action="../Controller?ac=updateProduct" method="Post" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label>Item Code</label>
+                                            <input type="text" readonly="" value="${pro.rows[0].itemcode}" class="form-control" name="itemcode" placeholder="Item Code">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Product Name</label>
+                                            <input type="text" class="form-control" value="${pro.rows[0].name}" name="name" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Price $</label>
+                                            <input type="text" class="form-control" value="${pro.rows[0].price}" name="price" placeholder="Price">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Egge</label>
+                                            <select class="form-control" name="egge">
+                                                <c:if test="${pro.rows[0].egg eq 'yes'}">
+                                                    <option>yes</option>
+                                                    <option>no</option>
+                                                </c:if>
+                                                <c:if test="${pro.rows[0].egg eq 'no'}">
+                                                    <option>no</option>
+                                                    <option>yes</option>
+                                                </c:if>
 
-                                        </tbody>
-                                    </table>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Event</label>
+                                            <select class="form-control" name="event">
+                                                <c:if test="${pro.rows[0]._event eq 'Birthday'}">
+                                                    <option>Birthday</option>
+                                                    <option>Anniversary</option>
+                                                    <option>Engagement</option>
+                                                    <option>Marriage</option>
+                                                </c:if>   
+                                                <c:if test="${pro.rows[0]._event eq 'Anniversary'}">
+                                                    <option>Anniversary</option>
+                                                    <option>Birthday</option>
+                                                    <option>Engagement</option>
+                                                    <option>Marriage</option>
+                                                </c:if>
+                                                <c:if test="${pro.rows[0]._event eq 'Engagement'}">
+                                                    <option>Engagement</option>
+                                                    <option>Birthday</option>
+                                                    <option>Anniversary</option>
+                                                    <option>Marriage</option>
+                                                </c:if>
+                                                <c:if test="${pro.rows[0]._event eq 'Marriage'}">
+                                                    <option>Marriage</option>
+                                                    <option>Birthday</option>
+                                                    <option>Anniversary</option>
+                                                    <option>Engagement</option>
+                                                </c:if>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <select class="form-control" name="status">
+                                                <c:if test="${pro.rows[0].stt eq 'show'}">
+                                                    <option>show</option>
+                                                    <option>hidden</option>
+                                                </c:if>
+                                                <c:if test="${pro.rows[0].egg eq 'hidden'}">
+                                                    <option>hidden</option>
+                                                    <option>show</option>
+                                                </c:if>                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Product Image</label>
+                                            <p><img src="${pro.rows[0].img}" height="100" width="100" alt=""/></p>
+                                            Chang image Product
+                                            <input type="file" id="exampleInputFile" name="file">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Update</button>
+                                        <hr>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-
 
                 </div>
                 <!-- /. PAGE INNER  -->
@@ -273,5 +278,7 @@
         <script src="assets/js/jquery.metisMenu.js"></script>
         <!-- CUSTOM SCRIPTS -->
         <script src="assets/js/custom.js"></script>
+
+
     </body>
 </html>

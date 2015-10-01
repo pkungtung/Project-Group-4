@@ -10,13 +10,15 @@
 <!DOCTYPE html>
 <c:set var="path" value="${pageContext.request.servletPath}" />
 <script src="../jQuery/jquery-2.1.4.min.js" type="text/javascript"></script>
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>-->
-<!--<script src="http://malsup.github.io/jquery.cycle2.js"></script>-->
 <script src="../jQuery/jquery 1.11.1 for cycle2.js" type="text/javascript"></script>
 <script src="../jQuery/jquery.cycle2.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="css/login/style.css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+<link rel="stylesheet" href="css/search/jquery-ui.css" type="text/css"/>
+<script src="js/search/jquery-ui.js"></script>
+<script src="js/search/jquery.ui.autocomplete.accentFolding.js"></script>
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>-->
 <script src="js/login.js"></script>
         <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
         <c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
@@ -53,6 +55,59 @@
     });
 //end
 </script>
+<!--Search-->
+<jsp:useBean id="search" class="model.DataProcess" />
+
+
+<style>
+    .ui-autocomplete {
+        max-height: 200px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+    }
+    /* IE 6 doesn't support max-height
+     * we use height instead, but this forces the menu to always be this tall
+     */
+    * html .ui-autocomplete {
+        height: 100px;
+    }
+</style>
+
+<script>
+    function getListSearch() {
+
+        var source = [
+    <c:forEach var="item" items="${search.listCake}">
+            {
+                url: "Detail.jsp?id=${item.icode}",
+                value: "${item.name}"
+            },
+    </c:forEach>
+        ];
+        return source;
+    }
+
+    $(document).ready(function () {
+        $("input#autosearch").autocomplete(
+                {
+                    source: getListSearch(),
+                    minLength: 1,
+                    delay: 100,
+                    autoFocus: false,
+                    open: function () {
+                        $('.ui-autocomplete').width('250px');
+                        $('.ui-widget-content').css('background', '#E1F7DE');
+                        $('.ui-menu-item a').removeClass('ui-corner-all');
+                    },
+                    select: function (event, ui) {
+                        window.location.href = ui.item.url;
+                    }
+                }
+        );
+    });
+</script>
+
 <div id="link">
 <div id="loginContainer" style="margin: 20px 190px -20px 0;">
     <a href="#" id="loginButton"><span>Login</span><em></em></a>
@@ -66,11 +121,11 @@
             <fieldset id="body">
                 <fieldset>
                     <label for="InputUserName">Email Address</label>
-                    <input type="text"  name="txtusername" id="email" />
+                    <input type="text"  name="txtUsername" id="email" />
                 </fieldset>
                 <fieldset>
                     <label for="InputPassword">Password</label>
-                    <input type="password" name="password" id="password" />
+                    <input type="password" name="txtPassword" id="password" />
                 </fieldset>
                  <label for="checkbox"><input type="checkbox" id="checkbox"/>Remember me</label>
                 <input type="submit" id="login" value="Sign in" />
@@ -98,10 +153,10 @@
             <div id="tright">
 
 
-                <form action="Product.jsp?">
-                    <input type="text" id="search" name="search" maxlength="30" />
-                    <input type="submit" value="" id="searchbtn" />
-                </form>
+                    <form action="Product.jsp?">
+                        <input type="text" id="autosearch" class="search" name="autosearch" maxlength="30" />
+                        <input type="submit" value="" id="searchbtn" />
+                    </form>
             </div>
         </div>
 

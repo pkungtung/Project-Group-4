@@ -14,13 +14,13 @@
 .clearfix:before, .clearfix:after { display: table; content: ''; }
 .clearfix:after { clear: both; }
 
-body {
+/*body {
 	background: #2f3238;
 	color: #fff;
 	font-weight: 400;
 	font-size: 1em;
 	font-family: 'Raleway', Arial, sans-serif;
-}
+}*/
 
 a {
 	outline: none;
@@ -41,7 +41,7 @@ section {
 	margin: 0 auto;
 	max-width: 1000px;
 }
-
+/*
 .content > h2 {
 	clear: both;
 	margin: 0;
@@ -53,7 +53,7 @@ section {
 
 .content > h2:first-child {
 	padding-top: 0em;
-}
+}*/
 
 /* Header */
 .codrops-header {

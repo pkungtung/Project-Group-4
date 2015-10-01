@@ -66,16 +66,13 @@
 	opacity: 0;
 }
 
-.grid figure h2 {
-	word-spacing: -0.15em;
-	font-weight: 300;
-}
 
-.grid figure h2 span {
+
+.grid figure  span {
 	font-weight: 800;
 }
 
-.grid figure h2,
+
 .grid figure p {
 	margin: 0;
 }
@@ -96,8 +93,7 @@ figure.effect-steve {
 	background: #000;
 }
 
-figure.effect-steve:before,
-figure.effect-steve h2:before {
+figure.effect-steve:before {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -127,21 +123,18 @@ figure.effect-steve img {
 	transform: perspective(1000px) translate3d(0,0,0);
 }
 
-figure.effect-steve h2,
+
 figure.effect-steve p {
 	background: #fff;
 	color: #2d434e;
 }
 
-figure.effect-steve h2 {
+/*figure.effect-steve h2 {
 	position: relative;
 	margin-top: 2em;
 	padding: 0.25em;
-}
+}*/
 
-figure.effect-steve h2:before {
-	box-shadow: 0 1px 10px rgba(0,0,0,0.5);
-}
 
 figure.effect-steve p {
 	margin-top: 1em;

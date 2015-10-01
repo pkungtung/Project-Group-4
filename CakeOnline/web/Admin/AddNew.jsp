@@ -1,7 +1,7 @@
 <%-- 
     Document   : AddNew
     Created on : Sep 30, 2015, 1:39:37 AM
-    Author     : ChungPhung
+    Author     : PkungTung
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
