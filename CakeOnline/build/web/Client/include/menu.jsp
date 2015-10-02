@@ -13,14 +13,11 @@
 <script src="../jQuery/jquery 1.11.1 for cycle2.js" type="text/javascript"></script>
 <script src="../jQuery/jquery.cycle2.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="css/login/style.css" />
 <link rel="stylesheet" href="css/search/jquery-ui.css" type="text/css"/>
 <script src="js/search/jquery-ui.js"></script>
 <script src="js/search/jquery.ui.autocomplete.accentFolding.js"></script>
 
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>-->
-<script src="js/login.js"></script>
-
 <!--login-->
 <link href="../Admin/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 <link href="../Admin/assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
@@ -28,23 +25,7 @@
 <script src="../Admin/assets/js/bootstrap.js" type="text/javascript"></script>
 
 <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
-<c:set var="paramPage" value="${pageContext.request.getQueryString()}" />
-<c:choose>
-    <c:when test="${!empty param.dangnhap}">
-        <c:set var="dangnhap" value="${param['dangnhap']}" />
-        <c:if test="${dangnhap =='loi'}" >
-            <script>
-                alert("Signin Failed");
-                window.location.href = "Signin.jsp";</script>
-            </c:if>
-            <c:if test="${dangnhap =='thanhcong'}" >
-            <script>
-                alert("Dang nhap thanh cong");
-                window.location.href = "Home.jsp";</script>
-            </c:if>
-        </c:when>
-    </c:choose>
-    <jsp:useBean id="mrBean" class="model.DataProcess" />
+<jsp:useBean id="mrBean" class="model.DataProcess" />
 <script type="text/javascript">
     // show and hide sub menu
     $(function () {
@@ -83,7 +64,7 @@
                     autoFocus: false,
                     open: function () {
                         $('.ui-autocomplete').width('250px');
-                        $('.ui-widget-content').css('background', '#E1F7DE');
+                        $('.ui-widget-content').css('background', '#fff');
                         $('.ui-menu-item a').removeClass('ui-corner-all');
                     },
                     select: function (event, ui) {

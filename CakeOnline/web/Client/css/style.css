@@ -338,6 +338,7 @@ p a {
     height: 420px;
     padding: 20px;
     width: 430px;
+    height: auto;
 }
 
 #content div.home div.section div {
@@ -346,6 +347,7 @@ p a {
     height: 395px;
     padding: 5px 20px 20px;
     width: 200px;
+    height: auto;
 }
 
 #content div.home div.section div h2 {
@@ -899,8 +901,8 @@ p a {
 
 #footer div.home div div.section div div {
     background: url(../images/bg-featured-heading.gif) no-repeat center top;
-    padding: 75px 20px 0;
-    width: 431px;
+    padding: 92px 19px 0;
+    width: 470px;
 }
 
 #footer div.home div div.section div div h3 {

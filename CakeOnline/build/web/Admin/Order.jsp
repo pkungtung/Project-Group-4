@@ -145,19 +145,16 @@
                         </li>
 
                         <li>
-                            <a  href="Home.jsp"><i class="fa fa-dashboard "></i>Home</a>
+                            <a href="Home.jsp"><i class="fa fa-home "></i>Home</a>
                         </li>
                         <li>
-                            <a class="active-menu" href="Oder.jsp"><i class="fa fa-venus "></i>Order </a>
-
-                        </li>
-
-                        <li>
-                            <a href="Product.jsp"><i class="fa fa-bolt "></i>Product</a>
-
+                            <a class="active-menu" href="Order.jsp"><i class="fa fa-cart-plus "></i>Order </a>
                         </li>
                         <li>
-                            <a href="Customer.jsp"><i class="fa fa-code "></i>Customer</a>
+                            <a href="Product.jsp"><i class="fa fa-birthday-cake "></i>Product</a>
+                        </li>
+                        <li>
+                            <a href="Customer.jsp"><i class="fa fa-user "></i>Customer</a>
                         </li>
                     </ul>
                 </div>

@@ -66,3 +66,12 @@ create table member(
 	
 	
 )
+create table feedback(
+	id int primary key identity(1,1),
+	name varchar(50),
+	email varchar(30),
+	sub varchar(50),
+	content varchar(max)
+)
+select *from feedback
+insert into feedback values('asd','asd','asdasd','asdasd');

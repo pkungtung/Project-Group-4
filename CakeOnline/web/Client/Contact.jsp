@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!DOCTYPE html>
 
 <html>
@@ -14,6 +16,18 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
+        <sql:setDataSource var="conn" 
+                           driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                           url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
+                           user="sa" 
+                           password="123456"
+                           scope="session"/>
+        <c:if test="${param.ac eq 'feedback'}">
+            <sql:update dataSource="${conn}" var="del">
+                insert into feedback values('${param.name}','${param.email}','${param.sub}','${param.content}');
+            </sql:update>
+            <c:redirect url="Home.jsp"/>
+        </c:if>
         <jsp:include page="include/menu.jsp" />
         <div id="content">
             <div id="suatex">
@@ -24,12 +38,12 @@
                         <a href="" class="visit">visit the shop</a>
                     </div>
                 </div>
-                <form action="#">
+                <form action="Contact.jsp?ac=feedback" method="Post">
                     <p>If you need assistance feel free to e-mail us. <span>Mauris dictum congque porta. Duis dapibus tellus id dolor fringilla et viverra nibh semper. Praesent sit amet lacus tortor.</span></p>
-                    <input type="text" maxlength="30" value="Name" class="textcontact coninput" />
-                    <input type="text" maxlength="30" value="E-mail Address" class="textcontact coninput" />
-                    <input type="text" maxlength="30" value="Subject" class="textcontact coninput" />
-                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    <input type="text" maxlength="30" name="name" placeholder="Name" class="textcontact coninput" />
+                    <input type="text" maxlength="30" name="email" placeholder="E-mail Address" class="textcontact coninput" />
+                    <input type="text" maxlength="30" name="sub" placeholder="Subject" class="textcontact coninput" />
+                    <textarea name="content" cols="30" rows="10"></textarea>
                     <input type="submit" value="" class="submit" />
                 </form>
             </div>
