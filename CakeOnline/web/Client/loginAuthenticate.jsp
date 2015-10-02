@@ -26,14 +26,14 @@
         </sql:query>
         <c:choose>
             <c:when test="${empty sql.rows}">
-                <c:redirect url="Product.jsp" >
-                    <c:param name="errMsg" value="Username/password does not match" />
+                <c:redirect url="${sessionScope.urlPage}" >
+                    <c:param name="checkLogin" value="failed" />
                 </c:redirect>
 
             </c:when>
             <c:otherwise>
                 <c:set scope="session" var="loginUser" value="${param.username}"/>
-                <c:redirect url="Home.jsp"/>
+                <c:redirect url="${sessionScope.urlPage}"/>
             </c:otherwise>
         </c:choose>    
     </body>

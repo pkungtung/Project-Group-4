@@ -24,9 +24,26 @@
 <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../Admin/assets/js/bootstrap.js" type="text/javascript"></script>
 
-<c:set var="urlPage" value="${pageContext.request.getRequestURL()}" />
+<c:set var="urlPage" value="${pageContext.request.getRequestURL()}" scope="session" />
 <jsp:useBean id="mrBean" class="model.DataProcess" />
+<c:if test="${!empty param.checkLogin}">
+    <script>
+        $(function () {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById('myModalLabel').innerHTML = "UserName or Password incorrect";
+            document.getElementById('myModalLabel').style.color = "#cc0000";
+        });
+
+    </script>
+</c:if>
 <script type="text/javascript">
+    function di() {
+        $(function () {
+            document.getElementById("myModal").style.display = "none";
+            document.getElementById('myModalLabel').innerHTML = "Signin to Site";
+            document.getElementById('myModalLabel').style.color = "#000";
+        });
+    }
     // show and hide sub menu
     $(function () {
         $('nav ul li').hover(
@@ -113,19 +130,7 @@
         } else {
             return false;
         }
-        //check Login
-        document.onload = load();
-        function loadtrang() {
-            alert("ok");
-        }
     }
-    <%--<c:set var="test" value="${mrBean.checkLogin(pram.u,param.p)}"/>--%>
-//            var login = <c:out value="${test}"/>
-//            var login = [value: ${mrBean.checkLogin(userName, password)};];
-//    $(function () {
-//        $('#singinBtn').click(function () {
-//        });
-//    });
 </script>
 <style>
     .ui-autocomplete {
@@ -141,11 +146,11 @@
         height: 100px;
     }
 </style>
-<div onchange="onchangeFunction()" class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background: #9C9C9C;background-color:rgba(0, 0, 0, 0.6);">
+<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background: #9C9C9C;background-color:rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <button type="button" onclick="di()" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title" id="myModalLabel">Signin to Site</h4>
             </div>
             <div class="modal-body">
@@ -161,7 +166,7 @@
                     <div class="modal-footer">
                         <button type="button" id="singinBtn" class="btn btn-primary" onclick="signin()">Sign in</button>
                         <button type="button" class="btn btn-primary"data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
-                        <button type="button" class="btn btn-default" onclick="resetField()" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" onclick="di()()" data-dismiss="modal">Close</button>
                     </div>
                 </form>
             </div>
@@ -220,7 +225,7 @@
                             <a href="#" data-toggle="modal" data-target="#myModal" class="last">Sign in</a>
                         </c:when>
                         <c:otherwise>
-                            <a href="#" class="last">Sign Out</a>
+                            <a href="../Controller?ac=logout" class="last">Sign out</a>
                         </c:otherwise>
                     </c:choose>
                 </div>

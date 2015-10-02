@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.DataProcess;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -43,12 +44,10 @@ public class Controller extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String ac = request.getParameter("ac");
-        if ("signin".equals(ac)) {
-           String username = request.getParameter("username");
-           String pass = request.getParameter("pass");
-        }
-        if ("signup".equals(ac)) {
-            
+        if ("logout".equals(ac)) {
+            HttpSession session = request.getSession();
+            session.removeAttribute("loginUser");
+            response.sendRedirect("/CakeOnline/Client/Home.jsp");
         }
         if ("add".equals(ac)) {
             String itemCode = null;
