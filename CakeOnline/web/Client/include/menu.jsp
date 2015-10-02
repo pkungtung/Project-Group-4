@@ -34,81 +34,117 @@
         <c:set var="dangnhap" value="${param['dangnhap']}" />
         <c:if test="${dangnhap =='loi'}" >
             <script>
-                        alert("Signin Failed");
-                        window.location.href = "Signin.jsp";</script>
+                alert("Signin Failed");
+                window.location.href = "Signin.jsp";</script>
             </c:if>
             <c:if test="${dangnhap =='thanhcong'}" >
             <script>
-                        alert("Dang nhap thanh cong");
-                        window.location.href = "Home.jsp";</script>
+                alert("Dang nhap thanh cong");
+                window.location.href = "Home.jsp";</script>
             </c:if>
         </c:when>
     </c:choose>
     <jsp:useBean id="mrBean" class="model.DataProcess" />
-<script>
-            // show and hide sub menu
-            $(function () {
-            $('nav ul li').hover(
-                    function () {
+<script type="text/javascript">
+    // show and hide sub menu
+    $(function () {
+        $('nav ul li').hover(
+                function () {
                     //show its submenu
                     $('ul', this).slideDown(150);
-                    },
-                    function () {
+                },
+                function () {
                     //hide its submenu
                     $('ul', this).slideUp(150);
-                    }
-            );
-            });
-//end    
-////signin
-            function signin(){
-            alert("buc minh qua");
-            }
-    $(function ()){
-    $("singinBtn").click(
-            this.fom.action = "http://localhost:8080/CakeOnline/Client/Product.jsp";
-            this.fom.submit();
-            )
-    });</script>
-<!--Search-->
-<input type="button" onclick="signin()" value="abc"/>
-<button onclick="signin()">aaa</button>
-<script>
-            function getListSearch() {
+                }
+        );
+    });
+//end   
+    //search a Muoi
+    function getListSearch() {
 
-            var source = [
+        var source = [
     <c:forEach var="item" items="${mrBean.listCake}">
             {
-            url: "Detail.jsp?id=${item.itemCode}",
-                    value: "${item.name}"
+                url: "Detail.jsp?id=${item.itemCode}",
+                value: "${item.name}"
             },
     </c:forEach>
-            ];
-                    return source;
-            }
+        ];
+        return source;
+    }
 
     $(document).ready(function () {
-    $("input#autosearch").autocomplete(
-    {
-    source: getListSearch(),
-            minLength: 1,
-            delay: 100,
-            autoFocus: false,
-            open: function () {
-            $('.ui-autocomplete').width('250px');
-                    $('.ui-widget-content').css('background', '#E1F7DE');
-                    $('.ui-menu-item a').removeClass('ui-corner-all');
-            },
-            select: function (event, ui) {
-            window.location.href = ui.item.url;
-            }
+        $("input#autosearch").autocomplete(
+                {
+                    source: getListSearch(),
+                    minLength: 1,
+                    delay: 100,
+                    autoFocus: false,
+                    open: function () {
+                        $('.ui-autocomplete').width('250px');
+                        $('.ui-widget-content').css('background', '#E1F7DE');
+                        $('.ui-menu-item a').removeClass('ui-corner-all');
+                    },
+                    select: function (event, ui) {
+                        window.location.href = ui.item.url;
+                    }
+                }
+        );
+    });
+    //signin
+    function signin() {
+        $('#fomSignin').submit();
     }
-    );
-    });</script>
+    $(function () {
+//        $('#singinBtn').click(function () {
+//        });
 
+    });
+    function resetField() {
+        document.getElementById('usernamelb').innerHTML = "UserName";
+        document.getElementById('usernamelb').style.color = "#000";
+        document.getElementById('passlb').innerHTML = "Password";
+        document.getElementById('passlb').style.color = "#000";
+        document.getElementById("username").value = "";
+        document.getElementById("pass").value = "";
+    }
+    function validateSignIn() {
+        var userName = document.getElementById('username').value;
+        var pass = document.getElementById('pass').value;
+        var f = false;
+        var f2 = false;
+        if (userName === null || userName === "") {
+            document.getElementById('usernamelb').innerHTML = "UserName not Blank";
+            document.getElementById('usernamelb').style.color = "#cc0000";
+            f = false;
+        } else {
+            document.getElementById('usernamelb').innerHTML = "UserName";
+            document.getElementById('usernamelb').style.color = "#000";
+            f = true;
+        }
+        if (pass === null || pass === "") {
+            document.getElementById('passlb').innerHTML = "Password not Blank";
+            document.getElementById('passlb').style.color = "#cc0000";
+            f2 = false;
+        } else {
+            document.getElementById('passlb').innerHTML = "Password";
+            document.getElementById('passlb').style.color = "#000";
+            f2 = true;
+        }
+        if (f && f2) {
+//            var login = value: ${mrBean.checkLogin(userName, pass)};
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+
+</script>
 <style>
     .ui-autocomplete {
-        max-height: 200px;
+        max-height: 300px;
         overflow-y: auto;
         /* prevent horizontal scrollbar */
         overflow-x: hidden;
@@ -120,27 +156,27 @@
         height: 100px;
     }
 </style>
-<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background: #9C9C9C;">
-    <div class="modal-dialog">
+<div onchange="onchangeFunction()" class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background: #9C9C9C;background-color:rgba(0, 0, 0, 0.6);">
+    <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title" id="myModalLabel">Signin to Site</h4>
             </div>
             <div class="modal-body">
-                <form method="Post" id="fom" name="phom">
+                <form name="phom" action="#?ac=signin" method="Post" id="fomSignin" onsubmit="return  validateSignIn()">
                     <div class="form-group has-success">
-                        <label for="userName">UserName</label>
-                        <input type="text" class="form-control" id="userName" placeholder="UserName" name="username">
+                        <label for="userName" id="usernamelb">UserName</label>
+                        <input type="text" class="form-control" id="username" placeholder="UserName" name="username"/>
                     </div>
                     <div class="form-group has-warning">
-                        <label for="pass">Password</label>
-                        <input type="password" class="form-control" id="pass" placeholder="Password" name="pass">
+                        <label for="password" id="passlb">Password</label>
+                        <input type="password" class="form-control" id="pass" placeholder="Password" name="pass"/>
                     </div>
                     <div class="modal-footer">
                         <button type="button" id="singinBtn" class="btn btn-primary" onclick="signin()">Sign in</button>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Sign up</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
+                        <button type="button" class="btn btn-default" onclick="resetField()" data-dismiss="modal">Close</button>
                     </div>
                 </form>
             </div>
@@ -148,7 +184,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade in" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background: #9C9C9C;">
+<div class="modal fade in" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background-color:rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

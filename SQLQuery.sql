@@ -11,8 +11,8 @@ create table Product
 	_event varchar(30),
 	stt varchar(10)
 )
-select * from Product
-
+select * from Product where itemcode = 'tc1'
+update Product set name='tung' where itemcode = 'tc1'
 insert into Product values('tc1', 'Fashion Happy Birthday Cake For Girls', 100, 'yes', '../imgProduct/1fashion-happy-birthday-cake-for-girls.png', 'Birthday','show')
 insert into Product values('tc2', 'GELATO BIRTHDAY CAKE', 56, 'no', '../imgProduct/1gelato.jpg', 'Birthday','show')
 insert into Product values('tc3', 'Oreo Birthday Cake', 75, 'no', '../imgProduct/1oreo-birthday-cakeac15.png', 'Birthday','show')
@@ -61,3 +61,8 @@ create table logincake(
 insert into logincake values('admin','123456','muoinv@gmail.com' ,'admin')
 insert into logincake values('user1','123456','muoinv@gmail.com' ,'user')
 select * from logincake
+
+create table member(
+	
+	
+)
