@@ -73,15 +73,10 @@
                 }
         );
     });
-    //signin
+    //signin button click
     function signin() {
         $('#fomSignin').submit();
     }
-    $(function () {
-//        $('#singinBtn').click(function () {
-//        });
-
-    });
     function resetField() {
         document.getElementById('usernamelb').innerHTML = "UserName";
         document.getElementById('usernamelb').style.color = "#000";
@@ -114,14 +109,23 @@
             f2 = true;
         }
         if (f && f2) {
-//            var login = value: ${mrBean.checkLogin(userName, pass)};
             return true;
         } else {
             return false;
         }
+        //check Login
+        document.onload = load();
+        function loadtrang() {
+            alert("ok");
+        }
     }
-</script>
-
+    <%--<c:set var="test" value="${mrBean.checkLogin(pram.u,param.p)}"/>--%>
+//            var login = <c:out value="${test}"/>
+//            var login = [value: ${mrBean.checkLogin(userName, password)};];
+//    $(function () {
+//        $('#singinBtn').click(function () {
+//        });
+//    });
 </script>
 <style>
     .ui-autocomplete {
@@ -145,7 +149,7 @@
                 <h4 class="modal-title" id="myModalLabel">Signin to Site</h4>
             </div>
             <div class="modal-body">
-                <form name="phom" action="#?ac=signin" method="Post" id="fomSignin" onsubmit="return  validateSignIn()">
+                <form action="loginAuthenticate.jsp?ac=signin" method="Post" id="fomSignin" onsubmit="return  validateSignIn()">
                     <div class="form-group has-success">
                         <label for="userName" id="usernamelb">UserName</label>
                         <input type="text" class="form-control" id="username" placeholder="UserName" name="username"/>
@@ -193,7 +197,7 @@
         </div>
     </div>
 </div>
-<div id="header" style="background: #f5f5f5 url(images/bg-body.gif) repeat-x center top;">    
+<div onload="loadtrang()" id="header" style="background: #f5f5f5 url(images/bg-body.gif) repeat-x center top;">    
     <div>           
         <div id="top">
             <div id="logo">
@@ -202,9 +206,23 @@
 
             <div id="tright">
                 <div id="link">
-                    <a href="#" data-toggle="modal" data-target="#signUpModal" >Sign up</a>
-                    <a href="index.html">Help</a>
-                    <a href="#" data-toggle="modal" data-target="#myModal" class="last">Sign in</a>
+                    <c:choose>
+                        <c:when test="${empty sessionScope.loginUser}">
+                            <a href="#" data-toggle="modal" data-target="#signUpModal" >Sign up</a>
+                        </c:when>
+                        <c:otherwise>
+                            <a href="#" >Hi, ${sessionScope.loginUser}</a>
+                        </c:otherwise>
+                    </c:choose>
+                    <a href="Contact.jsp">Help</a>
+                    <c:choose>
+                        <c:when test="${empty sessionScope.loginUser}">
+                            <a href="#" data-toggle="modal" data-target="#myModal" class="last">Sign in</a>
+                        </c:when>
+                        <c:otherwise>
+                            <a href="#" class="last">Sign Out</a>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
 
                 <form action="Product.jsp?">
@@ -381,10 +399,3 @@
         </div>
     </div>
 </div>
-<sql:setDataSource var="conn" 
-                   driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
-                   url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
-                   user="sa" 
-                   password="123456"
-                   scope="session"/>
-

@@ -52,7 +52,10 @@ public class DataProcess {
         }
         return false;
     }
-
+    public static void main(String[] args) {
+        DataProcess dt = new DataProcess();
+        dt.checkLogin("admin", "123456");
+    }
     public String checkAdmin(String user) {
         String sql = "SELECT _level FROM logincake WHERE _user='" + user + "'";
         try {
