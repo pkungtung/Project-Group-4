@@ -23,10 +23,10 @@
                            password="123456"
                            scope="session"/>
         <c:if test="${param.ac eq 'feedback'}">
-            <sql:update dataSource="${conn}" var="del">
+            <sql:update dataSource="${conn}" var="sql" scope="request">
                 insert into feedback values('${param.name}','${param.email}','${param.sub}','${param.content}');
             </sql:update>
-            <c:redirect url="Home.jsp"/>
+            <c:redirect url="${sessionScope.urlPage}"/>
         </c:if>
         <jsp:include page="include/menu.jsp" />
         <div id="content">

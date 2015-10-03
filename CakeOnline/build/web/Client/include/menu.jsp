@@ -36,12 +36,33 @@
 
     </script>
 </c:if>
+<c:if test="${param.singup eq 'ok'}">
+    <script>
+        $(function () {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById('myModalLabel').innerHTML = "Signup success, now you can signin!";
+            document.getElementById('myModalLabel').style.color = "#0033CC";
+        });
+    </script>
+</c:if>
+<c:if test="${param.singup eq 'exist'}">
+    <script>
+        $(function () {
+            document.getElementById("signUpModal").style.display = "block";
+            document.getElementById('myModalSignupLabel').innerHTML = "Username exist, please input again!";
+            document.getElementById('myModalSignupLabel').style.color = "#cc0000";
+        });
+    </script>
+</c:if>
 <script type="text/javascript">
-    function di() {
+    function resetModal() {
         $(function () {
             document.getElementById("myModal").style.display = "none";
             document.getElementById('myModalLabel').innerHTML = "Signin to Site";
             document.getElementById('myModalLabel').style.color = "#000";
+            document.getElementById('signUpModal').style.display = "none";
+            document.getElementById('myModalSignupLabel').innerHTML = "Signup to Site";
+            document.getElementById('myModalSignupLabel').style.color = "#000";
         });
     }
     // show and hide sub menu
@@ -150,7 +171,7 @@
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" onclick="di()" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <button type="button" onclick="resetModal()" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title" id="myModalLabel">Signin to Site</h4>
             </div>
             <div class="modal-body">
@@ -166,7 +187,7 @@
                     <div class="modal-footer">
                         <button type="button" id="singinBtn" class="btn btn-primary" onclick="signin()">Sign in</button>
                         <button type="button" class="btn btn-primary"data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
-                        <button type="button" class="btn btn-default" onclick="di()()" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" onclick="resetModal()" data-dismiss="modal">Close</button>
                     </div>
                 </form>
             </div>
@@ -178,23 +199,39 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Signup to Site</h4>
+                <button type="button" onclick="resetModal()" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalSignupLabel">Signup to Site</h4>
             </div>
             <div class="modal-body">
-                <form action="../Controller?ac=signup" method="Post">
-                    <div class="form-group has-success">
+                <form action="loginAuthenticate.jsp?ac=signup" method="Post">
+                    <div class="form-group">
                         <label for="userName">UserName</label>
-                        <input type="text" class="form-control" id="userName" placeholder="UserName">
+                        <input type="text" class="form-control" id="userName" placeholder="UserName" name="userName"/>
                     </div>
-                    <div class="form-group has-warning">
+                    <div class="form-group">
                         <label for="pass">Password</label>
-                        <input type="password" class="form-control" id="pass" placeholder="Password">
+                        <input type="password" class="form-control" id="pass" placeholder="Password" name="pass"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Name" name="name"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Email" name="email"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="Address" name="address"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Phone Number" name="number"/>
                     </div>
                     <div class="modal-footer">
-                        <button type="reset" class="btn btn-primary"><i class="fa fa-refresh"></i>  Reset</button>
-                        <button type="submit" class="btn btn-primary">Sign up</button>                        
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="reset" class="btn btn-warning"><i class="fa fa-refresh"></i>  Reset</button>
+                        <button type="submit" class="btn btn-warning">Sign up</button>                        
+                        <button type="button" onclick="resetModal()" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </form>
             </div>

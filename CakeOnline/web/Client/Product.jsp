@@ -30,7 +30,7 @@
         <c:choose>
             <c:when test="${empty param.event}">
                 <sql:query dataSource="${conn}" var="list">
-                    Select * from Product;
+                    Select * from Product where stt='show';
                 </sql:query>
             </c:when>
             <c:otherwise>

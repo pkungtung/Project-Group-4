@@ -51,7 +51,7 @@ insert into Product values('tc35', 'Italian Pie', 8, 'no', '../imgProduct/5itali
 insert into Product values('tc36', 'Velvet Cup Cake', 8, 'no', '../imgProduct/5sweetcupcake.jpg', 'Dessert','show')
 
 
-create table logincake(
+create drop table logincake(
 	_id int primary key identity (1,1),
 	_user varchar(50) unique not null,
 	_pass varchar(50) not null,
@@ -62,10 +62,18 @@ insert into logincake values('admin','123456','muoinv@gmail.com' ,'admin')
 insert into logincake values('user1','123456','muoinv@gmail.com' ,'user')
 select * from logincake
 
-create table member(
-	
-	
+create table Customer(
+	username varchar(50) primary key,
+	pass varchar(50),
+	name varchar(50),
+	email varchar(30),
+	addr varchar(50),
+	number varchar(15),
+	member varchar(5)
 )
+insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes')
+
+
 create table feedback(
 	id int primary key identity(1,1),
 	name varchar(50),
