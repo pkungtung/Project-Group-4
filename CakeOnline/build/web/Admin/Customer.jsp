@@ -167,8 +167,66 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="alert alert-warning">
-                                Viết content vào đây
+                            <h1 class="page-head-line">Product Manager</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a href="AddNew.jsp" class="btn btn-primary btn-lg">Add New Product</a>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Code</th>
+                                                <th>Name</th>
+                                                <th>Price</th>
+                                                <th>Egge</th>
+                                                <th>Event</th>
+                                                <th>Status</th>
+                                                <th>Edit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <c:forEach var="p" items="${list.rows}">
+                                            <tr>
+                                                <td>${p.itemcode}</td>
+                                                <td><a href="Update.jsp?id=${p.itemcode}">${p.name}</a></td>
+                                                <td>$ ${p.price}</td>
+                                                <td>${p.egg}</td>
+                                                <td>${p._event}</td>
+                                                <td>${p.stt}</td>
+                                                <td>
+                                                    <button class="btn btn-danger btn-sm" 
+                                                            data-toggle="modal" 
+                                                            data-target="#myModal">
+                                                        <i class="fa fa-pencil"></i> Delete
+                                                    </button>
+                                                    <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                                    <h4 class="modal-title" id="myModalLabel">Confirm Delete!</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Do you want to permanently delete?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                                    <a href="Product.jsp?ac=del&id=${p.itemcode}" class="btn btn-danger btn-sm">Delete</a>                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>    
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
