@@ -58,9 +58,9 @@
                     </div>
                 </div>
                 <div id="sidebar">
-                    <h2>Archives</h2>
-                    <h3 class="first"><a href="Home.jsp">2011 <span>(60)</span></a></h3>
-                    <div>
+                    <h2 id="bog">Archives</h2>
+                    <h3 class="first" id="bogfile"><a href="Home.jsp" id="down">2011 <span>(60)</span></a></h3>
+                    <div id="bogrigh">
                         <p><a href="Home.jsp">November <span>(11)</span></a></p>
                         <p><a href="Home.jsp">October <span>(3)</span></a></p>
                         <p><a href="Home.jsp">September <span>(8)</span></a></p>

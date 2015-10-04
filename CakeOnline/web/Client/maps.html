@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=vi"></script>
+<script type="text/javascript">
+    var map;
+    function initialize() {
+        var myLatlng = new google.maps.LatLng(10.777999, 106.683254);
+
+        var myOptions = {
+            zoom: 16,
+            center: myLatlng,
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(document.getElementById("10maps"), myOptions);
+        var text;
+        var namecompany = "Cửa Hàng The cake";
+        var address = "61 Tú Xương - P.7 - Q.3 - TPHCM. Tel 08. 22005000";
+        var note = "";
+        var mapTitle = document.createElement("div");
+        if (namecompany != " ") {
+            text = '<font style="line-height:20px;"><b><font color="green">' + namecompany + '</font></b><br><b>Địa chỉ: </b>' + address + '<br>' + (note != '' ? '<br><font color="red"><b>Ghi chú: </b></font><font color="blue">' + note + '</font>' : '') + '</font>';
+        }
+        var infowindow = new google.maps.InfoWindow(
+   { content: text,
+       size: new google.maps.Size(100, 50),
+       position: myLatlng
+   });
+        infowindow.open(map);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: "61 Tú Xương - P.7 - Q.3 - TPHCM. Tel 08. 22005000"
+        });
+    }
+</script>
+</head>
+<body onload="initialize()">
+    <div id="10maps" style="width:570px; height: 400px; margin: 0px; padding: 0px; text-align: left;">
+    </div>
+</body>
+</html>
