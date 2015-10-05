@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,6 +21,21 @@
         <link href="assets/css/style.css" rel="stylesheet" />
     </head>
     <body>
+        <sql:setDataSource var="conn" 
+                           driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                           url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
+                           user="sa" 
+                           password="123456"
+                           scope="session"/>
+        <sql:query dataSource="${conn}" var="item">
+            Select * from Customer;
+        </sql:query>
+        <c:if test="${param.ac eq 'del1'}">
+            <sql:update dataSource="${conn}" var="del1">
+                delete from Customer where username= '${param.id}'
+            </sql:update>
+            <c:redirect url="Product.jsp"/>
+        </c:if>
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -180,24 +197,25 @@
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
-                                                <th>Code</th>
+                                                <th>User Name</th>
                                                 <th>Name</th>
-                                                <th>Price</th>
-                                                <th>Egge</th>
-                                                <th>Event</th>
-                                                <th>Status</th>
-                                                <th>Edit</th>
+                                                <th>password</th>
+                                                <th>Email</th>
+                                                <th>Addr</th>
+                                                <th>Number</th>
+                                                <th>Member</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach var="p" items="${list.rows}">
+                                        <c:forEach var="p" items="${item.rows}">
                                             <tr>
-                                                <td>${p.itemcode}</td>
-                                                <td><a href="Update.jsp?id=${p.itemcode}">${p.name}</a></td>
-                                                <td>$ ${p.price}</td>
-                                                <td>${p.egg}</td>
-                                                <td>${p._event}</td>
-                                                <td>${p.stt}</td>
+                                                <td>${p.username}</td>
+                                                 <td>${p.pass}</td>
+                                                <td><a href="Update.jsp?id=${p.username}">${p.name}</a></td>
+                                                <td>${p.email}</td>
+                                                <td>${p.addr}</td>
+                                                <td>${p.number}</td>
+                                                <td>${p.member}</td>
                                                 <td>
                                                     <button class="btn btn-danger btn-sm" 
                                                             data-toggle="modal" 
@@ -216,7 +234,7 @@
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                                    <a href="Product.jsp?ac=del&id=${p.itemcode}" class="btn btn-danger btn-sm">Delete</a>                                                                    </div>
+                                                                    <a href="Customer.jsp?ac=del1&id=${p.username}" class="btn btn-danger btn-sm">Delete</a>                                                                    </div>
                                                             </div>
                                                         </div>
                                                     </div>
