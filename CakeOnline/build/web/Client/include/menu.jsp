@@ -369,12 +369,12 @@
                  data-cycle-timeout="1200"
                  data-cycle-slides="> a"
                  >
-                <a href="Home.jsp"><img src="images/wedding-cupcakes-small.jpg" height="240" width="940" alt="Image"/></a>
-                <a href="#"><img src="images/healthy.jpg" width="940" height="240" /></a>
-                <a href="#"><img src="images/cakes1.jpg" width="940" height="240" /></a>
-                <a href="#"><img src="images/dog.jpg" width="940" height="240" /></a>
-                <a href="#"><img src="images/Star.jpg" width="940" height="240" /></a>
-                <a href="#"><img src="images/valentine-day-cake.jpg" width="940" height="240" /></a>
+                <a href="Detail.jsp?id=tc27"><img src="images/wedding-cupcakes-small.jpg" height="240" width="940" alt="Image"/></a>
+                <a href="Detail.jsp?id=tc30"><img src="images/healthy.jpg" width="940" height="240" /></a>
+                <a href="Detail.jsp?id=tc29"><img src="images/cakes1.jpg" width="940" height="240" /></a>
+                <a href="Detail.jsp?id=tc23"><img src="images/dog.jpg" width="940" height="240" /></a>
+                <a href="Detail.jsp?id=tc36"><img src="images/sweetcupcake.jpg" width="940" height="240" /></a>
+                <a href="Detail.jsp?id=tc26"><img src="images/valentine-day-cake.jpg" width="940" height="240" /></a>
             </div>
         </div>
     </div>
