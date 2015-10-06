@@ -289,7 +289,7 @@
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
                             <li><a href="Contact.jsp">contact us</a></li>
-                            <li><a href="Service.jsp">Service</a></li>
+                            <li><a href="maps.jsp">Store Location</a></li>
                             <li><a href="Blog.jsp">Blog</a></li>
                         </ul>
                     </nav>
@@ -310,7 +310,7 @@
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
                             <li><a href="Contact.jsp">contact us</a></li>
-                            <li><a href="Service.jsp">Service</a></li>
+                            <li><a href="maps.jsp">Store Location</a></li>
                             <li><a href="Blog.jsp">Blog</a></li>
                         </ul>
                     </nav>
@@ -331,7 +331,7 @@
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
                             <li class="current"><a href="Contact.jsp">contact us</a></li>
-                            <li><a href="Service.jsp">Service</a></li>
+                            <li><a href="maps.jsp">Store Location</a></li>
                             <li><a href="Blog.jsp">Blog</a></li>
                         </ul>
                     </nav>
@@ -352,13 +352,13 @@
                             </li>
                             <li class="current"><a href="About.jsp">About Us</a></li>
                             <li><a href="Contact.jsp">contact us</a></li>
-                            <li><a href="Service.jsp">Service</a></li>
+                            <li><a href="maps.jsp">Store Location</a></li>
                             <li><a href="Blog.jsp">Blog</a></li>
                         </ul>
                     </nav>
                 </div>
             </c:when>          
-            <c:when test="${path == '/Client/Service.jsp'}">
+            <c:when test="${path == '/Client/maps.jsp'}">
                 <div id="fdw">
                     <nav>
                         <ul>
@@ -373,7 +373,7 @@
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
                             <li><a href="Contact.jsp">contact us</a></li>
-                            <li class="current"><a href="Service.jsp">Service</a></li>
+                            <li class="current"><a href="maps.jsp">Store Location</a></li>
                             <li><a href="Blog.jsp">Blog</a></li>
                         </ul>
                     </nav>
@@ -394,7 +394,7 @@
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
                             <li><a href="Contact.jsp">contact us</a></li>
-                            <li><a href="Service.jsp">Service</a></li>
+                            <li><a href="maps.jsp">Store Location</a></li>
                             <li class="current"><a href="Blog.jsp">Blog</a></li>
                         </ul>
                     </nav>

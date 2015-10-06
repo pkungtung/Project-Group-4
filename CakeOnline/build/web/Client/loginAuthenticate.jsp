@@ -22,6 +22,7 @@
                            password="123456"
                            scope="session"/>
         <c:if test="${param.ac eq 'signup'}">
+
             <sql:query dataSource="${conn}" var="user" scope="request">
                 select username from Customer;
             </sql:query>
@@ -29,7 +30,7 @@
                 <c:if test="${param.userName eq cus.username}">
                     <c:redirect url="${urlPage}">
                         <c:param name="singup" value="exist"/>
-                    </c:redirect>
+                    </c:redirect>         
                 </c:if>
                 <sql:update dataSource="${conn}" var="insert">
                     insert into Customer values('${param.userName}','${param.pass}','${param.name}','${param.email}','${param.address}','${param.number}','no');
@@ -37,7 +38,12 @@
                 <c:redirect url="${urlPage}">
                     <c:param name="singup" value="ok"/>
                 </c:redirect>
+                <c:redirect url="${urlPage}">
+                    <c:param name="singup" value="ok"/>
+                </c:redirect>  
             </c:forEach>
+
+
         </c:if>
         <c:if test="${param.ac eq 'signin'}">
             <sql:query dataSource="${conn}" var="sql" scope="request">

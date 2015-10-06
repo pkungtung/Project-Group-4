@@ -599,7 +599,103 @@ p a {
     width: 200px;
 }
 
-#content div#blog div#sidebar h2 {
+#content div#blog div#maps {
+    float: right;
+    padding: 20px 0 0 11px;
+    width: 200px;
+}
+
+.chinhanh {
+    border: 2px solid #D9D9D9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px;
+    position: relative;
+    /*height:330px;*/
+    margin-bottom: 20px;
+    background: #fff;
+}
+#chinhanh-head {
+    background: url(../images/head-right.png) no-repeat;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 200px;
+    height: 30px;
+    line-height: 29px;
+    padding-left: 60px;
+    font-weight: bold;
+    color: #bf1e2e;
+    z-index: 1;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+}
+#head-right-icon {
+    position: absolute;
+    z-index: 10;
+    top: -29px;
+    left: 0px;
+}
+.chinhanhbando {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.hotline {
+    font-weight: bold;
+    color: #bf1e2e;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.hotro-item {
+    width: 185px;
+}
+.hotro-item h2 {
+    background: url(../images/a.png) no-repeat left center;
+    font-weight: bold;
+    margin: 0px 0px 0px 10px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.qc-left {
+    margin-top: 25px;
+    position: relative;
+    height: 45px;
+}
+.qc-left span {
+    position: absolute;
+    z-index: 10;
+    background: #EBE9EA;
+    left: 10px;
+    padding: 0px 5px;
+    line-height: 20px;
+}
+    .qc {
+        width: 183px;
+        position: absolute;
+        z-index: 0;
+        top: 30px;
+        border-top: 1px solid #ADADAD;
+    }
+    .qc {
+    margin: 5px 0px;
+    overflow: hidden;
+}
+.truycap {
+    background: url(../images/tktc.png) no-repeat;
+    width: 19px;
+    height: 30px;
+    padding: 0px 0px 0px 4px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    float: left;
+    margin-top: 3px;
+}
+
+//het maps
+
+#content div#blog div#sidebar h2#bog {
     background: url(../images/sidebar-separator.gif) no-repeat center bottom;
     font-size: 18px;
     font-weight: normal;
@@ -607,7 +703,7 @@ p a {
     padding-bottom: 15px;
 }
 
-#content div#blog div#sidebar h3 {
+#content div#blog div#sidebar h3#bogfile {
     background: url(../images/sidebar-separator.gif) no-repeat center bottom;
     font-size: 18px;
     font-weight: normal;
@@ -625,7 +721,7 @@ p a {
     color: #cf8fa7;
 }
 
-#content div#blog div#sidebar h3 a {
+#content div#blog div#sidebar h3 a#down {
     background: url(../images/arrow-down.gif) no-repeat 175px 5px;
     display: block;
     color: #ff2279;
@@ -649,7 +745,7 @@ p a {
     margin: 0;
 }
 
-#content div#blog div#sidebar div {
+#content div#blog div#sidebar div#bogrigh {
     background: url(../images/sidebar-separator.gif) no-repeat center bottom;
     padding-right: 0;
     padding-bottom: 15px;

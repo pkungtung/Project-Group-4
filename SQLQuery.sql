@@ -51,7 +51,8 @@ insert into Product values('tc35', 'Italian Pie', 8, 'no', '../imgProduct/5itali
 insert into Product values('tc36', 'Velvet Cup Cake', 8, 'no', '../imgProduct/5sweetcupcake.jpg', 'Dessert','show')
 
 create table Customer(
-	username varchar(50) primary key,
+	CusId int identity(1,1)  primary key,
+	username varchar(50),
 	pass varchar(50),
 	name varchar(50),
 	email varchar(30),
@@ -60,6 +61,7 @@ create table Customer(
 	member varchar(5)
 )
 select *from Customer
+drop table Customer
 insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes')
 insert into Customer values('tien','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','yes')
 
