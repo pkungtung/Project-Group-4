@@ -9,7 +9,6 @@ import Entity.Cake;
 import Entity.Cart;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,8 +47,10 @@ public class Controller extends HttpServlet {
         if ("addCart".equals(ac)) {
             String id = request.getParameter("id");
             String quantity = request.getParameter("quantity");
+            System.out.println(id + " sao ko co gì nhỉ " + quantity);
+
             HttpSession session = request.getSession();
-            Cart cd = (Cart) session.getAttribute("card");
+            Cart cd = (Cart) session.getAttribute("cart");
             if (cd == null) {
                 cd = new Cart();
             }
@@ -59,6 +60,7 @@ public class Controller extends HttpServlet {
                 cd.addCart(id, quantity);
             }
             session.setAttribute("cart", cd);
+            System.out.println(id + " sao ko co gì nhỉ " + quantity);
             response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
         }
         if ("logout".equals(ac)) {

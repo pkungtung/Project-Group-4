@@ -19,6 +19,12 @@
         <link rel="stylesheet" type="text/css" href="css/set2.css" />
     </head>
     <body>
+        <sql:setDataSource var="conn" 
+                           driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                           url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
+                           user="sa" 
+                           password="123456"
+                           scope="session"/>
         <c:choose>
             <c:when test="${empty param.event}">
                 <sql:query dataSource="${conn}" var="list">
