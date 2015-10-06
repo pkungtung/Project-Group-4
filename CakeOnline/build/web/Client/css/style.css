@@ -670,14 +670,14 @@ p a {
     padding: 0px 5px;
     line-height: 20px;
 }
-    .qc {
-        width: 183px;
-        position: absolute;
-        z-index: 0;
-        top: 30px;
-        border-top: 1px solid #ADADAD;
-    }
-    .qc {
+.qc {
+    width: 183px;
+    position: absolute;
+    z-index: 0;
+    top: 30px;
+    border-top: 1px solid #ADADAD;
+}
+.qc {
     margin: 5px 0px;
     overflow: hidden;
 }
@@ -986,8 +986,8 @@ p a {
 #footer div.section div div.connect {
     float: right;
     height: auto;
-    margin-top: 85px;
-    width: 430px;
+    margin-top: 55px;
+    width: 450px;
 }
 
 #footer div.home div div.section div {
@@ -1492,131 +1492,139 @@ p a {
 
 }
 #content div ul li div div.grid figure {
-	position: relative;
-	float: left;
-	overflow: hidden;
-	margin: 10px 1%;
-	min-width: 320px;
-	max-width: 480px;
-	max-height: 360px;
-	width: 48%;
-	height: auto;
-	background: #3085a3;
-	text-align: center;
-	cursor: pointer;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 320px;
+    max-width: 480px;
+    max-height: 360px;
+    width: 48%;
+    height: auto;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
 }
 #content div ul li div div.grid figure img {
-	position: relative;
-	display: block;
-	min-height: 100%;
-	max-width: 100%;
-	opacity: 0.8;
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.8;
 }
 #content div ul li div div.grid figure figcaption {
-	padding: 2em;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1.25em;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 .grid figure figcaption::before,
 .grid figure figcaption::after {
-	pointer-events: none;
+    pointer-events: none;
 }
 #content div ul li div div.grid figure figcaption > a {
-	z-index: 1000;
-	text-indent: 200%;
-	white-space: nowrap;
-	font-size: 0;
-	opacity: 0;
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
 }
 .grid figure figcaption,
 .grid figure figcaption > a {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 .grid figure p {
-	letter-spacing: 1px;
-	font-size: 68.5%;
-        margin: 0;
+    letter-spacing: 1px;
+    font-size: 68.5%;
+    margin: 0;
 }
 figure.effect-steve {
-	z-index: auto;
-	overflow: visible;
-	background: #000;
+    z-index: auto;
+    overflow: visible;
+    background: #000;
 }
 figure.effect-steve:before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	background: #000;
-	contentx: '';
-	-webkit-transition: opacity 0.35s;
-	transition: opacity 0.35s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    contentx: '';
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
 }
 figure.effect-steve:before {
-	box-shadow: 0 3px 30px rgba(0,0,0,0.8);
-	opacity: 0;
+    box-shadow: 0 3px 30px rgba(0,0,0,0.8);
+    opacity: 0;
 }
 figure.effect-steve figcaption {
-	z-index: 1;
+    z-index: 1;
 }
 figure.effect-steve img {
-	opacity: 1;
-	-webkit-transition: -webkit-transform 0.35s;
-	transition: transform 0.35s;
-	-webkit-transform: perspective(1000px) translate3d(0,0,0);
-	transform: perspective(1000px) translate3d(0,0,0);
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: perspective(1000px) translate3d(0,0,0);
+    transform: perspective(1000px) translate3d(0,0,0);
 }
 figure.effect-steve p {
-	background: #FFF0F5;
-	color: #2d434e;
+    background: #FFF0F5;
+    color: #2d434e;
 }
 figure.effect-steve p {
-	margin-top: 1em;
-	padding: 0.5em;
-	font-weight: 800;
-	opacity: 0;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: scale3d(0.9,0.9,1);
-	transform: scale3d(0.9,0.9,1);
+    margin-top: 1em;
+    padding: 0.5em;
+    font-weight: 800;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale3d(0.9,0.9,1);
+    transform: scale3d(0.9,0.9,1);
 }
 figure.effect-steve:hover:before {
-	opacity: 1;
+    opacity: 1;
 }
 
 figure.effect-steve:hover img {
-	-webkit-transform: perspective(1000px) translate3d(0,0,21px);
-	transform: perspective(1000px) translate3d(0,0,21px);
+    -webkit-transform: perspective(1000px) translate3d(0,0,21px);
+    transform: perspective(1000px) translate3d(0,0,21px);
 }
 figure.effect-steve:hover p {
-	opacity: 1;
-	-webkit-transform: scale3d(1,1,1);
-	transform: scale3d(1,1,1);
+    opacity: 1;
+    -webkit-transform: scale3d(1,1,1);
+    transform: scale3d(1,1,1);
 }
 figure.effect-steve:hover h2:before {
-	opacity: 0;
+    opacity: 0;
 }
 
 
 /* Media queries */
 @media screen and (max-width: 50em) {
-	.contentx {
-		padding: 0 10px;
-		text-align: center;
-	}
-	.grid figure {
-		display: inline-block;
-		float: none;
-		margin: 10px auto;
-		width: 100%;
-	}
+    .contentx {
+        padding: 0 10px;
+        text-align: center;
+    }
+    .grid figure {
+        display: inline-block;
+        float: none;
+        margin: 10px auto;
+        width: 100%;
+    }
+}
+.ui-autocomplete {
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+* html .ui-autocomplete {
+    height: 100px;
 }

@@ -37,9 +37,6 @@
                 </sql:update>
                 <c:redirect url="${urlPage}">
                     <c:param name="singup" value="ok"/>
-                </c:redirect>
-                <c:redirect url="${urlPage}">
-                    <c:param name="singup" value="ok"/>
                 </c:redirect>  
             </c:forEach>
 

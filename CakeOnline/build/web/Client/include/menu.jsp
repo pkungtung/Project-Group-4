@@ -24,12 +24,14 @@
 <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../Admin/assets/js/bootstrap.js" type="text/javascript"></script>
 
+<script src="../jQuery/MyJs.js" type="text/javascript"></script>
 <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" scope="session" />
 <jsp:useBean id="mrBean" class="model.DataProcess" />
 <c:if test="${!empty param.checkLogin}">
     <script>
         $(function () {
-            document.getElementById("myModal").style.display = "block";
+            $("#myModal").modal();
+//            document.getElementById("myModal").style.display = "block";
             document.getElementById('myModalLabel').innerHTML = "UserName or Password incorrect";
             document.getElementById('myModalLabel').style.color = "#cc0000";
         });
@@ -39,7 +41,8 @@
 <c:if test="${param.singup eq 'ok'}">
     <script>
         $(function () {
-            document.getElementById("myModal").style.display = "block";
+            $("#myModal").modal();
+//            document.getElementById("myModal").style.display = "block";
             document.getElementById('myModalLabel').innerHTML = "Signup success, now you can signin!";
             document.getElementById('myModalLabel').style.color = "#0033CC";
         });
@@ -48,37 +51,15 @@
 <c:if test="${param.singup eq 'exist'}">
     <script>
         $(function () {
-            document.getElementById("signUpModal").style.display = "block";
+            $("#signUpModal").modal();
+//            document.getElementById("signUpModal").style.display = "block";
             document.getElementById('myModalSignupLabel').innerHTML = "Username exist, please input again!";
             document.getElementById('myModalSignupLabel').style.color = "#cc0000";
         });
     </script>
 </c:if>
 <script type="text/javascript">
-    function resetModal() {
-        $(function () {
-            document.getElementById("myModal").style.display = "none";
-            document.getElementById('myModalLabel').innerHTML = "Signin to Site";
-            document.getElementById('myModalLabel').style.color = "#000";
-            document.getElementById('signUpModal').style.display = "none";
-            document.getElementById('myModalSignupLabel').innerHTML = "Signup to Site";
-            document.getElementById('myModalSignupLabel').style.color = "#000";
-        });
-    }
-    // show and hide sub menu
-    $(function () {
-        $('nav ul li').hover(
-                function () {
-                    //show its submenu
-                    $('ul', this).slideDown(150);
-                },
-                function () {
-                    //hide its submenu
-                    $('ul', this).slideUp(150);
-                }
-        );
-    });
-//end   
+
     //search a Muoi
     function getListSearch() {
 
@@ -93,81 +74,14 @@
         return source;
     }
 
-    $(document).ready(function () {
-        $("input#autosearch").autocomplete(
-                {
-                    source: getListSearch(),
-                    minLength: 1,
-                    delay: 100,
-                    autoFocus: false,
-                    open: function () {
-                        $('.ui-autocomplete').width('250px');
-                        $('.ui-widget-content').css('background', '#fff');
-                        $('.ui-menu-item a').removeClass('ui-corner-all');
-                    },
-                    select: function (event, ui) {
-                        window.location.href = ui.item.url;
-                    }
-                }
-        );
-    });
     //signin button click
-    function signin() {
-        $('#fomSignin').submit();
-    }
-    function resetField() {
-        document.getElementById('usernamelb').innerHTML = "UserName";
-        document.getElementById('usernamelb').style.color = "#000";
-        document.getElementById('passlb').innerHTML = "Password";
-        document.getElementById('passlb').style.color = "#000";
-        document.getElementById("username").value = "";
-        document.getElementById("pass").value = "";
-    }
-    function validateSignIn() {
-        var userName = document.getElementById('username').value;
-        var pass = document.getElementById('pass').value;
-        var f = false;
-        var f2 = false;
-        if (userName === null || userName === "") {
-            document.getElementById('usernamelb').innerHTML = "UserName not Blank";
-            document.getElementById('usernamelb').style.color = "#cc0000";
-            f = false;
-        } else {
-            document.getElementById('usernamelb').innerHTML = "UserName";
-            document.getElementById('usernamelb').style.color = "#000";
-            f = true;
-        }
-        if (pass === null || pass === "") {
-            document.getElementById('passlb').innerHTML = "Password not Blank";
-            document.getElementById('passlb').style.color = "#cc0000";
-            f2 = false;
-        } else {
-            document.getElementById('passlb').innerHTML = "Password";
-            document.getElementById('passlb').style.color = "#000";
-            f2 = true;
-        }
-        if (f && f2) {
-            return true;
-        } else {
-            return false;
-        }
+
+    function showMyCart() {
+        //        document.getElementById("myCart").style.display = "block";
+
     }
 </script>
-<style>
-    .ui-autocomplete {
-        max-height: 300px;
-        overflow-y: auto;
-        /* prevent horizontal scrollbar */
-        overflow-x: hidden;
-    }
-    /* IE 6 doesn't support max-height
-     * we use height instead, but this forces the menu to always be this tall
-     */
-    * html .ui-autocomplete {
-        height: 100px;
-    }
-</style>
-<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background: #9C9C9C;background-color:rgba(0, 0, 0, 0.6);">
+<div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background-color:rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-header">
@@ -239,7 +153,35 @@
         </div>
     </div>
 </div>
-<div onload="loadtrang()" id="header" style="background: #f5f5f5 url(images/bg-body.gif) repeat-x center top;">    
+<div class="modal fade in" id="myCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background: #9C9C9C;background-color:rgba(0, 0, 0, 0.6);">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" onclick="resetModal()" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">My Cart</h4>
+            </div>
+            <div class="modal-body">
+                <form action="loginAuthenticate.jsp?ac=signin" method="Post" id="fomSignin" onsubmit="return  validateSignIn()">
+                    <div class="form-group has-success">
+                        <label for="userName" id="usernamelb">UserName</label>
+                        <input type="text" class="form-control" id="username" placeholder="UserName" name="username"/>
+                    </div>
+                    <div class="form-group has-warning">
+                        <label for="password" id="passlb">Password</label>
+                        <input type="password" class="form-control" id="pass" placeholder="Password" name="pass"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="singinBtn" class="btn btn-primary" onclick="signin()">Sign in</button>
+                        <button type="button" class="btn btn-primary"data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
+                        <button type="button" class="btn btn-default" onclick="resetModal()" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="header" style="background: #f5f5f5 url(images/bg-body.gif) repeat-x center top;">    
     <div>           
         <div id="top">
             <div id="logo">
@@ -250,19 +192,15 @@
                 <div id="link">
                     <c:choose>
                         <c:when test="${empty sessionScope.loginUser}">
-                            <a href="#" data-toggle="modal" data-target="#signUpModal" >Sign up</a>
+                            <a href="#" data-toggle="modal" data-target="#signUpModal"><i class="fa fa-reply-all"></i> Sign up</a>
+                            <a href="About.jsp"  ><i class="fa fa-info"></i> Help</a>
+                            <a href="#" data-toggle="modal" data-target="#myModal" class="last"><i class="fa fa-sign-in"></i> Sign in</a>
                         </c:when>
                         <c:otherwise>
-                            <a href="#" >Hi, ${sessionScope.loginUser}</a>
-                        </c:otherwise>
-                    </c:choose>
-                    <a href="Contact.jsp">Help</a>
-                    <c:choose>
-                        <c:when test="${empty sessionScope.loginUser}">
-                            <a href="#" data-toggle="modal" data-target="#myModal" class="last">Sign in</a>
-                        </c:when>
-                        <c:otherwise>
-                            <a href="../Controller?ac=logout" class="last">Sign out</a>
+                            <a href="#" ><i class="fa fa-user-plus"></i> Profile</a>
+                            <a href="#" data-toggle="modal" data-target="#myCart" onmouseover="showMyCart()"><i class="fa fa-cart-plus "></i> Cart</a>
+                            <a href="../Controller?ac=logout" class="last"><i class="fa fa-sign-out"></i> Sign out</a>
+
                         </c:otherwise>
                     </c:choose>
                 </div>

@@ -44,6 +44,9 @@ public class Controller extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String ac = request.getParameter("ac");
+        if ("addCart".equals(ac)) {
+            
+        }
         if ("logout".equals(ac)) {
             HttpSession session = request.getSession();
             session.removeAttribute("loginUser");
