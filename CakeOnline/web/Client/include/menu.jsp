@@ -25,9 +25,55 @@
 <script src="../Admin/assets/js/bootstrap.js" type="text/javascript"></script>
 
 <script src="../jQuery/MyJs.js" type="text/javascript"></script>
+<sql:setDataSource var="conn" 
+                   driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                   url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
+                   user="sa" 
+                   password="123456"
+                   scope="session"/>
+
 <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" scope="session" />
 <jsp:useBean id="mrBean" class="model.DataProcess" />
-<c:if test="${!empty param.checkLogin}">
+<c:if test="${!empty sessionScope['code']}">
+    <script>
+        $(function () {
+            $("#addCart").modal();
+        });
+
+    </script>
+    <sql:query dataSource="${conn}" var="p" scope="request">
+        Select * from Product where itemcode='${sessionScope.code}';
+    </sql:query>
+    <div class="modal fade in" id="addCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background-color:rgba(0, 0, 0, 0.6);">
+        <div class="modal-dialog" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" onclick="resetModal()" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">${p.rows[0].name}</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="${p.rows[0].img}" height="300" width="300"/>
+                    <form action="../Controller?ac=addCart&id=${p.rows[0].itemcode}" method="Post">
+                        <div class="form-group">
+                            <label for="quantity" id="usernamelb">Quantity</label>
+                            <input type="number" value="1" class="form-control" placeholder="Quantity" name="quantity"/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-warning"><i class="fa fa-shopping-cart"></i>
+                                Add to Cart</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <c:set var="code" scope="session" value="${null}"/>
+</c:if>
+
+<c:if test="${'signinFailed' eq sessionScope.flag}">
+    <c:set var="flag" scope="session" value=""/>
     <script>
         $(function () {
             $("#myModal").modal();
@@ -37,8 +83,10 @@
         });
 
     </script>
+
 </c:if>
-<c:if test="${param.singup eq 'ok'}">
+<c:if test="${'signupOK' eq sessionScope.flag}">
+    <c:set var="flag" scope="session" value=""/>
     <script>
         $(function () {
             $("#myModal").modal();
@@ -48,7 +96,8 @@
         });
     </script>
 </c:if>
-<c:if test="${param.singup eq 'exist'}">
+<c:if test="${'signupExist' eq sessionScope.flag}">
+    <c:set var="flag" scope="session" value=""/>
     <script>
         $(function () {
             $("#signUpModal").modal();

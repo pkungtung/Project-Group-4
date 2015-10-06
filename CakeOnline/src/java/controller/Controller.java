@@ -6,6 +6,7 @@
 package controller;
 
 import Entity.Cake;
+import Entity.Cart;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -45,7 +46,20 @@ public class Controller extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String ac = request.getParameter("ac");
         if ("addCart".equals(ac)) {
-            
+            String id = request.getParameter("id");
+            String quantity = request.getParameter("quantity");
+            HttpSession session = request.getSession();
+            Cart cd = (Cart) session.getAttribute("card");
+            if (cd == null) {
+                cd = new Cart();
+            }
+            if ("1".equals(quantity)) {
+                cd.addItem(id);
+            } else {
+                cd.addCart(id, quantity);
+            }
+            session.setAttribute("cart", cd);
+            response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
         }
         if ("logout".equals(ac)) {
             HttpSession session = request.getSession();

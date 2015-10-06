@@ -21,23 +21,24 @@
                            user="sa" 
                            password="123456"
                            scope="session"/>
+        <c:if test="${param.ac eq 'showModal'}">
+            <c:set var="code" scope="session" value="${param.id}"/>
+            <c:redirect url="${urlPage}"/>
+        </c:if>
         <c:if test="${param.ac eq 'signup'}">
-
             <sql:query dataSource="${conn}" var="user" scope="request">
                 select username from Customer;
             </sql:query>
             <c:forEach var="cus" items="${user.rows}">
                 <c:if test="${param.userName eq cus.username}">
-                    <c:redirect url="${urlPage}">
-                        <c:param name="singup" value="exist"/>
-                    </c:redirect>         
+                    <c:set var="flag" scope="session" value="signupExist"/>
+                    <c:redirect url="${urlPage}"/>
                 </c:if>
                 <sql:update dataSource="${conn}" var="insert">
                     insert into Customer values('${param.userName}','${param.pass}','${param.name}','${param.email}','${param.address}','${param.number}','no');
                 </sql:update>
-                <c:redirect url="${urlPage}">
-                    <c:param name="singup" value="ok"/>
-                </c:redirect>  
+                <c:set var="flag" scope="session" value="signupOK"/>
+                <c:redirect url="${urlPage}"/>
             </c:forEach>
 
 
@@ -48,9 +49,8 @@
             </sql:query>
             <c:choose>
                 <c:when test="${empty sql.rows}">
-                    <c:redirect url="${sessionScope.urlPage}" >
-                        <c:param name="checkLogin" value="failed" />
-                    </c:redirect>
+                    <c:set var="flag" scope="session" value="signinFailed"/>
+                    <c:redirect url="${sessionScope.urlPage}" />
                 </c:when>
                 <c:otherwise>
                     <c:set scope="session" var="loginUser" value="${sql.rows[0].name}"/>
