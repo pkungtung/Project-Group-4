@@ -148,7 +148,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" id="singinBtn" class="btn btn-primary" onclick="signin()">Sign in</button>
-                        <button type="button" class="btn btn-primary"data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
                         <button type="button" class="btn btn-default" onclick="resetModal()" data-dismiss="modal">Close</button>
                     </div>
                 </form>
@@ -191,6 +190,7 @@
                         <input type="text" class="form-control" id="phone" placeholder="Phone Number" name="number"/>
                     </div>
                     <div class="modal-footer">
+                        Already have an account? <a href="loginAuthenticate.jsp?ac=signin">Sign in</a> &nbsp;
                         <button type="reset" class="btn btn-warning"><i class="fa fa-refresh"></i>  Reset</button>
                         <button type="submit" class="btn btn-warning">Sign up</button>                        
                         <button type="button" onclick="resetModal()" class="btn btn-default" data-dismiss="modal">Close</button>
