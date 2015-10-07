@@ -44,11 +44,43 @@ public class Controller extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String ac = request.getParameter("ac");
+        if ("delProduct".equals(ac)) {
+            String id = request.getParameter("id");
+            HttpSession session = request.getSession();
+            Cart cr = (Cart) session.getAttribute("cart");
+            if (cr == null) {
+                cr = new Cart();
+            }
+            cr.deleteProduct(id);
+            response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
+        }
+        if ("delCart".equals(ac)) {
+            HttpSession ss = request.getSession();
+            Cart cr = (Cart) ss.getAttribute("cart");
+            if (cr == null) {
+                cr = new Cart();
+            }
+            cr.delCart();
+            response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
+        }
+        if ("updateCart".equals(ac)) {
+            if (request.getParameterValues("id") != null) {
+                String[] id = request.getParameterValues("id");
+                String[] quantity = request.getParameterValues("quantity");
+                HttpSession session = request.getSession();
+                Cart card = (Cart) session.getAttribute("cart");
+                if (card == null) {
+                    card = new Cart();
+                }
+                card.updateCart(id, quantity);
+                session.setAttribute("cart", card);
+            }
+
+            response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
+        }
         if ("addCart".equals(ac)) {
             String id = request.getParameter("id");
             String quantity = request.getParameter("quantity");
-            System.out.println(id + " sao ko co gì nhỉ " + quantity);
-
             HttpSession session = request.getSession();
             Cart cd = (Cart) session.getAttribute("cart");
             if (cd == null) {
@@ -60,7 +92,6 @@ public class Controller extends HttpServlet {
                 cd.addCart(id, quantity);
             }
             session.setAttribute("cart", cd);
-            System.out.println(id + " sao ko co gì nhỉ " + quantity);
             response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
         }
         if ("logout".equals(ac)) {

@@ -55,7 +55,7 @@
                     <form action="../Controller?ac=addCart&id=${p.rows[0].itemcode}" method="Post">
                         <div class="form-group">
                             <label for="quantity" id="usernamelb">Quantity</label>
-                            <input type="number" value="1" class="form-control" placeholder="Quantity" name="quantity"/>
+                            <input type="number" value="1" min="1" class="form-control" placeholder="Quantity" name="quantity"/>
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-warning"><i class="fa fa-shopping-cart"></i>
