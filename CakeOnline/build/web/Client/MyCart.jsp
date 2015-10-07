@@ -28,12 +28,12 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th></th>
                                 <th>Cake Name</th>
                                 <th>Cake Price</th>
                                 <th>Quantity</th>
                                 <th>Amount</th>  
-                                <th>Remove</th>
+                                <th></th>
 
                             </tr>
                         </thead>

@@ -228,10 +228,10 @@
                     <input type="submit" value="" id="searchbtn" />
                 </form>
                 <a href="MyCart.jsp" 
-                   class="btn btn-default" 
+                   class="btn btn-warning" 
                    style="float: right; width: 100px;" 
                    onmouseover="showMyCart()">
-                    <i class="fa fa-cart-plus "></i> Cart</a>
+                    <i class="fa fa-cart-plus "> </i>&nbsp Cart</a>
             </div>
         </div>
         <c:choose>
