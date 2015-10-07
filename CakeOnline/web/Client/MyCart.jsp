@@ -38,7 +38,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <c:set var="count" value="0"/>
                             <c:forEach var="ct" items="${cart.content}">
                                 <sql:query dataSource="${conn}" var="result">
                                     select * from Product where itemcode= '${ct.key}';
@@ -66,9 +65,7 @@
                             </td>
                         </tr>
                         <tr height="20">
-
                         </tr>
-
                         </tbody>
                     </table> 
                 </form>
