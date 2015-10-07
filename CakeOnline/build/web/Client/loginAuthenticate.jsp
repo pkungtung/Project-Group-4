@@ -53,11 +53,22 @@
                     <c:redirect url="${sessionScope.urlPage}" />
                 </c:when>
                 <c:otherwise>
-                    <c:set scope="session" var="loginUser" value="${sql.rows[0].name}"/>
-                    <c:redirect url="${sessionScope.urlPage}"/>
+                    <c:set scope="session" var="loginUser" value="${sql.rows[0].CusId}"/>
+                    <c:redirect url="${sessionScope.urlPage}">
+                        <c:if test="${!empty sessionScope.tic}">
+                            <c:param name="id" value="${sessionScope.tic}"/>
+                        </c:if>
+                    </c:redirect>
                 </c:otherwise>
             </c:choose> 
         </c:if>
-
+        <c:if test="${param.ac eq 'signout'}">
+            <c:remove var="loginUser"/>
+            <c:redirect url="${sessionScope.urlPage}">
+                <c:if test="${!empty sessionScope.tic}">
+                    <c:param name="id" value="${sessionScope.tic}"/>
+                </c:if>
+            </c:redirect>
+        </c:if>
     </body>
 </html>

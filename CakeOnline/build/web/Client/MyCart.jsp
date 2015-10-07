@@ -46,8 +46,8 @@
                                 <c:forEach var="p" items="${result.rows}">
                                     <tr>
                                         <c:set var="count" value="${count=count+1}"/>
-                                        <td>${count}<input type="hidden" value="${p.itemcode}" name="id"/></td>
-                                        <td>${p.name}</td>          
+                                        <td><img src="${p.img}" height="50px" width="50px"/><input type="hidden" value="${p.itemcode}" name="id"/></td>
+                                        <td><a href="Detail.jsp?id=${p.itemcode}">${p.name}</a></td>          
                                         <td>$ ${p.price}</td>
                                         <td><input type="number" value="${ct.value}" min="1" name="quantity"/></td>
                                         <td>$ ${p.price * ct.value}</td>

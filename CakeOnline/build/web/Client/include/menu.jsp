@@ -213,13 +213,12 @@
                 <div id="link">
                     <c:choose>
                         <c:when test="${empty sessionScope.loginUser}">
-                            <a href="#" data-toggle="modal" data-target="#signUpModal"><i class="fa fa-reply-all"></i> Sign up</a>
+                            <a href="#" data-toggle="modal" data-target="#signUpModal"><i class="fa fa-bars"></i> Sign up</a>
                             <a href="#" data-toggle="modal" data-target="#myModal" class="last"><i class="fa fa-sign-in"></i> Sign in</a>
-                            <a href="About.jsp"  ><i class="fa fa-info"></i> Help</a>
                         </c:when>
                         <c:otherwise>
                             <a href="#" ><i class="fa fa-user-plus"></i> Profile</a>
-                            <a href="../Controller?ac=logout" class="last"><i class="fa fa-sign-out"></i> Sign out</a>
+                            <a href="loginAuthenticate.jsp?ac=signout" class="last"><i class="fa fa-sign-out"></i> Sign out</a>
                         </c:otherwise>
                     </c:choose>
                 </div>

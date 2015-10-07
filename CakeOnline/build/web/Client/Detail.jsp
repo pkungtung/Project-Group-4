@@ -22,6 +22,7 @@
                            user="sa" 
                            password="123456"
                            scope="request"/>
+        <c:set var="tic" value="${param.id}" scope="session"/>
         <sql:query dataSource="${conn}" var="pr">
             Select * from Product where itemcode ='${param.id}';
         </sql:query>
@@ -38,8 +39,14 @@
                         <h3>Price: $ ${pr.rows[0].price}</h3>
                         <h3>Event: ${pr.rows[0]._event}</h3>
                         <p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
-                        <button  data-toggle="modal" data-target="#recipes">Recipes</button>
-
+                        <c:if test="${!empty sessionScope.loginUser}">
+                            <sql:query dataSource="${conn}" var="cus">
+                                Select * from Customer where CusId =${sessionScope.loginUser} and member='yes';
+                            </sql:query>
+                            <c:if test="${!empty cus.rows}">
+                                <button class="btn btn-warning" data-toggle="modal" data-target="#recipes">Recipes</button>
+                            </c:if>
+                        </c:if>
                     </div>
                 </div>
 
@@ -48,7 +55,7 @@
         </div>
         <div class="modal fade in" id="recipes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background-color:rgba(0, 0, 0, 0.6);">
             <div class="modal-dialog" style="width: 880px;margin:auto;">
-                <div class="modal-content">
+                <div class="modal-content" style="background: #FFFAF0;">
                     <div class="modal-header">
                         <button type="button" onclick="resetModal()" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="modal-title" style="color: #ff0066;font-weight: bold;" id="myModalLabel">${pr.rows[0].name}</h4>

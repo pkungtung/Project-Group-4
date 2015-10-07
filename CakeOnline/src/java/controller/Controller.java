@@ -94,11 +94,6 @@ public class Controller extends HttpServlet {
             session.setAttribute("cart", cd);
             response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
         }
-        if ("logout".equals(ac)) {
-            HttpSession session = request.getSession();
-            session.removeAttribute("loginUser");
-            response.sendRedirect("/CakeOnline/Client/Home.jsp");
-        }
         if ("add".equals(ac)) {
             String itemCode = null;
             String name = null;
