@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Oder
-    Created on : Sep 29, 2015, 3:32:52 PM
-    Author     : ChungPhung
+    Document   : DeatailCustomer
+    Created on : Oct 7, 2015, 12:54:17 PM
+    Author     : Pkung
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -72,46 +72,9 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Product Manager</h1>
+                            <h1 class="page-head-line">Customer Manager</h1>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a href="AddNew.jsp" class="btn btn-primary btn-lg">Add New Product</a>
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Code</th>
-                                                <th>Name</th>
-                                                <th>Price</th>
-                                                <th>Egge</th>
-                                                <th>Event</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <c:forEach var="p" items="${list.rows}">
-                                                <tr>
-                                                    <td>${p.itemcode}</td>
-                                                    <td><a href="Update.jsp?id=${p.itemcode}">${p.name}</a></td>
-                                                    <td>$ ${p.price}</td>
-                                                    <td>${p.egg}</td>
-                                                    <td>${p._event}</td>
-                                                    <td>${p.stt}</td>
-                                                </tr>
-                                            </c:forEach>    
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
 
                 </div>
                 <!-- /. PAGE INNER  -->

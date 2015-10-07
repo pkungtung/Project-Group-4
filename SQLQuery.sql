@@ -75,3 +75,12 @@ create table feedback(
 )
 select *from feedback
 insert into feedback values('asd','asd','asdasd','asdasd');
+create table administrator(
+	username varchar(50) primary key,
+	pass varchar(50),
+	name varchar(50),
+	phone varchar(15),
+	email varchar(20),
+	addr varchar(50)
+)
+insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','asdasdasda')
