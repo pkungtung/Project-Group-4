@@ -1628,3 +1628,8 @@ figure.effect-steve:hover h2:before {
 * html .ui-autocomplete {
     height: 100px;
 }
+input[type='number']{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}

@@ -38,19 +38,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <c:set var="count" value="0"/>
                             <c:forEach var="ct" items="${cart.content}">
                                 <sql:query dataSource="${conn}" var="result">
                                     select * from Product where itemcode= '${ct.key}';
                                 </sql:query>
                                 <c:forEach var="p" items="${result.rows}">
                                     <tr>
-                                        <td>${p.itemcode}<input type="hidden" value="${p.itemcode}" name="id"/></td>
+                                        <c:set var="count" value="${count=count+1}"/>
+                                        <td>${count}<input type="hidden" value="${p.itemcode}" name="id"/></td>
                                         <td>${p.name}</td>          
                                         <td>$ ${p.price}</td>
                                         <td><input type="number" value="${ct.value}" min="1" name="quantity"/></td>
                                         <td>$ ${p.price * ct.value}</td>
                                         <td>
-                                            <a href="../Controller?ac=delProduct&id=${p.itemcode}" class="btn btn-default">Remove</a>
+                                            <a href="../Controller?ac=delProduct&id=${p.itemcode}" class="btn btn-danger">Remove</a>
                                         </td>
                                     </tr>
                                 <input type="hidden" value="${total = total + p.price * ct.value}"/>
@@ -60,7 +62,8 @@
                             <td  colspan="3" >Total</td>
                             <td><a href="#" onclick="submitForm()" class="btn btn-default">Update Quantity</a></td>
                             <td>$ ${total}</td>
-                            <td></td>
+                            <td><a href="../Controller?ac=delCart" class="btn btn-danger">Remove All</a>
+                            </td>
                         </tr>
                         <tr height="20">
 
@@ -70,8 +73,7 @@
                     </table> 
                 </form>
                 <div style="float: right;">
-                    <a href="#" class="btn btn-success" style="width: 200px;">Check Out</a>
-                    <a href="../Controller?ac=delCart" class="btn btn-primary">Remove All</a>
+                    <a href="CheckOut.jsp" class="btn btn-success" style="width: 200px;">Check Out</a>
                     <a href="Product.jsp" class="btn btn-primary" >Continus Shopping</a>
 
                 </div>
