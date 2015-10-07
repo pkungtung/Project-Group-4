@@ -201,34 +201,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade in" id="myCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background: #9C9C9C;background-color:rgba(0, 0, 0, 0.6);">
-    <div class="modal-dialog" >
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" onclick="resetModal()" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">My Cart</h4>
-            </div>
-            <div class="modal-body">
-                <form action="loginAuthenticate.jsp?ac=signin" method="Post" id="fomSignin" onsubmit="return  validateSignIn()">
-                    <div class="form-group has-success">
-                        <label for="userName" id="usernamelb">UserName</label>
-                        <input type="text" class="form-control" id="username" placeholder="UserName" name="username"/>
-                    </div>
-                    <div class="form-group has-warning">
-                        <label for="password" id="passlb">Password</label>
-                        <input type="password" class="form-control" id="pass" placeholder="Password" name="pass"/>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" id="singinBtn" class="btn btn-primary" onclick="signin()">Sign in</button>
-                        <button type="button" class="btn btn-primary"data-dismiss="modal" data-toggle="modal" data-target="#signUpModal">Sign up</button>
-                        <button type="button" class="btn btn-default" onclick="resetModal()" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
 
-        </div>
-    </div>
-</div>
 <div id="header" style="background: #f5f5f5 url(images/bg-body.gif) repeat-x center top;">    
     <div>           
         <div id="top">
@@ -241,22 +214,25 @@
                     <c:choose>
                         <c:when test="${empty sessionScope.loginUser}">
                             <a href="#" data-toggle="modal" data-target="#signUpModal"><i class="fa fa-reply-all"></i> Sign up</a>
-                            <a href="About.jsp"  ><i class="fa fa-info"></i> Help</a>
                             <a href="#" data-toggle="modal" data-target="#myModal" class="last"><i class="fa fa-sign-in"></i> Sign in</a>
+                            <a href="About.jsp"  ><i class="fa fa-info"></i> Help</a>
                         </c:when>
                         <c:otherwise>
                             <a href="#" ><i class="fa fa-user-plus"></i> Profile</a>
-                            <a href="#" data-toggle="modal" data-target="#myCart" onmouseover="showMyCart()"><i class="fa fa-cart-plus "></i> Cart</a>
                             <a href="../Controller?ac=logout" class="last"><i class="fa fa-sign-out"></i> Sign out</a>
-
                         </c:otherwise>
                     </c:choose>
                 </div>
 
-                <form action="Product.jsp?">
+                <form action="Product.jsp?" style="margin-right: 100px;top: 60px">
                     <input type="text" id="autosearch" class="search" name="autosearch" maxlength="30" />
                     <input type="submit" value="" id="searchbtn" />
                 </form>
+                <a href="MyCart.jsp" 
+                   class="btn btn-default" 
+                   style="float: right; width: 100px;" 
+                   onmouseover="showMyCart()">
+                    <i class="fa fa-cart-plus "></i> Cart</a>
             </div>
         </div>
         <c:choose>
@@ -401,7 +377,7 @@
                             </li>
                             <li><a href="About.jsp">About Us</a></li>
                             <li><a href="Contact.jsp">contact us</a></li>
-                            <li><a href="Service.jsp">Service</a></li>
+                            <li><a href="maps.jsp">Store Location</a></li>
                             <li><a href="Blog.jsp">Blog</a></li>
                         </ul>
                     </nav>
