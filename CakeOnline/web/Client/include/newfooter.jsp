@@ -19,7 +19,7 @@
                         <div>
                             <div>
                                 <b>Too <span>BUSY</span> to shop?</b>
-                                <a href="signin.jsp">Sign up for free</a>
+                                <a data-toggle="modal" data-target="#signUpModal" href="#">Sign up for free</a>
                                 <p>and we&#39;ll deliver it on your doorstep</p>
                             </div>
                         </div>
