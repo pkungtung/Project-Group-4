@@ -34,9 +34,6 @@
                                 <div>
                                     <span class="date">Dec 3</span>
                                     <span class="connect">
-<!--                                        <a href="http://twitter.com/fwtemplates" target="_blank" class="twitter">Twitter</a>
-                                        <a href="#" target="_blank" class="heart">Heart</a>
-                                        <a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook">Facebook</a>-->
                                         <div class="fb-like" data-href="http://localhost:8080/CakeOnline/Client/Blog.jsp" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true">
     
                                         </div>

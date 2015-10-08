@@ -13,7 +13,19 @@
         <title>Maps</title>
         <link rel="shortcut icon" href="images/logo_footer.png">
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <meta property="fb:app_id"       content="711249222340969" />
+        <meta property="fb:admins" content="100005491393252"/>
     </head>
+       <div id="fb-root"></div>
+       <script>
+               (function(d, s, id) {
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) return;
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.4&appId=711249222340969";
+                 fjs.parentNode.insertBefore(js, fjs);
+               }(document, 'script', 'facebook-jssdk'));
+       </script>
     <body>
         <jsp:include page="include/menu.jsp" />
         <div id="content">
@@ -25,9 +37,9 @@
                                 <div>
                                     <span class="date">Store 1</span>
                                     <span class="connect">
-                                        <a href="http://twitter.com/fwtemplates" target="_blank" class="twitter">Twitter</a>
-                                        <a href="#" target="_blank" class="heart">Heart</a>
-                                        <a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook">Facebook</a>
+                                        <div class="fb-like" data-href="http://localhost:8080/CakeOnline/Client/Blog.jsp" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true">
+    
+                                        </div>
                                     </span>
                                     <h1>61 Tu Xuong - P7 - Q3 - TP.HCM</h1>
                                     <h1>Tel: 08.2200.5000</h1>
@@ -45,11 +57,11 @@
                                 <div>
                                     <span class="date">Store 2</span>
                                     <span class="connect">
-                                        <a href="http://twitter.com/fwtemplates" target="_blank" class="twitter">Twitter</a>
-                                        <a href="#" target="_blank" class="heart">Heart</a>
-                                        <a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook">Facebook</a>
+                                        <div class="fb-like" data-href="http://localhost:8080/CakeOnline/Client/Blog.jsp" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true">
+    
+                                        </div>
                                     </span>
-                                    <h1>251 Kham Thien - Dong Da District - Ha Noi</h1>
+                                    <h1>251 Kham Thien - Dong Da - Ha Noi</h1>
                                     <h1>Tel: 04.2200.5555</h1>
                                     <div style="margin: 0 auto; width: 573px;">
                                         <iframe frameborder="0" scrolling="no" style="top: 0px; width: 573px; height: 400px; border: none; overflow: hidden; margin-bottom: 20px" src="maps3.html"></iframe>
@@ -191,6 +203,15 @@
                                     </tr>
                                     <tr><td style="width: 50%; padding-left:5px;"><b>Lượt truy cập</b></td><td></td></tr><tr><td colspan="2" style="padding-left:5px;"><span class="truycap">2</span><span class="truycap">0</span><span class="truycap">5</span><span class="truycap">1</span><span class="truycap">8</span><span class="truycap">6</span><span class="truycap">1</span><span class="truycap">4</span></td></tr>
                                 </tbody></table>
+                        </div>
+                    </div>
+                    <div class="chinhanh" style="height: auto; margin-bottom: 10px; padding: 0px">
+                        <div class="fb-page" data-href="https://www.facebook.com/thecake2015" data-width="204" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+                            <div class="fb-xfbml-parse-ignore">
+                                <blockquote cite="https://www.facebook.com/thecake2015">
+                                    <a href="https://www.facebook.com/thecake2015">The Cake</a>
+                                </blockquote>
+                            </div>
                         </div>
                     </div>
                 </div>
