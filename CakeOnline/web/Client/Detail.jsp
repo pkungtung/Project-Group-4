@@ -38,9 +38,17 @@
                         <h2>${pr.rows[0].name}</h2>
                         <h3>Price: $ ${pr.rows[0].price}</h3>
                         <h3>Event: ${pr.rows[0]._event}</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
-                        <c:if test="${!empty sessionScope.loginUser}">
-                            <sql:query dataSource="${conn}" var="cus">
+                        <p><h1>Ingredients</h1></p>
+                        <p>225g unsalted butter, softened, plus extra for </p>
+                        <p>350g caster sugar</p>
+                        <p>1 tbsp vanilla extract</p>    
+                        <p>5 large egg whites</p>    
+                        <p>325g plain flour</p>    
+                        <p>25g cornflour</p>    
+                        <p>1½ tbsp baking powder</p>    
+                        <p>250ml buttermilk</p>
+                            <c:if test="${!empty sessionScope.loginUser}">
+                                <sql:query dataSource="${conn}" var="cus">
                                 Select * from Customer where CusId =${sessionScope.loginUser} and member='yes';
                             </sql:query>
                             <c:if test="${!empty cus.rows}">
