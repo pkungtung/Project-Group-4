@@ -26,17 +26,19 @@
     <body>
 
         <jsp:include page="include/menu.jsp" />
+        <c:if test="${param.ac eq 'CusOrder'}">
+            <sql:update dataSource="${conn}" var="sql" scope="request">
+                insert into CusOrder values('${param.name}','${param.number}','${param.address}','${param.ddate}');
+            </sql:update>
+            <c:redirect url="${sessionScope.urlPage}"/>
+        </c:if>
         <div id="content">
             <div class="home">
                 <div class="aside" style="width: 400px; padding: 10px;">
                     <h2 style="text-align: center; color: #0033ff;">Infomation</h2>
-                    <form action="MyCart.jsp" id="cartForm" method="Post">
+                    <form action="MyCart.jsp?ac=CusOrder" id="cartForm" method="Post">
                         <div class="form-group">
                             <label for="">Name</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Address</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
                         </div>
                         <div class="form-group">
@@ -49,7 +51,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Delivery Date</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                            <input type="date" class="form-control" id="exampleInputEmail1" placeholder="">
                         </div>
                         <button type="submit" class="btn btn-warning" style="width: 100px;">Order</button>
 

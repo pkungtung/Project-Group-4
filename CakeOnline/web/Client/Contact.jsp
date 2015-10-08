@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <form action="Contact.jsp?ac=feedback" method="Post">
-                    <p>If you need assistance feel free to e-mail us. <span>Mauris dictum congque porta. Duis dapibus tellus id dolor fringilla et viverra nibh semper. Praesent sit amet lacus tortor.</span></p>
+                    <p>If you need assistance, order or feedback, feel free to e-mail us</p>
                     <input type="text" maxlength="30" name="name" placeholder="Name" class="textcontact coninput" />
                     <input type="text" maxlength="30" name="email" placeholder="E-mail Address" class="textcontact coninput" />
                     <input type="text" maxlength="30" name="sub" placeholder="Subject" class="textcontact coninput" />
