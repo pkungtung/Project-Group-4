@@ -82,6 +82,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/footer.jsp", out, false);
       out.write("\r\n");
+      out.write("        <script src=\"js/chat.js\" type=\"text/javascript\"></script>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
