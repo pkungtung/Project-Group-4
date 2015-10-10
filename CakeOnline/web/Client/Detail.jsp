@@ -25,8 +25,7 @@
         <c:set var="tic" value="${param.id}" scope="session"/>
         <sql:query dataSource="${conn}" var="pr">
             Select * from Product where itemcode ='${param.id}';
-        </sql:query>
-
+        </sql:query> 
         <jsp:include page="include/menu.jsp" />
         <div id="content">
             <div class="home">
@@ -39,12 +38,18 @@
                         <h3>Price: $ ${pr.rows[0].price}</h3>
                         <h3>Event: ${pr.rows[0]._event}</h3>
                         <p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                        <form action="../Controller?ac=addCart&id=${pr.rows[0].itemcode}" method="Post">
+                            <h3 for="quantity" id="usernamelb">Quantity</h3>
+                            <input style="width: 100px;" type="number" value="1" min="1" class="form-control" placeholder="Quantity" name="quantity"/>
+                            <button type="submit" class="btn btn-warning"><i class="fa fa-shopping-cart"></i>
+                                Add to Cart</button>
+                        </form>
                         <c:if test="${!empty sessionScope.loginUser}">
                             <sql:query dataSource="${conn}" var="cus">
                                 Select * from Customer where CusId =${sessionScope.loginUser} and member='yes';
                             </sql:query>
                             <c:if test="${!empty cus.rows}">
-                                <button class="btn btn-warning" data-toggle="modal" data-target="#recipes">Recipes</button>
+                                <button style="margin-top: 10px;" class="btn btn-info" data-toggle="modal" data-target="#recipes">Recipes</button>
                             </c:if>
                         </c:if>
                     </div>

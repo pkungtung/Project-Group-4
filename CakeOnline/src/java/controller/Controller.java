@@ -86,13 +86,20 @@ public class Controller extends HttpServlet {
             if (cd == null) {
                 cd = new Cart();
             }
-            if ("1".equals(quantity)) {
-                cd.addItem(id);
-            } else {
-                cd.addCart(id, quantity);
-            }
+            cd.addCart(id, quantity);
             session.setAttribute("cart", cd);
-            response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
+            response.sendRedirect(session.getAttribute("urlPage").toString() + "?id=" + id);
+        }
+        if ("add1Item".equals(ac)) {
+            String id = request.getParameter("id");
+            HttpSession session = request.getSession();
+            Cart cd = (Cart) session.getAttribute("cart");
+            if (cd == null) {
+                cd = new Cart();
+            }
+            cd.addItem(id);
+            session.setAttribute("cart", cd);
+            response.sendRedirect(session.getAttribute("urlPage").toString());
         }
         if ("add".equals(ac)) {
             String itemCode = null;

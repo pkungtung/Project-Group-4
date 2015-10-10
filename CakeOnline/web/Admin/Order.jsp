@@ -66,10 +66,38 @@
                             <h1 class="page-head-line">Order Manager</h1>
                         </div>
                     </div>
+
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="alert alert-warning">
-                                Viết content vào đây
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>User Name</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Address</th>
+                                                <th>Number</th>
+                                                <th>Member</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <c:forEach var="p" items="${item.rows}">
+                                                <tr>
+                                                    <td>${p.username}</td>
+                                                    <td><a href="DetailAcc.jsp?id=${p.CusId}">${p.name}</a></td>
+                                                    <td>${p.email}</td>
+                                                    <td>${p.addr}</td>
+                                                    <td>${p.number}</td>
+                                                    <td>${p.member}</td>
+                                                </tr>
+                                            </c:forEach>    
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

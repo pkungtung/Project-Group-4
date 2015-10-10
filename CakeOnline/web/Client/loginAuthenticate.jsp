@@ -32,13 +32,20 @@
             <c:forEach var="cus" items="${user.rows}">
                 <c:if test="${param.userName eq cus.username}">
                     <c:set var="flag" scope="session" value="signupExist"/>
-                    <c:redirect url="${urlPage}"/>
-                </c:if>
+                    <c:redirect url="${sessionScope.urlPage}">
+                        <c:if test="${!empty sessionScope.tic}">
+                            <c:param name="id" value="${sessionScope.tic}"/>
+                        </c:if>
+                    </c:redirect>                </c:if>
                 <sql:update dataSource="${conn}" var="insert">
                     insert into Customer values('${param.userName}','${param.pass}','${param.name}','${param.email}','${param.address}','${param.number}','no');
                 </sql:update>
                 <c:set var="flag" scope="session" value="signupOK"/>
-                <c:redirect url="${urlPage}"/>
+                <c:redirect url="${sessionScope.urlPage}">
+                    <c:if test="${!empty sessionScope.tic}">
+                        <c:param name="id" value="${sessionScope.tic}"/>
+                    </c:if>
+                </c:redirect>
             </c:forEach>
 
 
@@ -50,8 +57,11 @@
             <c:choose>
                 <c:when test="${empty sql.rows}">
                     <c:set var="flag" scope="session" value="signinFailed"/>
-                    <c:redirect url="${sessionScope.urlPage}" />
-                </c:when>
+                    <c:redirect url="${sessionScope.urlPage}">
+                        <c:if test="${!empty sessionScope.tic}">
+                            <c:param name="id" value="${sessionScope.tic}"/>
+                        </c:if>
+                    </c:redirect>                </c:when>
                 <c:otherwise>
                     <c:set scope="session" var="loginUser" value="${sql.rows[0].CusId}"/>
                     <c:redirect url="${sessionScope.urlPage}">

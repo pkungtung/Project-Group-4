@@ -15,7 +15,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <style>
             #content div#blog div#articles div.section {
-                background: url(../images/border-horizontal.gif) no-repeat 40px top;
+                /*background: url(../images/border-horizontal.gif) no-repeat 40px top;*/
                 float: none;
                 overflow: hidden;
                 padding-left: 35px;

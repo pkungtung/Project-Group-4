@@ -51,8 +51,8 @@
                                         <img src="${p.img}" height="400" width="400" alt="img"/>
                                         <figcaption>
                                             <p style="margin: 50px 0 0 0">
-                                                <a href="loginAuthenticate.jsp?ac=showModal&id=${p.itemCode}" 
-                                                   >Order
+                                                <a href="../Controller?ac=add1Item&id=${p.itemCode}" 
+                                                   >Add to cart
                                                 </a>
                                             </p>
                                             <p style="margin: 10px 0 0 0"><a href="Detail.jsp?id=${p.itemCode}">View more</a></p>

@@ -33,7 +33,7 @@
 
 <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" scope="session" />
 <jsp:useBean id="mrBean" class="model.DataProcess" />
-<c:if test="${!empty sessionScope['code']}">
+<%--<c:if test="${!empty sessionScope['code']}">
     <script>
         $(function () {
             $("#addCart").modal();
@@ -69,7 +69,7 @@
         </div>
     </div>
     <c:set var="code" scope="session" value="${null}"/>
-</c:if>
+</c:if>--%>
 
 <c:if test="${'signinFailed' eq sessionScope.flag}">
     <c:set var="flag" scope="session" value=""/>

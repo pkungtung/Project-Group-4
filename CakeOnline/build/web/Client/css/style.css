@@ -333,7 +333,7 @@ p a {
 }
 
 #content div.home div.section {
-    /* background: url(../images/bg-foodstory.gif) repeat-y top center; */
+    background: url(../images/bg-foodstory.gif) repeat-y top center;
     float: right;
     height: 420px;
     padding: 20px;
@@ -405,7 +405,7 @@ p a {
 #content div form input {
     /*    color: #aeaeae;
         display: block;*/
-    margin: 20px 0;
+    margin: 10px 0;
 }
 #content div form input.coninput {
     color: #aeaeae;

@@ -65,6 +65,15 @@
 
             </nav>
             <!-- /. SIDEBAR MENU (navbar-side) -->
+            <sql:setDataSource var="conn" 
+                               driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                               url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
+                               user="sa" 
+                               password="123456"
+                               scope="session"/>
+            <sql:query dataSource="${conn}" var="item">
+                Select CusId, amount from Order;
+            </sql:query>
             <div id="page-wrapper" class="page-wrapper-cls">
                 <div id="page-inner">
                     <div class="row">
