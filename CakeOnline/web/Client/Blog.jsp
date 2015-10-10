@@ -13,6 +13,16 @@
         <title>Blog</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
+        <div id="fb-root"></div>
+        <script>
+                (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=711249222340969";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+        </script>
     <body>
         <jsp:include page="include/menu.jsp" />
         <div id="content">
@@ -24,9 +34,9 @@
                                 <div>
                                     <span class="date">Dec 3</span>
                                     <span class="connect">
-                                        <a href="http://twitter.com/fwtemplates" target="_blank" class="twitter">Twitter</a>
-                                        <a href="#" target="_blank" class="heart">Heart</a>
-                                        <a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook">Facebook</a>
+                                        <div class="fb-like" data-href="http://localhost:8080/CakeOnline/Client/Blog.jsp" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true">
+    
+                                        </div>
                                     </span>
                                     <h1><a href="Home.jsp">New Recipes: Fancy Desserts</a></h1>
                                     <h2>Let&#39;s bake!</h2>
@@ -40,9 +50,7 @@
                                 <div>
                                     <span class="date">Nov 29</span>
                                     <span class="connect">
-                                        <a href="http://twitter.com/fwtemplates" target="_blank" class="twitter">Twitter</a>
-                                        <a href="#" target="_blank" class="heart">Heart</a>
-                                        <a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook">Facebook</a>
+                                        <div class="fb-like" data-href="http://localhost:8080/CakeOnline/Client/Blog.jsp" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
                                     </span>
                                     <h1><a href="Home.jsp">3 Day Christmas Sale on the Shop</a></h1>
                                     <h2>December 3-5&#44; 2011 Crazy Discounts</h2>
@@ -80,5 +88,6 @@
             </div>
         </div>
        <jsp:include page="include/newfooter.jsp" />
+       <script src="js/chat.js" type="text/javascript"></script>
     </body>
 </html>

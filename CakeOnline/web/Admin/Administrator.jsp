@@ -134,7 +134,7 @@
                     <h1>Login</h1> ${param.ac} ${param.username}
                     <form action="#" method="Post" onsubmit="validate()">
                         <input type="text" required value="" placeholder="Username" id="username" name="username" />
-                        <input type="password" required value="" placeholder="Password" id="pass" name="pass"/>
+                        <input type="password" required value="" placeholder="Password" id="password" name="password"/>
                         <h4 id="checkf" style="color: #FF0000;margin:5px 5px 10px 5px;">UserName or Password incorrect</h4>
                         <button type="submit">Login</button>
                     </form>

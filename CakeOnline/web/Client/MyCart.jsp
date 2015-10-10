@@ -77,5 +77,6 @@
             </div>
         </div>
         <jsp:include page="include/footer.jsp" />
+        <script src="js/chat.js" type="text/javascript"></script>
     </body>
 </html>
