@@ -176,4 +176,54 @@ public class DataProcess {
         }
         return result > 0;
     }
+    //phan trang
+    public ArrayList<Cake> getBookIndex(int index, int i) {
+        ArrayList<Cake> list = new ArrayList<>();
+        String sql = "select top " + i + " * from Product where itemcode not in (select top " + (i * index + i) + " itemcode from Product)";
+        try {
+            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            while (rs.next()) {
+                String itemCode=rs.getString(1);
+                String name=rs.getString(2);
+                float price = rs.getFloat(3);
+                String egge=rs.getString(4);
+                String img=rs.getString(5);                
+                String event=rs.getString(6);
+                String stt=rs.getString(7);               
+                Cake emp = new Cake(itemCode, name, price, egge, img, event, stt);
+                emp.setItemCode(itemCode);
+                emp.setName(name);
+                emp.setPrice(price);
+                emp.setEgge(egge);
+                emp.setImg(img);
+                emp.setEvent(event);
+                emp.setStt(stt);
+                list.add(emp);
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+     public int countTblBook(int i) {
+        String sql = "select count(*) from Product";
+        int count = 0;
+        try {
+            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            while (rs.next()) {
+                count = rs.getInt(1);
+                if (count % i == 0) {
+                    count = count / i;
+                } else {
+                    count = count / i + 1;
+                }
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
 }
+

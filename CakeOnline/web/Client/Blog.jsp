@@ -13,16 +13,6 @@
         <title>Blog</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
-        <div id="fb-root"></div>
-        <script>
-                (function(d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) return;
-                  js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=711249222340969";
-                  fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-        </script>
     <body>
         <jsp:include page="include/menu.jsp" />
         <div id="content">
@@ -34,14 +24,14 @@
                                 <div>
                                     <span class="date">Dec 3</span>
                                     <span class="connect">
-                                        <div class="fb-like" data-href="http://localhost:8080/CakeOnline/Client/Blog.jsp" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true">
-    
-                                        </div>
+                                        <a href="http://twitter.com/fwtemplates" target="_blank" class="twitter">Twitter</a>
+                                        <a href="#" target="_blank" class="heart">Heart</a>
+                                        <a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook">Facebook</a>
                                     </span>
-                                    <h1><a href="Home.jsp">New Recipes: Fancy Desserts</a></h1>
-                                    <h2>Let&#39;s bake!</h2>
-                                    <p>Nullam ut mollis odio. Duis tempor interdum tellus, sit amet aliquet dui dictum a. Quisque in lacus vel dui tempus porttitor mollis vitae dolor. Phasellus lacinia est at massa mattis consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis condimentum ultricies scelerisque. Quisque vulputate laoreet erat at consequat. Sed sit amet sem sed lectus consectetur ultrices. Ut tincidunt, augue id sollicitudin placerat, magna nisl tempor arcu, vitae blandit risus ligula nec erat. Nunc convallis, erat in ornare tempus, ligula ipsum lacinia metus, nec bibendum tortor neque eget diam. Donec imperdiet faucibus enim, vel sodales tortor blandit a. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam eleifend tincidunt iaculis.</p>
-                                    <span id="tag">Tag: <a href="Home.jsp">Cookies</a> <a href="Home.jsp">Recipes</a></span>
+                                    <h1><a href="Home.jsp">Mid-Autumn Festival: Sale on the Shop</a></h1>
+                                    <h2>Let's Shopping!</h2>
+                                    <p>Compact, lightweight, and sturdy, the Video Camera from Oregon Scientific is great for kids on the go: Send it to summer camp, or swimming (it’s waterproof to almost 10 feet!), or to soccer practice. It’s that tough! A large record button makes using the cam fast and easy, and it even includes a helmet mount and a bicycle handle mount for your action-obsessed, budding Spielb</p>
+                                    <span id="tag">Tag: <a href="Product.jsp">Cookies</a> <a href="Home.jsp">Recipes</a></span>
                                 </div>
                             </div>
                         </li>
@@ -50,12 +40,30 @@
                                 <div>
                                     <span class="date">Nov 29</span>
                                     <span class="connect">
-                                        <div class="fb-like" data-href="http://localhost:8080/CakeOnline/Client/Blog.jsp" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                                        <a href="http://twitter.com/fwtemplates" target="_blank" class="twitter">Twitter</a>
+                                        <a href="#" target="_blank" class="heart">Heart</a>
+                                        <a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook">Facebook</a>
                                     </span>
-                                    <h1><a href="Home.jsp">3 Day Christmas Sale on the Shop</a></h1>
-                                    <h2>December 3-5&#44; 2011 Crazy Discounts</h2>
-                                    <p>Pellentesque placerat sollicitudin metus eget euismod. Suspendisse potenti. Sed nibh augue, rutrum quis posuere quis, elementum et enim. Morbi varius varius odio ac facilisis. Pellentesque ut erat vulputate ligula elementum ultrices. Morbi tempor magna sed tellus pellentesque ac ultricies justo euismod. Proin vitae enim non eros eleifend aliquam. Morbi posuere nibh vitae sapien ultrices molestie. Vivamus elit nulla, dignissim non fringilla vel, facillisis et arcu.</p>
-                                    <span id="tag">Tag: <a href="Home.jsp">Sale</a> <a href="Home.jsp">Promos</a> <a href="Home.jsp">Food</a></span>
+                                    <h1><a href="Home.jsp">Welcome Autumn</a></h1>
+                                    <h2>September!! Shopping</h2>
+                                    <p>One reason Americans start shopping early is to cushion the blow to their wallets. Many early shoppers say they want to spread the spending over a few months instead of taking a big financial hit in one month.</p>
+                                    <span id="tag">Tag: <a href="#">Sale</a> <a href="Product.jsp">Promos</a> <a href="Home.jsp">Food</a></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div>
+                                    <span class="date">Oct 10</span>
+                                    <span class="connect">
+                                        <a href="http://twitter.com/fwtemplates" target="_blank" class="twitter">Twitter</a>
+                                        <a href="#" target="_blank" class="heart">Heart</a>
+                                        <a href="http://facebook.com/freewebsitetemplates" target="_blank" class="facebook">Facebook</a>
+                                    </span>
+                                    <h1><a href="Home.jsp">winter shopping</a></h1>
+                                    <h2>October!! Shopping</h2>
+                                    <p>It's been a long day without you my friend And I'll tell you all about it when I see you again We've come a long way from where we began'll tell you all about it when I see you again.When I see you again.Damn who knew all the planes we flew Good things we've been through.That I'll be standing right here.Talking to you about another path I</p>
+                                    <span id="tag">Tag: <a href="#">Sale</a> <a href="Product.jsp">Promos</a> <a href="Home.jsp">Food</a></span>
                                 </div>
                             </div>
                         </li>
@@ -66,9 +74,9 @@
                     </div>
                 </div>
                 <div id="sidebar">
-                    <h2 id="bog">Archives</h2>
-                    <h3 class="first" id="bogfile"><a href="Home.jsp" id="down">2011 <span>(60)</span></a></h3>
-                    <div id="bogrigh">
+                    <h2>Archives</h2>
+                    <h3 class="first"><a href="#">2015 <span>(60)</span></a></h3>
+                    <div>
                         <p><a href="Home.jsp">November <span>(11)</span></a></p>
                         <p><a href="Home.jsp">October <span>(3)</span></a></p>
                         <p><a href="Home.jsp">September <span>(8)</span></a></p>
@@ -82,12 +90,11 @@
                         <p><a href="Home.jsp">February <span>(10)</span></a></p>
                         <p><a href="Home.jsp">January <span>(1)</span></a></p>
                     </div>
-                    <h3><a href="Home.jsp">2010</a></h3>
-                    <h3><a href="Home.jsp">2009</a></h3>
+                    <h3><a href="Home.jsp">2014</a></h3>
+                    <h3><a href="Home.jsp">2003</a></h3>
                 </div>
             </div>
         </div>
        <jsp:include page="include/newfooter.jsp" />
-       <script src="js/chat.js" type="text/javascript"></script>
     </body>
 </html>
