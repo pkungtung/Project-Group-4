@@ -77,8 +77,7 @@
                             </div>
                         </li>
                     </c:forEach>
-                </ul>
-                <div style=" clear: both ;width: auto; height: 50px; float: right; margin-right: 350px; margin-bottom: 5px">
+                        <div style=" clear: both ;width: auto; height: 50px; float: right; margin-right: 350px; margin-bottom: 5px">
                     <form action="#" method="GET">
                         <c:choose>
                             <c:when test="${empty param['page']}">
@@ -108,7 +107,9 @@
                             </c:otherwise>
                         </c:choose>
                     </form>   
-                </div>>
+                </div>
+                </ul>
+                
             </div>
         </div>
         <jsp:include page="include/newfooter.jsp" />
