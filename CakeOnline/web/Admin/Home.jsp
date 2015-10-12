@@ -64,7 +64,7 @@
                         <div class=" col-md-3 col-sm-3">
                             <div class="style-box-one Style-one-clr-one">
                                 <a href="Order.jsp">
-                                    <span class="glyphicon glyphicon-headphones"></span>
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>
                                     <h5>Order</h5>
                                 </a>
                             </div>
@@ -72,7 +72,7 @@
                         <div class=" col-md-3 col-sm-3">
                             <div class="style-box-one Style-one-clr-two">
                                 <a href="Product.jsp">
-                                    <span class="glyphicon glyphicon-repeat"></span>
+                                    <span class="fa fa-birthday-cake"></span>
                                     <h5>Product</h5>
                                 </a>
                             </div>
@@ -80,7 +80,7 @@
                         <div class=" col-md-3 col-sm-3">
                             <div class="style-box-one Style-one-clr-three">
                                 <a href="Customer.jsp">
-                                    <span class="glyphicon glyphicon-camera"></span>
+                                    <span class="fa fa-user"></span>
                                     <h5>Customer</h5>
                                 </a>
                             </div>
