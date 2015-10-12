@@ -86,15 +86,3 @@ $(document).ready(function () {
             }
     );
 });
-//Scroll_Top
-        jQuery('body').append('<div id="autoTop"><!----></div>'); //Chèn thêm thẻ div với id='top' vào cuối cặp thẻ body
-        jQuery(window).scroll(function () { //Bắt sự kiện cuộn trang
-            if (jQuery(window).scrollTop() > 300) { //Kiểm tra vị trí cuộn trang (Cách top 700px)
-                jQuery('#autoTop').animate({'width': 'show'}, 300);  //Nếu cách top 700px thì gán thuộc tính right:10px cho thẻ div để hiển thị
-            } else {
-                jQuery('#autoTop').animate({'width': 'hide'}, 300); //Nếu cách top dưới 700px thì gán thuộc tính right:-80px để ẩn thẻ div
-            }
-        });
-        jQuery('#autoTop').click(function () { //Bắt sự kiện click vào "Slide to top"
-            jQuery('html, body').animate({scrollTop: 0}, 1000); //Trượt trang lên đầu
-        });
