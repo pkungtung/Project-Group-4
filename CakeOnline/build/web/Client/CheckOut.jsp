@@ -30,7 +30,7 @@
             <div class="home">
                 <div class="aside" style="width: 400px; padding: 10px;">
                     <h2 style="text-align: center; color: #0033ff;">Infomation</h2>
-                    <form action="MyCart.jsp" id="cartForm" method="Post">
+                    <form action="loginAuthenticate.jsp" method="Post">
                         <div class="form-group">
                             <label for="">Name</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">

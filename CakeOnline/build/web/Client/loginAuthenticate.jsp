@@ -21,6 +21,14 @@
                            user="sa" 
                            password="123456"
                            scope="session"/>
+        <c:if test="${param.ac eq 'order'}">
+            <c:if test="${empty sessionScope.loginUser}">
+                
+            </c:if>
+            <c:if test="${!empty sessionScope.loginUser}">
+                
+            </c:if>
+        </c:if>
         <c:if test="${param.ac eq 'showModal'}">
             <c:set var="code" scope="session" value="${param.id}"/>
             <c:redirect url="${urlPage}"/>

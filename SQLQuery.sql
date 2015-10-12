@@ -11,6 +11,64 @@ create table Product
 	_event varchar(30),
 	stt varchar(10)
 )
+create table Customer(
+	CusId int identity(1,1)  primary key,
+	username varchar(50),
+	pass varchar(50),
+	name varchar(50),
+	email varchar(30),
+	addr varchar(50),
+	number varchar(15),
+	member varchar(5)
+)
+create table feedback(
+	id int primary key identity(1,1),
+	name varchar(50),
+	email varchar(30),
+	sub varchar(50),
+	content varchar(max)
+)
+select *from feedback
+insert into feedback values('asd','asd','asdasd','asdasd');
+create table administrator(
+	username varchar(50) primary key,
+	pass varchar(50),
+	name varchar(50),
+	phone varchar(15),
+	email varchar(20),
+	addr varchar(50)
+)
+create table OrderList(
+	oid int identity(1,1) primary key,
+	CusId int foreign key references Customer(CusId),
+	orderInfo varchar(100),
+	total float,
+	addr varchar(50),
+	deliveriDate date,
+	stt varchar(5)
+)
+
+create table OrderDetail(
+	oid int foreign key references OrderList(oid),
+	itemcode varchar(10) foreign key references Product(itemcode),
+	quantity int,
+	amount float,
+	orderDate Date
+)
+
+
+
+
+
+insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','asdasdasda')
+
+select *from Customer
+drop table Customer
+insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes')
+insert into Customer values('tien','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','yes')
+insert into Customer values('nam','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','no')
+
+
 select * from Product where itemcode = 'tc1'
 update Product set name='tung' where itemcode = 'tc1'
 insert into Product values('tc1', 'Fashion Happy Birthday Cake For Girls', 100, 'yes', '../imgProduct/1fashion-happy-birthday-cake-for-girls.png', 'Birthday','show')
@@ -49,38 +107,3 @@ insert into Product values('tc33', 'Fruit', 10, 'no', '../imgProduct/5fruit.jpg'
 insert into Product values('tc34', 'Fruit Cake', 8, 'no', '../imgProduct/5fruit-cake.jpg', 'Dessert','show')
 insert into Product values('tc35', 'Italian Pie', 8, 'no', '../imgProduct/5italianpie.jpg', 'Dessert','show')
 insert into Product values('tc36', 'Velvet Cup Cake', 8, 'no', '../imgProduct/5sweetcupcake.jpg', 'Dessert','show')
-
-create table Customer(
-	CusId int identity(1,1)  primary key,
-	username varchar(50),
-	pass varchar(50),
-	name varchar(50),
-	email varchar(30),
-	addr varchar(50),
-	number varchar(15),
-	member varchar(5)
-)
-select *from Customer
-drop table Customer
-insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes')
-insert into Customer values('tien','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','yes')
-insert into Customer values('nam','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','no')
-
-create table feedback(
-	id int primary key identity(1,1),
-	name varchar(50),
-	email varchar(30),
-	sub varchar(50),
-	content varchar(max)
-)
-select *from feedback
-insert into feedback values('asd','asd','asdasd','asdasd');
-create table administrator(
-	username varchar(50) primary key,
-	pass varchar(50),
-	name varchar(50),
-	phone varchar(15),
-	email varchar(20),
-	addr varchar(50)
-)
-insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','asdasdasda')
