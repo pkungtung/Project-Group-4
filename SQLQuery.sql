@@ -59,7 +59,6 @@ create table OrderDetail(
 select * from OrderDetail
 
 
-
 insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','asdasdasda')
 
 select top 1 CusId from Customer
