@@ -102,7 +102,7 @@
                     <i class="fa fa-user-plus"></i>  <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user-plus"></i> My Profile</a>
+                    <li><a href="DetailAcc.jsp"><i class="fa fa-user-plus"></i> My Profile</a>
                     </li>
                     <li class="divider"></li>
                     <li><a href="Administrator.jsp?ac=logout"><i class="fa fa-sign-out"></i> Logout</a>
