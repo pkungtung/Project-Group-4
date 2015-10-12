@@ -54,7 +54,7 @@
                                             <a href="../Controller?ac=delProduct&id=${p.itemcode}" class="btn btn-danger">Remove</a>
                                         </td>
                                     </tr>
-                                <input type="hidden" value="${total = total + p.price * ct.value}"/>
+                                    <c:set var="total" value="${total = total + p.price * ct.value}" scope="session"/>
                             </c:forEach>
                         </c:forEach>
                         <tr>
