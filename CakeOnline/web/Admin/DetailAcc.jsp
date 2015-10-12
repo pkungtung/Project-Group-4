@@ -12,7 +12,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Product</title>
+        <title>Profile</title>
         <!-- BOOTSTRAP STYLES-->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME ICONS STYLES-->
@@ -21,9 +21,7 @@
         <link href="assets/css/style.css" rel="stylesheet" />
     </head>
     <body>
-        <c:if test="${empty sessionScope.userAdmin}">
-            <c:redirect url="Administrator.jsp"/>
-        </c:if>
+
         <sql:setDataSource var="conn" 
                            driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
                            url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
