@@ -22,7 +22,19 @@
 <link href="../Admin/assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../Admin/assets/js/bootstrap.js" type="text/javascript"></script>
-
+<style>
+    #autoTop {
+        background: url(images/TopBtn.png) no-repeat left top;
+        width: 121px;
+        height: 50px;
+        position: fixed;
+        _position: absolute;
+        right: 0;
+        bottom: 41px;
+        cursor: pointer;
+        display: none;
+    }
+</style>
 <script src="../jQuery/MyJs.js" type="text/javascript"></script>
 <sql:setDataSource var="conn" 
                    driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 

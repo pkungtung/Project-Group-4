@@ -41,13 +41,14 @@ create table administrator(
 create table OrderList(
 	oid int identity(1,1) primary key,
 	CusId int foreign key references Customer(CusId),
-	orderInfo varchar(100),
+	orderInfo varchar(max),
 	total float,
 	addr varchar(50),
 	deliveriDate date,
-	stt varchar(5)
+	stt varchar(50)
 )
-
+select * from OrderList
+insert into OrderList values(1,'qweqewqe',2121,'12112','1212','inprocess')
 create table OrderDetail(
 	oid int foreign key references OrderList(oid),
 	itemcode varchar(10) foreign key references Product(itemcode),
@@ -55,21 +56,22 @@ create table OrderDetail(
 	amount float,
 	orderDate Date
 )
-
-
+select * from OrderDetail
 
 
 
 insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','asdasdasda')
 
-select *from Customer
+select top 1 CusId from Customer
+order by CusId desc
+select * from Customer
 drop table Customer
 insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes')
 insert into Customer values('tien','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','yes')
 insert into Customer values('nam','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','no')
 
 
-select * from Product where itemcode = 'tc1'
+select from Product where itemcode = 'tc1'
 update Product set name='tung' where itemcode = 'tc1'
 insert into Product values('tc1', 'Fashion Happy Birthday Cake For Girls', 100, 'yes', '../imgProduct/1fashion-happy-birthday-cake-for-girls.png', 'Birthday','show')
 insert into Product values('tc2', 'GELATO BIRTHDAY CAKE', 56, 'no', '../imgProduct/1gelato.jpg', 'Birthday','show')

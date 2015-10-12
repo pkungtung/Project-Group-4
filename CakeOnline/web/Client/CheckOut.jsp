@@ -30,29 +30,28 @@
             <div class="home">
                 <div class="aside" style="width: 400px; padding: 10px;">
                     <h2 style="text-align: center; color: #0033ff;">Infomation</h2>
-                    <form action="loginAuthenticate.jsp" method="Post">
+                    <form action="loginAuthenticate.jsp?ac=order" method="Post">
                         <div class="form-group">
                             <label for="">Name</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                            <input type="text" class="form-control" name="name"/>
                         </div>
                         <div class="form-group">
-                            <label for="">Address</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                            <label>Address</label>
+                            <input type="text" class="form-control" name="address"/>
                         </div>
                         <div class="form-group">
-                            <label for="">Contact number</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                            <label>Contact number</label>
+                            <input type="text" class="form-control" name="number"/>
                         </div>
                         <div class="form-group">
                             <label for="">Delivery address</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                            <input type="text" class="form-control" name="deAddress"/>
                         </div>
                         <div class="form-group">
                             <label for="">Delivery Date</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                            <input type="date" class="form-control" name="deDate"/>
                         </div>
                         <button type="submit" class="btn btn-warning" style="width: 100px;">Order</button>
-
                     </form>
                 </div>
                 <div class="section" style="width: 540px;min-height: 600px;background: #E8E8E8;">
