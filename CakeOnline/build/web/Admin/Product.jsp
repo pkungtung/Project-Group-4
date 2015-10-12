@@ -21,6 +21,17 @@
         <link href="assets/css/style.css" rel="stylesheet" />
     </head>
     <body>
+        <jsp:useBean id="myBean" class="model.DataProcess" scope="session" />
+
+<c:if test="${!empty param['page']}">
+    <c:set var="indexPage" value="${param['page']}" scope="session" />
+</c:if>
+<c:if test="${empty param['page']}">
+    <c:set var="indexPage" value="1" scope="session" />
+</c:if>
+
+<c:set var="getBook" value="${myBean.getBookIndex(indexPage , 6)}" scope="session" />
+<c:set var="countTblBook" value="${myBean.countTblBook(6)}" scope="session"/>
         <c:if test="${empty sessionScope.userAdmin}">
             <c:redirect url="Administrator.jsp"/>
         </c:if>
@@ -31,7 +42,7 @@
                            password="123456"
                            scope="session"/>
         <sql:query dataSource="${conn}" var="list">
-            Select * from Product;
+            select top 6 * from Product where itemcode not in (select top  ( 6 * (${indexPage} - 1))  itemcode from Product);
         </sql:query>
         <div id="wrapper">
             <jsp:include page="inAdmin/top.jsp" />
@@ -109,6 +120,37 @@
                                     </table>
                                 </div>
                             </div>
+                            <div style=" clear: both ;width: auto; height: 50px; float: right; margin-right: 500px; margin-bottom: 5px">
+                    <form action="#" method="GET">
+                        <c:choose>
+                            <c:when test="${empty param['page']}">
+                                <c:forEach var="i"  end="${countTblBook}" begin="1" step="1" >
+                                    <c:choose>
+                                        <c:when test="${empty param['page'] && i == 1}">
+                                            <input class="btn btn-default" name="page" type="submit" disabled="true" value="${i}" style="margin-left: 1px; background: #cccccc"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input class="btn btn-default" name="page" type="submit" value="${i}" style="margin-left: 1px;"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                            </c:when>
+
+                            <c:otherwise>
+                                <c:forEach var="i"  end="${countTblBook}" begin="1" step="1" >
+                                    <c:choose>
+                                        <c:when test="${i == param['page']}">
+                                            <input class="btn btn-default" name="page" type="submit" disabled="true" value="${i}" style="margin-left: 1px; background: #cccccc"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input class="btn btn-default" name="page" type="submit" value="${i}" style="margin-left: 1px;"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                            </c:otherwise>
+                        </c:choose>
+                    </form>   
+                </div>
                         </div>
                     </div>
 
