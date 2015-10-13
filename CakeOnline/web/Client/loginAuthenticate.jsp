@@ -35,19 +35,13 @@
                 <sql:query dataSource="${conn}" var="cuslast">
                     select top 1 CusId from Customer order by CusId desc;
                 </sql:query>
-                <c:set var="orderInfo" value=""/>
-                <c:forEach var="c" items="${sessionScope.cart.content}">
-                    <c:set var="orderInfo" value="${orderInfo} ${c.key} x${c.value},"/>
-                </c:forEach>
-
                 <sql:update dataSource="${conn}" var="ad">
-                    insert into OrderList values(?,?,?,?,?,?);
+                    insert into OrderList values(?,?,?,?,?);
                     <sql:param value="${cuslast.rows[0].CusId}"/>
-                    <sql:param value="${orderInfo}"/>
                     <sql:param value="${sessionScope.total}"/>
                     <sql:param value="${param.deAddress}"/>
                     <sql:param value="${param.deDate}"/>
-                    <sql:param value="inprocess"/>
+                    <sql:param value="pending"/>
                 </sql:update>
                 <sql:query dataSource="${conn}" var="orderlast">
                     select top 1 oid from OrderList order by oid desc;
@@ -60,6 +54,7 @@
                         <sql:param value="${ca.value}"/>
                     </sql:update>
                 </c:forEach>
+                <c:remove var="cart"/>
                 <c:redirect url="Product.jsp"/>
             </c:if>
             <c:set var="orderInfo" value=""/>
@@ -68,9 +63,8 @@
             </c:forEach>
 
             <sql:update dataSource="${conn}" var="ad">
-                insert into OrderList values(?,?,?,?,?,?);
+                insert into OrderList values(?,?,?,?,?);
                 <sql:param value="${sessionScope.loginUser}"/>
-                <sql:param value="${orderInfo}"/>
                 <sql:param value="${sessionScope.total}"/>
                 <sql:param value="${param.deAddress}"/>
                 <sql:param value="${param.deDate}"/>

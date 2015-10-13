@@ -61,12 +61,23 @@
                                     <figure class="effect-steve">
                                         <img src="${p.img}" height="400" width="400" alt="img"/>
                                         <figcaption>
-                                            <p style="margin: 50px 0 0 0">
+                                            <p style="background: none; 
+                                               color: #fff; 
+                                               font-size: larger;
+                                               text-align: left;
+                                               text-transform: capitalize;
+                                               font-weight: bold;
+                                               margin: 0 0 0 0;">
+                                                Item Code: ${p.itemcode}</br>
+                                                Price: $ ${p.price}</br>
+                                                Egg: ${p.egg}
+                                            </p>
+                                            <p style="margin: 110px 0 0 0">
                                                 <a href="../Controller?ac=add1Item&id=${p.itemCode}" 
                                                    >Add to cart
                                                 </a>
                                             </p>
-                                            <p style="margin: 10px 0 0 0"><a href="Detail.jsp?id=${p.itemCode}">View more</a></p>
+                                            <p style="margin: 5px 0 0 0"><a href="Detail.jsp?id=${p.itemCode}">View more</a></p>
                                         </figcaption>	
                                     </figure>
 
