@@ -72,7 +72,7 @@
                                password="123456"
                                scope="session"/>
             <sql:query dataSource="${conn}" var="item">
-                Select CusId, amount from Order;
+                Select * from Customer;
             </sql:query>
             <div id="page-wrapper" class="page-wrapper-cls">
                 <div id="page-inner">
@@ -89,6 +89,7 @@
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
+                                                <th>ID</th>
                                                 <th>User Name</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
@@ -100,6 +101,7 @@
                                         <tbody>
                                             <c:forEach var="p" items="${item.rows}">
                                                 <tr>
+                                                    <td>${p.CusId}</td>
                                                     <td>${p.username}</td>
                                                     <td><a href="DetailAcc.jsp?id=${p.CusId}">${p.name}</a></td>
                                                     <td>${p.email}</td>
