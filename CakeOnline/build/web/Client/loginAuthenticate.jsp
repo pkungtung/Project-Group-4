@@ -60,9 +60,33 @@
                 </c:forEach>
                 <c:redirect url="Product.jsp"/>
             </c:if>
-            <c:if test="${!empty sessionScope.loginUser}">
+            <c:set var="orderInfo" value=""/>
+            <c:forEach var="c" items="${sessionScope.cart.content}">
+                <c:set var="orderInfo" value="${orderInfo} ${c.key} x${c.value},"/>
+            </c:forEach>
 
-            </c:if>
+            <sql:update dataSource="${conn}" var="ad">
+                insert into OrderList values(?,?,?,?,?,?);
+                <sql:param value="${sessionScope.loginUser}"/>
+                <sql:param value="${orderInfo}"/>
+                <sql:param value="${sessionScope.total}"/>
+                <sql:param value="${param.deAddress}"/>
+                <sql:param value="${param.deDate}"/>
+                <sql:param value="inprocess"/>
+            </sql:update>
+            <sql:query dataSource="${conn}" var="orderlast">
+                select top 1 oid from OrderList order by oid desc;
+            </sql:query>
+            <c:forEach var="cab" items="${sessionScope.cart.content}">
+                <sql:update dataSource="${conn}" var="odde">
+                    insert into OrderDetail values(?,?,?,?,default);
+                    <sql:param value="${sessionScope.loginUser}"/>
+                    <sql:param value="${cab.key}"/>
+                    <sql:param value="${cab.value}"/>
+                    <sql:param value="123"/>
+                </sql:update>
+            </c:forEach>
+            <c:redirect url="Product.jsp"/>
         </c:if>
         <c:if test="${param.ac eq 'showModal'}">
             <c:set var="code" scope="session" value="${param.id}"/>
