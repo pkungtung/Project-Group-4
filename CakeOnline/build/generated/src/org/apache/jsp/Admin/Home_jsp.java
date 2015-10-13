@@ -121,7 +121,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <div class=\" col-md-3 col-sm-3\">\r\n");
       out.write("                            <div class=\"style-box-one Style-one-clr-one\">\r\n");
       out.write("                                <a href=\"Order.jsp\">\r\n");
-      out.write("                                    <span class=\"glyphicon glyphicon-headphones\"></span>\r\n");
+      out.write("                                    <span class=\"glyphicon glyphicon-shopping-cart\"></span>\r\n");
       out.write("                                    <h5>Order</h5>\r\n");
       out.write("                                </a>\r\n");
       out.write("                            </div>\r\n");
@@ -129,7 +129,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <div class=\" col-md-3 col-sm-3\">\r\n");
       out.write("                            <div class=\"style-box-one Style-one-clr-two\">\r\n");
       out.write("                                <a href=\"Product.jsp\">\r\n");
-      out.write("                                    <span class=\"glyphicon glyphicon-repeat\"></span>\r\n");
+      out.write("                                    <span class=\"fa fa-birthday-cake\"></span>\r\n");
       out.write("                                    <h5>Product</h5>\r\n");
       out.write("                                </a>\r\n");
       out.write("                            </div>\r\n");
@@ -137,7 +137,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <div class=\" col-md-3 col-sm-3\">\r\n");
       out.write("                            <div class=\"style-box-one Style-one-clr-three\">\r\n");
       out.write("                                <a href=\"Customer.jsp\">\r\n");
-      out.write("                                    <span class=\"glyphicon glyphicon-camera\"></span>\r\n");
+      out.write("                                    <span class=\"fa fa-user\"></span>\r\n");
       out.write("                                    <h5>Customer</h5>\r\n");
       out.write("                                </a>\r\n");
       out.write("                            </div>\r\n");
