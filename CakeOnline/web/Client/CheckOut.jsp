@@ -36,6 +36,10 @@
                             <input type="text" class="form-control" name="name"/>
                         </div>
                         <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="text" class="form-control" name="email"/>
+                        </div>
+                        <div class="form-group">
                             <label>Address</label>
                             <input type="text" class="form-control" name="address"/>
                         </div>

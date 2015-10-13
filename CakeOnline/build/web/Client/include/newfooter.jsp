@@ -16,12 +16,40 @@
             <div class="section">
                 <div>
                     <div class="aside">
-                        <div>
+                        <div class="side">
                             <div>
                                 <b>Too <span>BUSY</span> to shop?</b>
                                 <a data-toggle="modal" data-target="#signUpModal" href="#">Sign up for free</a>
                                 <p>and we&#39;ll deliver it on your doorstep</p>
                             </div>
+                        </div>
+                          <div class="desi" style="margin-top: 10px;">
+                            <p style="padding-right:10px; text-align:center; clear:both; overflow:hidden; padding-bottom:8px;">
+                                <span class="linkxanh">
+                                    <a href="http://hocwebgiare.com/nguyen-phat-tai-youtube-channel.html">
+                                        <i class="fa fa-youtube fa-2x"></i>
+                                    </a>
+                                </span> 
+                                <span class="linkxanh">
+                                    <a href="https://twitter.com/123hocweb" target="_blank">
+                                        <i class="fa fa-twitter fa-2x"></i> 
+                                    </a>
+                                </span>
+                                <span class="linkxanh">
+                                    <a href="https://www.google.com/+NguyenPhatTai" target="_blank">
+                                        <i class="fa fa-google-plus fa-2x"></i> 
+                                    </a>
+                                </span> 
+                                <span class="linkxanh"><a href="https://www.facebook.com/hocwebgiare" target="_blank">
+                                        <i class="fa fa-facebook-square fa-2x"></i> 
+                                    </a>
+                                </span> 
+                                <span class="linkxanh">
+                                    <a href="https://www.pinterest.com/hocwebgiare/" target="_blank">
+                                        <i class="fa fa-pinterest fa-2x"></i>
+                                    </a>
+                                </span>
+                            </p>
                         </div>
                     </div>
                     <div class="connect">

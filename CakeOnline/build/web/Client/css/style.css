@@ -930,15 +930,20 @@ p a {
 }
 
 #footer div.home div div.aside div.signup, 
-#footer div.section div div.aside div {
+#footer div.section div div.aside div.side {
     background: url(../images/bg-sign-up.gif) no-repeat 0 0;
     height: 195px;
     position: relative;
     width: auto;
 }
+#footer div.home div div.aside div.signup, 
+#footer div.section div div.aside div.desi {
+    margin-top: 0px;
+    width: auto;
+}
 
 #footer div.home div div.aside div.signup  div,
-#footer div.section div div.aside div div {
+#footer div.section div div.aside div.side div {
     background: none;
     height: auto;
     position: absolute;
@@ -948,7 +953,7 @@ p a {
 }
 
 #footer div.home div div.aside div.signup  div a,
-#footer div.section div div.aside div div a {
+#footer div.section div div.aside div.side div a {
     background: url(../images/sprite-buttons.gif) no-repeat 0 -331px;
     color: #84284D;
     display: block;
@@ -958,7 +963,7 @@ p a {
 }
 
 #footer div.home div div.aside div.signup  div b,
-#footer div.section div div.aside div div b {
+#footer div.section div div.aside div.side div b {
     color: #674253;
     display: block;
     font-size: 22px;
@@ -966,12 +971,12 @@ p a {
 }
 
 #footer div.home div div.aside div.signup  div b span,
-#footer div.section div div.aside div div b span {
+#footer div.section div div.aside div.side div b span {
     color: #af6282;
 }
 
 #footer div.home div div.aside div.signup  div p,
-#footer div.section div div.aside div div p {
+#footer div.section div div.aside div.side div p {
     color: #3e071c;
     margin: 0;
 }
@@ -1689,7 +1694,7 @@ input[type='number']{
 
 /* display paused text on top of paused slideshow */
 .cycle-paused:after {
-    content: 'Paused'; color: white; background: black; padding: 10px;
+/*    content: 'Paused'; color: white; background: black; padding: 10px;*/
     z-index: 500; position: absolute; top: 10px; right: 10px;
     border-radius: 10px;
     opacity: .5; filter: alpha(opacity=50);
