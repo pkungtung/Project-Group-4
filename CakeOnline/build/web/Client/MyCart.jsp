@@ -55,17 +55,17 @@
                                         </td>
                                     </tr>
                                     <c:set var="total" value="${total = total + p.price * ct.value}" scope="session"/>
+                                </c:forEach>
                             </c:forEach>
-                        </c:forEach>
-                        <tr>
-                            <td  colspan="3" >Total</td>
-                            <td><a href="#" onclick="submitForm()" class="btn btn-default">Update Quantity</a></td>
-                            <td>$ ${total}</td>
-                            <td><a href="../Controller?ac=delCart" class="btn btn-danger">Remove All</a>
-                            </td>
-                        </tr>
-                        <tr height="20">
-                        </tr>
+                            <tr>
+                                <td  colspan="3" >Total</td>
+                                <td><a href="#" onclick="submitForm()" class="btn btn-default">Update Quantity</a></td>
+                                <td>$ ${total}</td>
+                                <td><a href="../Controller?ac=delCart" class="btn btn-danger">Remove All</a>
+                                </td>
+                            </tr>
+                            <tr height="20">
+                            </tr>
                         </tbody>
                     </table> 
                 </form>

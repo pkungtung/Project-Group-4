@@ -36,12 +36,12 @@ create table administrator(
 	name varchar(50),
 	phone varchar(15),
 	email varchar(20),
-	addr varchar(50)
+	addr varchar(50),
+	ava varchar(50)
 )
 create table OrderList(
 	oid int identity(1,1) primary key,
 	CusId int foreign key references Customer(CusId),
-	orderInfo varchar(max),
 	total float,
 	addr varchar(50),
 	deliveriDate date,
@@ -54,14 +54,14 @@ create table OrderDetail(
 	quantity int,
 	orderDate Date DEFAULT GETDATE()
 )
-select * from OrderDetail
+select * from OrderDetail where oid=7
 
 select * from OrderList
-insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','asdasdasda')
+insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','asdasdasda','asdasda')
 
 select top 1 CusId from Customer
 order by CusId desc
-
+delete from table Customer
 select * from Customer
 drop table Customer
 insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes')
@@ -69,7 +69,7 @@ insert into Customer values('tien','123','Phung Van Tien','Tung@gmail.com','asda
 insert into Customer values('nam','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','no')
 
 
-insert into OrderList values(1,'qweqewqe',2121,'12112','1212','inprocess')
+insert into OrderList values(1,2121,'12112','1212','inprocess')
 
 insert into Product values('tc1', 'Fashion Happy Birthday Cake For Girls', 100, 'yes', '../imgProduct/1fashion-happy-birthday-cake-for-girls.png', 'Birthday','show')
 insert into Product values('tc2', 'GELATO BIRTHDAY CAKE', 56, 'no', '../imgProduct/1gelato.jpg', 'Birthday','show')

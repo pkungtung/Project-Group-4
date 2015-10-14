@@ -55,7 +55,28 @@
                     </sql:update>
                 </c:forEach>
                 <c:remove var="cart"/>
-                <c:redirect url="Product.jsp"/>
+                <c:remove var="total"/>
+                <c:redirect url="https://www.sandbox.paypal.com/cgi-bin/webscr" >
+                    <c:param name="upload" value="1" />
+                    <c:param name="return" value="http://localhost:8080/CakeOnline/Client/Product.jsp" />
+                    <c:param name="cmd" value="_cart" />
+                    <c:param name="business" value="phungtung1993@gmail.com" />
+                    <c:param name="currency_code" value="USD" />
+                    <c:param name="item_name" value="The Cake" />
+                    <c:set var="num" value="1"/>
+                    <c:forEach var="ct" items="${cart.content}">
+                        <sql:query dataSource="${conn}" var="p">
+                            select * from Product where itemcode= '${ct.key}';
+                        </sql:query>
+                        <c:param name="item_name_${num}" value="${p.rows[0].name}" />
+                        <c:param name="item_number_${num}" value="${p.rows[0].itemcode}" />
+                        <c:param name="amount_${num}" value="${p.rows[0].price * ct.value}" />
+                        <c:param name="quantity_${num}" value="${ct.value}" />
+                        <c:set var="num" value="${num + 1}"/>
+                        <c:set var="total" value="${total = total + p.rows[0].price * ct.value}" scope="request"/>
+                    </c:forEach>
+                    <c:param name="total" value="${total}" />
+                </c:redirect>          
             </c:if>
             <sql:update dataSource="${conn}" var="ad">
                 insert into OrderList values(?,?,?,?,?);
@@ -77,6 +98,7 @@
                 </sql:update>
             </c:forEach>
             <c:remove var="cart"/>
+            <c:remove var="total"/>
             <c:redirect url="Product.jsp"/>
         </c:if>
         <c:if test="${param.ac eq 'showModal'}">
