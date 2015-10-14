@@ -254,7 +254,8 @@
                                          position: fixed;
                                          width: 260px;
                                          margin-right: 193px;
-                                         margin-top: 58px">
+                                         margin-top: 58px" 
+                                         onmouseover="document.getElementById('myCart').style.display = 'block'" onmouseout="document.getElementById('myCart').style.display = 'none'">
                                         <!--              Xử lý chức năng giỏ hàng-->
                                         <c:choose>
                                             <c:when test="${empty sessionScope.cart}">
@@ -286,11 +287,11 @@
                                             </c:otherwise>
                                         </c:choose>
                                     </div>
-                                    <div  class="cart-mini-title" style="width: 120px;">
+                                    <div  class="cart-mini-title" style="width: 110px;" onmouseover="document.getElementById('myCart').style.display = 'block'" onmouseout="document.getElementById('myCart').style.display = 'none'">
                                         <a class="shopping-cart" href="./mycart.jsp" rel="tooltip" data-original-title="">
                                             <span class="cart-title"><i class="fa fa-shopping-cart"></i></span>
-                                            <span class="cart-count" onmouseover="document.getElementById('myCart').style.display = 'block'" onmouseout="document.getElementById('myCart').style.display = 'none'"> item <span class="asc">- </span><span class="price">My Cart</span></span>
-                                            <span class="arrows" onmouseover="document.getElementById('myCart').style.display = 'block'" onmouseout="document.getElementById('myCart').style.display = 'none'"><i class="fa fa-arrow-right"></i></span>
+                                            <span class="cart-count"> item <span class="asc">- </span><span class="price">My Cart</span></span>
+                                            <span class="arrows" ><i class="fa fa-arrow-right"></i></span>
                                         </a>
                                     </div>
 
