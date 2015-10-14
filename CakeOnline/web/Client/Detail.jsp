@@ -12,6 +12,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Detail Cake</title>
+        <meta property="fb:app_id"       content="711249222340969" />
+        <meta property="fb:admins" content="100005491393252"/>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     </head>
@@ -29,33 +31,39 @@
         <jsp:include page="include/menu.jsp" />
         <div id="content">
             <div class="home">
-                <div class="imgpro" style="width: 450px; float: left;">
-                    <img src="${pr.rows[0].img}" height="100%" width="100%" alt=""/>
-                </div>
-                <div class="detail">
-                    <div>
-                        <h2>${pr.rows[0].name}</h2>
-                        <h3>Price: $ ${pr.rows[0].price}</h3>
-                        <h3>Event: ${pr.rows[0]._event}</h3>
-                        <h3>Egge: ${pr.rows[0].egg}</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
-                        <form action="../Controller?ac=addCart&id=${pr.rows[0].itemcode}" method="Post">
-                            <h3 for="quantity" id="usernamelb">Quantity</h3>
-                            <input style="width: 100px;" type="number" value="1" min="1" class="form-control" placeholder="Quantity" name="quantity"/>
-                            <button type="submit" class="btn btn-warning"><i class="fa fa-shopping-cart"></i>
-                                Add to Cart</button>
-                        </form>
-                        <c:if test="${!empty sessionScope.loginUser}">
-                            <sql:query dataSource="${conn}" var="cus">
-                                Select * from Customer where CusId =${sessionScope.loginUser} and member='yes';
-                            </sql:query>
-                            <c:if test="${!empty cus.rows}">
-                                <button style="margin-top: 10px;" class="btn btn-info" data-toggle="modal" data-target="#recipes">Recipes</button>
+                <div id="bl">
+                    <div class="imgpro" style="width: 450px; float: left;">
+                        <img src="${pr.rows[0].img}" height="100%" width="100%" alt=""/>
+                    </div>
+                    <div class="detail">
+                        <div>
+                            <h2>${pr.rows[0].name}</h2>
+                            <h3>Price: $ ${pr.rows[0].price}</h3>
+                            <h3>Event: ${pr.rows[0]._event}</h3>
+                            <h3>Egge: ${pr.rows[0].egg}</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                            <form action="../Controller?ac=addCart&id=${pr.rows[0].itemcode}" method="Post">
+                                <h3 for="quantity" id="usernamelb">Quantity</h3>
+                                <input style="width: 100px;" type="number" value="1" min="1" class="form-control" placeholder="Quantity" name="quantity"/>
+                                <button type="submit" class="btn btn-warning"><i class="fa fa-shopping-cart"></i>
+                                    Add to Cart</button>
+                            </form>
+                            <c:if test="${!empty sessionScope.loginUser}">
+                                <sql:query dataSource="${conn}" var="cus">
+                                    Select * from Customer where CusId =${sessionScope.loginUser} and member='yes';
+                                </sql:query>
+                                <c:if test="${!empty cus.rows}">
+                                    <button style="margin-top: 10px;" class="btn btn-info" data-toggle="modal" data-target="#recipes">Recipes</button>
+                                </c:if>
                             </c:if>
-                        </c:if>
+                        </div>
                     </div>
                 </div>
-
+                                <div class="facecmt">
+                                    <div class="subtitile">Ý kiến bình luận</div>
+                                    <div class="fb-comments" data-href="Detail.jsp?id=${p.itemCode}" data-width="700" data-numposts="10" data-colorscheme="light" scrolling="no" title="http://developers.facebook.com/thecake2015"></div>
+<!--                                    <div class="fb-comments fb_iframe_widget" data-href="" data-width="715" num_posts="7" fb-xfbml-state="rendered"><span style="height: 300px; width: 715px;"><iframe id="f72821b8c" name="f18e972034" scrolling="no" title="http://developers.facebook.com/thecake2015" style="border: none; overflow: hidden; height: 236px; width: 715px;"></iframe></span></div>-->
+                                </div>
 
             </div>
         </div>
