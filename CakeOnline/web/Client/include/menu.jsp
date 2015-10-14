@@ -235,15 +235,70 @@
                     </c:choose>
                 </div>
 
-                <form action="Product.jsp?" style="margin-right: 100px;top: 60px">
+                <form action="Product.jsp?" style="margin-right: 195px; top: 60px;">
                     <input type="text" id="autosearch" class="search" name="autosearch" maxlength="30" />
                     <input type="submit" value="" id="searchbtn" />
                 </form>
-                <a href="MyCart.jsp" 
+<!--                <a href="MyCart.jsp" 
                    class="btn btn-warning" 
                    style="float: right; width: 100px;" 
                    onmouseover="showMyCart()">
-                    <i class="fa fa-cart-plus "> </i>&nbsp Cart</a>
+                    <i class="fa fa-cart-plus "> </i>&nbsp Cart</a>-->
+                                <div class="header-cart-mini" style="width: 180px">
+                    <div class="topcart-mini-container" style="width: 190px;">
+                        <div id="mini_cart_block" style="width: 190px;">
+                            <div id="bcart" class="block-cart mini_cart_ajax" style="width: 190px;">
+                                <div class="block-cart" style="width: 190px;">
+                                    <!--<span class="top-cart-icon"></span>-->
+                                    <div id="myCart"  class="top-cart-content" style="z-index: 999;
+                                         position: fixed;
+                                         width: 260px;
+                                         margin-right: 193px;
+                                         margin-top: 58px">
+                                        <!--              Xử lý chức năng giỏ hàng-->
+                                        <c:choose>
+                                            <c:when test="${empty sessionScope.cart}">
+                                                <p class="empty">You have no items in your shopping cart.</p>
+                                                <div class="">Subtotal: <span class="price">$0.00</span></div>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <ol id="cart-sidebar" class="mini-products-list">
+                                                    <c:forEach var="item" items="${sessionScope.cart}">
+                                                        <li class="item odd">
+                                                            <a href="#" class="product-image">
+                                                                <img src="./images/${item.image}" width="50" height="50"></a>
+                                                            <div class="product-details">
+                                                                <a id="${item.pid}" title="Remove This Item" onclick="removeCart(${item.pid})" class="btn-remove">Remove This Item</a>
+                                                                <a href="./mycart.jsp" title="Edit item" class="btn-edit">Edit item</a>
+                                                                <p class="product-name" style="width: 150px"><a href="#">${item.name}</a></p>
+                                                                <strong>${item.qua}</strong> x
+                                                                <span class="price">$${item.price}</span>                    
+                                                            </div>
+                                                        </li> 
+                                                        <c:set var="multiplication" value="${item.qua * item.price}" scope="page"/>
+                                                        <c:set var="total" value="${total + multiplication}" scope="page"/>
+                                                    </c:forEach>
+                                                </ol>
+                                                <div class="top-subtotal">Subtotal: <span class="price">$${total}</span></div>
+                                                <div class="actions">
+                                                    <button type="button" title="Checkout" class="button" onclick="window.location = './checkout.jsp'"><span><span>Checkout</span></span></button>
+                                                </div>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </div>
+                                    <div  class="cart-mini-title" style="width: 120px;">
+                                        <a class="shopping-cart" href="./mycart.jsp" rel="tooltip" data-original-title="">
+                                            <span class="cart-title"><i class="fa fa-shopping-cart"></i></span>
+                                            <span class="cart-count" onmouseover="document.getElementById('myCart').style.display = 'block'" onmouseout="document.getElementById('myCart').style.display = 'none'"> item <span class="asc">- </span><span class="price">My Cart</span></span>
+                                            <span class="arrows" onmouseover="document.getElementById('myCart').style.display = 'block'" onmouseout="document.getElementById('myCart').style.display = 'none'"><i class="fa fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <c:choose>
