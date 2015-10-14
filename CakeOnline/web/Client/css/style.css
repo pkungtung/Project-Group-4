@@ -1710,4 +1710,27 @@ input[type='number']{
     .cycle-overlay { padding: 4px }
     .cycle-caption { bottom: 4px; right: 4px }
 }
-//he
+//het anh
+//hover cua Newfooter
+.linkxanh a
+{
+	color:#06C;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	text-decoration:none;
+}
+.linkxanh a:visited
+{
+	/* color:#06C; */
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	text-decoration:none;
+}
+.linkxanh a:hover
+{
+	color:#F00;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	text-decoration:none;
+}
+//het hover cua Newfooter
