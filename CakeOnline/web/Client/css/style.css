@@ -1903,3 +1903,8 @@ p {
 }
 .top-cart-contain .product-details .price {width: auto;font-size: 15px;font-weight: bold;}
 
+
+//ligooge
+.box h4 {display:block;color:#555;font-size:13px;font-weight:600;padding:10px 10px;margin:0;background-image: linear-gradient(top, rgb(255,255,255) 0%, rgb(237,237,237) 100%);background-image: -o-linear-gradient(top, rgb(255,255,255) 0%, rgb(237,237,237) 100%);background-image: -moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(237,237,237) 100%);background-image: -webkit-linear-gradient(top, rgb(255,255,255) 0%, rgb(237,237,237) 100%);background-image: -ms-linear-gradient(top, rgb(255,255,255) 0%, rgb(237,237,237) 100%);background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgb(255,255,255)),color-stop(1, rgb(237,237,237)));border-bottom:1px solid #ededed;}
+.box .content {padding:10px;border-bottom:1px solid #ededed;}
+.box .content.last {border-bottom:none;}

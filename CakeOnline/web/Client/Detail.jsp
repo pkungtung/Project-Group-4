@@ -59,11 +59,17 @@
                         </div>
                     </div>
                 </div>
-                                <div class="facecmt">
-                                    <div class="subtitile">Ý kiến bình luận</div>
-                                    <div class="fb-comments" data-href="Detail.jsp?id=${p.itemCode}" data-width="700" data-numposts="10" data-colorscheme="light" scrolling="no" title="http://developers.facebook.com/thecake2015"></div>
-<!--                                    <div class="fb-comments fb_iframe_widget" data-href="" data-width="715" num_posts="7" fb-xfbml-state="rendered"><span style="height: 300px; width: 715px;"><iframe id="f72821b8c" name="f18e972034" scrolling="no" title="http://developers.facebook.com/thecake2015" style="border: none; overflow: hidden; height: 236px; width: 715px;"></iframe></span></div>-->
+                            <div class="facecmt">
+                                <div class="box socialshare">
+                                    <!--                                    Go to www.addthis.com/dashboard to customize your tools -->
+                                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51fb1dcd68d4a79c" async="async"></script>
+                                    <!--                                    Go to www.addthis.com/dashboard to customize your tools -->
+                                    <div class="addthis_native_toolbox"></div>
                                 </div>
+                                <div class="subtitile">Ý kiến bình luận</div>
+                                <div class="fb-comments" data-href="Detail.jsp?id=${p.itemCode}" data-width="700" data-numposts="10" data-colorscheme="light" scrolling="no" title="http://developers.facebook.com/thecake2015"></div>
+                                <!--                                    <div class="fb-comments fb_iframe_widget" data-href="" data-width="715" num_posts="7" fb-xfbml-state="rendered"><span style="height: 300px; width: 715px;"><iframe id="f72821b8c" name="f18e972034" scrolling="no" title="http://developers.facebook.com/thecake2015" style="border: none; overflow: hidden; height: 236px; width: 715px;"></iframe></span></div>-->
+                            </div>
 
             </div>
         </div>
