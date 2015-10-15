@@ -23,6 +23,22 @@
 <link href="../Admin/assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../Admin/assets/js/bootstrap.js" type="text/javascript"></script>
+<!--facboock-->
+<meta property="fb:app_id"       content="711249222340969" />
+<meta property="fb:admins" content="100005491393252"/>
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+            return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=711249222340969";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <style>
     #autoTop {
         background: url(images/TopBtn.png) no-repeat left top;
