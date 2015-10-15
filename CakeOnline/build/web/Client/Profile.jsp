@@ -21,7 +21,10 @@
         <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-
+        <c:if test="${empty loginUser}">
+            <c:set var="flag" scope="session" value="loginPlease"/>
+            <c:redirect url="${sessionScope.urlPahe}"/>
+        </c:if>
         <sql:setDataSource var="conn" 
                            driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
                            url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
@@ -88,6 +91,9 @@
                         </li>
                         <li>
                             <a href="EditAcc.jsp"><i class="fa fa-user "></i>Edit Your Account</a>
+                        </li>
+                        <li>
+                            <a href="ChangePass.jsp"><i class="fa fa-cog "></i>Change Password</a>
                         </li>
                     </ul>
                 </div>

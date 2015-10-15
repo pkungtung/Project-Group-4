@@ -20,7 +20,10 @@
         <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-
+        <c:if test="${empty loginUser}">
+            <c:set var="flag" scope="session" value="loginPlease"/>
+            <c:redirect url="${sessionScope.urlPahe}"/>
+        </c:if>
         <sql:setDataSource var="conn" 
                            driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
                            url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
@@ -88,6 +91,9 @@
                         <li>
                             <a class="active-menu" href="#"><i class="fa fa-user "></i>Edit Your Account</a>
                         </li>
+                        <li>
+                            <a href="ChangePass.jsp"><i class="fa fa-cog "></i>Change Password</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -100,62 +106,11 @@
                             <h1 class="page-head-line">Edit Infomation</h1>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="panel panel-default">
 
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Order Id</th>
-                                                <th>Deliveri Address</th>
-                                                <th>Deliveri Date</th>
-                                                <th>Item Code</th>
-                                                <th>Quantity</th>
-                                                <th>Total</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <sql:query dataSource="${conn}" var="ol">
-                                                Select * from OrderList where CusId=${sessionScope.loginUser.rows[0].CusId};
-                                            </sql:query>
-                                            <c:forEach var="order" items="${ol.rows}">
-                                                <tr>
-                                                    <td>${order.oid}</td>
-                                                    <td>${order.addr}</td>
-                                                    <td>${order.deliveriDate}</td>
-                                                    <sql:query dataSource="${conn}" var="od">
-                                                        select * from OrderDetail where oid=${order.oid};
-                                                    </sql:query>
-                                                    <td>
-                                                        <c:forEach var="p" items="${od.rows}">
-                                                            ${p.itemcode}</br>
-                                                        </c:forEach>
-                                                    </td>
-                                                    <td>
-                                                        <c:forEach var="p" items="${od.rows}">
-                                                            ${p.quantity}</br>
-                                                        </c:forEach>
-                                                    </td>
-                                                    <td>$ ${order.total}</td>
-                                                    <td>${order.stt}</td>
-                                                </tr>
-                                            </c:forEach>  
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <!-- /. PAGE INNER  -->
             </div>
 
-            <!-- /. PAGE WRAPPER  -->
         </div>
-        <!-- /. WRAPPER  -->
         <footer >
             &copy; 2015 Design By : <a href="#" target="_blank">Group 4 GC 0902</a>
         </footer>

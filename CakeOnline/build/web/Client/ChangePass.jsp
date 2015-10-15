@@ -1,9 +1,8 @@
 <%-- 
-    Document   : Profile
-    Created on : Oct 15, 2015, 9:18:59 PM
-    Author     : Boong
+    Document   : ChangePass
+    Created on : Oct 16, 2015, 1:27:13 AM
+    Author     : Pkung
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
@@ -87,13 +86,13 @@
                             <a> <strong> ${sessionScope.loginUser.rows[0].name} </strong></a>
                         </li>
                         <li>
-                            <a class="active-menu" href="#"><i class="fa fa-cart-plus "></i>My Orders </a>
+                            <a href="Profile.jsp"><i class="fa fa-cart-plus "></i>My Orders </a>
                         </li>
                         <li>
                             <a href="EditAcc.jsp"><i class="fa fa-user "></i>Edit Your Account</a>
                         </li>
                         <li>
-                            <a href="ChangePass.jsp"><i class="fa fa-cog "></i>Change Password</a>
+                            <a class="active-menu" href="#"><i class="fa fa-cog "></i>Change Password</a>
                         </li>
                     </ul>
                 </div>
@@ -104,56 +103,30 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Order List</h1>
+                            <h1 class="page-head-line">Change Password</h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="panel panel-default">
-
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Order Id</th>
-                                                <th>Deliveri Address</th>
-                                                <th>Deliveri Date</th>
-                                                <th>Item Code</th>
-                                                <th>Quantity</th>
-                                                <th>Total</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <sql:query dataSource="${conn}" var="ol">
-                                                Select * from OrderList where CusId=${sessionScope.loginUser.rows[0].CusId};
-                                            </sql:query>
-                                            <c:forEach var="order" items="${ol.rows}">
-                                                <tr>
-                                                    <td>${order.oid}</td>
-                                                    <td>${order.addr}</td>
-                                                    <td>${order.deliveriDate}</td>
-                                                    <sql:query dataSource="${conn}" var="od">
-                                                        select * from OrderDetail where oid=${order.oid};
-                                                    </sql:query>
-                                                    <td>
-                                                        <c:forEach var="p" items="${od.rows}">
-                                                            ${p.itemcode}</br>
-                                                        </c:forEach>
-                                                    </td>
-                                                    <td>
-                                                        <c:forEach var="p" items="${od.rows}">
-                                                            ${p.quantity}</br>
-                                                        </c:forEach>
-                                                    </td>
-                                                    <td>$ ${order.total}</td>
-                                                    <td>${order.stt}</td>
-                                                </tr>
-                                            </c:forEach>  
-                                        </tbody>
-                                    </table>
+                        <div class="col-md-4 col-sm-4">
+                            <form action="#" method="get">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        Confirm Password
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label id="check">Old Password</label>
+                                            <input type="password" class="form-control" name="oldpass"/>
+                                            <input type="password" class="form-control" name="newpass"/>
+                                            <input type="password" class="form-control" name="confirmpass"/>
+                                            <input type="hidden" name="ac" value="changePass"/>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <button type="submit" class="btn btn-default">Submit</button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

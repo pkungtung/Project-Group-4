@@ -67,10 +67,19 @@
     <script>
     $(function () {
         $("#myModal").modal();
-//            document.getElementById("myModal").style.display = "block";
         document.getElementById('myModalLabel').innerHTML = "UserName or Password incorrect";
         document.getElementById('myModalLabel').style.color = "#cc0000";
     });
+
+    </script>
+
+</c:if>
+<c:if test="${'loginPlease' eq sessionScope.flag}">
+    <c:set var="flag" scope="session" value=""/>
+    <script>
+        $(function () {
+            $("#myModal").modal();
+        });
 
     </script>
 
