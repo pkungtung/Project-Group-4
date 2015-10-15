@@ -84,7 +84,7 @@
                             <a> <strong> ${sessionScope.loginUser.rows[0].name} </strong></a>
                         </li>
                         <li>
-                            <a href="Order.jsp"><i class="fa fa-cart-plus "></i>Order </a>
+                            <a class="active-menu" href="Order.jsp"><i class="fa fa-cart-plus "></i>My Orders </a>
                         </li>
                         <li>
                             <a href="DetailAcc.jsp"><i class="fa fa-user "></i>Edit Your Account</a>
