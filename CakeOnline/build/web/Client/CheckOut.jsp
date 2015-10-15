@@ -51,24 +51,22 @@
                                 </div>
                             </c:when>
                             <c:otherwise>
-                                <sql:query dataSource="${conn}" var="user">
-                                    select *from Customer where CusId = ${sessionScope.loginUser};
-                                </sql:query>
+         
                                 <div class="form-group">
                                     <label for="">Name</label>
-                                    <input type="text" class="form-control" name="name" value="${user.rows[0].name}"/>
+                                    <input type="text" class="form-control" name="name" value="${loginUser.rows[0].name}"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Email</label>
-                                    <input type="text" class="form-control" name="email" value="${user.rows[0].email}"/>
+                                    <input type="text" class="form-control" name="email" value="${loginUser.rows[0].email}"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control" name="address" value="${user.rows[0].addr}"/>
+                                    <input type="text" class="form-control" name="address" value="${loginUser.rows[0].addr}"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Contact number</label>
-                                    <input type="text" class="form-control" name="number" value="${user.rows[0].number}"/>
+                                    <input type="text" class="form-control" name="number" value="${loginUser.rows[0].number}"/>
                                 </div>
                             </c:otherwise>
                         </c:choose>

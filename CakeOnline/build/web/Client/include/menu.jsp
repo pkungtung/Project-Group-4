@@ -23,6 +23,22 @@
 <link href="../Admin/assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../Admin/assets/js/bootstrap.js" type="text/javascript"></script>
+<!--facboock-->
+<meta property="fb:app_id"       content="711249222340969" />
+<meta property="fb:admins" content="100005491393252"/>
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+            return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=711249222340969";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <style>
     #autoTop {
         background: url(images/TopBtn.png) no-repeat left top;
@@ -49,12 +65,12 @@
 <c:if test="${'signinFailed' eq sessionScope.flag}">
     <c:set var="flag" scope="session" value=""/>
     <script>
-        $(function () {
-            $("#myModal").modal();
+    $(function () {
+        $("#myModal").modal();
 //            document.getElementById("myModal").style.display = "block";
-            document.getElementById('myModalLabel').innerHTML = "UserName or Password incorrect";
-            document.getElementById('myModalLabel').style.color = "#cc0000";
-        });
+        document.getElementById('myModalLabel').innerHTML = "UserName or Password incorrect";
+        document.getElementById('myModalLabel').style.color = "#cc0000";
+    });
 
     </script>
 
@@ -192,7 +208,7 @@
                             <a href="#" data-toggle="modal" data-target="#myModal" class="last"><i class="fa fa-sign-in"></i> Sign in</a>
                         </c:when>
                         <c:otherwise>
-                            <a href="Profile.jsp" ><i class="fa fa-user-plus"></i> Profile</a>
+                            <a href="Profile.jsp" ><i class="fa fa-user-plus"></i> My Account</a>
                             <a href="loginAuthenticate.jsp?ac=signout" class="last"><i class="fa fa-sign-out"></i> Sign out</a>
                         </c:otherwise>
                     </c:choose>
@@ -202,11 +218,6 @@
                     <input type="text" id="autosearch" class="search" name="autosearch" maxlength="30" />
                     <input type="submit" value="" id="searchbtn" />
                 </form>
-                <!--                <a href="MyCart.jsp" 
-                                   class="btn btn-warning" 
-                                   style="float: right; width: 100px;" 
-                                   onmouseover="showMyCart()">
-                                    <i class="fa fa-cart-plus "> </i>&nbsp Cart</a>-->
                 <div class="header-cart-mini" style="width: 110px;">
                     <div class="topcart-mini-container" style="width: 190px;">
                         <div id="mini_cart_block" style="width: 190px;">

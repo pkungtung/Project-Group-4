@@ -1139,17 +1139,16 @@ p a {
     padding: 0;
     width: auto;
 }
-
 // pkung tung
 
-#content div.home div.imgpro {
+#content div.home div#bl div.imgpro {
     float: left;
     height: auto;
     padding: 0 0 0 20px;
     width: 450px;
 }
 
-#content div.home div.imgpro h1 {
+#content div.home div#bl div.imgpro h1 {
     color: #84284d;
     font-family: Trebuchet MS;
     font-size: 25px;
@@ -1160,18 +1159,26 @@ p a {
     text-indent: 0;
 }
 
-#content div.home div.imgpro p {
-    line-height: 28px;
-    margin: 0;
-    text-align: justify;
+#content div.home {
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 30px 0;
+    width: 960px;
 }
 
-#content div.home div.imgpro p a.readmore {
+#content div.home div#bl {
+    margin: 0 auto;
+    overflow: hidden;
+    height: auto;
+    width: 960px;
+}
+
+#content div.home div#bl div.imgpro p a.readmore {
     color: #932b50;
     text-decoration: none;
 }
 
-#content div.home div.detail {
+#content div.home div#bl div.detail {
     background: url(../images/bg-foodstory.gif) repeat-y top center;
     float: right;
     height: auto;
@@ -1179,7 +1186,7 @@ p a {
     width: 400px;
 }
 
-#content div.home div.detail div {
+#content div.home div#bl div.detail div {
     background: #ebe7e8;
     float: left;
     height: auto;
@@ -1187,7 +1194,7 @@ p a {
     width: 360px;
 }
 
-#content div.home div.detail div h2 {
+#content div.home div#bl div.detail div h2 {
     color: #84284d;
     /* font-family: 'JamesFajardoRegular'; */
     font-family: Trebuchet MS;
@@ -1197,7 +1204,7 @@ p a {
     margin: 0 0 5px;
 }
 
-#content div.home div.detail div p {
+#content div.home div#bl div.detail div p {
     color: #5f5d5e;
     line-height: 34px;
     margin: 0;
@@ -1211,10 +1218,20 @@ p a {
 }
 
 
-#content div.home div.detail ul li img {
+#content div.home div#bl div.detail ul li img {
     border: 6px solid #fefffa;
 }
 
+#content div.home div.facecmt {
+    float: left;
+    width: 715px;
+    margin-top: 10px;
+}
+#content div.home div.facecmt div.subtitile {
+    display: block;
+    color: #db241c;
+    font: 24px/50px 'fujiyama';
+}
 
 // Dropdow menu pkung Tung
 #header {
@@ -1276,7 +1293,7 @@ p a {
 
 #header div div div form {
     position: absolute;
-    right: 0;
+    right: 20px;
     /* top: 69px; */
     height: 30px;
     width: 290px;
@@ -1921,3 +1938,27 @@ button.button {
 
 .box h4 {display:block;color:#555;font-size:13px;font-weight:600;padding:10px 10px;margin:0;background-image: linear-gradient(top, rgb(255,255,255) 0%, rgb(237,237,237) 100%);background-image: -o-linear-gradient(top, rgb(255,255,255) 0%, rgb(237,237,237) 100%);background-image: -moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(237,237,237) 100%);background-image: -webkit-linear-gradient(top, rgb(255,255,255) 0%, rgb(237,237,237) 100%);background-image: -ms-linear-gradient(top, rgb(255,255,255) 0%, rgb(237,237,237) 100%);background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgb(255,255,255)),color-stop(1, rgb(237,237,237)));border-bottom:1px solid #ededed;}
 .box .content {padding:10px;border-bottom:1px solid #ededed;}
+
+//hover cua Newfooter
+.linkxanh a
+{
+    color:#06C;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+    text-decoration:none;
+}
+.linkxanh a:visited
+{
+    /* color:#06C; */
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+    text-decoration:none;
+}
+.linkxanh a:hover
+{
+    color:#F00;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+    text-decoration:none;
+}
+//het hover cua Newfooter 

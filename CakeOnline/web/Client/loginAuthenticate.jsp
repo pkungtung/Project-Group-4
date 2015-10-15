@@ -76,7 +76,7 @@
             </c:if>
             <sql:update dataSource="${conn}" var="ad">
                 insert into OrderList values(?,?,?,?,?);
-                <sql:param value="${sessionScope.loginUser}"/>
+                <sql:param value="${sessionScope.loginUser.rows[0].CusId}"/>
                 <sql:param value="${sessionScope.total}"/>
                 <sql:param value="${param.deAddress}"/>
                 <sql:param value="${param.deDate}"/>
@@ -130,7 +130,7 @@
                         </c:if>
                     </c:redirect>                </c:if>
                 <sql:update dataSource="${conn}" var="insert">
-                    insert into Customer values('${param.userName}','${param.pass}','${param.name}','${param.email}','${param.address}','${param.number}','no');
+                    insert into Customer values('${param.userName}','${param.pass}','${param.name}','${param.email}','${param.address}','${param.number}','no','../imgProduct/user-default.jpg');
                 </sql:update>
                 <c:set var="flag" scope="session" value="signupOK"/>
                 <c:redirect url="${sessionScope.urlPage}">
@@ -156,7 +156,7 @@
                     </c:redirect>  
                 </c:when>
                 <c:otherwise>
-                    <c:set scope="session" var="loginUser" value="${sql.rows[0].CusId}"/>
+                    <c:set scope="session" var="loginUser" value="${sql}"/>
                     <c:redirect url="${sessionScope.urlPage}">
                         <c:if test="${!empty sessionScope.tic}">
                             <c:param name="id" value="${sessionScope.tic}"/>

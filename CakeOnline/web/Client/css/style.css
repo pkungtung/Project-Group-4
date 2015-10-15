@@ -1293,7 +1293,7 @@ p a {
 
 #header div div div form {
     position: absolute;
-    right: 0;
+    right: 20px;
     /* top: 69px; */
     height: 30px;
     width: 290px;

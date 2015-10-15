@@ -85,14 +85,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class=" col-md-3 col-sm-3">
-                            <div class="style-box-one Style-one-clr-four">
-                                <a href="#">
-                                    <span class="glyphicon glyphicon-cog"></span>
-                                    <h5>Some Sample Text</h5>
-                                </a>
-                            </div>
-                        </div>      
+                          
                     </div>
                     <div class="row">
                         <div class="col-md-12">

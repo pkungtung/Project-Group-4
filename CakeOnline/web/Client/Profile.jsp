@@ -29,20 +29,59 @@
                            password="123456"
                            scope="session"/>
         <div id="wrapper">
-            <jsp:include page="../Admin/inAdmin/top.jsp" />
-            <!-- /. NAV TOP  -->
+            <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a  class="navbar-brand" href="#"><i class="fa fa-user"></i> My Account</a>
+                </div>
+
+                <div class="notifications-wrapper">
+                    <ul class="nav">
+                        <li><a href="Home.jsp?"><i class="fa fa-backward"></i> Back to The Cake</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                                <i class="fa fa-bullhorn"></i> Message <i class="fa fa-caret-down"> </i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p>
+                                                <strong>Task 1</strong>
+                                                <span class="pull-right text-muted">60% Complete</span>
+                                            </p>
+                                            <div class="progress progress-striped active">
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                    <span class="sr-only">60% Complete (danger)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a href="loginAuthenticate.jsp?ac=signout"><i class="fa fa-sign-out"></i> Logout</a></li> 
+                    </ul>
+                </div>
+            </nav>           
             <nav  class="navbar-default navbar-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
                         <li>
                             <div class="user-img-div">
-                                <img src="images/placeholder-user.jpg" class="img-circle" />
+                                <img src="${loginUser.rows[0].ava}" class="img-circle" />
 
                             </div>
 
                         </li>
                         <li>
-                            <a> <strong> User </strong></a>
+                            <a> <strong> ${sessionScope.loginUser.rows[0].name} </strong></a>
                         </li>
                         <li>
                             <a href="Order.jsp"><i class="fa fa-cart-plus "></i>Order </a>
@@ -62,10 +101,59 @@
                             <h1 class="page-head-line">Order List</h1>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="panel panel-default">
 
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Order Id</th>
+                                                <th>Deliveri Address</th>
+                                                <th>Deliveri Date</th>
+                                                <th>Item Code</th>
+                                                <th>Quantity</th>
+                                                <th>Total</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <sql:query dataSource="${conn}" var="ol">
+                                                Select * from OrderList where CusId=${sessionScope.loginUser.rows[0].CusId};
+                                            </sql:query>
+                                            <c:forEach var="order" items="${ol.rows}">
+                                                <tr>
+                                                    <td>${order.oid}</td>
+                                                    <td>${order.addr}</td>
+                                                    <td>${order.deliveriDate}</td>
+                                                    <sql:query dataSource="${conn}" var="od">
+                                                        select * from OrderDetail where oid=${order.oid};
+                                                    </sql:query>
+                                                    <td>
+                                                        <c:forEach var="p" items="${od.rows}">
+                                                            ${p.itemcode}</br>
+                                                        </c:forEach>
+                                                    </td>
+                                                    <td>
+                                                        <c:forEach var="p" items="${od.rows}">
+                                                            ${p.quantity}</br>
+                                                        </c:forEach>
+                                                    </td>
+                                                    <td>$ ${order.total}</td>
+                                                    <td>${order.stt}</td>
+                                                </tr>
+                                            </c:forEach>  
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /. PAGE INNER  -->
             </div>
+
             <!-- /. PAGE WRAPPER  -->
         </div>
         <!-- /. WRAPPER  -->
