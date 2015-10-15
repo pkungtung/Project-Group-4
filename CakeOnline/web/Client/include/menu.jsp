@@ -5,6 +5,7 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <c:set var="path" value="${pageContext.request.servletPath}" />
@@ -45,44 +46,6 @@
 
 <c:set var="urlPage" value="${pageContext.request.getRequestURL()}" scope="session" />
 <jsp:useBean id="mrBean" class="model.DataProcess" />
-<%--<c:if test="${!empty sessionScope['code']}">
-    <script>
-        $(function () {
-            $("#addCart").modal();
-        });
-
-    </script>
-    <sql:query dataSource="${conn}" var="p" scope="request">
-        Select * from Product where itemcode='${sessionScope.code}';
-    </sql:query>
-    <div class="modal fade in" id="addCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background-color:rgba(0, 0, 0, 0.6);">
-        <div class="modal-dialog" >
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" onclick="resetModal()" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" id="myModalLabel">${p.rows[0].name}</h4>
-                </div>
-                <div class="modal-body">
-                    <img src="${p.rows[0].img}" height="300" width="300"/>
-                    <form action="../Controller?ac=addCart&id=${p.rows[0].itemcode}" method="Post">
-                        <div class="form-group">
-                            <label for="quantity" id="usernamelb">Quantity</label>
-                            <input type="number" value="1" min="1" class="form-control" placeholder="Quantity" name="quantity"/>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-warning"><i class="fa fa-shopping-cart"></i>
-                                Add to Cart</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <c:set var="code" scope="session" value="${null}"/>
-</c:if>--%>
-
 <c:if test="${'signinFailed' eq sessionScope.flag}">
     <c:set var="flag" scope="session" value=""/>
     <script>
@@ -235,15 +198,77 @@
                     </c:choose>
                 </div>
 
-                <form action="Product.jsp?" style="margin-right: 100px;top: 60px">
+                <form action="Product.jsp?" style="margin-right: 200px;top: 60px">
                     <input type="text" id="autosearch" class="search" name="autosearch" maxlength="30" />
                     <input type="submit" value="" id="searchbtn" />
                 </form>
-                <a href="MyCart.jsp" 
-                   class="btn btn-warning" 
-                   style="float: right; width: 100px;" 
-                   onmouseover="showMyCart()">
-                    <i class="fa fa-cart-plus "> </i>&nbsp Cart</a>
+                <!--                <a href="MyCart.jsp" 
+                                   class="btn btn-warning" 
+                                   style="float: right; width: 100px;" 
+                                   onmouseover="showMyCart()">
+                                    <i class="fa fa-cart-plus "> </i>&nbsp Cart</a>-->
+                <div class="header-cart-mini" style="width: 110px;">
+                    <div class="topcart-mini-container" style="width: 190px;">
+                        <div id="mini_cart_block" style="width: 190px;">
+                            <div id="bcart" class="block-cart mini_cart_ajax" style="width: 190px;">
+                                <div id="scart" class="block-cart" style="width: 190px;">
+                                    <!--<span class="top-cart-icon"></span>-->
+                                    <div class="cart-mini-title" style="width: 190px;">
+                                        <a class="shopping-cart" href="MyCart.jsp" rel="tooltip" data-original-title="">
+                                            <span class="cart-title"><i class="fa fa-shopping-cart"></i></span>
+                                                <c:set var="it" value="0"/>
+                                                <c:forEach var="xxx" items="${cart.content}">
+                                                    <c:set var="it" value="${it+1}"/>
+                                                </c:forEach>
+                                            <span class="cart-count">${it} item <span class="asc">- </span><span class="price">My Cart</span></span>
+                                            <!--<span class="cart-qty"></span>-->
+                                            <span class="arrows"><i class="fa fa-arrow-right"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="top-cart-content" style="width: 421px;position: fixed;margin-left: 20px;margin-right: 247px;margin-top: 60px;z-index: 999;">
+                                        <!--              Xử lý chức năng giỏ hàng-->
+                                        <c:choose>
+                                            <c:when test="${empty sessionScope.cart}">
+                                                <p class="empty">You have no items in your shopping cart.</p>
+                                                <div class="top-subtotal" style="width: 190px;">Subtotal: <span class="price">$0.00</span></div>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <ol id="cart-sidebar" class="mini-products-list">
+
+                                                    <c:forEach var="item" items="${sessionScope.cart.getContent()}">
+                                                        <li class="item odd">
+                                                            <sql:query dataSource="${conn}" var="cakes">
+                                                                SELECT * FROM Product where itemcode = '${item.key}'
+                                                            </sql:query>
+                                                            <c:forEach var="cake" items="${cakes.rows}">
+                                                                <a href="#" class="product-image">
+                                                                    <!--     anh chinh anh o day-->
+                                                                    <img src="../images/${cake.img}" width="50" height="50"></a>
+                                                                <div class="product-details" style="width: 190px;">
+                                                                    <a href="../Controller?ac=delProduct&id=${cake.itemcode}" id="${cake.itemcode}" title="Remove This Item" onclick="removeCart(${cake.itemcode})" class="btn-remove">Remove This Item</a>
+                                                                    <a href="MyCart.jsp" title="Edit item" class="btn-edit">Edit item</a>
+                                                                    <p class="product-name" style="width: 150px"><a href="#">${cake.name}</a></p>
+                                                                    <strong>${item.value}</strong> x
+                                                                    <span class="price">$${cake.price}</span>                    
+                                                                </div>
+                                                                <c:set var="multiplication" value="${item.value * cake.price}" scope="page"/>
+                                                                <c:set var="total" value="${total + multiplication}" scope="page"/>
+                                                            </c:forEach>
+                                                        </li> 
+                                                    </c:forEach>
+                                                </ol>
+                                                <div class="top-subtotal" style="width: 190px;">total: <span class="price">$${total}</span></div>
+                                                <div class="actions" style="width: 190px;">
+                                                    <button type="button" title="Checkout" class="button" onclick="window.location = '../Client/CheckOut.jsp'"><span><span>Checkout</span></span></button>
+                                                </div>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <c:choose>
@@ -405,7 +430,7 @@
                  data-cycle-slides="> a"
                  >
                 <!--            empty element for pager links -->
-               <div class="cycle-pager"></div>
+                <div class="cycle-pager"></div>
                 <a href="Detail.jsp?id=tc27"><img src="images/wedding-cupcakes-small.jpg" height="240" width="940" alt="Image"/></a>
                 <a href="Detail.jsp?id=tc30"><img src="images/healthy.jpg" width="940" height="240" /></a>
                 <a href="Detail.jsp?id=tc29"><img src="images/cakes1.jpg" width="940" height="240" /></a>
