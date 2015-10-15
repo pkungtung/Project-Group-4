@@ -59,15 +59,6 @@
 
             </nav>
             <!-- /. SIDEBAR MENU (navbar-side) -->
-            <sql:setDataSource var="conn" 
-                               driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
-                               url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
-                               user="sa" 
-                               password="123456"
-                               scope="session"/>
-            <sql:query dataSource="${conn}" var="ol">
-                Select * from OrderList;
-            </sql:query>
             <div id="page-wrapper" class="page-wrapper-cls">
                 <div id="page-inner">
                     <div class="row">
@@ -84,38 +75,23 @@
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
-                                                <th>Order Id</th>
-                                                <th>Customer</th>
-                                                <th>Deliveri Address</th>
-                                                <th>Deliveri Date</th>
-                                                <th>Item Code</th>
-                                                <th>Quantity</th>
-                                                <th>Total</th>
-                                                <th>Status</th>
+                                                <th>User Name</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Address</th>
+                                                <th>Number</th>
+                                                <th>Member</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <c:forEach var="order" items="${ol.rows}">
+                                            <c:forEach var="p" items="${item.rows}">
                                                 <tr>
-                                                    <td>${order.oid}</td>
-                                                    <td>${order.CusId}</td>
-                                                    <td>${order.addr}</td>
-                                                    <td>${order.deliveriDate}</td>
-                                                    <sql:query dataSource="${conn}" var="od">
-                                                        select * from OrderDetail where oid=${order.oid};
-                                                    </sql:query>
-                                                    <td>
-                                                        <c:forEach var="p" items="${od.rows}">
-                                                            ${p.itemcode}</br>
-                                                        </c:forEach>
-                                                    </td>
-                                                    <td>
-                                                        <c:forEach var="p" items="${od.rows}">
-                                                            ${p.quantity}</br>
-                                                        </c:forEach>
-                                                    </td>
-                                                    <td>$ ${order.total}</td>
-                                                    <td>${order.stt}</td>
+                                                    <td>${p.username}</td>
+                                                    <td><a href="DetailAcc.jsp?id=${p.CusId}">${p.name}</a></td>
+                                                    <td>${p.email}</td>
+                                                    <td>${p.addr}</td>
+                                                    <td>${p.number}</td>
+                                                    <td>${p.member}</td>
                                                 </tr>
                                             </c:forEach>    
 

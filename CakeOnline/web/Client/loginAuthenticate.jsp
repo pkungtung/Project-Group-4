@@ -78,21 +78,26 @@
                     <c:param name="total" value="${total}" />
                 </c:redirect>          
             </c:if>
+            <c:set var="orderInfo" value=""/>
+            <c:forEach var="c" items="${sessionScope.cart.content}">
+                <c:set var="orderInfo" value="${orderInfo} ${c.key} x${c.value},"/>
+            </c:forEach>
+
             <sql:update dataSource="${conn}" var="ad">
                 insert into OrderList values(?,?,?,?,?);
                 <sql:param value="${sessionScope.loginUser}"/>
                 <sql:param value="${sessionScope.total}"/>
                 <sql:param value="${param.deAddress}"/>
                 <sql:param value="${param.deDate}"/>
-                <sql:param value="pending"/>
+                <sql:param value="inprocess"/>
             </sql:update>
             <sql:query dataSource="${conn}" var="orderlast">
                 select top 1 oid from OrderList order by oid desc;
             </sql:query>
             <c:forEach var="cab" items="${sessionScope.cart.content}">
                 <sql:update dataSource="${conn}" var="odde">
-                    insert into OrderDetail values(?,?,?,default);
-                    <sql:param value="${orderlast.rows[0].oid}"/>
+                    insert into OrderDetail values(?,?,?);
+                    <sql:param value="${sessionScope.loginUser}"/>
                     <sql:param value="${cab.key}"/>
                     <sql:param value="${cab.value}"/>
                 </sql:update>
