@@ -95,7 +95,10 @@
                                             <c:forEach var="order" items="${ol.rows}">
                                                 <tr>
                                                     <td>${order.oid}</td>
-                                                    <td>${order.CusId}</td>
+                                                    <sql:query dataSource="${conn}" var="us">
+                                                        select name from Customer where CusId = ${order.CusId};
+                                                    </sql:query>
+                                                        <td><a href="DetailAcc.jsp?id=${order.CusId}">${us.rows[0].name}</a></td>
                                                     <td>${order.addr}</td>
                                                     <td>${order.deliveriDate}</td>
                                                     <sql:query dataSource="${conn}" var="od">

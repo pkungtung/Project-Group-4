@@ -52,7 +52,7 @@ public class Controller extends HttpServlet {
                 cr = new Cart();
             }
             cr.deleteProduct(id);
-            response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
+            response.sendRedirect(session.getAttribute("urlPage").toString());
         }
         if ("delCart".equals(ac)) {
             HttpSession ss = request.getSession();
@@ -61,13 +61,13 @@ public class Controller extends HttpServlet {
                 cr = new Cart();
             }
             cr.delCart();
-            response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
+            response.sendRedirect(ss.getAttribute("urlPage").toString());
         }
         if ("updateCart".equals(ac)) {
+            HttpSession session = request.getSession();
             if (request.getParameterValues("id") != null) {
                 String[] id = request.getParameterValues("id");
                 String[] quantity = request.getParameterValues("quantity");
-                HttpSession session = request.getSession();
                 Cart card = (Cart) session.getAttribute("cart");
                 if (card == null) {
                     card = new Cart();
@@ -75,8 +75,7 @@ public class Controller extends HttpServlet {
                 card.updateCart(id, quantity);
                 session.setAttribute("cart", card);
             }
-
-            response.sendRedirect("/CakeOnline/Client/MyCart.jsp");
+            response.sendRedirect(session.getAttribute("urlPage").toString());
         }
         if ("addCart".equals(ac)) {
             String id = request.getParameter("id");

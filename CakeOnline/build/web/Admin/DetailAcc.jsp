@@ -67,7 +67,7 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Customer Manager</h1>
+                            <h1 class="page-head-line">Customer Details</h1>
                         </div>
                     </div>
 

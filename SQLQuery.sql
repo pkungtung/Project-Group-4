@@ -70,9 +70,9 @@ select * from Customer
 
 drop table Customer
 
-insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes')
-insert into Customer values('tien','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','yes')
-insert into Customer values('nam','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','no')
+insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes','../imgProduct/user-default.jpg')
+insert into Customer values('tien','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','yes','../imgProduct/user-default.jpg')
+insert into Customer values('nam','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','no','../imgProduct/user-default.jpg')
 
 
 insert into OrderList values(1,2121,'12112','1212','inprocess')

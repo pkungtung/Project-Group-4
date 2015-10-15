@@ -31,22 +31,47 @@
                 <div class="aside" style="width: 400px; padding: 10px;">
                     <h2 style="text-align: center; color: #0033ff;">Infomation</h2>
                     <form action="loginAuthenticate.jsp?ac=order" method="Post">
-                        <div class="form-group">
-                            <label for="">Name</label>
-                            <input type="text" class="form-control" name="name"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="text" class="form-control" name="email"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Address</label>
-                            <input type="text" class="form-control" name="address"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Contact number</label>
-                            <input type="text" class="form-control" name="number"/>
-                        </div>
+                        <c:choose>
+                            <c:when test="${empty sessionScope.loginUser}">
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input type="text" class="form-control" name="name"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="text" class="form-control" name="email"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input type="text" class="form-control" name="address"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact number</label>
+                                    <input type="text" class="form-control" name="number"/>
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <sql:query dataSource="${conn}" var="user">
+                                    select *from Customer where CusId = ${sessionScope.loginUser};
+                                </sql:query>
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input type="text" class="form-control" name="name" value="${user.rows[0].name}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="text" class="form-control" name="email" value="${user.rows[0].email}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input type="text" class="form-control" name="address" value="${user.rows[0].addr}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Contact number</label>
+                                    <input type="text" class="form-control" name="number" value="${user.rows[0].number}"/>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
                         <div class="form-group">
                             <label for="">Delivery address</label>
                             <input type="text" class="form-control" name="deAddress"/>

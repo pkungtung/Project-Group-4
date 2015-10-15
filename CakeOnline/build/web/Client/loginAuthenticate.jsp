@@ -54,14 +54,15 @@
                         <sql:param value="${ca.value}"/>
                     </sql:update>
                 </c:forEach>
-                <c:remove var="total"/>
+                <c:set var="carttopay" value="${sessionScope.cart}" scope="session"/>
+                <c:remove var="cart"/>
                 <c:redirect url="https://www.sandbox.paypal.com/cgi-bin/webscr" >
                     <c:param name="upload" value="1" />
                     <c:param name="return" value="http://localhost:8080/CakeOnline/Client/Product.jsp" />
                     <c:param name="cmd" value="_cart" />
                     <c:param name="business" value="phungtung1993@gmail.com" />
                     <c:set var="num" value="1"/>
-                    <c:forEach var="ct" items="${cart.content}">
+                    <c:forEach var="ct" items="${carttopay.content}">
                         <sql:query dataSource="${conn}" var="p">
                             select * from Product where itemcode= '${ct.key}';
                         </sql:query>
@@ -71,8 +72,7 @@
                         <c:param name="quantity_${num}" value="${ct.value}" />
                         <c:set var="num" value="${num + 1}"/>
                     </c:forEach>
-                </c:redirect>  
-                <c:remove var="cart"/>
+                </c:redirect> 
             </c:if>
             <sql:update dataSource="${conn}" var="ad">
                 insert into OrderList values(?,?,?,?,?);
@@ -93,8 +93,25 @@
                     <sql:param value="${cab.value}"/>
                 </sql:update>
             </c:forEach>
+            <c:set var="carttopay" value="${sessionScope.cart}" scope="session"/>
             <c:remove var="cart"/>
-            <c:redirect url="Product.jsp"/>
+            <c:redirect url="https://www.sandbox.paypal.com/cgi-bin/webscr" >
+                <c:param name="upload" value="1" />
+                <c:param name="return" value="http://localhost:8080/CakeOnline/Client/Product.jsp" />
+                <c:param name="cmd" value="_cart" />
+                <c:param name="business" value="phungtung1993@gmail.com" />
+                <c:set var="num" value="1"/>
+                <c:forEach var="ct" items="${carttopay.content}">
+                    <sql:query dataSource="${conn}" var="p">
+                        select * from Product where itemcode= '${ct.key}';
+                    </sql:query>
+                    <c:param name="item_name_${num}" value="${p.rows[0].name}" />
+                    <c:param name="item_number_${num}" value="${ct.key}" />
+                    <c:param name="amount_${num}" value="${p.rows[0].price * ct.value}" />
+                    <c:param name="quantity_${num}" value="${ct.value}" />
+                    <c:set var="num" value="${num + 1}"/>
+                </c:forEach>
+            </c:redirect>  
         </c:if>
         <c:if test="${param.ac eq 'showModal'}">
             <c:set var="code" scope="session" value="${param.id}"/>
@@ -136,7 +153,8 @@
                         <c:if test="${!empty sessionScope.tic}">
                             <c:param name="id" value="${sessionScope.tic}"/>
                         </c:if>
-                    </c:redirect>                </c:when>
+                    </c:redirect>  
+                </c:when>
                 <c:otherwise>
                     <c:set scope="session" var="loginUser" value="${sql.rows[0].CusId}"/>
                     <c:redirect url="${sessionScope.urlPage}">
