@@ -23,15 +23,15 @@
     <body>
         <jsp:useBean id="myBean" class="model.DataProcess" scope="session" />
 
-<c:if test="${!empty param['page']}">
-    <c:set var="indexPage" value="${param['page']}" scope="session" />
-</c:if>
-<c:if test="${empty param['page']}">
-    <c:set var="indexPage" value="1" scope="session" />
-</c:if>
+        <c:if test="${!empty param['page']}">
+            <c:set var="indexPage" value="${param['page']}" scope="session" />
+        </c:if>
+        <c:if test="${empty param['page']}">
+            <c:set var="indexPage" value="1" scope="session" />
+        </c:if>
 
-<c:set var="getBook" value="${myBean.getBookIndex(indexPage , 10)}" scope="session" />
-<c:set var="countTblBook" value="${myBean.countTblBook(10)}" scope="session"/>
+        <c:set var="getBook" value="${myBean.getBookIndex(indexPage , 10)}" scope="session" />
+        <c:set var="countTblBook" value="${myBean.countTblBook(10)}" scope="session"/>
         <c:if test="${empty sessionScope.userAdmin}">
             <c:redirect url="Administrator.jsp"/>
         </c:if>
@@ -53,14 +53,11 @@
                     <ul class="nav" id="main-menu">
                         <li>
                             <div class="user-img-div">
-                                <img src="assets/img/user.jpg" class="img-circle" />
-
-
+                                <img src="${userAdmin.rows[0].ava}" class="img-circle" />
                             </div>
-
                         </li>
                         <li>
-                            <a  href="#"> <strong> Phug Van Tung </strong></a>
+                            <a  href="#"> <strong> ${sessionScope.userAdmin.rows[0].name} </strong></a>
                         </li>
                         <li>
                             <a href="Home.jsp"><i class="fa fa-home "></i>Home</a>
@@ -121,36 +118,36 @@
                                 </div>
                             </div>
                             <div style=" clear: both ;width: auto; height: 50px; float: right; margin-right: 500px; margin-bottom: 5px">
-                    <form action="#" method="GET">
-                        <c:choose>
-                            <c:when test="${empty param['page']}">
-                                <c:forEach var="i"  end="${countTblBook}" begin="1" step="1" >
+                                <form action="#" method="GET">
                                     <c:choose>
-                                        <c:when test="${empty param['page'] && i == 1}">
-                                            <input class="btn btn-default" name="page" type="submit" disabled="true" value="${i}" style="margin-left: 1px; background: #cccccc"/>
+                                        <c:when test="${empty param['page']}">
+                                            <c:forEach var="i"  end="${countTblBook}" begin="1" step="1" >
+                                                <c:choose>
+                                                    <c:when test="${empty param['page'] && i == 1}">
+                                                        <input class="btn btn-default" name="page" type="submit" disabled="true" value="${i}" style="margin-left: 1px; background: #cccccc"/>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <input class="btn btn-default" name="page" type="submit" value="${i}" style="margin-left: 1px;"/>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </c:forEach>
                                         </c:when>
-                                        <c:otherwise>
-                                            <input class="btn btn-default" name="page" type="submit" value="${i}" style="margin-left: 1px;"/>
-                                        </c:otherwise>
-                                    </c:choose>
-                                </c:forEach>
-                            </c:when>
 
-                            <c:otherwise>
-                                <c:forEach var="i"  end="${countTblBook}" begin="1" step="1" >
-                                    <c:choose>
-                                        <c:when test="${i == param['page']}">
-                                            <input class="btn btn-default" name="page" type="submit" disabled="true" value="${i}" style="margin-left: 1px; background: #cccccc"/>
-                                        </c:when>
                                         <c:otherwise>
-                                            <input class="btn btn-default" name="page" type="submit" value="${i}" style="margin-left: 1px;"/>
+                                            <c:forEach var="i"  end="${countTblBook}" begin="1" step="1" >
+                                                <c:choose>
+                                                    <c:when test="${i == param['page']}">
+                                                        <input class="btn btn-default" name="page" type="submit" disabled="true" value="${i}" style="margin-left: 1px; background: #cccccc"/>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <input class="btn btn-default" name="page" type="submit" value="${i}" style="margin-left: 1px;"/>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </c:forEach>
                                         </c:otherwise>
                                     </c:choose>
-                                </c:forEach>
-                            </c:otherwise>
-                        </c:choose>
-                    </form>   
-                </div>
+                                </form>   
+                            </div>
                         </div>
                     </div>
 

@@ -19,7 +19,8 @@ create table Customer(
 	email varchar(30),
 	addr varchar(50),
 	number varchar(15),
-	member varchar(5)
+	member varchar(5),
+	ava varchar(50)
 )
 create table feedback(
 	id int primary key identity(1,1),
@@ -29,7 +30,7 @@ create table feedback(
 	content varchar(max)
 )
 select *from feedback
-insert into feedback values('asd','asd','asdasd','asdasd');
+
 create table administrator(
 	username varchar(50) primary key,
 	pass varchar(50),
@@ -57,19 +58,26 @@ create table OrderDetail(
 select * from OrderDetail where oid=7
 
 select * from OrderList
-insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','asdasdasda','asdasda')
+
+insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','Ha Noi','../imgProduct/user-tung.jpg')
+insert into administrator values('admin','123','Administrator','000000000','00@gmail.com','Ha Noi','../imgProduct/user-default.jpg')
 
 select top 1 CusId from Customer
 order by CusId desc
+
 delete from table Customer
 select * from Customer
+
 drop table Customer
+
 insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes')
 insert into Customer values('tien','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','yes')
 insert into Customer values('nam','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','no')
 
 
 insert into OrderList values(1,2121,'12112','1212','inprocess')
+
+insert into feedback values('asd','asd','asdasd','asdasd');
 
 insert into Product values('tc1', 'Fashion Happy Birthday Cake For Girls', 100, 'yes', '../imgProduct/1fashion-happy-birthday-cake-for-girls.png', 'Birthday','show')
 insert into Product values('tc2', 'GELATO BIRTHDAY CAKE', 56, 'no', '../imgProduct/1gelato.jpg', 'Birthday','show')

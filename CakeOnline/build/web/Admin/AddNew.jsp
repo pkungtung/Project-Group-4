@@ -31,11 +31,11 @@
                     <ul class="nav" id="main-menu">
                         <li>
                             <div class="user-img-div">
-                                <img src="assets/img/user.jpg" class="img-circle" />
+                                <img src="${userAdmin.rows[0].ava}" class="img-circle" />
                             </div>
                         </li>
                         <li>
-                            <a  href="#"> <strong> Phug Van Tung </strong></a>
+                            <a  href="#"> <strong> ${sessionScope.userAdmin.rows[0].name} </strong></a>
                         </li>
                         <li>
                             <a  href="Home.jsp"><i class="fa fa-home "></i>Home</a>

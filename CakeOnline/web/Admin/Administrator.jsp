@@ -116,15 +116,15 @@
                            password="123456"
                            scope="session"/>
         <c:if test="${not empty param.username and not empty param.pass}">
-            <sql:query dataSource="${conn}" var="s">
+            <sql:query dataSource="${conn}" var="admin">
                 select *from administrator where username = '${param.username}' and pass='${param.pass}';
             </sql:query>
-            <c:if test="${empty s.rows}">
+            <c:if test="${empty admin.rows}">
                 <c:set var="login" value="failed" scope="session"/>
                 <c:redirect url="Administrator.jsp">
                 </c:redirect>
             </c:if>
-            <c:set var="userAdmin" value="${param.username}" scope="session"/>
+            <c:set var="userAdmin" value="${admin}" scope="session"/>
             <c:redirect url="Home.jsp"/>s
         </c:if>
         <c:choose>

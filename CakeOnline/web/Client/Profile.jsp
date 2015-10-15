@@ -29,8 +29,7 @@
                            password="123456"
                            scope="session"/>
         <div id="wrapper">
-            <jsp:include page="include/top.jsp" />
-
+            <jsp:include page="../Admin/inAdmin/top.jsp" />
             <!-- /. NAV TOP  -->
             <nav  class="navbar-default navbar-side" role="navigation">
                 <div class="sidebar-collapse">
@@ -38,7 +37,6 @@
                         <li>
                             <div class="user-img-div">
                                 <img src="images/placeholder-user.jpg" class="img-circle" />
-
 
                             </div>
 
@@ -84,6 +82,6 @@
         <script src="../Admin/assets/js/jquery.metisMenu.js" type="text/javascript"></script>
         <!-- CUSTOM SCRIPTS -->
         <script src="../Admin/assets/js/custom.js" type="text/javascript"></script>
-        
+
     </body>
 </html>
