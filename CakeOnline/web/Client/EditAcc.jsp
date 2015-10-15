@@ -1,9 +1,8 @@
 <%-- 
-    Document   : Profile
-    Created on : Oct 15, 2015, 9:18:59 PM
-    Author     : Boong
+    Document   : EditAcc
+    Created on : Oct 16, 2015, 1:17:01 AM
+    Author     : Pkung
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
@@ -84,10 +83,10 @@
                             <a> <strong> ${sessionScope.loginUser.rows[0].name} </strong></a>
                         </li>
                         <li>
-                            <a class="active-menu" href="#"><i class="fa fa-cart-plus "></i>My Orders </a>
+                            <a href="Profile.jsp"><i class="fa fa-cart-plus "></i>My Orders </a>
                         </li>
                         <li>
-                            <a href="EditAcc.jsp"><i class="fa fa-user "></i>Edit Your Account</a>
+                            <a class="active-menu" href="#"><i class="fa fa-user "></i>Edit Your Account</a>
                         </li>
                     </ul>
                 </div>
@@ -98,7 +97,7 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Order List</h1>
+                            <h1 class="page-head-line">Edit Infomation</h1>
                         </div>
                     </div>
                     <div class="row">
