@@ -54,56 +54,46 @@
                         <sql:param value="${ca.value}"/>
                     </sql:update>
                 </c:forEach>
-                <c:remove var="cart"/>
                 <c:remove var="total"/>
                 <c:redirect url="https://www.sandbox.paypal.com/cgi-bin/webscr" >
                     <c:param name="upload" value="1" />
                     <c:param name="return" value="http://localhost:8080/CakeOnline/Client/Product.jsp" />
                     <c:param name="cmd" value="_cart" />
                     <c:param name="business" value="phungtung1993@gmail.com" />
-                    <c:param name="currency_code" value="USD" />
-                    <c:param name="item_name" value="The Cake" />
                     <c:set var="num" value="1"/>
                     <c:forEach var="ct" items="${cart.content}">
                         <sql:query dataSource="${conn}" var="p">
                             select * from Product where itemcode= '${ct.key}';
                         </sql:query>
                         <c:param name="item_name_${num}" value="${p.rows[0].name}" />
-                        <c:param name="item_number_${num}" value="${p.rows[0].itemcode}" />
+                        <c:param name="item_number_${num}" value="${ct.key}" />
                         <c:param name="amount_${num}" value="${p.rows[0].price * ct.value}" />
                         <c:param name="quantity_${num}" value="${ct.value}" />
                         <c:set var="num" value="${num + 1}"/>
-                        <c:set var="total" value="${total = total + p.rows[0].price * ct.value}" scope="request"/>
                     </c:forEach>
-                    <c:param name="total" value="${total}" />
-                </c:redirect>          
+                </c:redirect>  
+                <c:remove var="cart"/>
             </c:if>
-            <c:set var="orderInfo" value=""/>
-            <c:forEach var="c" items="${sessionScope.cart.content}">
-                <c:set var="orderInfo" value="${orderInfo} ${c.key} x${c.value},"/>
-            </c:forEach>
-
             <sql:update dataSource="${conn}" var="ad">
                 insert into OrderList values(?,?,?,?,?);
                 <sql:param value="${sessionScope.loginUser}"/>
                 <sql:param value="${sessionScope.total}"/>
                 <sql:param value="${param.deAddress}"/>
                 <sql:param value="${param.deDate}"/>
-                <sql:param value="inprocess"/>
+                <sql:param value="pending"/>
             </sql:update>
             <sql:query dataSource="${conn}" var="orderlast">
                 select top 1 oid from OrderList order by oid desc;
             </sql:query>
             <c:forEach var="cab" items="${sessionScope.cart.content}">
                 <sql:update dataSource="${conn}" var="odde">
-                    insert into OrderDetail values(?,?,?);
-                    <sql:param value="${sessionScope.loginUser}"/>
+                    insert into OrderDetail values(?,?,?,default);
+                    <sql:param value="${orderlast.rows[0].oid}"/>
                     <sql:param value="${cab.key}"/>
                     <sql:param value="${cab.value}"/>
                 </sql:update>
             </c:forEach>
             <c:remove var="cart"/>
-            <c:remove var="total"/>
             <c:redirect url="Product.jsp"/>
         </c:if>
         <c:if test="${param.ac eq 'showModal'}">
