@@ -30,8 +30,8 @@
     <c:set var="indexPage" value="1" scope="session" />
 </c:if>
 
-<c:set var="getBook" value="${myBean.getBookIndex(indexPage , 6)}" scope="session" />
-<c:set var="countTblBook" value="${myBean.countTblBook(6)}" scope="session"/>
+<c:set var="getBook" value="${myBean.getBookIndex(indexPage , 10)}" scope="session" />
+<c:set var="countTblBook" value="${myBean.countTblBook(10)}" scope="session"/>
         <c:if test="${empty sessionScope.userAdmin}">
             <c:redirect url="Administrator.jsp"/>
         </c:if>
@@ -42,7 +42,7 @@
                            password="123456"
                            scope="session"/>
         <sql:query dataSource="${conn}" var="list">
-            select top 6 * from Product where itemcode not in (select top  ( 6 * (${indexPage} - 1))  itemcode from Product);
+            select top 10 * from Product where itemcode not in (select top  ( 10 * (${indexPage} - 1))  itemcode from Product);
         </sql:query>
         <div id="wrapper">
             <jsp:include page="inAdmin/top.jsp" />
