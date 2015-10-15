@@ -192,7 +192,7 @@
                             <a href="#" data-toggle="modal" data-target="#myModal" class="last"><i class="fa fa-sign-in"></i> Sign in</a>
                         </c:when>
                         <c:otherwise>
-                            <a href="loginAuthenticate.jsp?ac=signout" ><i class="fa fa-user-plus"></i> Profile</a>
+                            <a href="Profile.jsp" ><i class="fa fa-user-plus"></i> Profile</a>
                             <a href="loginAuthenticate.jsp?ac=signout" class="last"><i class="fa fa-sign-out"></i> Sign out</a>
                         </c:otherwise>
                     </c:choose>
