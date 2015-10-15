@@ -77,7 +77,7 @@ public final class Profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        <div id=\"wrapper\">\n");
       out.write("            ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "../Admin/inAdmin/top.jsp", out, false);
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/top.jsp", out, false);
       out.write("\n");
       out.write("\n");
       out.write("            <!-- /. NAV TOP  -->\n");

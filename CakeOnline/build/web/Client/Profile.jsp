@@ -29,7 +29,7 @@
                            password="123456"
                            scope="session"/>
         <div id="wrapper">
-            <jsp:include page="../Admin/inAdmin/top.jsp" />
+            <jsp:include page="include/top.jsp" />
 
             <!-- /. NAV TOP  -->
             <nav  class="navbar-default navbar-side" role="navigation">
