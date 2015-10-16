@@ -108,6 +108,41 @@
                         <div class="col-md-12">
                             <h1 class="page-head-line">Edit Infomation</h1>
                         </div>
+                        <div class="row">
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    
+                                        
+                                        <div class="form-group">
+                                            <label>User Name</label>
+                                            <input readonly="" type="text" class="form-control" value="${pro.rows[0].name}" name="user" placeholder="User Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input type="text" class="form-control" value="${pro.rows[0].price}" name="email" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="text" class="form-control" value="${pro.rows[0].price}" name="email" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input type="text" class="form-control" value="${pro.rows[0].price}" name="price" placeholder="Phone">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Avatar Image</label>
+                                            <p><img src="${pro.rows[0].img}" height="100" width="100" alt=""/></p>
+                                            Change Avatar Image
+                                            <input type="file" id="exampleInputFile" name="file">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Update</button>
+                                        <hr>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
 
                 </div>

@@ -120,13 +120,15 @@
                                         <div class="form-group">
                                             <label id="check">Old Password</label>
                                             <input type="password" class="form-control" name="oldpass"/>
+                                            <label id="check">New Password</label>
                                             <input type="password" class="form-control" name="newpass"/>
+                                            <label id="check">Re-enter New Password</label>
                                             <input type="password" class="form-control" name="confirmpass"/>
                                             <input type="hidden" name="ac" value="changePass"/>
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <button type="submit" class="btn btn-default">Submit</button>
+                                        <button type="submit" class="btn btn-default">Change Password</button>
                                     </div>
                                 </div>
                             </form>
