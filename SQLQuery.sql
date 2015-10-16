@@ -65,6 +65,7 @@ create table payment(
 select * from OrderDetail where oid=7
 
 select * from OrderList
+select * from Product
 
 insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','Ha Noi','../imgProduct/user-tung.jpg')
 insert into administrator values('admin','123','Administrator','000000000','00@gmail.com','Ha Noi','../imgProduct/user-default.jpg')

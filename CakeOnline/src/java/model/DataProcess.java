@@ -39,6 +39,16 @@ public class DataProcess {
         return conn;
     }
 
+    public String autoId() {
+        ArrayList<Cake> list = getListCake();
+        return "tc"+(list.size()+1);
+    }
+
+    public static void main(String[] args) {
+        DataProcess dt = new DataProcess();
+        System.out.println(dt.autoId());
+    }
+
     public boolean checkLogin(String user, String pass) {
         String sql = "SELECT * FROM logincake WHERE _user=? and _pass=?";
         try {
@@ -176,6 +186,7 @@ public class DataProcess {
         }
         return result > 0;
     }
+
     //phan trang
     public ArrayList<Cake> getBookIndex(int index, int i) {
         ArrayList<Cake> list = new ArrayList<>();
@@ -183,13 +194,13 @@ public class DataProcess {
         try {
             ResultSet rs = getConnection().createStatement().executeQuery(sql);
             while (rs.next()) {
-                String itemCode=rs.getString(1);
-                String name=rs.getString(2);
+                String itemCode = rs.getString(1);
+                String name = rs.getString(2);
                 float price = rs.getFloat(3);
-                String egge=rs.getString(4);
-                String img=rs.getString(5);                
-                String event=rs.getString(6);
-                String stt=rs.getString(7);               
+                String egge = rs.getString(4);
+                String img = rs.getString(5);
+                String event = rs.getString(6);
+                String stt = rs.getString(7);
                 Cake emp = new Cake(itemCode, name, price, egge, img, event, stt);
                 emp.setItemCode(itemCode);
                 emp.setName(name);
@@ -206,7 +217,8 @@ public class DataProcess {
         }
         return list;
     }
-     public int countTblBook(int i) {
+
+    public int countTblBook(int i) {
         String sql = "select count(*) from Product";
         int count = 0;
         try {
@@ -225,7 +237,8 @@ public class DataProcess {
         }
         return count;
     }
-          public int countTblBook1(int i) {
+
+    public int countTblBook1(int i) {
         String sql = "select count(*) from Customer";
         int count = 0;
         try {
@@ -244,7 +257,8 @@ public class DataProcess {
         }
         return count;
     }
-     public int countTblBook2(int i) {
+
+    public int countTblBook2(int i) {
         String sql = "select count(*) from OrderList";
         int count = 0;
         try {
@@ -264,4 +278,3 @@ public class DataProcess {
         return count;
     }
 }
-
