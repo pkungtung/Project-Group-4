@@ -66,9 +66,10 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <form action="../Controller?ac=add" method="Post" enctype="multipart/form-data">
+                                        <jsp:useBean id="mrbean" class="model.DataProcess"/>
                                         <div class="form-group">
                                             <label>Item Code</label>
-                                            <input type="text" class="form-control" name="itemcode" placeholder="Item Code">
+                                            <input readonly type="text" class="form-control" name="itemcode" value="${mrbean.autoId()}">
                                         </div>
                                         <div class="form-group">
                                             <label>Product Name</label>
