@@ -67,7 +67,7 @@
                     <sql:param value="${sessionScope.total}"/>
                     <sql:param value="${param.deAddress}"/>
                     <sql:param value="${param.deDate}"/>
-                    <sql:param value="pending"/>
+                    <sql:param value="done"/>
                 </sql:update>
                 <sql:query dataSource="${conn}" var="orderlast">
                     select top 1 oid from OrderList order by oid desc;
@@ -106,7 +106,7 @@
                 <sql:param value="${sessionScope.total}"/>
                 <sql:param value="${param.deAddress}"/>
                 <sql:param value="${param.deDate}"/>
-                <sql:param value="pending"/>
+                <sql:param value="done"/>
             </sql:update>
             <sql:query dataSource="${conn}" var="orderlast">
                 select top 1 oid from OrderList order by oid desc;

@@ -116,7 +116,7 @@
                         <div class="col-md-6" style="margin: auto;">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <form action="../Controller?ac=add" method="Post" enctype="multipart/form-data">
+                                    <form action="../Controller?ac=addCake" method="Post" enctype="multipart/form-data">
                                         <jsp:useBean id="mrbean" class="model.DataProcess"/>
                                         <div class="form-group">
                                             <label>Item Code</label>

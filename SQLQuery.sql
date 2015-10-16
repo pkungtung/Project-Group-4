@@ -79,7 +79,7 @@ insert into Customer values('ad','123','Pkung Tung','Tung@gmail.com','Ha Noi','0
 insert into OrderList values(1,2121,'12112','1212','inprocess')
 
 insert into feedback values('asd','asd','asdasd','asdasd');
-delete Product where itemcode='tc4'
+delete Product where itemcode='tc37'
 insert into Product values('tc1', 'Fashion Happy Birthday Cake For Girls', 100, 'yes', '../imgProduct/1fashion-happy-birthday-cake-for-girls.png', 'Birthday','show')
 insert into Product values('tc2', 'GELATO BIRTHDAY CAKE', 56, 'no', '../imgProduct/1gelato.jpg', 'Birthday','show')
 insert into Product values('tc3', 'Oreo Birthday Cake', 75, 'no', '../imgProduct/1oreo-birthday-cakeac15.png', 'Birthday','show')

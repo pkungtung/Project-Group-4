@@ -38,11 +38,12 @@ public class Controller extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-//    private final String UPLOAD_DIRECTORY = "C:\\Users\\Pkung\\Documents\\GitHub\\Project-Group-4\\CakeOnline\\web\\imgProduct";
+    private final String UPLOAD_DIRECTORY = "C:\\Users\\Pkung\\Desktop\\Project-Group-4\\CakeOnline\\web\\imgProduct";
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String UPLOAD_DIRECTORY = request.getServletContext().getRealPath("/")+"imgProduct";
+//        String UPLOAD_DIRECTORY = request.getServletContext().getRealPath("/") + "imgProduct";
         String ac = request.getParameter("ac");
         if ("delProduct".equals(ac)) {
             String id = request.getParameter("id");
@@ -118,6 +119,7 @@ public class Controller extends HttpServlet {
                         if (!item.isFormField()) {
                             img = new File(item.getName()).getName();
                             item.write(new File(UPLOAD_DIRECTORY + File.separator + img));
+                            System.out.println(UPLOAD_DIRECTORY);
                             System.out.println("Name Img is:" + img);
                         } else {
                             if ("itemcode".equals(item.getFieldName())) {
@@ -160,6 +162,69 @@ public class Controller extends HttpServlet {
                 request.setAttribute("message",
                         "Sorry this Servlet only handles file upload request");
                 response.sendRedirect("../Admin/AddProduct.jsp");
+            }
+        }
+        if ("addCake".equals(ac)) {
+            String itemCode = null;
+            String name = null;
+            float price = 0;
+            String egg = null;
+            String img = null;
+            String event = null;
+            String stt = null;
+            if (ServletFileUpload.isMultipartContent(request)) {
+
+                try {
+                    List<FileItem> multiparts = new ServletFileUpload(
+                            new DiskFileItemFactory()).parseRequest(request);
+                    for (FileItem item : multiparts) {
+
+                        if (!item.isFormField()) {
+                            img = new File(item.getName()).getName();
+                            item.write(new File(UPLOAD_DIRECTORY + File.separator + img));
+                            System.out.println(UPLOAD_DIRECTORY);
+                            System.out.println("Name Img is:" + img);
+                        } else {
+                            if ("itemcode".equals(item.getFieldName())) {
+                                itemCode = (String) item.getString();
+                            }
+                            if ("name".equals(item.getFieldName())) {
+                                name = (String) item.getString();
+                                name = new String(name.getBytes("iso-8859-1"), "UTF-8");
+                            }
+                            if ("price".equalsIgnoreCase(item.getFieldName())) {
+                                price = Float.parseFloat(item.getString());
+                                System.out.println("Price is:" + price);
+                            }
+                            if ("egge".equals(item.getFieldName())) {
+                                egg = (String) item.getString();
+                            }
+                            if ("event".equalsIgnoreCase(item.getFieldName())) {
+                                event = item.getString();
+                            }
+                            if ("status".equalsIgnoreCase(item.getFieldName())) {
+                                stt = item.getString();
+                            }
+                        }
+                    }
+                    //File uploaded successfully
+                    request.setAttribute("message", "File Uploaded Successfully");
+                    Cake ca = new Cake(itemCode, name, price, egg, "../imgProduct/" + img, event, stt);
+                    DataProcess dt = new DataProcess();
+                    if (dt.addProduct(ca)) {
+                        response.sendRedirect("/CakeOnline/Client/Profile.jsp");
+                    } else {
+                        response.sendRedirect("/CakeOnline/Client/NewCake.jsp");
+                    }
+
+                } catch (Exception ex) {
+                    request.setAttribute("message", "File Upload Failed due to " + ex);
+                }
+
+            } else {
+                request.setAttribute("message",
+                        "Sorry this Servlet only handles file upload request");
+                response.sendRedirect("/CakeOnline/Client/Profile.jsp");
             }
         }
         if ("updateProduct".equals(ac)) {
