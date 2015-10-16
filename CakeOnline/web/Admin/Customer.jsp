@@ -42,7 +42,7 @@
                            password="123456"
                            scope="session"/>
         <sql:query dataSource="${conn}" var="item">
-            select top 6 * from Customer where CusId not in (select top  ( 6 * (${indexPage} - 1))  CusId from Customer);
+            select top 10 * from Customer where CusId not in (select top  ( 10 * (${indexPage} - 1))  CusId from Customer);
         </sql:query>
         <div id="wrapper">
             <jsp:include page="inAdmin/top.jsp" />
@@ -82,7 +82,7 @@
                                password="123456"
                                scope="session"/>
             <sql:query dataSource="${conn}" var="item">
-                select top 6 * from Customer where CusId not in (select top  ( 6 * (${indexPage} - 1))  CusId from Customer);
+                select top 10 * from Customer where CusId not in (select top  ( 10 * (${indexPage} - 1))  CusId from Customer);
             </sql:query>
             <div id="page-wrapper" class="page-wrapper-cls">
                 <div id="page-inner">

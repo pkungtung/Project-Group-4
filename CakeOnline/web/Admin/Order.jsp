@@ -75,7 +75,7 @@
                                password="123456"
                                scope="session"/>
             <sql:query dataSource="${conn}" var="ol">
-                select top 6 * from OrderList where oid not in (select top  ( 6 * (${indexPage} - 1))  oid from OrderList);
+                select top 10 * from OrderList where oid not in (select top  ( 10 * (${indexPage} - 1))  oid from OrderList);
             </sql:query>
             <div id="page-wrapper" class="page-wrapper-cls">
                 <div id="page-inner">
