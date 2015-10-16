@@ -42,7 +42,7 @@
                            password="123456"
                            scope="session"/>
         <sql:query dataSource="${conn}" var="item">
-            select top 6 * from Customer where CusId not in (select top  ( 6 * (${indexPage} - 1))  CusId from Customer);
+            select top 10 * from Customer where CusId not in (select top  ( 10 * (${indexPage} - 1))  CusId from Customer);
         </sql:query>
         <div id="wrapper">
             <jsp:include page="inAdmin/top.jsp" />
@@ -75,15 +75,7 @@
 
             </nav>
             <!-- /. SIDEBAR MENU (navbar-side) -->
-            <sql:setDataSource var="conn" 
-                               driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
-                               url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
-                               user="sa" 
-                               password="123456"
-                               scope="session"/>
-            <sql:query dataSource="${conn}" var="item">
-                select top 6 * from Customer where CusId not in (select top  ( 6 * (${indexPage} - 1))  CusId from Customer);
-            </sql:query>
+
             <div id="page-wrapper" class="page-wrapper-cls">
                 <div id="page-inner">
                     <div class="row">

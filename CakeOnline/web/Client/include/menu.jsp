@@ -164,30 +164,30 @@
                 <h4 class="modal-title" id="myModalSignupLabel">Signup to Site</h4>
             </div>
             <div class="modal-body">
-                <form action="loginAuthenticate.jsp?ac=signup" method="Post">
+                <form name="fom" action="loginAuthenticate.jsp?ac=signup" method="Post" onsubmit="return ValidateEmail(document.fom.email)">
                     <div class="form-group">
                         <label for="userName">UserName</label>
-                        <input type="text" class="form-control" id="userName" placeholder="UserName" name="userName"/>
+                        <input type="text" required class="form-control" id="userName" placeholder="UserName" name="userName"/>
                     </div>
                     <div class="form-group">
                         <label for="pass">Password</label>
-                        <input type="password" class="form-control" id="pass" placeholder="Password" name="pass"/>
+                        <input type="password" required class="form-control" id="pass" placeholder="Password" name="pass"/>
                     </div>
                     <div class="form-group">
                         <label for="Name">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Name" name="name"/>
+                        <input type="text" required class="form-control" id="name" placeholder="Name" name="name"/>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" placeholder="Email" name="email"/>
+                        <label for="email" id="checkEmail">Email</label>
+                        <input type="text" required class="form-control" id="email" placeholder="Email" name="email"/>
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="Address" name="address"/>
+                        <input type="text" required class="form-control" id="address" placeholder="Address" name="address"/>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="text" class="form-control" id="phone" placeholder="Phone Number" name="number"/>
+                        <input type="text" required class="form-control" id="phone" placeholder="Phone Number" name="number"/>
                     </div>
                     <div class="modal-footer">
                         Already have an account? <a href="loginAuthenticate.jsp?ac=signin">Sign in</a> &nbsp;
