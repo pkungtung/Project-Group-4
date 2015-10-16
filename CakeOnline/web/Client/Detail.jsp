@@ -21,7 +21,7 @@
                            url="jdbc:sqlserver://127.0.0.1:1433;database=ProjectGroup4"
                            user="sa" 
                            password="123456"
-                           scope="request"/>
+                           scope="session"/>
         <c:set var="tic" value="${param.id}" scope="session"/>
         <sql:query dataSource="${conn}" var="pr">
             Select * from Product where itemcode ='${param.id}';
@@ -48,9 +48,12 @@
                             </form>
                             <c:if test="${!empty sessionScope.loginUser}">
                                 <sql:query dataSource="${conn}" var="cus">
-                                    Select * from Customer where CusId =${sessionScope.loginUser} and member='yes';
+                                    Select * from Customer where CusId =${sessionScope.loginUser.rows[0].CusId};
                                 </sql:query>
-                                <c:if test="${!empty cus.rows}">
+                                <c:if test="${cus.rows[0].member eq 'Pre'}">
+                                    <button style="margin-top: 10px;" class="btn btn-info" data-toggle="modal" data-target="#recipes">Recipes</button>
+                                </c:if>
+                                <c:if test="${cus.rows[0].member eq 'Pro'}">
                                     <button style="margin-top: 10px;" class="btn btn-info" data-toggle="modal" data-target="#recipes">Recipes</button>
                                 </c:if>
                             </c:if>

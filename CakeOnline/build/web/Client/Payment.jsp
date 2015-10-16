@@ -1,5 +1,7 @@
 <%-- 
-    Document   : Payment
+    Doc/* global update */
+
+ument   : Payment
     Created on : Oct 16, 2015, 8:43:15 AM
     Author     : Pkung
 --%>
@@ -19,16 +21,15 @@
         <!--CUSTOM STYLES-->
         <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
         <script>
-            function upgradePremium() {
-            <sql:update dataSource="${sessionScope.conn}" var="pre">
-                update
-                Customer set member = 'Pre' where CusId =${sessionScope.loginUser.rows[0].CusId};
-            </sql:update>
+            function toPre() {
+
             }
-            function upgradeProfessional() {
-            <sql:update dataSource="${sessionScope.conn}" var="pre">
+            function toPro() {
+            <sql:update dataSource="${sessionScope.conn}" var="pro">
                 update
-                Customer set member = 'Pro' where CusId =${sessionScope.loginUser.rows[0].CusId};
+                Customer
+                set
+                member = 'Pro' where CusId =${sessionScope.loginUser.rows[0].CusId};
             </sql:update>
             }
         </script>
@@ -133,16 +134,8 @@
                                     <p>You can see the recipe of any cake on the website if you are a premium membership</p>
                                 </div>
                                 <div class="panel-footer">
-                                    <p>Pay 9$ Monthly To Premium mebership</p></br>
-                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-                                        <input type="hidden" name="cmd" value="_xclick">
-                                        <input type="hidden" name="business" value="phungtung1993@gmail.com">
-                                        <input type="hidden" name="item_name" value="Upgrade to Premium">
-                                        <input type="hidden" name="return" value="http://localhost:8080/CakeOnline/Client/Payment.jsp">
-                                        <input type="hidden" name="amount" value="9.00">
-                                        <input type="hidden" name="currency_code" value="USD">
-                                        <button type="submit" class="btn btn-warning" onclick="upgradePremium()">Upgrade Account</button>
-                                    </form>
+                                    <p>Pay 9$ Monthly To Premium mebership</p>
+                                    <a href="loginAuthenticate.jsp?ac=toPre" class="btn btn-warning">Upgrade Account</a>
                                 </div>
                             </div>
                         </div>
@@ -156,16 +149,8 @@
                                     <p><strong>2</strong>. You can upload your cake and sale in website if you are a professional  membership</p>
                                 </div>
                                 <div class="panel-footer">
-                                    <p>Pay 20$ To Professional mebership</p></br>
-                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-                                        <input type="hidden" name="cmd" value="_xclick">
-                                        <input type="hidden" name="business" value="phungtung1993@gmail.com">
-                                        <input type="hidden" name="item_name" value="Upgrade to Professional">
-                                        <input type="hidden" name="return" value="http://localhost:8080/CakeOnline/Client/Payment.jsp">
-                                        <input type="hidden" name="amount" value="20.00">
-                                        <input type="hidden" name="currency_code" value="USD">
-                                        <button type="submit" class="btn btn-warning" onclick="upgradeProfessional()">Upgrade Account</button>
-                                    </form>
+                                    <p>Pay 20$ To Professional mebership</p>
+                                    <a href="loginAuthenticate.jsp?ac=toPro" class="btn btn-warning">Upgrade Account</a>
                                 </div>
                             </div>
                         </div>

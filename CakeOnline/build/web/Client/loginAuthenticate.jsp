@@ -23,6 +23,32 @@
                            user="sa" 
                            password="123456"
                            scope="session"/>
+        <c:if test="${param.ac eq 'toPre'}">
+            <sql:update dataSource="${sessionScope.conn}" var="pre">
+                update Customer set member = 'Pre' where CusId =${sessionScope.loginUser.rows[0].CusId};
+            </sql:update>
+            <c:redirect url="https://www.sandbox.paypal.com/cgi-bin/webscr" >
+                <c:param name="cmd" value="_xclick"/>
+                <c:param name="business" value="phungtung1993@gmail.com"/>
+                <c:param name="item_name" value="Upgrade to Premium"/>
+                <c:param name="return" value="http://localhost:8080/CakeOnline/Client/Payment.jsp"/>
+                <c:param name="amount" value="9.00"/>
+                <c:param name="currency_code" value="USD"/>
+            </c:redirect> 
+        </c:if> 
+        <c:if test="${param.ac eq 'toPro'}">
+            <sql:update dataSource="${sessionScope.conn}" var="pre">
+                update Customer set member = 'Pro' where CusId =${sessionScope.loginUser.rows[0].CusId};
+            </sql:update>
+            <c:redirect url="https://www.sandbox.paypal.com/cgi-bin/webscr" >
+                <c:param name="cmd" value="_xclick"/>
+                <c:param name="business" value="phungtung1993@gmail.com"/>
+                <c:param name="item_name" value="Upgrade to Professional"/>
+                <c:param name="return" value="http://localhost:8080/CakeOnline/Client/Payment.jsp"/>
+                <c:param name="amount" value="9.00"/>
+                <c:param name="currency_code" value="USD"/>
+            </c:redirect> 
+        </c:if>
         <c:if test="${param.ac eq 'order'}">
             <c:if test="${empty sessionScope.loginUser}">
                 <sql:update dataSource="${conn}" var="insertCus">
@@ -128,7 +154,8 @@
                         <c:if test="${!empty sessionScope.tic}">
                             <c:param name="id" value="${sessionScope.tic}"/>
                         </c:if>
-                    </c:redirect>                </c:if>
+                    </c:redirect>        
+                </c:if>
                 <sql:update dataSource="${conn}" var="insert">
                     insert into Customer values('${param.userName}','${param.pass}','${param.name}','${param.email}','${param.address}','${param.number}','no','../imgProduct/user-default.jpg');
                 </sql:update>

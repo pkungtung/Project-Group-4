@@ -38,11 +38,11 @@ public class Controller extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private final String UPLOAD_DIRECTORY = "C:\\Users\\Pkung\\Documents\\GitHub\\Project-Group-4\\CakeOnline\\web\\imgProduct";
-
+//    private final String UPLOAD_DIRECTORY = "C:\\Users\\Pkung\\Documents\\GitHub\\Project-Group-4\\CakeOnline\\web\\imgProduct";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String UPLOAD_DIRECTORY = request.getServletContext().getRealPath("/");
         String ac = request.getParameter("ac");
         if ("delProduct".equals(ac)) {
             String id = request.getParameter("id");

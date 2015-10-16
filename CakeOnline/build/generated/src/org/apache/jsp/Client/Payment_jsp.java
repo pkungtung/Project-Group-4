@@ -15,6 +15,7 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_redirect_url_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_sql_setDataSource_var_user_url_scope_password_driver_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_sql_update_var_dataSource;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -27,6 +28,7 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_c_redirect_url_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_sql_setDataSource_var_user_url_scope_password_driver_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_sql_update_var_dataSource = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
@@ -34,6 +36,7 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_c_redirect_url_nobody.release();
     _jspx_tagPool_c_if_test.release();
     _jspx_tagPool_sql_setDataSource_var_user_url_scope_password_driver_nobody.release();
+    _jspx_tagPool_sql_update_var_dataSource.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -76,6 +79,20 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"../Admin/assets/css/font-awesome.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
       out.write("        <!--CUSTOM STYLES-->\n");
       out.write("        <link href=\"../Admin/assets/css/style.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
+      out.write("        <script>\n");
+      out.write("            function upgradePremium() {\n");
+      out.write("            ");
+      if (_jspx_meth_sql_update_0(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("            }\n");
+      out.write("            function upgradeProfessional() {\n");
+      out.write("            ");
+      if (_jspx_meth_sql_update_1(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("            }\n");
+      out.write("        </script>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        ");
@@ -171,15 +188,15 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\n");
       out.write("                    <div class=\"row\">\n");
       out.write("                        <div class=\"col-md-4 col-sm-4\">\n");
-      out.write("                            <div class=\"panel panel-info\">\n");
+      out.write("                            <div class=\"panel panel-primary\">\n");
       out.write("                                <div class=\"panel-heading\">\n");
-      out.write("                                    See Recipes\n");
+      out.write("                                    Premium mebership\n");
       out.write("                                </div>\n");
       out.write("                                <div class=\"panel-body\">\n");
       out.write("                                    <p>You can see the recipe of any cake on the website if you are a premium membership</p>\n");
       out.write("                                </div>\n");
       out.write("                                <div class=\"panel-footer\">\n");
-      out.write("                                    <p>Pay 9$ To Premium mebership</p></br>\n");
+      out.write("                                    <p>Pay 9$ Monthly To Premium mebership</p></br>\n");
       out.write("                                    <form action=\"https://www.sandbox.paypal.com/cgi-bin/webscr\" method=\"post\">\n");
       out.write("                                        <input type=\"hidden\" name=\"cmd\" value=\"_xclick\">\n");
       out.write("                                        <input type=\"hidden\" name=\"business\" value=\"phungtung1993@gmail.com\">\n");
@@ -187,21 +204,31 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                        <input type=\"hidden\" name=\"return\" value=\"http://localhost:8080/CakeOnline/Client/Payment.jsp\">\n");
       out.write("                                        <input type=\"hidden\" name=\"amount\" value=\"9.00\">\n");
       out.write("                                        <input type=\"hidden\" name=\"currency_code\" value=\"USD\">\n");
-      out.write("                                        <button type=\"submit\" class=\"btn btn-primary\">Upgrade Account</button>\n");
+      out.write("                                        <button type=\"submit\" class=\"btn btn-warning\" onclick=\"upgradePremium()\">Upgrade Account</button>\n");
       out.write("                                    </form>\n");
       out.write("                                </div>\n");
       out.write("                            </div>\n");
       out.write("                        </div>\n");
       out.write("                        <div class=\"col-md-4 col-sm-4\">\n");
-      out.write("                            <div class=\"panel panel-info\">\n");
+      out.write("                            <div class=\"panel panel-primary\">\n");
       out.write("                                <div class=\"panel-heading\">\n");
-      out.write("                                    Upload Cake\n");
+      out.write("                                    Professional mebership\n");
       out.write("                                </div>\n");
       out.write("                                <div class=\"panel-body\">\n");
-      out.write("                                    <p>you can upload your cake and sale in website if you are a professional  membership</p>\n");
+      out.write("                                    <p><strong>1</strong>. You can see the recipe of any cake on the website if you are a premium membership</p>\n");
+      out.write("                                    <p><strong>2</strong>. You can upload your cake and sale in website if you are a professional  membership</p>\n");
       out.write("                                </div>\n");
       out.write("                                <div class=\"panel-footer\">\n");
-      out.write("                                    <button type=\"submit\" class=\"btn btn-primary\">Upgrade Account</button>\n");
+      out.write("                                    <p>Pay 20$ To Professional mebership</p></br>\n");
+      out.write("                                    <form action=\"https://www.sandbox.paypal.com/cgi-bin/webscr\" method=\"post\">\n");
+      out.write("                                        <input type=\"hidden\" name=\"cmd\" value=\"_xclick\">\n");
+      out.write("                                        <input type=\"hidden\" name=\"business\" value=\"phungtung1993@gmail.com\">\n");
+      out.write("                                        <input type=\"hidden\" name=\"item_name\" value=\"Upgrade to Professional\">\n");
+      out.write("                                        <input type=\"hidden\" name=\"return\" value=\"http://localhost:8080/CakeOnline/Client/Payment.jsp\">\n");
+      out.write("                                        <input type=\"hidden\" name=\"amount\" value=\"20.00\">\n");
+      out.write("                                        <input type=\"hidden\" name=\"currency_code\" value=\"USD\">\n");
+      out.write("                                        <button type=\"submit\" class=\"btn btn-warning\" onclick=\"upgradeProfessional()\">Upgrade Account</button>\n");
+      out.write("                                    </form>\n");
       out.write("                                </div>\n");
       out.write("                            </div>\n");
       out.write("                        </div>\n");
@@ -240,6 +267,106 @@ public final class Payment_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_sql_update_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  sql:update
+    org.apache.taglibs.standard.tag.rt.sql.UpdateTag _jspx_th_sql_update_0 = (org.apache.taglibs.standard.tag.rt.sql.UpdateTag) _jspx_tagPool_sql_update_var_dataSource.get(org.apache.taglibs.standard.tag.rt.sql.UpdateTag.class);
+    _jspx_th_sql_update_0.setPageContext(_jspx_page_context);
+    _jspx_th_sql_update_0.setParent(null);
+    _jspx_th_sql_update_0.setDataSource((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.conn}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_sql_update_0.setVar("pre");
+    int[] _jspx_push_body_count_sql_update_0 = new int[] { 0 };
+    try {
+      int _jspx_eval_sql_update_0 = _jspx_th_sql_update_0.doStartTag();
+      if (_jspx_eval_sql_update_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        if (_jspx_eval_sql_update_0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+          out = _jspx_page_context.pushBody();
+          _jspx_push_body_count_sql_update_0[0]++;
+          _jspx_th_sql_update_0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+          _jspx_th_sql_update_0.doInitBody();
+        }
+        do {
+          out.write("\n");
+          out.write("                update\n");
+          out.write("                        Customer\n");
+          out.write("                set member = 'Pre' where CusId =");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.loginUser.rows[0].CusId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write(";\n");
+          out.write("            ");
+          int evalDoAfterBody = _jspx_th_sql_update_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+        if (_jspx_eval_sql_update_0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE)
+          out = _jspx_page_context.popBody();
+          _jspx_push_body_count_sql_update_0[0]--;
+      }
+      if (_jspx_th_sql_update_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_sql_update_0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_sql_update_0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_sql_update_0.doFinally();
+      _jspx_tagPool_sql_update_var_dataSource.reuse(_jspx_th_sql_update_0);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_sql_update_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  sql:update
+    org.apache.taglibs.standard.tag.rt.sql.UpdateTag _jspx_th_sql_update_1 = (org.apache.taglibs.standard.tag.rt.sql.UpdateTag) _jspx_tagPool_sql_update_var_dataSource.get(org.apache.taglibs.standard.tag.rt.sql.UpdateTag.class);
+    _jspx_th_sql_update_1.setPageContext(_jspx_page_context);
+    _jspx_th_sql_update_1.setParent(null);
+    _jspx_th_sql_update_1.setDataSource((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.conn}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_sql_update_1.setVar("pro");
+    int[] _jspx_push_body_count_sql_update_1 = new int[] { 0 };
+    try {
+      int _jspx_eval_sql_update_1 = _jspx_th_sql_update_1.doStartTag();
+      if (_jspx_eval_sql_update_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        if (_jspx_eval_sql_update_1 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+          out = _jspx_page_context.pushBody();
+          _jspx_push_body_count_sql_update_1[0]++;
+          _jspx_th_sql_update_1.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+          _jspx_th_sql_update_1.doInitBody();
+        }
+        do {
+          out.write("\n");
+          out.write("                update\n");
+          out.write("                        Customer\n");
+          out.write("                set member = 'Pro' where CusId =");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.loginUser.rows[0].CusId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write(";\n");
+          out.write("            ");
+          int evalDoAfterBody = _jspx_th_sql_update_1.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+        if (_jspx_eval_sql_update_1 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE)
+          out = _jspx_page_context.popBody();
+          _jspx_push_body_count_sql_update_1[0]--;
+      }
+      if (_jspx_th_sql_update_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_sql_update_1[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_sql_update_1.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_sql_update_1.doFinally();
+      _jspx_tagPool_sql_update_var_dataSource.reuse(_jspx_th_sql_update_1);
+    }
+    return false;
   }
 
   private boolean _jspx_meth_c_if_0(PageContext _jspx_page_context)
