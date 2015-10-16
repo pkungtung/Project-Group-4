@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ChangePass
-    Created on : Oct 16, 2015, 1:27:13 AM
+    Document   : Payment
+    Created on : Oct 16, 2015, 8:43:15 AM
     Author     : Pkung
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -92,10 +92,10 @@
                             <a href="EditAcc.jsp"><i class="fa fa-user "></i>Edit Your Account</a>
                         </li>
                         <li>
-                            <a class="active-menu" href="#"><i class="fa fa-cog "></i>Change Password</a>
-                        </li>
+                            <a href="ChangePass.jsp"><i class="fa fa-cog "></i>Change Password</a>
+                        </li> 
                         <li>
-                            <a href="Payment.jsp"><i class="fa fa-paypal"></i>Payment</a>
+                            <a class="active-menu"  href="#"><i class="fa fa-paypal"></i>Payment</a>
                         </li>
                     </ul>
                 </div>
@@ -106,30 +106,54 @@
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Change Password</h1>
+                            <h1 class="page-head-line">Payment Infomation!</h1>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
-                            <form action="#" method="get">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        Confirm Password
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="form-group">
-                                            <label id="check">Old Password</label>
-                                            <input type="password" class="form-control" name="oldpass"/>
-                                            <input type="password" class="form-control" name="newpass"/>
-                                            <input type="password" class="form-control" name="confirmpass"/>
-                                            <input type="hidden" name="ac" value="changePass"/>
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <button type="submit" class="btn btn-default">Submit</button>
-                                    </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    Premium mebership
                                 </div>
-                            </form>
+                                <div class="panel-body">
+                                    <p>You can see the recipe of any cake on the website if you are a premium membership</p>
+                                </div>
+                                <div class="panel-footer">
+                                    <p>Pay 9$ Monthly To Premium mebership</p></br>
+                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                        <input type="hidden" name="cmd" value="_xclick">
+                                        <input type="hidden" name="business" value="phungtung1993@gmail.com">
+                                        <input type="hidden" name="item_name" value="Upgrade to Premium">
+                                        <input type="hidden" name="return" value="http://localhost:8080/CakeOnline/Client/Payment.jsp">
+                                        <input type="hidden" name="amount" value="9.00">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <button type="submit" class="btn btn-warning">Upgrade Account</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    Professional mebership
+                                </div>
+                                <div class="panel-body">
+                                    <p><strong>1</strong>. You can see the recipe of any cake on the website if you are a premium membership</p>
+                                    <p><strong>2</strong>. You can upload your cake and sale in website if you are a professional  membership</p>
+                                </div>
+                                <div class="panel-footer">
+                                    <p>Pay 20$ To Professional mebership</p></br>
+                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                        <input type="hidden" name="cmd" value="_xclick">
+                                        <input type="hidden" name="business" value="phungtung1993@gmail.com">
+                                        <input type="hidden" name="item_name" value="Upgrade to Professional">
+                                        <input type="hidden" name="return" value="http://localhost:8080/CakeOnline/Client/Payment.jsp">
+                                        <input type="hidden" name="amount" value="20.00">
+                                        <input type="hidden" name="currency_code" value="USD">
+                                        <button type="submit" class="btn btn-warning">Upgrade Account</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

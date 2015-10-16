@@ -55,6 +55,13 @@ create table OrderDetail(
 	quantity int,
 	orderDate Date DEFAULT GETDATE()
 )
+create table payment(
+	id int identity(1,1) primary key,
+
+
+)
+
+
 select * from OrderDetail where oid=7
 
 select * from OrderList
@@ -71,8 +78,8 @@ select * from Customer
 drop table Customer
 
 insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes','../imgProduct/user-default.jpg')
-insert into Customer values('tien','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','yes','../imgProduct/user-default.jpg')
-insert into Customer values('nam','123','Phung Van Tien','Tung@gmail.com','asdasdasda','12323123','no','../imgProduct/user-default.jpg')
+insert into Customer values('tien','123','Pham Hong Tien','Tung@gmail.com','asdasdasda','12323123','yes','../imgProduct/user-default.jpg')
+insert into Customer values('nam','123','Hua Van Nam','Tung@gmail.com','asdasdasda','12323123','no','../imgProduct/user-default.jpg')
 insert into Customer values('ad','123','Pkung Tung','Tung@gmail.com','Ha Noi','09780904684','yes','../imgProduct/user-tung.jpg')
 
 insert into OrderList values(1,2121,'12112','1212','inprocess')

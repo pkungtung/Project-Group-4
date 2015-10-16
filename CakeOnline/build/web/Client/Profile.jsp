@@ -94,6 +94,9 @@
                         </li>
                         <li>
                             <a href="ChangePass.jsp"><i class="fa fa-cog "></i>Change Password</a>
+                        </li> 
+                        <li>
+                            <a href="Payment.jsp"><i class="fa fa-paypal"></i>Payment</a>
                         </li>
                     </ul>
                 </div>
