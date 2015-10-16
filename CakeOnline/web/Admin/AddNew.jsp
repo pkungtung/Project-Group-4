@@ -81,8 +81,8 @@
                                         <div class="form-group">
                                             <label>Egge</label>
                                             <select class="form-control" name="egge">
-                                                <option>Yes</option>
-                                                <option>No</option>
+                                                <option>yes</option>
+                                                <option>no</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -97,8 +97,8 @@
                                         <div class="form-group">
                                             <label>Status</label>
                                             <select class="form-control" name="status">
-                                                <option>Show</option>
-                                                <option>Hidden</option>
+                                                <option>show</option>
+                                                <option>hidden</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
