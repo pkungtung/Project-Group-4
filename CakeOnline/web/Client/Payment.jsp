@@ -18,6 +18,20 @@
         <link href="../Admin/assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <!--CUSTOM STYLES-->
         <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
+        <script>
+            function upgradePremium() {
+            <sql:update dataSource="${sessionScope.conn}" var="pre">
+                update
+                Customer set member = 'Pre' where CusId =${sessionScope.loginUser.rows[0].CusId};
+            </sql:update>
+            }
+            function upgradeProfessional() {
+            <sql:update dataSource="${sessionScope.conn}" var="pre">
+                update
+                Customer set member = 'Pro' where CusId =${sessionScope.loginUser.rows[0].CusId};
+            </sql:update>
+            }
+        </script>
     </head>
     <body>
         <c:if test="${empty loginUser}">
@@ -127,7 +141,7 @@
                                         <input type="hidden" name="return" value="http://localhost:8080/CakeOnline/Client/Payment.jsp">
                                         <input type="hidden" name="amount" value="9.00">
                                         <input type="hidden" name="currency_code" value="USD">
-                                        <button type="submit" class="btn btn-warning">Upgrade Account</button>
+                                        <button type="submit" class="btn btn-warning" onclick="upgradePremium()">Upgrade Account</button>
                                     </form>
                                 </div>
                             </div>
@@ -150,7 +164,7 @@
                                         <input type="hidden" name="return" value="http://localhost:8080/CakeOnline/Client/Payment.jsp">
                                         <input type="hidden" name="amount" value="20.00">
                                         <input type="hidden" name="currency_code" value="USD">
-                                        <button type="submit" class="btn btn-warning">Upgrade Account</button>
+                                        <button type="submit" class="btn btn-warning" onclick="upgradeProfessional()">Upgrade Account</button>
                                     </form>
                                 </div>
                             </div>
