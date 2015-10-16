@@ -79,9 +79,7 @@
                         <li>
                             <div class="user-img-div">
                                 <img src="${loginUser.rows[0].ava}" class="img-circle" />
-
                             </div>
-
                         </li>
                         <li>
                             <a> <strong> ${sessionScope.loginUser.rows[0].name} </strong></a>

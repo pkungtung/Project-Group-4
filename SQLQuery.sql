@@ -19,7 +19,7 @@ create table Customer(
 	email varchar(30),
 	addr varchar(50),
 	number varchar(15),
-	member varchar(5),
+	member varchar(20),
 	ava varchar(50)
 )
 create table feedback(
@@ -29,8 +29,6 @@ create table feedback(
 	sub varchar(50),
 	content varchar(max)
 )
-select *from feedback
-
 create table administrator(
 	username varchar(50) primary key,
 	pass varchar(50),
@@ -55,11 +53,6 @@ create table OrderDetail(
 	quantity int,
 	orderDate Date DEFAULT GETDATE()
 )
-create table payment(
-	id int identity(1,1) primary key,
-
-
-)
 
 
 select * from OrderDetail where oid=7
@@ -78,15 +71,15 @@ select * from Customer
 
 drop table Customer
 
-insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','yes','../imgProduct/user-default.jpg')
-insert into Customer values('tien','123','Pham Hong Tien','Tung@gmail.com','asdasdasda','12323123','yes','../imgProduct/user-default.jpg')
+insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','Pre','../imgProduct/user-tung.jpg')
+insert into Customer values('tien','123','Pham Hong Tien','Tung@gmail.com','asdasdasda','12323123','Pro','../imgProduct/user-default.jpg')
 insert into Customer values('nam','123','Hua Van Nam','Tung@gmail.com','asdasdasda','12323123','no','../imgProduct/user-default.jpg')
-insert into Customer values('ad','123','Pkung Tung','Tung@gmail.com','Ha Noi','09780904684','yes','../imgProduct/user-tung.jpg')
+insert into Customer values('ad','123','Pkung Tung','Tung@gmail.com','Ha Noi','09780904684','no','../imgProduct/user-tung.jpg')
 
 insert into OrderList values(1,2121,'12112','1212','inprocess')
 
 insert into feedback values('asd','asd','asdasd','asdasd');
-
+delete Product where itemcode='tc4'
 insert into Product values('tc1', 'Fashion Happy Birthday Cake For Girls', 100, 'yes', '../imgProduct/1fashion-happy-birthday-cake-for-girls.png', 'Birthday','show')
 insert into Product values('tc2', 'GELATO BIRTHDAY CAKE', 56, 'no', '../imgProduct/1gelato.jpg', 'Birthday','show')
 insert into Product values('tc3', 'Oreo Birthday Cake', 75, 'no', '../imgProduct/1oreo-birthday-cakeac15.png', 'Birthday','show')

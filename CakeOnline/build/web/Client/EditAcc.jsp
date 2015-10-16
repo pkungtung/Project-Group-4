@@ -22,7 +22,7 @@
     <body>
         <c:if test="${empty loginUser}">
             <c:set var="flag" scope="session" value="loginPlease"/>
-            <c:redirect url="${sessionScope.urlPahe}"/>
+            <c:redirect url="${sessionScope.urlPage}"/>
         </c:if>
         <sql:setDataSource var="conn" 
                            driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
@@ -119,23 +119,29 @@
 
                                         <div class="form-group">
                                             <label>User Name</label>
-                                            <input readonly="" type="text" class="form-control" value="${pro.rows[0].name}" name="user" placeholder="User Name">
+                                            <input readonly="" type="text" class="form-control" value="${sessionScope.loginUser.rows[0].username}" name="user" placeholder="User Name">
                                         </div>
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" value="${pro.rows[0].price}" name="email" placeholder="Name">
+                                            <input type="text" class="form-control" value="${sessionScope.loginUser.rows[0].name}" name="name"/>
                                         </div>
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="text" class="form-control" value="${pro.rows[0].price}" name="email" placeholder="Email">
+                                            <input type="text" class="form-control" value="${sessionScope.loginUser.rows[0].email}" name="email"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" class="form-control" 
+                                                   value="${sessionScope.loginUser.rows[0].addr}" name="address"/>
                                         </div>
                                         <div class="form-group">
                                             <label>Phone Number</label>
-                                            <input type="text" class="form-control" value="${pro.rows[0].price}" name="price" placeholder="Phone">
+                                            <input type="text" class="form-control" 
+                                                   value="${sessionScope.loginUser.rows[0].number}" name="number"/>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputFile">Avatar Image</label>
-                                            <p><img src="${pro.rows[0].img}" height="100" width="100" alt=""/></p>
+                                            <p><img src="${sessionScope.loginUser.rows[0].ava}" height="100" width="100" alt=""/></p>
                                             Change Avatar Image
                                             <input type="file" id="exampleInputFile" name="file">
                                         </div>
