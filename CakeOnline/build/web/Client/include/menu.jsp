@@ -37,6 +37,7 @@
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=711249222340969";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+
 </script>
 
 <style>
@@ -122,12 +123,6 @@
         return source;
     }
 
-    //signin button click
-
-    function showMyCart() {
-        //        document.getElementById("myCart").style.display = "block";
-
-    }
 </script>
 <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;background-color:rgba(0, 0, 0, 0.6);">
     <div class="modal-dialog" >
@@ -265,7 +260,7 @@
                                                                     <!--     anh chinh anh o day-->
                                                                     <img src="../images/${cake.img}" width="50" height="50"></a>
                                                                 <div class="product-details" style="width: 190px;">
-                                                                    <a href="../Controller?ac=delProduct&id=${cake.itemcode}" id="${cake.itemcode}" title="Remove This Item" onclick="removeCart(${cake.itemcode})" class="btn-remove">Remove This Item</a>
+                                                                    <a href="../Controller?ac=delProduct&id=${cake.itemcode}" id="${cake.itemcode}" title ="Remove This Item" onclick="return confirm('Are you sure you want to delete this item?')" class="btn-remove">Remove This Item</a>
                                                                     <a href="MyCart.jsp" title="Edit item" class="btn-edit">Edit item</a>
                                                                     <p class="product-name" style="width: 150px"><a href="#">${cake.name}</a></p>
                                                                     <strong>${item.value}</strong> x
