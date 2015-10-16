@@ -260,7 +260,9 @@
                                                                     <!--     anh chinh anh o day-->
                                                                     <img src="../images/${cake.img}" width="50" height="50"></a>
                                                                 <div class="product-details" style="width: 190px;">
-                                                                    <a href="../Controller?ac=delProduct&id=${cake.itemcode}" id="${cake.itemcode}" title ="Remove This Item" onclick="return confirm('Are you sure you want to delete this item?')" class="btn-remove">Remove This Item</a>
+                                                                    <a href="../Controller?ac=delProduct&id=${cake.itemcode}" id="${cake.itemcode}" title ="Remove This Item" 
+                                                                       onclick="return confirm('Are you sure you want to delete this item?')"
+                                                                       class="btn-remove">Remove This Item</a>
                                                                     <a href="MyCart.jsp" title="Edit item" class="btn-edit">Edit item</a>
                                                                     <p class="product-name" style="width: 150px"><a href="#">${cake.name}</a></p>
                                                                     <strong>${item.value}</strong> x

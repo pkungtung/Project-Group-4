@@ -1,8 +1,6 @@
 <%-- 
-    Doc/* global update */
-
-ument   : Payment
-    Created on : Oct 16, 2015, 8:43:15 AM
+    Document   : NewCake
+    Created on : Oct 16, 2015, 11:34:36 PM
     Author     : Pkung
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -20,19 +18,6 @@ ument   : Payment
         <link href="../Admin/assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <!--CUSTOM STYLES-->
         <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
-        <script>
-            function toPre() {
-
-            }
-            function toPro() {
-            <sql:update dataSource="${sessionScope.conn}" var="pro">
-                update
-                Customer
-                set
-                member = 'Pro' where CusId =${sessionScope.loginUser.rows[0].CusId};
-            </sql:update>
-            }
-        </script>
     </head>
     <body>
         <c:if test="${empty loginUser}">
@@ -110,10 +95,10 @@ ument   : Payment
                             <a href="ChangePass.jsp"><i class="fa fa-cog "></i>Change Password</a>
                         </li> 
                         <li>
-                            <a class="active-menu"  href="#"><i class="fa fa-paypal"></i>Payment</a>
+                            <a href="Payment.jsp"><i class="fa fa-paypal"></i>Payment</a>
                         </li>
                         <li>
-                            <a href="NewCake.jsp"><i class="fa fa-birthday-cake"></i>Add New Cake</a>
+                            <a class="active-menu" href="#"><i class="fa fa-birthday-cake"></i>Add New Cake</a>
                         </li>
                     </ul>
                 </div>
@@ -124,36 +109,56 @@ ument   : Payment
                 <div id="page-inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="page-head-line">Payment Infomation!</h1>
+                            <h1 class="page-head-line">Add New Cake by Customer</h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 col-sm-4">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    Premium mebership
-                                </div>
+                        <div class="col-md-6" style="margin: auto;">
+                            <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <p>You can see the recipe of any cake on the website if you are a premium membership</p>
-                                </div>
-                                <div class="panel-footer">
-                                    <p>Pay 9$ Monthly To Premium mebership</p>
-                                    <a href="loginAuthenticate.jsp?ac=toPre" class="btn btn-warning">Upgrade Account</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    Professional mebership
-                                </div>
-                                <div class="panel-body">
-                                    <p><strong>1</strong>. You can see the recipe of any cake on the website if you are a premium membership</p>
-                                    <p><strong>2</strong>. You can upload your cake and sale in website if you are a professional  membership</p>
-                                </div>
-                                <div class="panel-footer">
-                                    <p>Pay 20$ To Professional mebership</p>
-                                    <a href="loginAuthenticate.jsp?ac=toPro" class="btn btn-warning">Upgrade Account</a>
+                                    <form action="../Controller?ac=add" method="Post" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label>Item Code</label>
+                                            <input type="text" class="form-control" name="itemcode" placeholder="Item Code">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Product Name</label>
+                                            <input type="text" class="form-control" name="name" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Price</label>
+                                            <input type="text" class="form-control" name="price" placeholder="Price">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Egge</label>
+                                            <select class="form-control" name="egge">
+                                                <option>yes</option>
+                                                <option>no</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Event</label>
+                                            <select class="form-control" name="event">
+                                                <option>Birthday</option>
+                                                <option>Anniversary</option>
+                                                <option>Engagement</option>
+                                                <option>Marriage</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <select class="form-control" name="status">
+                                                <option>show</option>
+                                                <option>hidden</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Product Image</label>
+                                            <input type="file" id="exampleInputFile" name="file">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Submit</button>
+                                        <hr>
+                                    </form>
                                 </div>
                             </div>
                         </div>

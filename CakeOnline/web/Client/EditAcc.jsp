@@ -97,6 +97,9 @@
                         <li>
                             <a href="Payment.jsp"><i class="fa fa-paypal"></i>Payment</a>
                         </li>
+                        <li>
+                            <a href="NewCake.jsp"><i class="fa fa-birthday-cake"></i>Add New Cake</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -109,11 +112,11 @@
                             <h1 class="page-head-line">Edit Infomation</h1>
                         </div>
                         <div class="row">
-                        <div class="col-md-6" style="margin: auto;">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    
-                                        
+                            <div class="col-md-6" style="margin: auto;">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+
+
                                         <div class="form-group">
                                             <label>User Name</label>
                                             <input readonly="" type="text" class="form-control" value="${pro.rows[0].name}" name="user" placeholder="User Name">
@@ -138,11 +141,11 @@
                                         </div>
                                         <button type="submit" class="btn btn-default">Update</button>
                                         <hr>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </div>
 
                 </div>

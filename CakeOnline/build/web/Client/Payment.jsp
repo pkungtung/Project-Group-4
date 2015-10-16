@@ -112,6 +112,9 @@ ument   : Payment
                         <li>
                             <a class="active-menu"  href="#"><i class="fa fa-paypal"></i>Payment</a>
                         </li>
+                        <li>
+                            <a href="NewCake.jsp"><i class="fa fa-birthday-cake"></i>Add New Cake</a>
+                        </li>
                     </ul>
                 </div>
 
