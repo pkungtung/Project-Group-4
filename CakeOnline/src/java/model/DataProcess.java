@@ -225,5 +225,43 @@ public class DataProcess {
         }
         return count;
     }
+          public int countTblBook1(int i) {
+        String sql = "select count(*) from Customer";
+        int count = 0;
+        try {
+            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            while (rs.next()) {
+                count = rs.getInt(1);
+                if (count % i == 0) {
+                    count = count / i;
+                } else {
+                    count = count / i + 1;
+                }
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
+     public int countTblBook2(int i) {
+        String sql = "select count(*) from OrderList";
+        int count = 0;
+        try {
+            ResultSet rs = getConnection().createStatement().executeQuery(sql);
+            while (rs.next()) {
+                count = rs.getInt(1);
+                if (count % i == 0) {
+                    count = count / i;
+                } else {
+                    count = count / i + 1;
+                }
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return count;
+    }
 }
 
