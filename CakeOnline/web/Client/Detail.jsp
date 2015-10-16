@@ -68,7 +68,7 @@
                         <div class="addthis_native_toolbox"></div>
                     </div>
                     <div class="subtitile">Ý kiến bình luận</div>
-                    <div class="fb-comments" data-href="Detail.jsp?id=${p.itemCode}" data-width="700" data-numposts="10" data-colorscheme="light" scrolling="no" title="http://developers.facebook.com/thecake2015"></div>
+                    <div class="fb-comments" data-href="Detail.jsp?id=${pr.rows[0].img}" data-width="700" data-numposts="10" data-colorscheme="light" scrolling="no" title="http://developers.facebook.com/thecake2015"></div>
                     <!--                                    <div class="fb-comments fb_iframe_widget" data-href="" data-width="715" num_posts="7" fb-xfbml-state="rendered"><span style="height: 300px; width: 715px;"><iframe id="f72821b8c" name="f18e972034" scrolling="no" title="http://developers.facebook.com/thecake2015" style="border: none; overflow: hidden; height: 236px; width: 715px;"></iframe></span></div>-->
                 </div>
 
