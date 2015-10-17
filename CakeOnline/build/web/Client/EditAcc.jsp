@@ -115,38 +115,39 @@
                             <div class="col-md-6" style="margin: auto;">
                                 <div class="panel panel-default">
                                     <div class="panel-body">
+                                        <form action="../Controller?ac=editAcc" method="post" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label>User Name</label>
+                                                <input readonly="" type="text" class="form-control" value="${sessionScope.loginUser.rows[0].username}" name="user" placeholder="User Name">
+                                            </div>
+                                            <input type="hidden" value="${sessionScope.loginUser.rows[0].CusId}" name="id"/>
 
-
-                                        <div class="form-group">
-                                            <label>User Name</label>
-                                            <input readonly="" type="text" class="form-control" value="${sessionScope.loginUser.rows[0].username}" name="user" placeholder="User Name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Name</label>
-                                            <input type="text" class="form-control" value="${sessionScope.loginUser.rows[0].name}" name="name"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="text" class="form-control" value="${sessionScope.loginUser.rows[0].email}" name="email"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" class="form-control" 
-                                                   value="${sessionScope.loginUser.rows[0].addr}" name="address"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" class="form-control" 
-                                                   value="${sessionScope.loginUser.rows[0].number}" name="number"/>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Avatar Image</label>
-                                            <p><img src="${sessionScope.loginUser.rows[0].ava}" height="100" width="100" alt=""/></p>
-                                            Change Avatar Image
-                                            <input type="file" id="exampleInputFile" name="file">
-                                        </div>
-                                        <button type="submit" class="btn btn-default">Update</button>
-                                        <hr>
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" value="${sessionScope.loginUser.rows[0].name}" name="name"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Email</label>
+                                                <input type="text" class="form-control" value="${sessionScope.loginUser.rows[0].email}" name="email"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Address</label>
+                                                <input type="text" class="form-control" 
+                                                       value="${sessionScope.loginUser.rows[0].addr}" name="address"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Phone Number</label>
+                                                <input type="text" class="form-control" 
+                                                       value="${sessionScope.loginUser.rows[0].number}" name="number"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputFile">Avatar Image</label>
+                                                <p><img src="${sessionScope.loginUser.rows[0].ava}" height="100" width="100" alt=""/></p>
+                                                Change Avatar Image
+                                                <input type="file" id="exampleInputFile" name="file">
+                                            </div>
+                                            <button type="submit" class="btn btn-default">Update</button>
+                                            <hr>
                                         </form>
                                     </div>
                                 </div>

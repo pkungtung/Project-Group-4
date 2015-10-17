@@ -7,6 +7,7 @@ package controller;
 
 import Entity.Cake;
 import Entity.Cart;
+import Entity.Customer;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -327,6 +328,105 @@ public class Controller extends HttpServlet {
                 request.setAttribute("message",
                         "Sorry this Servlet only handles file upload request");
                 response.sendRedirect("/CakeOnline/Admin/Product.jsp");
+            }
+        }
+        if ("editAcc".equals(ac)) {
+            int id = 0;
+            String name = null;
+            String email = null;
+            String address = null;
+            String number = null;
+            String img = null;
+            if (ServletFileUpload.isMultipartContent(request)) {
+
+                try {
+                    List<FileItem> multiparts = new ServletFileUpload(
+                            new DiskFileItemFactory()).parseRequest(request);
+                    for (FileItem item : multiparts) {
+
+                        if (!item.isFormField()) {
+                            img = new File(item.getName()).getName();
+                            item.write(new File(UPLOAD_DIRECTORY + File.separator + img));
+                        } else {
+                            if ("id".equals(item.getFieldName())) {
+                                id = Integer.parseInt(item.getString());
+                            }
+                            if ("name".equals(item.getFieldName())) {
+                                name = (String) item.getString();
+                            }
+                            if ("email".equals(item.getFieldName())) {
+                                email = (String) item.getString();
+                                email = new String(name.getBytes("iso-8859-1"), "UTF-8");
+                            }
+                            if ("address".equalsIgnoreCase(item.getFieldName())) {
+                                address = (String) item.getString();
+                                address = new String(name.getBytes("iso-8859-1"), "UTF-8");
+                            }
+                            if ("number".equals(item.getFieldName())) {
+                                number = (String) item.getString();
+                            }
+                        }
+                    }
+                    //File uploaded successfully
+                    request.setAttribute("message", "File Uploaded Successfully");
+                    Customer c = new Customer(id, name, email, address, number, "../imgProduct/" + img);
+                    DataProcess dt = new DataProcess();
+                    if (dt.updateCustomer(c)) {
+                        response.sendRedirect("/CakeOnline/Client/Profile.jsp");
+                    } else {
+                        response.sendRedirect("/CakeOnline/Client/EditAcc.jsp");
+                    }
+
+                } catch (Exception ex) {
+                    request.setAttribute("message", "File Upload Failed due to " + ex);
+
+                    List<FileItem> multiparts;
+                    try {
+                        multiparts = new ServletFileUpload(
+                                new DiskFileItemFactory()).parseRequest(request);
+                        for (FileItem item : multiparts) {
+
+                            if (!item.isFormField()) {
+                                img = new File(item.getName()).getName();
+                            } else {
+                                if ("id".equals(item.getFieldName())) {
+                                    id = Integer.parseInt(item.getString());
+                                }
+                                if ("name".equals(item.getFieldName())) {
+                                    name = (String) item.getString();
+                                }
+                                if ("email".equals(item.getFieldName())) {
+                                    email = (String) item.getString();
+                                    email = new String(name.getBytes("iso-8859-1"), "UTF-8");
+                                }
+                                if ("address".equalsIgnoreCase(item.getFieldName())) {
+                                    address = (String) item.getString();
+                                    address = new String(name.getBytes("iso-8859-1"), "UTF-8");
+                                }
+                                if ("number".equals(item.getFieldName())) {
+                                    number = (String) item.getString();
+                                }
+                            }
+                        }
+                        //File uploaded successfully
+                        request.setAttribute("message", "File Uploaded Successfully");
+                        System.out.println("CusId  " + id);
+                        Customer ca = new Customer(id, name, email, address, number, img);
+                        DataProcess dt = new DataProcess();
+                        if (dt.updateCustomerNoAva(ca)) {
+                            response.sendRedirect("/CakeOnline/Client/Profile.jsp");
+                        } else {
+                            response.sendRedirect("/CakeOnline/Client/EditAcc.jsp");
+                        }
+                    } catch (FileUploadException ex1) {
+                        Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex1);
+                    }
+                }
+
+            } else {
+                request.setAttribute("message",
+                        "Sorry this Servlet only handles file upload request");
+                response.sendRedirect("/CakeOnline/Client/Home.jsp");
             }
         }
     }

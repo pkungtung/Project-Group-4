@@ -6,6 +6,7 @@
 package model;
 
 import Entity.Cake;
+import Entity.Customer;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -41,7 +42,7 @@ public class DataProcess {
 
     public String autoId() {
         ArrayList<Cake> list = getListCake();
-        return "tc"+(list.size()+1);
+        return "tc" + (list.size() + 1);
     }
 
     public static void main(String[] args) {
@@ -155,6 +156,49 @@ public class DataProcess {
             pr.setString(5, ca.getEvent());
             pr.setString(6, ca.getStt());
             pr.setString(7, ca.getItemCode());
+            result = pr.executeUpdate();
+            pr.close();
+            conn.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return result > 0;
+    }
+
+    public boolean updateCustomer(Customer ca) {
+        int result = 0;
+        String sql = "update Customer set name=?,email=?,addr=?,number=?,ava=? where CusId=?";
+        Connection conn = getConnection();
+        try {
+            PreparedStatement pr = conn.prepareStatement(sql);
+            pr.setString(1, ca.getName());
+            pr.setString(2, ca.getEmail());
+            pr.setString(3, ca.getAddress());
+            pr.setString(4, ca.getNumber());
+            pr.setString(5, ca.getImg());
+            pr.setInt(6, ca.getId());
+            result = pr.executeUpdate();
+            pr.close();
+            conn.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DataProcess.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return result > 0;
+    }
+
+    public boolean updateCustomerNoAva(Customer ca) {
+        int result = 0;
+        String sql = "update Customer set name=?,email=?,addr=?,number=? where CusId=?";
+        Connection conn = getConnection();
+        try {
+            PreparedStatement pr = conn.prepareStatement(sql);
+            pr.setString(1, ca.getName());
+            pr.setString(2, ca.getEmail());
+            pr.setString(3, ca.getAddress());
+            pr.setString(4, ca.getNumber());
+            pr.setInt(5, ca.getId());
             result = pr.executeUpdate();
             pr.close();
             conn.close();

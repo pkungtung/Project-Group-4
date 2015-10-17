@@ -68,7 +68,7 @@ order by CusId desc
 
 delete from table Customer
 select * from Customer
-
+update Customer set name='Hoang Tung' where CusId=1
 drop table Customer
 
 insert into Customer values('tung','123','Phung Van Tung','Tung@gmail.com','asdasdasda','12323123','Pre','../imgProduct/user-tung.jpg')
@@ -78,7 +78,7 @@ insert into Customer values('ad','123','Pkung Tung','Tung@gmail.com','Ha Noi','0
 
 insert into OrderList values(1,2121,'12112','1212','inprocess')
 
-insert into feedback values('asd','asd','asdasd','asdasd');
+insert into feedback values('asd','asd','asdasd' ,'asdasd');
 delete Product where itemcode='tc38'
 delete Product where itemcode='tc37'
 delete Product where itemcode='tc39'
