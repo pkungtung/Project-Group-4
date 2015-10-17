@@ -1114,7 +1114,7 @@ p a {
 }
 
 #footer div#navigation div ul li a {
-    color: #995870;
+    color: #ABBC40;
     display: block;
     padding: 0 5px;
     text-align: center;
@@ -1122,12 +1122,16 @@ p a {
     text-transform: lowercase
 }
 
-#footer div#navigation div ul li a:hover {
-    color: #EBD7E0;
+#footer div#navigation div ul li a:hover
+{
+    color:#EBD7E0;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+    text-decoration:none;
 }
 
 #footer div#navigation div p {
-    color: #995870;
+    color: #FF9A00;
     font-size: 11px;
     margin: 0;
     text-align: center;

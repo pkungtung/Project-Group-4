@@ -76,22 +76,22 @@
                     <li class="first">
                         <a href="Home.jsp"><img src="images/fruit-cake.jpg" alt="Image" /></a>
                         <h2><a href="Home.jsp">Tips on how to preserve</a></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="Home.jsp" class="readmore">read more</a></p>
+                        <p> <a href="Home.jsp" class="readmore">read more</a></p>
                     </li>
                     <li>
                         <a href="Home.jsp"><img src="images/italian.jpg" alt="Image" /></a>
                         <h2><a href="Home.jsp">Menu of the day: Italian</a></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="Home.jsp" class="readmore">read more</a></p>
+                        <p> <a href="Home.jsp" class="readmore">read more</a></p>
                     </li>
                     <li>
                         <a href="Home.jsp"><img src="images/fruit.jpg" alt="Image" /></a>
                         <h2><a href="Home.jsp">Fruit menu for your diet</a></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="Home.jsp" class="readmore">read more</a></p>
+                        <p> <a href="Home.jsp" class="readmore">read more</a></p>
                     </li>
                     <li>
                         <a href="Home.jsp"><img src="images/desserts.jpg" alt="Image" /></a>
                         <h2><a href="Home.jsp">Desserts for every occassion</a></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="Home.jsp" class="readmore">read more</a></p>
+                        <p> <a href="Home.jsp" class="readmore">read more</a></p>
                     </li>
                 </ul>
             </div>

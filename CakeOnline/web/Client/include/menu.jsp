@@ -454,7 +454,7 @@
                 <a href="Detail.jsp?id=tc23"><img src="images/dog.jpg" width="940" height="240" /></a>
                 <a href="Detail.jsp?id=tc36"><img src="images/swcupcake.jpg" width="940" height="240" /></a>
                 <a href="Detail.jsp?id=tc26"><img src="images/valentine-day-cake.jpg" width="940" height="240" /></a>
-                <a href="Detail.jsp?id=tc26"><img src="images/banh sinh_n.png" width="940" height="240" /></a>
+<!--                <a href="Detail.jsp?id=tc26"><img src="images/banh sinh_n.png" width="940" height="240" /></a>-->
             </div>
         </div>
     </div>
