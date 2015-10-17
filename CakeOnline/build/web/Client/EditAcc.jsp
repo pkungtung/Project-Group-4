@@ -89,7 +89,7 @@
                             <a href="Profile.jsp"><i class="fa fa-cart-plus "></i>My Orders </a>
                         </li>
                         <li>
-                            <a class="active-menu" href="#"><i class="fa fa-user "></i>Edit Your Account</a>
+                            <a class="active-menu" href="#"><i class="fa fa-user "></i>My Account</a>
                         </li>
                         <li>
                             <a href="ChangePass.jsp"><i class="fa fa-cog "></i>Change Password</a>
@@ -139,6 +139,17 @@
                                                 <label>Phone Number</label>
                                                 <input type="text" class="form-control" 
                                                        value="${sessionScope.loginUser.rows[0].number}" name="number"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <c:if test="${sessionScope.loginUser.rows[0].member eq 'no'}">
+                                                    <label>Account: No Membership</label>
+                                                </c:if>
+                                                <c:if test="${sessionScope.loginUser.rows[0].member eq 'Pre'}">
+                                                    <label>Account: Premium Membership</label>
+                                                </c:if>
+                                                <c:if test="${sessionScope.loginUser.rows[0].member eq 'Pro'}">
+                                                    <label>Account: Professional Membership</label>
+                                                </c:if>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputFile">Avatar Image</label>

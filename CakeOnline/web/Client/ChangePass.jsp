@@ -89,7 +89,7 @@
                             <a href="Profile.jsp"><i class="fa fa-cart-plus "></i>My Orders </a>
                         </li>
                         <li>
-                            <a href="EditAcc.jsp"><i class="fa fa-user "></i>Edit Your Account</a>
+                            <a href="EditAcc.jsp"><i class="fa fa-user "></i>My Account</a>
                         </li>
                         <li>
                             <a class="active-menu" href="#"><i class="fa fa-cog "></i>Change Password</a>

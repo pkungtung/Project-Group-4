@@ -20,19 +20,6 @@ ument   : Payment
         <link href="../Admin/assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <!--CUSTOM STYLES-->
         <link href="../Admin/assets/css/style.css" rel="stylesheet" type="text/css"/>
-        <script>
-            function toPre() {
-
-            }
-            function toPro() {
-            <sql:update dataSource="${sessionScope.conn}" var="pro">
-                update
-                Customer
-                set
-                member = 'Pro' where CusId =${sessionScope.loginUser.rows[0].CusId};
-            </sql:update>
-            }
-        </script>
     </head>
     <body>
         <c:if test="${empty loginUser}">
@@ -104,7 +91,7 @@ ument   : Payment
                             <a href="Profile.jsp"><i class="fa fa-cart-plus "></i>My Orders </a>
                         </li>
                         <li>
-                            <a href="EditAcc.jsp"><i class="fa fa-user "></i>Edit Your Account</a>
+                            <a href="EditAcc.jsp"><i class="fa fa-user "></i>My Account</a>
                         </li>
                         <li>
                             <a href="ChangePass.jsp"><i class="fa fa-cog "></i>Change Password</a>
