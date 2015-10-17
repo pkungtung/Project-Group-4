@@ -58,7 +58,7 @@ create table OrderDetail(
 select * from OrderDetail where oid=7
 
 select * from OrderList
-select * from Product
+
 
 insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','Ha Noi','../imgProduct/user-tung.jpg')
 insert into administrator values('admin','123','Administrator','000000000','00@gmail.com','Ha Noi','../imgProduct/user-default.jpg')
@@ -79,7 +79,10 @@ insert into Customer values('ad','123','Pkung Tung','Tung@gmail.com','Ha Noi','0
 insert into OrderList values(1,2121,'12112','1212','inprocess')
 
 insert into feedback values('asd','asd','asdasd','asdasd');
+delete Product where itemcode='tc38'
 delete Product where itemcode='tc37'
+delete Product where itemcode='tc39'
+select * from Product
 insert into Product values('tc1', 'Fashion Happy Birthday Cake For Girls', 100, 'yes', '../imgProduct/1fashion-happy-birthday-cake-for-girls.png', 'Birthday','show')
 insert into Product values('tc2', 'GELATO BIRTHDAY CAKE', 56, 'no', '../imgProduct/1gelato.jpg', 'Birthday','show')
 insert into Product values('tc3', 'Oreo Birthday Cake', 75, 'no', '../imgProduct/1oreo-birthday-cakeac15.png', 'Birthday','show')

@@ -114,20 +114,21 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
-                            <form action="#" method="get">
+                            <form action="loginAuthenticate.jsp?ac=changePass" method="post">
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">
                                         Confirm Password
                                     </div>
                                     <div class="panel-body">
                                         <div class="form-group">
-                                            <label id="check">Old Password</label>
-                                            <input type="password" class="form-control" name="oldpass"/>
-                                            <label id="check">New Password</label>
-                                            <input type="password" class="form-control" name="newpass"/>
-                                            <label id="check">Re-enter New Password</label>
-                                            <input type="password" class="form-control" name="confirmpass"/>
-                                            <input type="hidden" name="ac" value="changePass"/>
+                                            <label>Old Password</label>
+                                            <input required type="password" class="form-control" name="oldpass"/>
+                                            <label>New Password</label>
+                                            <input required type="password" class="form-control" name="newpass"/>
+                                            <label>Re-enter New Password</label>
+                                            <input required type="password" class="form-control" name="confirmpass"/>
+                                            <br/>
+                                            <label id="check" style="color: #ff3333">${sessionScope.alert}</label>
                                         </div>
                                     </div>
                                     <div class="panel-footer">

@@ -13,6 +13,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Detail Cake</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <meta property="fb:app_id" content="711249222340969" />
+        <meta property="fb:admins" content="100005491393252"/>
 
     </head>
     <body>

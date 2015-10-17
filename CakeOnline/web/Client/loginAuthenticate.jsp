@@ -23,6 +23,21 @@
                            user="sa" 
                            password="123456"
                            scope="session"/>
+        <c:if test="${param.ac eq 'changePass'}">
+            <c:if test="${sessionScope.loginUser.rows[0].pass != param.oldpass}">
+                <c:set var="alert" value="Invaild oldpassword" scope="session"/>
+                <c:redirect url="ChangePass.jsp"/>
+            </c:if>
+            <c:if test="${param.newpass != param.confirmpass}">
+                <c:set var="alert" value="Confirm new password not macth!" scope="session"/>
+                <c:redirect url="ChangePass.jsp"/>
+            </c:if>
+            <sql:update dataSource="${conn}">
+                update Customer set pass = '${param.newpass}' where CusId=${sessionScope.loginUser.rows[0].CusId};
+            </sql:update>
+            <c:set var="alert" value="" scope="session"/>
+            <c:redirect url="ChangePass.jsp"/>
+        </c:if>
         <c:if test="${param.ac eq 'toPre'}">
             <sql:update dataSource="${sessionScope.conn}" var="pre">
                 update Customer set member = 'Pre' where CusId =${sessionScope.loginUser.rows[0].CusId};
