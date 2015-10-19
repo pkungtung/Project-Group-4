@@ -38,34 +38,34 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <c:set var="total" value="0" scope="session"/>
                             <c:forEach var="ct" items="${cart.content}">
                                 <sql:query dataSource="${conn}" var="result">
                                     select * from Product where itemcode= '${ct.key}';
                                 </sql:query>
-                                <c:forEach var="p" items="${result.rows}">
-                                    <tr>
-                                        <c:set var="count" value="${count=count+1}"/>
-                                        <td><img src="${p.img}" height="50px" width="50px"/><input type="hidden" value="${p.itemcode}" name="id"/></td>
-                                        <td><a href="Detail.jsp?id=${p.itemcode}">${p.name}</a></td>          
-                                        <td>$ ${p.price}</td>
-                                        <td><input type="number" value="${ct.value}" min="1" name="quantity"/></td>
-                                        <td>$ ${p.price * ct.value}</td>
-                                        <td>
-                                            <a href="../Controller?ac=delProduct&id=${p.itemcode}" class="btn btn-danger">Remove</a>
-                                        </td>
-                                    </tr>
-                                    <c:set var="total" value="${total = total + p.price * ct.value}" scope="session"/>
+                                <tr>
+                                    <c:set var="count" value="${count=count+1}"/>
+                                    <td><img src="${result.rows[0].img}" height="50px" width="50px"/><input type="hidden" value="${result.rows[0].itemcode}" name="id"/></td>
+                                    <td><a href="Detail.jsp?id=${p.itemcode}">${p.name}</a></td>          
+                                    <td>$ ${result.rows[0].price}</td>
+                                    <td><input type="number" value="${ct.value}" min="1" name="quantity"/></td>
+                                    <td>$ ${result.rows[0].price * ct.value}</td>
+                                    <td>
+                                        <a href="../Controller?ac=delProduct&id=${result.rows[0].itemcode}" class="btn btn-danger">Remove</a>
+                                    </td>
+                                </tr>
+                                <c:set var="amount" value="${result.rows[0].price * ct.value}"/>
+                                <c:set var="total" value="${total = total + amount}" scope="session"/>
                             </c:forEach>
-                        </c:forEach>
-                        <tr>
-                            <td  colspan="3" >Total</td>
-                            <td><a href="#" onclick="submitForm()" class="btn btn-default">Update Quantity</a></td>
-                            <td>$ ${total}</td>
-                            <td><a href="../Controller?ac=delCart" class="btn btn-danger">Remove All</a>
-                            </td>
-                        </tr>
-                        <tr height="20">
-                        </tr>
+                            <tr>
+                                <td  colspan="3" >Total</td>
+                                <td><a href="#" onclick="submitForm()" class="btn btn-default">Update Quantity</a></td>
+                                <td>$ ${total}</td>
+                                <td><a href="../Controller?ac=delCart" class="btn btn-danger">Remove All</a>
+                                </td>
+                            </tr>
+                            <tr height="20">
+                            </tr>
                         </tbody>
                     </table> 
                 </form>

@@ -62,6 +62,7 @@ select * from OrderList
 
 insert into administrator values('tung','123','Phung Van Tung','0978004684','Tung@gmail.com','Ha Noi','../imgProduct/user-tung.jpg')
 insert into administrator values('admin','123','Administrator','000000000','00@gmail.com','Ha Noi','../imgProduct/user-default.jpg')
+insert into administrator values('tien','123','Manh Tien','000000000','00@gmail.com','Ha Noi','../imgProduct/user-default.jpg')
 
 select top 1 CusId from Customer
 order by CusId desc

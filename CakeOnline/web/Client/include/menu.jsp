@@ -240,7 +240,7 @@
                                             <span class="arrows"><i class="fa fa-arrow-right"></i></span>
                                         </a>
                                     </div>
-                                    <div class="top-cart-content" style="width: 421px;position: fixed;margin-left: 20px;margin-right: 247px;margin-top: 60px;z-index: 999;">
+                                    <div class="top-cart-content" style="width: 421px;position: fixed;margin-left: 20px;margin-right: 174px;margin-top: 60px;z-index: 999;">
                                         <!--              Xử lý chức năng giỏ hàng-->
                                         <c:choose>
                                             <c:when test="${empty sessionScope.cart}">

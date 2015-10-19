@@ -30,53 +30,53 @@
             <div class="home">
                 <div class="aside" style="width: 400px; padding: 10px;">
                     <h2 style="text-align: center; color: #0033ff;">Infomation</h2>
-                    <form action="loginAuthenticate.jsp?ac=order" method="Post">
+                    <form name="fom" action="loginAuthenticate.jsp?ac=order" method="Post" onsubmit="return ValidateEmail(document.fom.email)">
                         <c:choose>
                             <c:when test="${empty sessionScope.loginUser}">
                                 <div class="form-group">
                                     <label for="">Name</label>
-                                    <input type="text" class="form-control" name="name"/>
+                                    <input required type="text" class="form-control" name="name"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Email</label>
-                                    <input type="text" class="form-control" name="email"/>
+                                    <input required type="text" class="form-control" name="email"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control" name="address"/>
+                                    <input required type="text" class="form-control" name="address"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Contact number</label>
-                                    <input type="text" class="form-control" name="number"/>
+                                    <input required type="text" class="form-control" name="number"/>
                                 </div>
                             </c:when>
                             <c:otherwise>
-         
+
                                 <div class="form-group">
                                     <label for="">Name</label>
-                                    <input type="text" class="form-control" name="name" value="${loginUser.rows[0].name}"/>
+                                    <input required type="text" class="form-control" name="name" value="${loginUser.rows[0].name}"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Email</label>
-                                    <input type="text" class="form-control" name="email" value="${loginUser.rows[0].email}"/>
+                                    <input required type="text" class="form-control" name="email" value="${loginUser.rows[0].email}"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control" name="address" value="${loginUser.rows[0].addr}"/>
+                                    <input required type="text" class="form-control" name="address" value="${loginUser.rows[0].addr}"/>
                                 </div>
                                 <div class="form-group">
                                     <label>Contact number</label>
-                                    <input type="text" class="form-control" name="number" value="${loginUser.rows[0].number}"/>
+                                    <input required type="text" class="form-control" name="number" value="${loginUser.rows[0].number}"/>
                                 </div>
                             </c:otherwise>
                         </c:choose>
                         <div class="form-group">
                             <label for="">Delivery address</label>
-                            <input type="text" class="form-control" name="deAddress"/>
+                            <input required type="text" class="form-control" name="deAddress"/>
                         </div>
                         <div class="form-group">
                             <label for="">Delivery Date</label>
-                            <input type="date" class="form-control" name="deDate"/>
+                            <input required type="date" class="form-control" name="deDate"/>
                         </div>
                         <button type="submit" class="btn btn-warning" style="width: 100px;">Order</button>
                     </form>
@@ -95,28 +95,31 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <c:set var="total" value="0" scope="session"/>
                             <c:forEach var="ct" items="${cart.content}">
                                 <sql:query dataSource="${conn}" var="result">
                                     select * from Product where itemcode= '${ct.key}';
                                 </sql:query>
                                 <c:forEach var="p" items="${result.rows}">
                                     <tr>
-                                        <td><img src="${p.img}" height="50px" width="50px"/><input type="hidden" value="${p.itemcode}" name="id"/></td>
-                                        <td>${p.name}</td>
-                                        <td>$ ${p.price}</td>
-                                        <td>${ct.value}</td>
-                                        <td>$ ${p.price * ct.value}</td>
+                                        <c:set var="count" value="${count=count+1}"/>
+                                        <td><img src="${result.rows[0].img}" height="50px" width="50px"/><input type="hidden" value="${result.rows[0].itemcode}" name="id"/></td>
+                                        <td><a href="Detail.jsp?id=${p.itemcode}">${p.name}</a></td>          
+                                        <td>$ ${result.rows[0].price}</td>
+                                        <td><input readonly type="number" value="${ct.value}" min="1" name="quantity"/></td>
+                                        <td>$ ${result.rows[0].price * ct.value}</td>
                                     </tr>
-                                <input type="hidden" value="${total = total + p.price * ct.value}"/>
+                                    <c:set var="amount" value="${result.rows[0].price * ct.value}"/>
+                                    <c:set var="total" value="${total = total + amount}" scope="session"/>
+                                </c:forEach>
                             </c:forEach>
-                        </c:forEach>
-                        <tr>
-                            <td  colspan="4" >Total</td>
-                            <td>$ ${total}</td>
+                            <tr>
+                                <td  colspan="4" >Total</td>
+                                <td>$ ${total}</td>
 
-                        </tr>
-                        <tr height="20">
-                        </tr>
+                            </tr>
+                            <tr height="20">
+                            </tr>
                         </tbody>
                     </table> 
                 </div>

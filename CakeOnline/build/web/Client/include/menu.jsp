@@ -240,7 +240,7 @@
                                             <span class="arrows"><i class="fa fa-arrow-right"></i></span>
                                         </a>
                                     </div>
-                                    <div class="top-cart-content" style="width: 421px;position: fixed;margin-left: 20px;margin-right: 247px;margin-top: 60px;z-index: 999;">
+                                    <div class="top-cart-content" style="width: 421px;position: fixed;margin-left: 20px;margin-right: 174px;margin-top: 60px;z-index: 999;">
                                         <!--              Xử lý chức năng giỏ hàng-->
                                         <c:choose>
                                             <c:when test="${empty sessionScope.cart}">
@@ -454,7 +454,7 @@
                 <a href="Detail.jsp?id=tc23"><img src="images/dog.jpg" width="940" height="240" /></a>
                 <a href="Detail.jsp?id=tc36"><img src="images/swcupcake.jpg" width="940" height="240" /></a>
                 <a href="Detail.jsp?id=tc26"><img src="images/valentine-day-cake.jpg" width="940" height="240" /></a>
-                <a href="Detail.jsp?id=tc26"><img src="images/banh sinh_n.png" width="940" height="240" /></a>
+<!--                <a href="Detail.jsp?id=tc26"><img src="images/banh sinh_n.png" width="940" height="240" /></a>-->
             </div>
         </div>
     </div>
